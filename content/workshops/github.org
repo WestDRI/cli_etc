@@ -1,0 +1,26 @@
+#+title: Taking Git one step further: collaborations and contributions through GitHub
+#+slug: github
+#+description = 1.5h workshop on GitHub at UBC RC
+#+tags[]: git github
+#+categories[]: workshop
+#+date: 2020-03-14
+
+#+OPTIONS: toc:1
+
+* Abstract
+
+#+BEGIN_definition
+Git is a version control tool: it allows to keep a record of files history. Not only is this a much cleaner method than keeping (often messy) collections of files versions, it also makes navigating this history and identifying the changes between versions particularly easy. Using online remotes (for instance through online repository hosting services such as GitHub, GitLab, or Bitbucket) unleashes Git's full potential by providing:
+
+- an online backup of projects history
+- a powerful system to collaborate on projects
+- an easy way to make your open-source projects available to the community (and conversely, an easy way to contribute to others' open-source projects)
+
+In this workshop, we will go over the full workflow of creating a project, hosting it on GitHub, and collaborating on it. We will also learn how to contribute to someone else's project by opening issues and submitting pull requests.
+
+Prerequisites:
+
+While this workshop is open to everyone, it is most suitable to people with a basic knowledge of Git.
+Please bring a laptop with wifi access and Git installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). It would be best if you could also sign up for a free GitHub account before coming to the workshop (https://github.com/join?plan=free&source=pricing-card-free).
+#+END_definition
+
