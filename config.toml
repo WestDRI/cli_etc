@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Cli, Git, et al."
+title = "Command line, git, et al."
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
