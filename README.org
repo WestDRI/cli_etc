@@ -1,1 +1,1 @@
-This is the repo for [[https://www.westgrid.ca/][WestGrid]]'s portal on command line, version control, and other utilities training material. You can find this site [[https://westgrid-cli.netlify.com/][here]].
+This is the repo for [[https://www.westgrid.ca/][WestGrid]]'s training material on command line tools, version control, and other utilities. You can find the site [[https://westgrid-cli.netlify.com/][here]].
