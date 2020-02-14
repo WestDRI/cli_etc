@@ -1,8 +1,7 @@
 #+title: Fun tools to simplify your life in the command line
 #+slug: cli_tools
-#+tags[]: cli shell
-#+categories[]: webinar
 #+date: 2020-02-19
+#+place: 45 min live webinar
 
 #+OPTIONS: toc:1
 
