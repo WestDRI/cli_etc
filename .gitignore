@@ -1,6 +1,3 @@
 public/
 resources/
-!cli.png
-!cli_tools_slides.png
-!favicon.png
-!wg_white_removed_medium.png
+!*.png
