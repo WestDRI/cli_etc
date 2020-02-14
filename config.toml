@@ -1,0 +1,88 @@
+baseurl = "/"
+title = "Cli, Git, et al."
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+buildFuture = true
+
+footnotereturnlinkcontents = "↩"
+relativeURLs = true
+uglyURLs = true
+enableEmoji = true
+
+paginate = 20
+canonifyurls = true
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    style = "friendly"
+  [markup.tableOfContents]
+    endLevel = 1
+    ordered = false
+    startLevel = 1
+
+[params]
+  # author = "Training Material on"
+  # info = "Helping researchers with high-performance computing tools"
+  wgavatar = "/img/wg_white_removed_medium.png"
+  avatarurl = "/img/cli.png"
+
+  favicon_32 = "/img/favicon.png"
+
+  hidecredits = false
+  hidecopyright = false
+
+  rtl = false
+
+  math = true
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+  name = "WestGrid"
+  icon = "fas fa-globe fa-2x"
+  weight = 1
+  url = "https://www.westgrid.ca/"
+[[params.social]]
+  name = "Compute Canada"
+  icon = "fas fa-user-friends fa-2x"
+  weight = 2
+  url = "https://www.computecanada.ca/"
+[[params.social]]
+  name = "Github"
+  icon = "fab fa-github fa-2x"
+  weight = 3
+  url = "https://github.com/WestGrid"
+[[params.social]]
+  name = "Twitter"
+  icon = "fab fa-twitter fa-2x"
+  weight = 4
+  url = "https://twitter.com/WestGrid"
+[[params.social]]
+  name = "Events"
+  icon = "fa fa-calendar-alt fa-2x"
+  weight = 5
+  url = "https://westgrid.github.io/trainingMaterials/events/upcoming-training-winter-spring-2020/"
+
+[[menu.main]]
+  name = "Workshops"
+  weight = 1
+  url  = "/workshops/"
+[[menu.main]]
+  name = "Webinars"
+  weight = 2
+  url  = "/webinars/"
+[[menu.main]]
+  name = "⟰"
+  weight = 4
+  url  = "https://westgrid.github.io/trainingMaterials/"
