@@ -6,7 +6,7 @@
 #+OPTIONS: toc:1
 
 #+BEGIN_sticker
-[[https://www.eventbrite.ca/e/fun-tools-to-simplify-your-life-in-the-command-line-registration-88571725415][Register]]
+[[https://www.eventbrite.ca/e/fun-tools-to-simplify-your-life-in-the-command-line-registration-88571725415][Register for free webinar]]
 #+END_sticker
 
 * Abstract
