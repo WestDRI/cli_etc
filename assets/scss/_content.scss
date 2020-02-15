@@ -290,7 +290,6 @@ img[alt=wgavatar] {
 .monofont-block {
   /*monospace font*/
   margin: auto;
-  width: max-content;
   font-family: 'Slabo';
   width: max-content;
   color: #000000;
@@ -299,6 +298,19 @@ img[alt=wgavatar] {
   line-height: 20px;
   border: 0.5pt solid #999999;
   border-radius: 3px;
+}
+
+.sticker-block {
+  color: #b35900;
+  background-color: #ececec;
+  border: 1pt solid #ffcc99;
+  // margin: auto;
+  font-family: 'Slabo';
+  width: max-content;
+  padding: 0em 0.8em;
+  font-size: 95%;
+  line-height: 3px;
+  border-radius: 5px;
 }
 
 .red-block {
