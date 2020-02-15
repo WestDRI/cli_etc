@@ -5,6 +5,10 @@
 
 #+OPTIONS: toc:1
 
+#+BEGIN_sticker
+[[https://www.eventbrite.ca/e/fun-tools-to-simplify-your-life-in-the-command-line-registration-88571725415][Register]]
+#+END_sticker
+
 * Abstract
 
 #+BEGIN_definition
