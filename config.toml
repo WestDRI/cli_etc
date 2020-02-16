@@ -72,7 +72,7 @@ canonifyurls = true
   name = "Events"
   icon = "fa fa-calendar-alt fa-2x"
   weight = 5
-  url = "https://westgrid.github.io/trainingMaterials/events/upcoming-training-winter-spring-2020/"
+  url = "https://www.westgrid.ca/events/westgrid-training-events"
 
 [[menu.main]]
   name = "Workshops"
