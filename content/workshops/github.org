@@ -5,6 +5,10 @@
 
 #+OPTIONS: toc:1
 
+#+BEGIN_sticker
+[[https://libcal.library.ubc.ca/event/3540388][UBC event page]]
+#+END_sticker
+
 * Abstract
 
 #+BEGIN_definition
