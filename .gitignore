@@ -1,3 +1,4 @@
 public/
 resources/
 !*.png
+!workinprogress.svg
