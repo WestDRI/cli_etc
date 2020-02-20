@@ -31,7 +31,7 @@ canonifyurls = true
 [params]
   # author = "Training Material on"
   # info = "Helping researchers with high-performance computing tools"
-  wgavatar = "/img/wg_white_removed_medium.png"
+  wgavatar = "/img/wg_top_padding_medium.png"
   avatarurl = "/img/cli.png"
 
   favicon_32 = "/img/favicon.png"
