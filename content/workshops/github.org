@@ -5,6 +5,11 @@
 
 #+OPTIONS: toc:1
 
+#+BEGIN_center
+#+ATTR_HTML: :width 200
+[[/img/workinprogress.svg]]
+#+END_center
+
 #+BEGIN_sticker
 [[https://libcal.library.ubc.ca/event/3540388][UBC event page]]
 #+END_sticker
