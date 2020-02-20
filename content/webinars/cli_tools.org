@@ -31,7 +31,7 @@ In this webinar, aimed at any command-line user, I intend to demonstrate that "y
 
 Coming shortly.
 
-* Comments
+* Comments and questions
 
 #+BEGIN_export html
 <script src="https://utteranc.es/client.js"
