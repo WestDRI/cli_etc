@@ -3,14 +3,11 @@ title = "Command line, git, et al."
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
-
 buildFuture = true
-
 footnotereturnlinkcontents = "↩"
 relativeURLs = true
 uglyURLs = true
 enableEmoji = true
-
 paginate = 20
 canonifyurls = true
 
@@ -33,15 +30,13 @@ canonifyurls = true
   # info = "Helping researchers with high-performance computing tools"
   wgavatar = "/img/wg_top_padding_medium.png"
   avatarurl = "/img/cli_with_text7.png"
-
   favicon_32 = "/img/favicon.png"
-
   hidecredits = false
   hidecopyright = false
-
   rtl = false
-
   math = true
+  [params.utteranc]
+    repo = "WestGrid/cli_git_etal"
 
 [taxonomies]
   category = "categories"

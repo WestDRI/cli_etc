@@ -30,15 +30,3 @@ Prerequisites:
 While this workshop is open to everyone, it is most suitable to people with a basic knowledge of Git.
 Please bring a laptop with wifi access and Git installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). It would be best if you could also sign up for a free GitHub account before coming to the workshop (https://github.com/join?plan=free&source=pricing-card-free).
 #+END_definition
-
-* Comments and questions
-
-#+BEGIN_export html
-<script src="https://utteranc.es/client.js"
-        repo="WestGrid/cli_git_etal"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-#+END_export
