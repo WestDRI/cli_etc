@@ -1,0 +1,12 @@
+<section class="container centered">
+  <div class="error">
+    {{ with .Site.Params.error }}
+    <div>
+      <img src="{{ . | relURL }}" alt="photoid">
+    </div>
+    {{ end }}
+    <h1>404</h1>
+    <h2>{{ i18n "page_does_not_exist" }}</h2>
+    <p>Would you like to head back to the <a href="/">homepage</a>?</p>
+  </div>
+</section>
