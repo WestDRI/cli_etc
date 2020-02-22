@@ -30,6 +30,7 @@ canonifyurls = true
   # info = "Helping researchers with high-performance computing tools"
   wgavatar = "/img/wg_top_padding_medium.png"
   avatarurl = "/img/cli_with_text7.png"
+  error = "/img/404.png"
   favicon_32 = "/img/favicon.png"
   hidecredits = false
   hidecopyright = false
