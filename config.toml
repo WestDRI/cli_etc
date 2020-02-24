@@ -65,10 +65,15 @@ canonifyurls = true
   weight = 4
   url = "https://twitter.com/WestGrid"
 [[params.social]]
+  name = "YouTube"
+  icon = "fab fa-youtube fa-2x"
+  weight = 5
+  url = "https://www.youtube.com/channel/UCfgds4Qf7VFOv4ORRvFFmhw"
+[[params.social]]
   name = "Events"
   icon = "fa fa-calendar-alt fa-2x"
-  weight = 5
-  url = "https://www.westgrid.ca/events/westgrid-training-events"
+  weight = 6
+  url = "https://www.westgrid.ca/events"
 
 [[menu.main]]
   name = "Workshops"
