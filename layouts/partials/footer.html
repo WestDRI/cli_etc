@@ -3,21 +3,23 @@
     {{ with .Site.Params.footercontent | safeHTML }}
       <p>{{.}}</p>
     {{ end }}
-    <p>View on &nbsp;<a href="{{ .Site.Params.repourl | safeHTML }}"><i class="fab fa-github fa-lg"></i></a></p>
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
         © {{ if lt . now.Year }}{{ . }} - {{ end }}{{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
       {{ else }}
-        © {{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      © {{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{ end }}
     {{ end }}
     {{ if not .Site.Params.hideCredits }}
-    {{ if not .Site.Params.hideCopyright }} · {{ end }}
-      Powered by <a href="https://gohugo.io/">Hugo</a>,
-      inspired by <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      <!-- {{ if not .Site.Params.hideCopyright }} · {{ end }} -->
+      Powered by <a href="https://gohugo.io/">Hugo</a>, inspired by <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     {{ end }}
+      View on &nbsp;<a href="{{ .Site.Params.repourl }}"><i class="fab fa-github fa-lg"></i></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     {{ if .Site.Params.commit }}
-    {{ if or (not .Site.Params.hideCredits) (not .Site.Params.hideCopyright) }} · {{ end }}
+      {{ if or (not .Site.Params.hideCredits) (not .Site.Params.hideCopyright) }} · {{ end }}
       [<a href="{{ .Site.Params.commit }}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]
     {{ end }}
   </section>
