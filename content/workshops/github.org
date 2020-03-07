@@ -3,11 +3,6 @@
 #+date: 2020-03-14
 #+place: 1.5h workshop at the University of British Columbia Research Commons
 
-
-#+BEGIN_center
-#+ATTR_HTML: :width 200
-[[/img/workinprogress.svg]]
-#+END_center
 #+OPTIONS: toc:2
 
 #+BEGIN_sticker
@@ -37,6 +32,10 @@ You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows
 
 A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
 #+END_box
+
+* Before we start: setting up a GitHub account
+
+Setting up SSH: https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 
 #+BEGIN_export html
 <br>
@@ -174,13 +173,61 @@ git push --set-upstream origin master
 From now on, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span> will be enough to push to our remote (when we are on the branch master).
 #+END_export
 
+If you were working alone on this project, you would be set. But we want to collaborate as a team on this project.
 
+* Collaborating on GitHub
 
+** Inviting collaborators to a GitHub repo
 
+#+BEGIN_export html
+Go to the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Settings</span> tab, then the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Manage access</span> section on the left-hand side. Finally click <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Invite a collaborator</span>.
+#+END_export
+
+** Cloning the repo
+
+Now that the project is on the web, all other team members can clone it on their machine to start collaborating on it.
+
+#+BEGIN_src sh
+cd /place/where/you/want/to/have/your/project
+git clone git@github.com:<user>/<repo>.git <name>
+#+END_src
 
 #+BEGIN_export html
 <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">&lt;name&gt;</span> is not necessary: this is only if you want to rename the repo on your machine.
 #+END_export
+
+** Pushing changes
+
+Those who had started to work on some file(s) then have to copy the entire content of one directory into the other (you can copy your file(s) to the newly cloned repo or copy the entire content of the repo to your previous directory).
+
+Then, you will want to push those files of yours to the remote so that everybody in the team can get a copy of your files.
+
+You don't need to set the remote: cloning a repo from GitHub automatically does this for you. So all you need to do is to run:
+
+#+BEGIN_src sh
+git push
+#+END_src
+
+** Pulling changes
+
+Now, everybody can pull those new files:
+
+#+BEGIN_src sh
+git pull
+#+END_src
+
+** Branches
+
+
+** Resolving conflicts
+
+
+* Contributing to someone else's project
+
+** Forking a project
+
+** Creating a pull request
+
 
 
 
