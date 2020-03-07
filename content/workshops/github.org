@@ -62,21 +62,35 @@ We are a team of virologists starting a new research project on COVID-19 and we 
 
 ** Our project
 
-#+BEGIN_export html
-You want to have all the project files in one place. So let's create a directory called <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">covid</span>. You can create it wherever is suitable in your computer.
-#+END_export
+Let's imagine a real case scenario:
 
-** Start version control
+Most researchers aren't starting anything yet (so most of you please simply watch for now), others are starting various things independently.
 
-We will start version control with Git on our project, thus turning it into a repository.
+You want to have all the project files in one place. So those who are starting to work on the project, please create a directory with the name of your choosing (it doesn't have to be the same name for everyone). You can create it wherever is suitable in your computer. This does not matter either.
+
+- One of you please start a script in the language of your choice (any language is fine as long as your script is a text file: it can be a python file, or an R file, etc.). Just write a couple of lines of code.
+
+- Another one please start writing a bogus draft manuscript in a .txt file.
+
+- Someone else please add a few images (.jpg or .png) to your project folder (if you don't want to use your pictures, you can download a few images from the web).
+
+- Finally, someone please add a data file (quickly create a very short bogus Excel file).
+
+At this point, it is totally uncoordinated.
+
+** Starting version control
+
+One of you will start the coordination work. Let's say for instance that it is the person who started the draft manuscript (everybody else, you are welcome to gather around the person doing that work or you can simply follow from your seat).
+
+That person will start version control with Git on their project, thus turning it into a repository.
 
 #+BEGIN_src sh
-cd /path/to/covid
+cd /path/to/project
 git init
 #+END_src
 
 #+BEGIN_export html
-As you can see, a <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">.git</span> directory was created in <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">covid</span>.
+A <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">.git</span> directory was created in the project directory.
 #+END_export
 
 If you don't see it, make sure that your file manager is set so that you can see hidden files and directories.
@@ -87,30 +101,85 @@ You can also see that our directory is now a repository by running:
 git status
 #+END_src
 
-** Set a remote on GitHub
+** Setting up a remote on GitHub
 
-#+BEGIN_export html
-Before we can do this, we need to have at least one commit. So let's create a <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">README</span> file.
-#+END_export
+Before we can do this, we need to have at least one commit.
 
-Now, we can add it with
+Let's add the draft manuscript. As this is the only file at this point, you can run:
 
 #+BEGIN_src sh
 git add .
 #+END_src
 
-and commit it with
+This stages the file to be committed.
+
+#+BEGIN_export html
+What are you getting now when you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span>?
+#+END_export
+
+Then commit your staged file with:
 
 #+BEGIN_src sh
-git commit -m "Initial commit with README"
+git commit -m "Initial commit with draft manuscript"
 #+END_src
 
 #+BEGIN_export html
-Now, if we run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span> we can see that we are on branch master of our new repo.
+What are you getting now when you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span>?
+<br>
+<br>
+But our repo does not have any remote: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> does not return anything.
 #+END_export
 
+The project, though under version control, only resides in your computer. If we want to collaborate with others, we need to have a version on the web.
+
 #+BEGIN_export html
-But our repo does not have any remote: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remove -v</span> does not return anything.
+Go to your GitHub webpage, select the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Repositories</span> tab, then click the green <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">New</span> button.
+#+END_export
+
+Enter the name of your repo, avoiding spaces. It can be the name you had on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
+
+You can make your repository public or private. In a real scenario, our researchers would probably go with the private option as their research could be sensitive. If you want to develop open source projects, of course, you want to make them public.
+
+Here, we will go with the public option because, while free accounts allow private repositories, not all team options are available on private repositories for free accounts.
+
+Now, you can copy the web address of your repo and add it as a remote for your project:
+
+#+BEGIN_src sh
+git remote add origin git@github.com:<your-gh-user-name>/<your-repo-name>.git 
+#+END_src
+
+#+BEGIN_export html
+Now, your project as a remote called <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">origin</span>: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> returns your repo on GitHub to <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">fetch</span> and to <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">push</span>.
+<br>
+Now, what happens if we run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span>?
+#+END_export
+
+This is because our current branch (master) is not associated with anything. We need to tell git where to push master.
+
+We could run:
+
+#+BEGIN_src sh
+git push origin master
+#+END_src
+
+#+BEGIN_export html
+This tells git to push master to origin. But we would have to do this each time we want to push to origin from master. A nicer way is to set the upstream for master when we push for the first time. This is done by adding the flag <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">--set-upstream</span>:
+#+END_export
+
+#+BEGIN_src sh
+git push --set-upstream origin master
+#+END_src
+
+#+BEGIN_export html
+From now on, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span> will be enough to push to our remote (when we are on the branch master).
+#+END_export
+
+
+
+
+
+#+BEGIN_export html
+<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">&lt;name&gt;</span> is not necessary: this is only if you want to rename the repo on your machine.
 #+END_export
 
 
