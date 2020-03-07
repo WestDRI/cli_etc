@@ -24,10 +24,95 @@ Git is a version control tool: it allows to keep a record of files history. Not 
 - an easy way to make your open-source projects available to the community (and conversely, an easy way to contribute to others' open-source projects)
 
 In this workshop, we will go over the full workflow of creating a project, hosting it on GitHub, and collaborating on it. We will also learn how to contribute to someone else's project by opening issues and submitting pull requests.
+#+END_definition
+
 **** /Workshop requirements/
 
-Prerequisites:
+#+BEGIN_box
+*1 - Git*
 
-While this workshop is open to everyone, it is most suitable to people with a basic knowledge of Git.
-Please bring a laptop with wifi access and Git installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). It would be best if you could also sign up for a free GitHub account before coming to the workshop (https://github.com/join?plan=free&source=pricing-card-free).
-#+END_definition
+You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
+
+*2 - GitHub account*
+
+A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
+#+END_box
+
+#+BEGIN_export html
+<br>
+<br>
+<br>
+#+END_export
+
+-----
+
+*Workshop scenario*
+
+We are a team of virologists starting a new research project on COVID-19 and we decided to use GitHub as our collaboration tool.
+
+/Please note that we could have chosen [[https://about.gitlab.com/][GitLab]] or [[https://bitbucket.org/][Bitbucket]] which offer the same functionalities. You can directly apply the workflow we will use today to these services./
+
+-----
+
+#+BEGIN_export html
+<br>
+#+END_export
+
+* Project setup
+
+** Our project
+
+#+BEGIN_export html
+You want to have all the project files in one place. So let's create a directory called <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">covid</span>. You can create it wherever is suitable in your computer.
+#+END_export
+
+** Start version control
+
+We will start version control with Git on our project, thus turning it into a repository.
+
+#+BEGIN_src sh
+cd /path/to/covid
+git init
+#+END_src
+
+#+BEGIN_export html
+As you can see, a <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">.git</span> directory was created in <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">covid</span>.
+#+END_export
+
+If you don't see it, make sure that your file manager is set so that you can see hidden files and directories.
+
+You can also see that our directory is now a repository by running:
+
+#+BEGIN_src sh
+git status
+#+END_src
+
+** Set a remote on GitHub
+
+#+BEGIN_export html
+Before we can do this, we need to have at least one commit. So let's create a <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">README</span> file.
+#+END_export
+
+Now, we can add it with
+
+#+BEGIN_src sh
+git add .
+#+END_src
+
+and commit it with
+
+#+BEGIN_src sh
+git commit -m "Initial commit with README"
+#+END_src
+
+#+BEGIN_export html
+Now, if we run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span> we can see that we are on branch master of our new repo.
+#+END_export
+
+#+BEGIN_export html
+But our repo does not have any remote: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remove -v</span> does not return anything.
+#+END_export
+
+
+
+
