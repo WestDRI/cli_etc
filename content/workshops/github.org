@@ -3,18 +3,18 @@
 #+date: 2020-03-14
 #+place: 1.5h workshop at the University of British Columbia Research Commons
 
-#+OPTIONS: toc:1
 
 #+BEGIN_center
 #+ATTR_HTML: :width 200
 [[/img/workinprogress.svg]]
 #+END_center
+#+OPTIONS: toc:2
 
 #+BEGIN_sticker
 [[https://libcal.library.ubc.ca/event/3540388][UBC event page]]
 #+END_sticker
 
-* Abstract
+**** /Abstract/
 
 #+BEGIN_definition
 Git is a version control tool: it allows to keep a record of files history. Not only is this a much cleaner method than keeping (often messy) collections of files versions, it also makes navigating this history and identifying the changes between versions particularly easy. Using online remotes (for instance through online repository hosting services such as GitHub, GitLab, or Bitbucket) unleashes Git's full potential by providing:
@@ -24,6 +24,7 @@ Git is a version control tool: it allows to keep a record of files history. Not 
 - an easy way to make your open-source projects available to the community (and conversely, an easy way to contribute to others' open-source projects)
 
 In this workshop, we will go over the full workflow of creating a project, hosting it on GitHub, and collaborating on it. We will also learn how to contribute to someone else's project by opening issues and submitting pull requests.
+**** /Workshop requirements/
 
 Prerequisites:
 
