@@ -221,11 +221,63 @@ This is all nice and good, as long as everybody works on something different. No
 
 ** Resolving conflicts
 
+Working on the same file is no problem at all as long as different sections of the file are being edited. But if the same section is changed by different people, this creates a conflict.
 
+Ideally, you want to avoid conflicts with a good team workflow. But if they arise, there are great tools to help you deal with them.
+
+You can run:
+
+#+BEGIN_src sh
+git mergetool
+#+END_src
+
+Or you can use one of many GUI applications developed to make Git more friendly.
+
+The lucky people who use Emacs will have access to an amazing tool: Emacs Ediff mode.
+
+Whatever tool you use, conflicts will look like some variation of this:
+
+#+BEGIN_src
+<<<<<<< HEAD (current change)
+One possible version of a this section of the file
+=======
+Another possible version of the same section of the file
+>>>>>>> some other version (incoming change)
+#+END_src
+
+You will jump from conflict to conflict within a file and you will have to decide which version you want to choose for each of them. You can also in one swoop keep all of your version or all of "their" version with:
+
+#+BEGIN_src sh
+git checkout --ours <file>
+git checkout --theirs <file>
+#+END_src
+
+Let's create a conflict and see what that looks like.
 
 ** Branches
 
+What if you want to experiment with something in the project and you don't want to mess it all up?
 
+Branches are a great way to play with project files in a safe way. If you don't like the result, you can simply get rid of the branch. If you like it, you can merge it with master.
+
+#+BEGIN_src sh
+# show all branches (current branch marked with *)
+git branch
+
+# create a new branch called <name>
+git branch <name>
+
+# checkout branch <name>
+git checkout <name>
+
+# a better option, since it is easy to create a new branch
+# and forget to switch to it is to run
+git checkout -b <name>
+# this creates a branch called <name> and switches to it
+
+# delete branch <name>
+git branch -d <name>
+#+END_src
 
 * Contributing to someone else's project
 
