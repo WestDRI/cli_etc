@@ -88,9 +88,7 @@ cd /path/to/project
 git init
 #+END_src
 
-#+BEGIN_export html
-A <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">.git</span> directory was created in the project directory.
-#+END_export
+A .git directory was created in the project directory.
 
 If you don't see it, make sure that your file manager is set so that you can see hidden files and directories.
 
@@ -132,7 +130,7 @@ But our repo does not have any remote: <span style="font-family: 'Source Code Pr
 The project, though under version control, only resides in your computer. If we want to collaborate with others, we need to have a version on the web.
 
 #+BEGIN_export html
-Go to your GitHub webpage, select the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Repositories</span> tab, then click the green <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">New</span> button.
+Go to your GitHub webpage, select the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); color: #000000">Repositories</span> tab, then click the green <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); color: #000000">New</span> button.
 #+END_export
 
 Enter the name of your repo, avoiding spaces. It can be the name you had on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
@@ -148,21 +146,22 @@ git remote add origin git@github.com:<your-gh-user-name>/<your-repo-name>.git
 #+END_src
 
 #+BEGIN_export html
-Now, your project as a remote called <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">origin</span>: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> returns your repo on GitHub to <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">fetch</span> and to <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">push</span>.
+Now, your project has a remote called "origin": <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> returns your repo on GitHub.
 <br>
-Now, what happens if we run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span>?
+<br>
+What happens if you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span>?
 #+END_export
 
-This is because our current branch (master) is not associated with anything. We need to tell git where to push master.
+This is because your current branch ("master") is not associated with anything. You need to tell Git where to push "master".
 
-We could run:
+You could run:
 
 #+BEGIN_src sh
 git push origin master
 #+END_src
 
 #+BEGIN_export html
-This tells git to push master to origin. But we would have to do this each time we want to push to origin from master. A nicer way is to set the upstream for master when we push for the first time. This is done by adding the flag <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">--set-upstream</span>:
+This tells Git to push "master" to "origin". But you would have to do this each time you want to push to "origin" from "master". A nicer way is to set the upstream for "master" when you push for the first time. This is done by adding the flag <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">--set-upstream</span>:
 #+END_export
 
 #+BEGIN_src sh
@@ -170,17 +169,17 @@ git push --set-upstream origin master
 #+END_src
 
 #+BEGIN_export html
-From now on, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span> will be enough to push to our remote (when we are on the branch master).
+From now on, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span> will be enough to push to your remote called "origin" (when you are on the branch "master").
 #+END_export
 
-If you were working alone on this project, you would be set. But we want to collaborate as a team on this project.
+If you were working alone on this project, you would be set. But we want to collaborate as a team on it.
 
 * Collaborating on GitHub
 
 ** Inviting collaborators to a GitHub repo
 
 #+BEGIN_export html
-Go to the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Settings</span> tab, then the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Manage access</span> section on the left-hand side. Finally click <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">Invite a collaborator</span>.
+Go to the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); color: #000000">Settings</span> tab, then the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); color: #000000">Manage access</span> section on the left-hand side. Finally click <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.4rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 3px rgba(0,0,0,0.3); color: #000000">Invite a collaborator</span>.
 #+END_export
 
 ** Cloning the repo
@@ -200,7 +199,7 @@ git clone git@github.com:<user>/<repo>.git <name>
 
 Those who had started to work on some file(s) then have to copy the entire content of one directory into the other (you can copy your file(s) to the newly cloned repo or copy the entire content of the repo to your previous directory).
 
-Then, you will want to push those files of yours to the remote so that everybody in the team can get a copy of your files.
+Then, you will want to push those files of yours to the remote so that everybody in the team can get a copy.
 
 You don't need to set the remote: cloning a repo from GitHub automatically does this for you. So all you need to do is to run:
 
@@ -210,16 +209,20 @@ git push
 
 ** Pulling changes
 
-Now, everybody can pull those new files:
+Now, everybody can pull those new files to their computer:
 
 #+BEGIN_src sh
 git pull
 #+END_src
 
-** Branches
+From now on, whenever someone wants to make their local work available to everybody, they can push it to the remote and whenever someone wants to update their local repo, adding to it everybody else's changes, they can pull those changes.
 
+This is all nice and good, as long as everybody works on something different. Now, what happens if several persons are working on the /same/ file?
 
 ** Resolving conflicts
+
+
+** Branches
 
 
 * Contributing to someone else's project
