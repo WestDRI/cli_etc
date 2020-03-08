@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Domine&display=swap);
 
-// Fonts
+// * Fonts
+
 // $text-font-family: Merriweather, Georgia, serif;
 $text-font-family: 'Domine', Georgia, serif;
 
@@ -8,21 +9,45 @@ $heading-font-family: Lato, Helvetica, sans-serif;
 
 $code-font-family: 'Source Code Pro', 'Lucida Console', monospace;
 
-// Colors
+// * Colors
+
 // $bg-color: #FAFAFA !default;
-$bg-color: #fcfcfc !default;
 // $bg-color: #fefcfb !default;
 // $bg-color: #faf9f9 !default;
+$bg-color: #fcfcfc !default;
+
 $fg-color: #212121 !default;
+
 // $alt-bg-color: #E0E0E0 !default;
 $alt-bg-color: #f0f0f0 !default;
+
 $alt-fg-color: #000 !default;
+
 // $link-color: #1565c0 !default;
 // $link-color: #85a3e0 !default;
 // $link-color: #809dd8 !default;
-$link-color: #7c98d1 !default;
+// $link-color: #36679f !default;
+// $link-color: #5454c4 !default;
+// $link-color: #7c98d1 !default;
+// $link-color: #426bbd !default;
+// $link-color: #5460c4 !default;
+// $link-color: #336699 !default;
+$link-color: #557ac3 !default;
 
-// Colors dark
+// $link-visited-color: #7c98d1 !default;
+// $link-visited-color: #7a7ad1 !default;
+// $link-visited-color: #6767cb !default;
+// $link-visited-color: #6600cc !default;
+// $link-visited-color: #4d0099 !default;
+// $link-visited-color: #6655c4 !default;
+// $link-visited-color: #5542bd !default;
+// $link-visited-color: #7454c4 !default;
+// $link-visited-color: #780199 !default;
+// $link-visited-color: #5454c4 !default;
+$link-visited-color: #8755c4 !default;
+
+// ** Colors dark theme
+
 $bg-color-dark: #212121 !default;
 $fg-color-dark: #dadada !default;
 $alt-bg-color-dark: #424242 !default;
