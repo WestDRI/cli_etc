@@ -1,0 +1,27 @@
+#+title: Tips and tricks to get help in any programming language
+#+slug: getting_help
+#+date: 2020-
+#+place: 45 min live webinar
+
+#+OPTIONS: toc:2
+
+#+BEGIN_center
+#+ATTR_HTML: :width 200
+[[/img/workinprogress.svg]]
+#+END_center
+
+**** /Abstract/
+
+#+BEGIN_definition
+ how to ask a question on Stack Overflow, how to create a reproducible example, how to get help online, where to find resources
+#+END_definition
+
+* Slides
+
+#+BEGIN_export html
+<a href="https://westgrid-webinars.netlify.com/getting_help/"><p align="center"><img src="/img/getting_help_slides.png" title="Link to slides" width="700" style="border:2px solid black"/></p></a>
+#+END_export
+
+* Video
+
+Coming on .
