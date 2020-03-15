@@ -28,7 +28,7 @@ canonifyurls = true
 [params]
   # author = "Training Material on"
   # info = "Helping researchers with high-performance computing tools"
-  repourl = "https://github.com/WestGrid/cli_git_etal"
+  repourl = "https://github.com/WestGrid/cli_etc"
   wgavatar = "/img/wg_top_padding_medium.png"
   siteavatar = "/img/cli_etc.png"
   error = "/img/404.png"
@@ -38,7 +38,7 @@ canonifyurls = true
   rtl = false
   math = true
   [params.utteranc]
-    repo = "WestGrid/cli_git_etal"
+    repo = "WestGrid/cli_etc"
 
 [taxonomies]
   category = "categories"
