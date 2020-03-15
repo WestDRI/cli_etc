@@ -1,12 +1,12 @@
 <section class="container centered">
   <div class="about" style="text-align: center">
-    {{ with .Site.Params.avatarurl }}
+    {{ with .Site.Params.siteavatar }}
     <div class="avatar">
       <img style="vertical-align: middle" src="{{ . | relURL }}" alt="avatar">
       <span style="vertical-align: sub">
 	<font size="5">
           <b>
-  	    &nbsp;&nbsp;training material
+   	    &nbsp;&nbsp;training material
    	  </b>
 	</font>
       </span>
@@ -32,7 +32,8 @@
       {{ else }}
       <li>
         <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }}>
-	  {{ .name }}</a>
+	  {{ .name }}
+	</a>
       </li>
       {{ end }}
       {{ end }}
