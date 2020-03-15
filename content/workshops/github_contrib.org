@@ -1,5 +1,5 @@
 #+title: Contributing to GitHub projects
-#+slug: github
+#+slug: github-contrib
 
 #+OPTIONS: toc:2
 

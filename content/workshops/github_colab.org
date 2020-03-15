@@ -1,5 +1,5 @@
 #+title: Taking Git one step further: collaborating through GitHub
-#+slug: github
+#+slug: github-colab
 
 #+OPTIONS: toc:2
 
