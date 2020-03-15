@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Command line, git, et al."
+title = "Shell, Git, R, Python, etc."
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
