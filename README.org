@@ -1,1 +1,1 @@
-This is the repo for some of [[https://www.westgrid.ca/][WestGrid]]'s training material on shell scripting, version control, R, Python, and other tools. You can find the site [[https://westgrid-cli.netlify.com/][here]].
+This is the repo for some of [[https://www.westgrid.ca/][WestGrid]]'s training material on [[https://westgrid-cli.netlify.com/][shell scripting, version control, R, Python, and other tools]].
