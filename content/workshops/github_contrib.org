@@ -3,20 +3,10 @@
 
 #+OPTIONS: toc:2
 
-#+BEGIN_sticker
-[[https://libcal.library.ubc.ca/event/3540388][UBC event page]]
-#+END_sticker
-
 **** /Abstract/
 
 #+BEGIN_definition
-Git is a version control tool: it allows to keep a record of files history. Not only is this a much cleaner method than keeping (often messy) collections of files versions, it also makes navigating this history and identifying the changes between versions particularly easy. Using online remotes (for instance through online repository hosting services such as GitHub, GitLab, or Bitbucket) unleashes Git's full potential by providing:
-
-- an online backup of projects history
-- a powerful system to collaborate on projects
-- an easy way to make your open-source projects available to the community (and conversely, an easy way to contribute to others' open-source projects)
-
-In this workshop, we will learn how to contribute to someone else's project by opening issues and submitting pull requests.
+In this workshop, we will learn how to contribute to open source projects hosted on GitHub by opening issues and submitting pull requests.
 #+END_definition
 
 **** /Workshop requirements/
