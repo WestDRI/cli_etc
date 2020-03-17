@@ -42,7 +42,6 @@ An easy way to avoid having to do this all the time is to set up SSH for your ac
 #+BEGIN_export html
 <br>
 <br>
-<br>
 #+END_export
 
 -----
