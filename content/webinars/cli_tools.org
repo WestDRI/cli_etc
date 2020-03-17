@@ -30,3 +30,5 @@ In this webinar, aimed at any command-line user, I intend to demonstrate that "y
 * Video
 
 {{< youtube BFKT7aj-i80 >}}
+
+* Comments & questions

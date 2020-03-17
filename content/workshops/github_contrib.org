@@ -76,3 +76,5 @@ Here is the proper workflow, as described on many websites and in the [[https://
 Let's try this:
 
 I will make some changes to one of my file so that you can practice 4. Then you will all submit a PR (short for pull request) to my repo.
+
+* Comments & questions

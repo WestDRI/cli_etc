@@ -280,3 +280,5 @@ git checkout -b <name>
 # delete branch <name>
 git branch -d <name>
 #+END_src
+
+* Comments & questions
