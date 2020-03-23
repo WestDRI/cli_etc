@@ -115,7 +115,19 @@ img[alt=radius] {
 	  text-align: left;
 	}
       }
-      .title {
+      .wstitle {
+	font-size: 1.9rem;
+	margin-left: 11.0rem;
+	line-height: 3.5rem;
+	color: $fg-color;
+	font-family: $heading-font-family;
+	font-weight: 700;
+	&:hover,
+	&:focus {
+	  color: $link-color
+	}
+      }
+      .wbtitle {
 	font-size: 1.9rem;
 	color: $fg-color;
 	font-family: $heading-font-family;
