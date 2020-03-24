@@ -1,0 +1,33 @@
+#+title: GIS in R
+#+slug: gis_r
+#+date: 2020-11-01
+#+place: 45 min live webinar
+
+#+OPTIONS: toc:2
+
+#+BEGIN_center
+#+ATTR_HTML: :width 200
+[[/img/workinprogress.svg]]
+#+END_center
+
+# #+BEGIN_sticker
+# [[][Register for free webinar]]
+# #+END_sticker
+
+**** /Abstract/
+
+#+BEGIN_definition
+
+#+END_definition
+
+* Slides
+
+#+BEGIN_export html
+<a href="https://westgrid-webinars.netlify.com/gis_r/"><p align="center"><img src="/img/gis_r.png" title="Link to online slides" width="100%" style="border:2px solid black"/></p></a>
+#+END_export
+
+* Video
+
+Coming in Fall 2020.
+
+* Comments & questions
