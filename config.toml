@@ -86,7 +86,7 @@ canonifyurls = true
   weight = 2
   url  = "/webinars/"
 [[menu.main]]
-  name = "⟰"
+  name = "🏠"
   weight = 3
   url  = "https://westgrid.github.io/trainingMaterials/"
 [[menu.main]]
