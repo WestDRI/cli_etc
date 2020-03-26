@@ -5,10 +5,11 @@
     {{ end }}
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
-        © {{ if lt . now.Year }}{{ . }} - {{ end }}{{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      © {{ if lt . now.Year }}{{ . }}–{{ end }}{{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{ else }}
       © {{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{ end }}
     {{ end }}
     {{ if not .Site.Params.hideCredits }}

@@ -35,6 +35,7 @@ canonifyurls = true
   favicon_32 = "/img/favicon.png"
   hidecredits = false
   hidecopyright = false
+  since = 2020
   rtl = false
   math = true
   [params.utteranc]
