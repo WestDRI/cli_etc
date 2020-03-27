@@ -3,10 +3,13 @@
 
 #+OPTIONS: toc:2
 
-#+BEGIN_center
-#+ATTR_HTML: :width 200
-[[/img/workinprogress.svg]]
-#+END_center
+#+BEGIN_export html
+{{< pic
+src="/img/workinprogress.svg"
+title="Patience... patience..."
+width="200"
+>}}
+#+END_export
 
 **** /Abstract/
 
