@@ -1,0 +1,6 @@
+#+title: Introduction to WestGrid Summer School Git lesson
+#+slug: intro
+
+Video coming in May 2020.
+
+* Comments & questions

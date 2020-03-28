@@ -1,0 +1,30 @@
+{{ define "title" }}
+{{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+
+<section class="container post">
+  <article>
+    <header>
+      <div class="post-title">
+        <center><h1 class="title">{{ .Title }}</h1></center>
+      </div>
+      <div class="post-meta">
+        <center>Last updated: {{ now.Format "January 2, 2006" }}</center>
+      </div>
+      {{ .TableOfContents }}
+    </header>
+    <div>
+      {{ .Content }}
+    </div>
+    <footer>
+      {{ partial "posts/series.html" . }}
+      {{ partial "posts/disqus.html" . }}
+      {{ partial "posts/commento.html" . }}
+      {{ partial "posts/utteranc.html" . }}
+    </footer>
+  </article>
+  {{ partial "posts/math.html" . }}
+</section>
+
+{{ end }}
