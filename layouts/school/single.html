@@ -6,17 +6,16 @@
 <section class="container post">
   <article>
     <header>
-      <!-- <div> -->
-	<h1 style="font-size: 3.0rem">
-	  <strong>
-	    <font color="#5c8a6f">
-	      Video
-	    </font>
-	  </strong>
-	  <span style="padding-left: 2.0rem">
-            {{ .Title }}
-	  </span>
-	</h1>
+      <h1 style="font-size: 3.0rem">
+	<strong>
+	  <font color="{{ .Params.colordes }}" style="font-family: Merriweather, Georgia, serif">
+	    {{ .Description }}
+	  </font>
+	</strong>
+	<span style="padding-left: 2.0rem">
+	  {{ .Title }}
+	</span>
+      </h1>
       <div class="post-meta">
         <center>Last updated: {{ now.Format "January 2, 2006" }}</center>
       </div>
