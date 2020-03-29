@@ -1,1 +1,13 @@
+#+title: Git basics
+#+slug: basics
+
+#+BEGIN_export html
+<br>
+Video coming in May 2020.
+<br>
+<br>
+#+END_export
+
 {{< prevnext urlprev="https://westgrid-cli.netlify.com/school/config.html" urlnext="https://westgrid-cli.netlify.com/school/debug.html" >}}
+
+*** Comments & questions

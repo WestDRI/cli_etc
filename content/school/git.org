@@ -1,1 +1,12 @@
+#+title: Why Git?
+#+slug: git
+
+
+
+
+
+
+
 {{< prevnext urlprev="https://westgrid-cli.netlify.com/school/intro.html" urlnext="https://westgrid-cli.netlify.com/school/config.html" >}}
+
+*** Comments & questions
