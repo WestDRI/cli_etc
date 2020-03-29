@@ -1,4 +1,6 @@
 #+title: Introduction to WestGrid Summer School Git lesson
+#+description: Video
+#+colordes: #5c8a6f
 #+slug: intro
 
 #+BEGIN_export html

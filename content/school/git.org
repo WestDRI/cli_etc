@@ -1,4 +1,6 @@
 #+title: Why Git?
+#+description: Lecture
+#+colordes: #538cc6
 #+slug: git
 
 

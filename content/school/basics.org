@@ -1,4 +1,6 @@
 #+title: Git basics
+#+description: Video
+#+colordes: #5c8a6f
 #+slug: basics
 
 #+BEGIN_export html

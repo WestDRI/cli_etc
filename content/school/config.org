@@ -1,4 +1,6 @@
 #+title: Configuring Git
+#+description: Hands-on
+#+colordes: #dc7309
 #+slug: config
 
 
