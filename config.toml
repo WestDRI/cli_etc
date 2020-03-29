@@ -85,15 +85,19 @@ canonifyurls = true
   name = "Webinars"
   weight = 2
   url  = "/webinars/"
+# [[menu.main]]
+#   name = "SummerSchool"
+#   weight = 3
+#   url  = ""
 [[menu.main]]
   name = "🏠"
-  weight = 3
+  weight = 4
   url  = "https://westgrid.github.io/trainingMaterials/"
 # [[menu.main]]
 #   name = "📓"
-#   weight = 4
+#   weight = 5
 #   url  = ""
 [[menu.main]]
   name = "🖅"
-  weight = 5
+  weight = 6
   url  = "https://www.westgrid.ca/contact"
