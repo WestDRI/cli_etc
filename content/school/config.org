@@ -1,0 +1,1 @@
+{{< prevnext urlprev="https://westgrid-cli.netlify.com/school/git.html" urlnext="https://westgrid-cli.netlify.com/school/basics.html" >}}
