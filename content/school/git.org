@@ -3,11 +3,78 @@
 #+colordes: #538cc6
 #+slug: git
 
+#+OPTIONS: toc:2
+
+* The nightmare of versioning
+
+We all know what life without Git looks like:
+
+- you work on a document
+- then you make changes, but you are not sure whether those changes really are an improvement. So you decide to keep the first version, in case
+- then you make new changes, so you save new files
+
+If you are extremely organized, you made sure to name them with the date. Most people aren't extremely organized...
+
+In no time, you have a folder full of versions of the same file and you may not even know which one is the current version. Some section may be better in one file (but you can't remember which), others in other files. It is a nightmare.
+
+#+BEGIN_export html
+<br>
+{{< figshadow
+    src="http://phdcomics.com/comics/archive/phd101212s.gif"
+    title=""
+    width="500"
+    line-height=""
+    >}}
+{{< /figshadow >}}
+<br>
+#+END_export
+
+What you are doing, without realizing it, is a form of version control. This home-made and chaotic approach however is not really efficient. There are power tools which allow to do this much better. Git is one such tools.
+
+* Here comes Git
+
+Git allows to save snapshots of a project at different points in time. Going back to our previous example, instead of having many files which correspond to alternative versions of the same document, you only have one file; but because its state was recorded each time you "took a snapshot", you can return the file to any of those states.
+
+This has many advantages:
+
+- each time you "take a snapshot", Git takes care of recording information such as date, etc. for you
+- having only one file avoids the overwhelming feeling to open a directory full of alternative versions!
+- Git comes with many tools which make it easy to compare one snapshot with another, to merge different snapshots together, to find snapshots, to navigate between one snapshot and another, to put changes aside for some time, etc.
 
 
+Well, if one knows how to use it that is...
 
+#+BEGIN_export html
+<br>
+{{< fig
+    src="https://imgs.xkcd.com/comics/git.png"
+    title=""
+    width="300"
+    line-height="0.5rem"
+    >}}
+from <a href="https://xkcd.com/">xkcd.com</a>
+{{< /fig >}}
+#+END_export
 
+* Backup tool
 
+An additional advantage of using Git is that online remotes such as [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allow to backup a project and its history online.
+
+#+BEGIN_export html
+<br>
+{{< fig
+    src="/img/gitout.png"
+    title=""
+    width="200"
+    line-height="0"
+    >}}
+by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&nbsp;&nbsp;
+{{< /fig >}}
+#+END_export
+
+* Collaborative tool
+
+Finally, having a Git project online on [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allows to easily collaborate on it with other people.
 
 {{< prevnext urlprev="https://westgrid-cli.netlify.com/school/intro.html" urlnext="https://westgrid-cli.netlify.com/school/config.html" >}}
 
