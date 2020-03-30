@@ -9,7 +9,6 @@
 <br>
 Video coming in May 2020.
 <br>
-<br>
 #+END_export
 
 {{< next urlnext="https://westgrid-cli.netlify.com/school/git.html" >}}
