@@ -20,7 +20,7 @@ In no time, you have a folder full of versions of the same file and you may not 
 #+BEGIN_export html
 <br>
 {{< figshadow
-    src="http://phdcomics.com/comics/archive/phd101212s.gif"
+    src="https://phdcomics.com/comics/archive/phd101212s.gif"
     title=""
     width="500"
     line-height=""
