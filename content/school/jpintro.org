@@ -1,0 +1,16 @@
+#+title: Introduction to WestGrid Summer School Project Jupyter lesson
+#+description: Video
+#+colordes: #5c8a6f
+#+slug: jpintro
+
+#+OPTIONS: toc:nil
+
+#+BEGIN_export html
+<br>
+Video coming in May 2020.
+<br>
+#+END_export
+
+{{< next urlnext="https://westgrid-cli.netlify.com/school/jpxxxx.html" >}}
+
+*** Comments & questions
