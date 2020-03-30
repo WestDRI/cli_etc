@@ -3,6 +3,8 @@
 #+colordes: #5c8a6f
 #+slug: basics
 
+#+OPTIONS: toc:nil
+
 #+BEGIN_export html
 <br>
 Video coming in May 2020.

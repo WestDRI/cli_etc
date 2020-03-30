@@ -3,7 +3,7 @@
 #+colordes: #dc7309
 #+slug: config
 
-
+#+OPTIONS: toc:nil
 
 {{< prevnext urlprev="https://westgrid-cli.netlify.com/school/git.html" urlnext="https://westgrid-cli.netlify.com/school/basics.html" >}}
 
