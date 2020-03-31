@@ -11,7 +11,3 @@
 Video coming in May 2020.
 <br>
 #+END_export
-
-{{< updated >}}
-
-*** Comments & questions
