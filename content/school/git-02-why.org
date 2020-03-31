@@ -77,4 +77,6 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&n
 
 Finally, having a Git project online on [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allows to easily collaborate on it with other people.
 
+{{< updated >}}
+
 *** Comments & questions
