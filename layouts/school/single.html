@@ -56,7 +56,34 @@
       {{ partial "posts/commento.html" . }}
       {{ partial "posts/utteranc.html" . }}
     </footer>
+
+    <br>
+    <center>
+      {{ with .Site.Params.summerschoolurl }}
+      <a href="{{ . }}">
+	<i class="fas fa-level-up-alt fa-2x" style="color: #336699"></i>
+      </a>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-left fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &emsp;&nbsp;
+      {{ end }}
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-right fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &ensp;
+      {{ end }}
+    </center>
+
   </article>
+
   {{ partial "posts/math.html" . }}
 </section>
 
