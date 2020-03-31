@@ -6,4 +6,79 @@
 
 #+OPTIONS: toc:nil
 
+Before we get started, you need to install and configure Git.
 
+* Install Git
+
+You can download Git from [[https://git-scm.com/downloads][the official Git download page]].
+
+If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Git for Windows project]] is a better option as this will also provide you with a Bash emulation to run Git in the command line.
+
+* How to run Git from the command line?
+
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line.
+
+#+BEGIN_export html
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line<sup><a id="n-1" href="#f-1">1</a></sup>.
+#+END_export
+
+Why?\\
+Many of these GUIs do not allow to use the full capabilities of Git, they are sometimes buggy, and even if you decide to use one of them in your workflow, it is always good to know how to run Git in the command line in case something does not work in the GUI.
+
+So, whenever we use Git, you will open:
+
+#+BEGIN_export html
+<b>Windows:</b> &emsp;Git BASH <br>
+
+<b>MacOS:</b> &emsp;&emsp;Terminal <br>
+
+<b>Linux:</b> &emsp;&emsp;&ensp;any terminal emulator
+#+END_export
+
+#+BEGIN_export html
+<br>
+<br>
+<hr>
+<div class="footnote-definition">
+<sup><a id="f-1" href="#n-1">1</a></sup>
+<span class="footnote-body">
+At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.
+</span>
+</div>
+#+END_export
+
+* Configure Git
+
+Now, you are reading to configure Git.
+
+First, you need to tell Git some information about yourself. This will be used to identify you as the author of commits.
+
+#+BEGIN_src sh
+git config --global user.name "Your Name"
+git config --global user.email "your@email"
+#+END_src
+
+#+BEGIN_export html
+The&nbsp;<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">--global</span> flag tells Git to set those configurations on your entire system rather than for the current repository. That's what we want here since we are setting the basic Git configurations.
+#+END_export
+
+Unless you have set a default text editor via a shell environment variable, Git uses the vi editor whenever it prompts you for some text. vi is extremely powerful, but not friendly for those unfamiliar with its modes and keybindings. You might want to use nano (or any editor of your choice) instead:
+
+#+BEGIN_src sh
+git config --global core.editor "nano"
+#+END_src
+
+To make sure that line endings are properly formatted, you should set:
+
+#+BEGIN_src sh
+git config --global core.autocrlf input   # if you are on macOS or Linux
+git config --global core.autocrlf true    # if you are on Windows
+#+END_src
+
+To see all the configurations you have set, you can run:
+
+#+BEGIN_src sh
+git config --list
+#+END_src
+
+If one of the values doesn't look right or to change your configuration at any time, just re-run the code with the proper value.
