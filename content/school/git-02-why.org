@@ -2,6 +2,7 @@
 #+description: Lecture
 #+colordes: #538cc6
 #+slug: git-02-why
+#+weight: 2
 
 #+OPTIONS: toc:2
 

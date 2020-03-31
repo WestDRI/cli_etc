@@ -2,6 +2,7 @@
 #+description: Video
 #+colordes: #5c8a6f
 #+slug: git-04-basics
+#+weight: 4
 
 #+OPTIONS: toc:nil
 
