@@ -1,7 +1,7 @@
 #+title: Git basics
 #+description: Video
 #+colordes: #5c8a6f
-#+slug: gitbasics
+#+slug: git-04-basics
 
 #+OPTIONS: toc:nil
 
@@ -10,7 +10,5 @@
 Video coming in May 2020.
 <br>
 #+END_export
-
-{{< prevnext urlprev="https://westgrid-cli.netlify.com/school/config.html" urlnext="https://westgrid-cli.netlify.com/school/debug.html" >}}
 
 *** Comments & questions

@@ -1,0 +1,8 @@
+#+title: Configuring Git
+#+description: Hands-on
+#+colordes: #dc7309
+#+slug: git-03-config
+
+#+OPTIONS: toc:nil
+
+*** Comments & questions
