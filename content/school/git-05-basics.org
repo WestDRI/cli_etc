@@ -11,3 +11,14 @@
 Video coming in May 2020.
 <br>
 #+END_export
+
+Concepts:
+
+- what is a repository
+- the .git dir
+- git status
+- the staging area
+- git add
+- git commit
+- git diff
+- .gitignore
