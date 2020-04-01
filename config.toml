@@ -19,7 +19,8 @@ canonifyurls = true
   [markup.highlight]
     codeFences = true
     guessSyntax = true
-    style = "friendly"
+    # style = "friendly"
+    style = "manni"
   [markup.tableOfContents]
     endLevel = 1
     ordered = false
