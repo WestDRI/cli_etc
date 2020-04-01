@@ -6,8 +6,10 @@
 
 #+OPTIONS: toc:nil
 
+{{< youtube xxxx >}}
+
+Slides:
+
 #+BEGIN_export html
-<br>
-Video coming in May 2020.
-<br>
+<a href="https://westgrid-webinars.netlify.com/cli_tools/"><p align="center"><img src="/img/xxxx.png" title="Link to slides" width="100%" style="border:2px solid black"/></p></a>
 #+END_export
