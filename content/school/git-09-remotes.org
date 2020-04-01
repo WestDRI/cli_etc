@@ -1,0 +1,13 @@
+#+title: Remotes
+#+description: Video
+#+colordes: #5c8a6f
+#+slug: git-09-remotes
+#+weight: 9
+
+#+OPTIONS: toc:nil
+
+#+BEGIN_export html
+<br>
+Video coming in May 2020.
+<br>
+#+END_export

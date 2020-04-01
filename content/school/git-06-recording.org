@@ -1,0 +1,8 @@
+#+title: Tracking changes on a project
+#+description: Interactive
+#+colordes: #cc0066
+#+slug: git-06-recording
+#+weight: 6
+
+#+OPTIONS: toc:nil
+

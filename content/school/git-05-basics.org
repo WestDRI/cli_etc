@@ -1,0 +1,13 @@
+#+title: Git basics
+#+description: Video
+#+colordes: #5c8a6f
+#+slug: git-05-basics
+#+weight: 5
+
+#+OPTIONS: toc:nil
+
+#+BEGIN_export html
+<br>
+Video coming in May 2020.
+<br>
+#+END_export
