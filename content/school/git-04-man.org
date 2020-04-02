@@ -15,6 +15,10 @@ git &lt;command&gt; --help
 #+END_EXAMPLE
 
 #+BEGIN_EXAMPLE
+git help &lt;command&gt;
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
 man git-&lt;command&gt;
 #+END_EXAMPLE
 
@@ -22,6 +26,10 @@ Example:
 
 #+BEGIN_src sh
 git commit --help
+#+END_src
+
+#+BEGIN_src sh
+git help commit
 #+END_src
 
 #+BEGIN_src sh
