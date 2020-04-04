@@ -8,7 +8,7 @@
 
 {{< youtube xxxx >}}
 
-Slides:
+*** Slides
 
 #+BEGIN_export html
 <a href="https://westgrid-webinars.netlify.com/git_basics/"><p align="center"><img src="/img/git/git_basics_slides.png" title="Link to slides" width="100%" style="border:2px solid black"/></p></a>
