@@ -64,7 +64,7 @@ An additional advantage of using Git is that online remotes such as [[https://gi
 #+BEGIN_export html
 <br>
 {{< fig
-    src="/img/gitout.png"
+    src="/img/git/gitout.png"
     title=""
     width="200"
     line-height="0"
