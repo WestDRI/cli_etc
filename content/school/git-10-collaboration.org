@@ -1,4 +1,4 @@
-#+title: Collaboration though GitHub (or similar)
+#+title: Collaborating though GitHub (or similar)
 #+description: Hands-on
 #+colordes: #dc7309
 #+slug: git-10-collaboration
