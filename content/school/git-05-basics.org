@@ -13,14 +13,3 @@
 #+BEGIN_export html
 <a href="https://westgrid-webinars.netlify.com/git_basics/"><p align="center"><img src="/img/git/git_basics_slides.png" title="Link to slides" width="100%" style="border:2px solid black"/></p></a>
 #+END_export
-
-Concepts:
-
-- what is a repository
-- the .git dir
-- git status
-- the staging area
-- git add
-- git commit
-- git diff
-- .gitignore
