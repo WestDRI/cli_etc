@@ -1,0 +1,13 @@
+#+title: Debugging session: installing and configuring Git
+#+description: Interactive
+#+colordes: #cc0066
+#+slug: git-04-debug
+#+weight: 4
+
+#+OPTIONS: toc:nil
+
+#+BEGIN_interactivebox
+*This interactive session will be conducted through Zoom.*
+
+*Please join the meeting ID: xxxxx.*
+#+END_interactivebox
