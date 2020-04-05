@@ -1,9 +1,0 @@
-#+title: Collaborating though GitHub (or similar)
-#+description: Hands-on
-#+colordes: #dc7309
-#+slug: git-10-collaboration
-#+weight: 10
-
-#+OPTIONS: toc:nil
-
-
