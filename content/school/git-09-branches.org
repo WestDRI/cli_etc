@@ -1,0 +1,8 @@
+#+title: Working with branches
+#+description: Hands-on
+#+colordes: #dc7309
+#+slug: git-09-branches
+#+weight: 9
+
+#+OPTIONS: toc:nil
+
