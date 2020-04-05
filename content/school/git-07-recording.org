@@ -1,8 +1,8 @@
 #+title: Recording a project's history
 #+description: Interactive
 #+colordes: #cc0066
-#+slug: git-06-recording
-#+weight: 6
+#+slug: git-07-recording
+#+weight: 7
 
 #+OPTIONS: toc:nil
 

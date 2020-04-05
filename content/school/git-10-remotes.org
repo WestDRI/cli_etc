@@ -1,8 +1,8 @@
 #+title: Remotes
 #+description: Video
 #+colordes: #5c8a6f
-#+slug: git-09-remotes
-#+weight: 9
+#+slug: git-10-remotes
+#+weight: 10
 
 #+OPTIONS: toc:nil
 

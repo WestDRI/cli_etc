@@ -1,8 +1,8 @@
 #+title: First things first: Git manual
 #+description: Lecture
 #+colordes: #538cc6
-#+slug: git-04-man
-#+weight: 4
+#+slug: git-05-man
+#+weight: 5
 
 #+OPTIONS: toc:nil
 

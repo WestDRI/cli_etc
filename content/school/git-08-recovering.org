@@ -1,8 +1,8 @@
 #+title: Going back in history
 #+description: Lecture
 #+colordes: #538cc6
-#+slug: git-07-recovering
-#+weight: 7
+#+slug: git-08-recovering
+#+weight: 8
 
 #+OPTIONS: toc:nil
 
