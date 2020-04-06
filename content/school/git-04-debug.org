@@ -1,4 +1,4 @@
-#+title: Debugging session: installing and configuring Git
+#+title: Debugging session: installing & configuring Git
 #+description: Interactive
 #+colordes: #cc0066
 #+slug: git-04-debug
