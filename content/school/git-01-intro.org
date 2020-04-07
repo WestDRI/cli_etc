@@ -8,8 +8,8 @@
 
 In this session, I will present the schedule for our Git lesson and we will briefly introduce each other.
 
-#+BEGIN_interactivebox
+#+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
 *Please join the meeting ID: xxxxx.*
-#+END_interactivebox
+#+END_zoombox

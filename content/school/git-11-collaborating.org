@@ -1,16 +1,16 @@
 #+title: Collaborating though GitHub (or similar)
-#+description: Interactive
+#+description: Zoom
 #+colordes: #cc0066
-#+slug: git-11-collaboration
+#+slug: git-11-collaborating
 #+weight: 11
 
 #+OPTIONS: toc:nil
 
-#+BEGIN_interactivebox
+#+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
 *Please join the meeting ID: xxxxx.*
-#+END_interactivebox
+#+END_zoombox
 
 #+BEGIN_export html
 <br>

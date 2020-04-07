@@ -1,5 +1,5 @@
 #+title: Working with branches
-#+description: Hands-on
+#+description: Practice
 #+colordes: #dc7309
 #+slug: git-09-branches
 #+weight: 9

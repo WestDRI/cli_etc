@@ -1,5 +1,5 @@
 #+title: Recording a project's history
-#+description: Interactive
+#+description: Zoom
 #+colordes: #cc0066
 #+slug: git-07-recording
 #+weight: 7
@@ -14,11 +14,11 @@ We will start a project, put it under version control with Git and start taking 
 <br>
 #+END_export
 
-#+BEGIN_interactivebox
+#+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
 *Please join the meeting ID: xxxxx.*
-#+END_interactivebox
+#+END_zoombox
 
 #+BEGIN_export html
 <br>

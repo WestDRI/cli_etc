@@ -1,5 +1,5 @@
 #+title: Why Git?
-#+description: Lecture
+#+description: Reading
 #+colordes: #538cc6
 #+slug: git-02-why
 #+weight: 2
