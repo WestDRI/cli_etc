@@ -1,8 +1,8 @@
 #+title: Git basics
 #+description: Video
 #+colordes: #5c8a6f
-#+slug: git-06-basics
-#+weight: 6
+#+slug: git-05-basics
+#+weight: 5
 
 #+OPTIONS: toc:nil
 
