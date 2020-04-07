@@ -1,9 +1,15 @@
 #+title: Introduction to WestGrid Summer School Git lesson
-#+description: Video
-#+colordes: #5c8a6f
+#+description: Zoom
+#+colordes: #cc0066
 #+slug: git-01-intro
 #+weight: 1
 
 #+OPTIONS: toc:nil
 
-{{< youtube xxxx >}}
+In this session, I will present the schedule for our Git lesson and we will briefly introduce each other.
+
+#+BEGIN_interactivebox
+*This interactive session will be conducted through Zoom.*
+
+*Please join the meeting ID: xxxxx.*
+#+END_interactivebox
