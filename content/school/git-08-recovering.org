@@ -1,4 +1,4 @@
-#+title: Going back in history
+#+title: Going back in time
 #+description: Lecture
 #+colordes: #538cc6
 #+slug: git-08-recovering
