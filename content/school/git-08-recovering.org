@@ -6,3 +6,14 @@
 
 #+OPTIONS: toc:nil
 
+* Getting an overview of history
+
+#+BEGIN_src sh
+git log --graph --date-order --date=short\
+--pretty=format:'%C(cyan)%h %C(blue)%ar\
+%C(auto)%d %C(yellow)%s%+b %C(black)%ae'
+#+END_src
+
+* Exploring the past
+
+* Undoing
