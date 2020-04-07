@@ -1,10 +1,14 @@
-#+title: Debugging session: installing & configuring Git
-#+description: Debug
+#+title: Git installation and configuration
+#+description: (Debug)
 #+colordes: #800040
 #+slug: git-06-debug
 #+weight: 6
 
 #+OPTIONS: toc:nil
+
+/This *debugging session* is not part of the actual lesson./
+
+/Only sign up for it if you have carefully followed the session on [[https://westgrid-cli.netlify.com/school/git-03-config.html][configuring Git]] and have already tried everything you could on your own, but are still stuck with the installation or the configuration of Git./
 
 #+BEGIN_debugbox
 *This interactive session will be conducted through Zoom.*
