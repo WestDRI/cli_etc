@@ -61,6 +61,18 @@ from <a href="https://xkcd.com/">xkcd.com</a>
 
 An additional advantage of using Git is that online remotes such as [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allow to backup a project and its history online.
 
+#+BEGIN_export html
+<br>
+{{< fig
+    src="/img/git/gitout.png"
+    title=""
+    width="200"
+    line-height="0"
+    >}}
+by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&nbsp;&nbsp;
+{{< /fig >}}
+#+END_export
+
 * Collaborative tool
 
 Finally, having a Git project online on [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allows to easily collaborate on it with other people.
