@@ -1,4 +1,4 @@
-#+title: Recording a project's history
+#+title: Let's record a project's history
 #+description: Zoom
 #+colordes: #cc0066
 #+slug: git-07-recording
