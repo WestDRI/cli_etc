@@ -85,23 +85,23 @@ canonifyurls = true
   url = "https://www.westgrid.ca/events"
 
 [[menu.main]]
-  # name = "🏠"
-  name = "📚"
-  weight = 1
-  url  = "https://westgrid.github.io/trainingMaterials/"
-[[menu.main]]
   name = "Workshops"
-  weight = 2
+  weight = 1
   url  = "/workshops/"
 [[menu.main]]
   name = "Webinars"
-  weight = 3
+  weight = 2
   url  = "/webinars/"
 [[menu.main]]
   # name = "📓"
   name = "School"
-  weight = 4
+  weight = 3
   url  = "https://wgschool.netlify.app/"
+[[menu.main]]
+  # name = "🏠"
+  name = "📚"
+  weight = 4
+  url  = "https://westgrid.github.io/trainingMaterials/"
 [[menu.main]]
   name = "📬"
   weight = 5
