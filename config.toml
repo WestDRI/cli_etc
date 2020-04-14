@@ -48,11 +48,11 @@ canonifyurls = true
   series = "series"
   tag = "tags"
 
-[[params.social]]
-  name = "WestGrid"
-  icon = "fas fa-globe fa-2x"
-  weight = 1
-  url = "https://www.westgrid.ca/"
+# [[params.social]]
+#   name = "WestGrid"
+#   icon = "fas fa-globe fa-2x"
+#   weight = 1
+#   url = "https://www.westgrid.ca/"
 [[params.social]]
   name = "Compute Canada"
   icon = "fas fa-user-friends fa-2x"
