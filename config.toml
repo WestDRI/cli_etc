@@ -85,7 +85,8 @@ canonifyurls = true
   url = "https://www.westgrid.ca/events"
 
 [[menu.main]]
-  name = "🏠"
+  # name = "🏠"
+  name = "📋 📕 📚 🕮 📖 📑"
   weight = 1
   url  = "https://westgrid.github.io/trainingMaterials/"
 [[menu.main]]
