@@ -26,7 +26,7 @@ In this webinar, aimed at any command-line user, I intend to demonstrate that "y
 Click to open the slides in a new tab:
 
 #+BEGIN_export html
-<a href="https://westgrid-webinars.netlify.com/cli_tools/" target="_blank"><p align="center"><img src="/img/cli_tools/cli_tools_slides.png" title="Link to slides" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://westgrid-webinars.netlify.app/cli_tools/" target="_blank"><p align="center"><img src="/img/cli_tools/cli_tools_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Video
