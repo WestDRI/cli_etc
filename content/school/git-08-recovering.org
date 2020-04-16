@@ -4,16 +4,133 @@
 #+slug: git-08-recovering
 #+weight: 8
 
-#+OPTIONS: toc:nil
-
-* Getting an overview of history
-
-#+BEGIN_src sh
-git log --graph --date-order --date=short\
---pretty=format:'%C(cyan)%h %C(blue)%ar\
-%C(auto)%d %C(yellow)%s%+b %C(black)%ae'
-#+END_src
+#+OPTIONS: toc:2
 
 * Exploring the past
+
+** Getting an overview of history
+
+*** As a list
+
+#+BEGIN_export html
+&nbsp;<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span> lists all past commits in a pager (so scroll down with <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">Space</span> and quit with <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">q</span>).<br>
+<br>
+Go back to <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">git_lesson</span> and try it out:
+#+END_export
+
+#+BEGIN_src sh
+cd /path/to/git_lesson
+git log
+#+END_src
+
+Of course, our history is very short, so our history tree is very simple. For long histories, this is a powerful way to get an overview of the full history.
+
+*** As a list with one line per commit
+
+For a compact version with a single line per commit, you can run:
+
+#+BEGIN_src sh
+git log --oneline
+#+END_src
+
+*** Getting fancy
+
+#+BEGIN_export html
+By playing with the various flags of <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span>, you can customize the commit log to your liking: different colors make it easier to read and you can information about commit author or time while keeping it compact.<br>
+<br>
+To find out about all the available options of <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span>, run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">man git-log</span>.
+#+END_export
+
+Try for instance:
+
+#+BEGIN_src sh
+git log --graph --date-order --date=short --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d %C(yellow)%s%+b %C(black)%ae'
+#+END_src
+
+*** As a graph
+
+#+BEGIN_export html
+The <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">--graph</span> flag allows to view this history in the form of a graph.
+#+END_export
+
+#+BEGIN_src sh
+git log --graph
+#+END_src
+
+This may not seem very useful with our simple history because it is linear with a single branch (a single version of history). But in complex situations with several branches, this can be really useful.
+
+** Exploring past commits
+
+#+BEGIN_export html
+<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span> is great to view the whole history. But maybe you want to explore one particular commit in more detail.
+#+END_export
+
+*** Checking out a commit
+
+In order to explore a commit, you "check" it "out". This replaces the current content of your working tree with the content of the working tree at that commit. In other words, it allows you to travel back in time to the state of your project at that commit.
+
+#+BEGIN_export html
+To do so, you need the hash of the commit of interest. You can copy it from the output of <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span>.<br>
+For example, if the commit of interest has the hash <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">e7447c2</span>, you would run:
+#+END_export
+
+#+BEGIN_src sh
+git checkout e7447c2
+#+END_src
+
+/Note: Git prevents you from checking out a commit if this would result in the loss of information: if the commit you want to checkout conflicts with any uncommitted changes, you will first need to commit or stash them. Stashing changes means to put them aside for the time being, so that they aren't in the way: changes are moved out of the working tree and into a "stash", from which they can later be retrieved./
+
+Once you have checked a commit out, you can look at the files.
+
+*** The concept of HEAD
+
+#+BEGIN_export html
+When looking at the output of <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span>, you may have noticed this: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">(HEAD -> master)</span> and wondered what this was all about.<br><br>
+#+END_export
+
+#+BEGIN_export html
+<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">HEAD</span> is a file in the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">.git</span> directory of your project. You should go to that directory and look for it.<br>
+<br>
+It is a pointer to the current branch. In our case, we only have one branch since we never created any additional branch. By defaut, that branch is called <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span>.<br>
+<br>
+<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">(HEAD -> master)</span> means that we are on the branch <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span>. In other words, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">HEAD</span> is pointing at the branch <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span>.<br><br>
+#+END_export
+
+#+BEGIN_export html
+If you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; border: 0.5pt solid #e6e6e6; background-color: #f0f3f3; color: #000000">git log</span> again now, you will see that <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">HEAD</span> is not pointing at <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span> anymore. It is pointing directly at the commit we checked out. We are now in a "detached HEAD state". This is fine to look at the past, but it is not a state in which to work and make changes as the changes would be lost.
+#+END_export
+
+
+*** Going back to "the present"
+
+#+BEGIN_export html
+To return to the latest commit, you need to "reattach HEAD" and have it point again at the branch <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span>.<br>
+<br>
+This is done by ckecking out <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #d9d9d9; box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3); color: #000000">master</span>:
+#+END_export
+
+#+BEGIN_src sh
+git checkout master
+#+END_src
+
+* Tools that make it easier to explore the past
+
+** fzf
+
+[[https://github.com/junegunn/fzf][fzf]] is a fantastic multi-platform command line fuzzy finder with a huge versatility.\\
+If you want to try it out, follow the installation instructions in the [[https://github.com/junegunn/fzf#installation][README]] and start playing with it.
+
+In this video, I demo quickly how it can be used with Git:
+
+{{< youtube  >}}
+
+** lazygit
+
+[[https://github.com/jesseduffield/lazygit][lazygit]] is an excellent multi-platform user interface for Git which works in the command line.\\
+The [[https://github.com/jesseduffield/lazygit#installation][README]] provides installation instructions.
+
+Here is a very short demo:
+
+{{< youtube  >}}
 
 * Undoing
