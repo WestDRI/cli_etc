@@ -1,8 +1,8 @@
 #+title: Working with branches
-#+description: Practice
-#+colordes: #dc7309
+#+description: Reading
+#+colordes: #538cc6
 #+slug: git-09-branches
 #+weight: 9
 
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:2
 
