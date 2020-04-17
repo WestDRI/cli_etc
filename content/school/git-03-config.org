@@ -18,7 +18,7 @@ If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Gi
 
 There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line.
 
-#+BEGIN_export html
+#+BEGIN_export mhtml
 There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line<sup><a id="n-1" href="#f-1">1</a></sup>.
 #+END_export
 
@@ -27,17 +27,15 @@ Many of these GUIs do not allow to use the full capabilities of Git, they are so
 
 So, whenever we use Git, you will open:
 
-#+BEGIN_export html
-<b>Windows:</b> &emsp;Git BASH <br>
+#+BEGIN_export mhtml
+<b>Windows:</b> &emsp;Git BASH<br>
 
-<b>MacOS:</b> &emsp;&emsp;Terminal <br>
+<b>MacOS:</b> &emsp;&emsp;Terminal<br>
 
-<b>Linux:</b> &emsp;&emsp;&ensp;any terminal emulator
+<b>Linux:</b> &emsp;&emsp;&ensp;any terminal emulator<br><br>
 #+END_export
 
-#+BEGIN_export html
-<br>
-<br>
+#+BEGIN_export mhtml
 <hr>
 <div class="footnote-definition">
 <sup><a id="f-1" href="#n-1">1</a></sup>
