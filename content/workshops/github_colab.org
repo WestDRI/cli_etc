@@ -111,9 +111,7 @@ git add .
 
 This stages the file to be committed.
 
-#+BEGIN_export html
-What are you getting now when you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span>?
-#+END_export
+What are you getting now when you run {{<c>}}git status{{</c>}}?
 
 Then commit your staged file with:
 
@@ -121,18 +119,13 @@ Then commit your staged file with:
 git commit -m "Initial commit with draft manuscript"
 #+END_src
 
-#+BEGIN_export html
-What are you getting now when you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git status</span>?
-<br>
-<br>
-But our repo does not have any remote: <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> does not return anything.
-#+END_export
+What are you getting now when you run {{<c>}}git status{{</c>}}?
+
+But our repo does not have any remote: {{<c>}}git remote -v{{</c>}} does not return anything.
 
 The project, though under version control, only resides in your computer. If we want to collaborate with others, we need to have a version on the web.
 
-#+BEGIN_export html
-Go to your GitHub webpage, select the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); color: #000000">Repositories</span> tab, then click the green <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); color: #000000">New</span> button.
-#+END_export
+Go to your GitHub webpage, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
 
 Enter the name of your repo, avoiding spaces. It can be the name you had on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
 
@@ -143,15 +136,12 @@ Here, we will go with the public option because, while free accounts allow priva
 Now, you can copy the web address of your repo and add it as a remote for your project:
 
 #+BEGIN_src sh
-git remote add origin git@github.com:<your-gh-user-name>/<your-repo-name>.git 
+git remote add origin git@github.com:<your-gh-user-name>/<your-repo-name>.git
 #+END_src
 
-#+BEGIN_export html
-Now, your project has a remote called "origin": <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git remote -v</span> returns your repo on GitHub.
-<br>
-<br>
-What happens if you run <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span>?
-#+END_export
+Now, your project has a remote called "origin": {{<c>}}git remote -v{{</c>}} returns your repo on GitHub.
+
+What happens if you run {{<c>}}git push{{</c>}}?
 
 This is because your current branch ("master") is not associated with anything. You need to tell Git where to push "master".
 
@@ -161,17 +151,13 @@ You could run:
 git push origin master
 #+END_src
 
-#+BEGIN_export html
-This tells Git to push "master" to "origin". But you would have to do this each time you want to push to "origin" from "master". A nicer way is to set the upstream for "master" when you push for the first time. This is done by adding the flag <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">--set-upstream</span>:
-#+END_export
+This tells Git to push "master" to "origin". But you would have to do this each time you want to push to "origin" from "master". A nicer way is to set the upstream for "master" when you push for the first time. This is done by adding the flag {{<c>}}--set-upstream{{</c>}}:
 
 #+BEGIN_src sh
 git push --set-upstream origin master
 #+END_src
 
-#+BEGIN_export html
-From now on, <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">git push</span> will be enough to push to your remote called "origin" (when you are on the branch "master").
-#+END_export
+From now on, {{<c>}}git push{{</c>}} will be enough to push to your remote called "origin" (when you are on the branch "master").
 
 If you were working alone on this project, you would be set. But we want to collaborate as a team on it.
 
@@ -179,9 +165,7 @@ If you were working alone on this project, you would be set. But we want to coll
 
 ** Inviting collaborators to a GitHub repo
 
-#+BEGIN_export html
-Go to the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); color: #000000">Settings</span> tab, then the <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); color: #000000">Manage access</span> section on the left-hand side. Finally click <span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; border-radius: 5%; border: 0.5pt solid #b3b3b3; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); color: #000000">Invite a collaborator</span>.
-#+END_export
+Go to the {{<b>}}Settings{{</b>}} tab, then the {{<b>}}Manage access{{</b>}} section on the left-hand side. Finally click {{<b>}}Invite a collaborator{{</b>}}.
 
 ** Cloning the repo
 
@@ -192,9 +176,7 @@ cd /place/where/you/want/to/have/your/project
 git clone git@github.com:<user>/<repo>.git <name>
 #+END_src
 
-#+BEGIN_export html
-<span style="font-family: 'Source Code Pro', 'Lucida Console', monospace; font-size: 1.4rem; padding: 0.2rem; box-shadow: 0px 0px 2px rgba(0,0,0,0.3); border-radius: 5%; background-color: #f0f3f3; color: #000000">&lt;name&gt;</span> is not necessary: this is only if you want to rename the repo on your machine.
-#+END_export
+{{<c>}}&lt;name&gt;{{</c>}} is not necessary: this is only if you want to rename the repo on your machine.
 
 ** Pushing changes
 
