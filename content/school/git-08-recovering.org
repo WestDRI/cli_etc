@@ -4,8 +4,6 @@
 #+slug: git-08-recovering
 #+weight: 8
 
-#+OPTIONS: toc:2
-
 * Exploring the past
 
 ** Getting an overview of history

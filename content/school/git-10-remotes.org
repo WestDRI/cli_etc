@@ -4,8 +4,6 @@
 #+slug: git-10-remotes
 #+weight: 10
 
-#+OPTIONS: toc:nil
-
 {{< youtube xxxx >}}
 
 *** Slides

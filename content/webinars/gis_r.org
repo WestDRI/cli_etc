@@ -3,8 +3,6 @@
 #+date: 2020-11-01
 #+place: 45 min live webinar
 
-#+OPTIONS: toc:2
-
 #+BEGIN_export mhtml
 {{< pic
 src="/img/workinprogress.svg"

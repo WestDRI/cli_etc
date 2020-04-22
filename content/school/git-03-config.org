@@ -4,8 +4,6 @@
 #+slug: git-03-config
 #+weight: 3
 
-#+OPTIONS: toc:nil
-
 Before we get started, you need to install and configure Git.
 
 * Install Git

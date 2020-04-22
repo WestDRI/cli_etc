@@ -4,5 +4,4 @@
 #+slug: git-09-branches
 #+weight: 9
 
-#+OPTIONS: toc:2
 

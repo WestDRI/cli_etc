@@ -4,8 +4,6 @@
 #+slug: git-02-why
 #+weight: 2
 
-#+OPTIONS: toc:2
-
 * The nightmare of versioning
 
 We all know what life without Git looks like:

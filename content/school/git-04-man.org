@@ -4,8 +4,6 @@
 #+slug: git-04-man
 #+weight: 4
 
-#+OPTIONS: toc:nil
-
 *** Man pages
 
 [[https://en.wikipedia.org/wiki/Man_page][Man (manual) pages]] hold the documentation on [[https://en.wikipedia.org/wiki/Unix-like][*nix systems]].

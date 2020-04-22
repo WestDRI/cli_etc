@@ -1,8 +1,6 @@
 #+title: Contributing to GitHub projects
 #+slug: github-contrib
 
-#+OPTIONS: toc:2
-
 **** /Abstract/
 
 #+BEGIN_definition

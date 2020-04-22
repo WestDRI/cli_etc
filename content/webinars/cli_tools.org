@@ -3,8 +3,6 @@
 #+date: 2020-02-19
 #+place: 45 min live webinar
 
-#+OPTIONS: toc:2
-
 **** /Abstract/
 
 #+BEGIN_definition
