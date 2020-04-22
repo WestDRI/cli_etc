@@ -1,20 +1,20 @@
 *,
 *:after,
 *:before {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-	box-sizing: border-box;
-	font-size: 62.5%;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
   color: $fg-color;
   background-color: $bg-color;
-	font-family: $text-font-family;
-	font-size: 1.6em;
-	font-weight: 300;
+  font-family: $text-font-family;
+  font-size: 1.6em;
+  font-weight: 300;
   line-height: 1.8em;
   @media only screen and (max-width : 768px) {
     font-size: 1.6em;
@@ -22,16 +22,58 @@ body {
   }
 }
 
+ul {
+  li {
+    list-style-type: circle;
+  }
+  p {
+    margin: 0.5rem;
+  }
+}
+
+ol {
+  p {
+    margin: 0.5rem;
+  }
+}
+
 #TableOfContents {
-  // top: 14.0rem;
-  // position: fixed;
   font-size: 1.5rem;
   line-height: 2.5rem;
-  padding-left: 45.0rem;
+  padding: 1.0rem 10.0rem 1.0rem 8.0rem;
   font-family: $heading-font-family;
   ul {
+    padding-left: 3.0rem;
     list-style: none;
   }
+}
+
+.toggle {
+  cursor: pointer;
+  text-align: center;
+  color: #404040;
+  // padding: 0.1em 0.3em;
+  font-size: 95%;
+  transition: 0.1s;
+}
+
+.panel {
+  margin: auto;
+  width: max-content;
+  margin-top: 2.0rem;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panelnotoggle {
+  margin: auto;
+  width: max-content;
+  margin-top: 2.0rem;
+  background-color: #f6f6f6;
+  border-radius: 5px;
 }
 
 a {
