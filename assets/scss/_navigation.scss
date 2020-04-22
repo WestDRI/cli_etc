@@ -17,13 +17,13 @@
   }
   .navigation-title {
     letter-spacing: 0.05rem;
-    font-variant:small-caps;
+    font-variant: small-caps;
     color: #333333;
     // color: #595959;
   }
   .navigation-list {
     float: right;
-    list-style: none;
+    list-style-type: none;
     margin-bottom: 0;
     margin-top: 0;
     @media only screen and (max-width : 768px) {
@@ -42,6 +42,7 @@
       transition: opacity 0.25s, max-height 0.15s linear;
     }
     .navigation-item {
+      list-style-type: none;
       float: left;
       margin: 0;
       position: relative;

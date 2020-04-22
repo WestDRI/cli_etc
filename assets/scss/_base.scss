@@ -44,7 +44,9 @@ ol {
   font-family: $heading-font-family;
   ul {
     padding-left: 3.0rem;
-    list-style: none;
+    li {
+      list-style-type: none;
+    }
   }
 }
 
