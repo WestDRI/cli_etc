@@ -42,18 +42,20 @@
 	  {{ .Title }}
 	</span>
       </h1>
-      {{ .TableOfContents }}
+      <div class="panelnotoggle">
+	{{ .TableOfContents }}
+      </div>
     </header>
     <div>
       {{ .Content }}
     </div>
 
-      <br>
-      <div class="updated">
-	Last updated: {{ now.Format "January 2, 2006" }}
-      </div>
+    <br>
+    <div class="updated">
+      Last updated: {{ now.Format "January 2, 2006" }}
+    </div>
 
-      <h4>Comments & questions</h4>
+    <h4>Comments & questions</h4>
     <footer>
       {{ partial "posts/series.html" . }}
       {{ partial "posts/disqus.html" . }}
