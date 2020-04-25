@@ -33,16 +33,6 @@ So, whenever we use Git, you will open:
 <b>Linux:</b> &emsp;&emsp;&ensp;any terminal emulator<br><br>
 #+END_export
 
-#+BEGIN_export mhtml
-<hr>
-<div class="footnote-definition">
-<sup><a id="f-1" href="#n-1">1</a></sup>
-<span class="footnote-body">
-At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.
-</span>
-</div>
-#+END_export
-
 * Configure Git
 
 Now, you are reading to configure Git.
@@ -76,4 +66,20 @@ git config --list
 #+END_src
 
 If one of the values doesn't look right or to change your configuration at any time, just re-run the code with the proper value.
+
+#+BEGIN_export html
+<br>
+<hr style="height: 1px; border-width:0; background-color: #e6e6e6">
+<div class="footnote-definition">
+<ol>
+<li id="fn1">
+<p>
+At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.
+<a href="#fnref1">↩</a>
+</p>
+</li>
+</ol>
+</div>
+#+END_export
+
 {{<fn>}}
