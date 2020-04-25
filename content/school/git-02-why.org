@@ -16,7 +16,7 @@ If you are extremely organized, you made sure to name them with the date. Most p
 
 In no time, you have a folder full of versions of the same file and you may not even know which one is the current version. Some section may be better in one file (but you can't remember which), others in other files. It is a nightmare.
 
-#+BEGIN_export mhtml
+#+BEGIN_export html
 <br>
 {{< figshadow
     src="https://phdcomics.com/comics/archive/phd101212s.gif"
@@ -42,7 +42,7 @@ This has many advantages:
 
 Well, if one knows how to use it that is...
 
-#+BEGIN_export mhtml
+#+BEGIN_export html
 <br>
 {{< fig
     src="https://imgs.xkcd.com/comics/git.png"
@@ -58,7 +58,7 @@ from <a href="https://xkcd.com/">xkcd.com</a>
 
 An additional advantage of using Git is that online remotes such as [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allow to backup a project and its history online.
 
-#+BEGIN_export mhtml
+#+BEGIN_export html
 <br>
 {{< fig
     src="/img/git/gitout.png"
