@@ -76,3 +76,4 @@ git config --list
 #+END_src
 
 If one of the values doesn't look right or to change your configuration at any time, just re-run the code with the proper value.
+{{<fn>}}
