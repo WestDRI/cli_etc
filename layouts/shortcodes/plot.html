@@ -1,7 +1,13 @@
-<center>
-  <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
-	      background-color: #FFFFFF; padding: 1.0rem 0.5rem 0 0;"
-       src="{{ .Get "src" }}"
-       title="{{ .Get "title" }}"
-       width="{{ .Get "width" }}" />
-</center>
+<figure style="display: table; margin: 0 auto">
+  <center>
+    <img style="background-color: #FFFFFF; padding: 1.0rem 0.5rem 0 0;"
+	 src="{{ .Get "src" }}" title="{{ .Get "title" }}" width="{{ .Get "width" }}">
+  </center>
+  <div align="right" style="font-size: 1.3rem; color: #978282; line-height: {{ .Get "line-height" }}">
+    <figcaption>
+      <em>
+ 	{{ .Inner }}
+      </em>
+    </figcaption>
+  </div>
+</figure>
