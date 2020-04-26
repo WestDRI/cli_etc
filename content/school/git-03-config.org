@@ -14,11 +14,7 @@ If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Gi
 
 * How to run Git from the command line?
 
-There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line.
-
-#+BEGIN_export html
-There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.
-#+END_export
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line.{{<fl n="1">}}
 
 Why?\\
 Many of these GUIs do not allow to use the full capabilities of Git, they are sometimes buggy, and even if you decide to use one of them in your workflow, it is always good to know how to run Git in the command line in case something does not work in the GUI.
@@ -67,19 +63,6 @@ git config --list
 
 If one of the values doesn't look right or to change your configuration at any time, just re-run the code with the proper value.
 
-#+BEGIN_export html
-<br>
-<hr style="height: 1px; border-width:0; background-color: #e6e6e6">
-<div class="footnote-definition">
-<ol>
-<li id="fn1">
-<p>
-At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.
-<a href="#fnref1">↩</a>
-</p>
-</li>
-</ol>
-</div>
-#+END_export
-
 {{<fn>}}
+{{<fr n="1" text="At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.">}}
+{{</fn>}}
