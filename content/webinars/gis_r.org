@@ -3,13 +3,8 @@
 #+date: 2020-11-01
 #+place: 45 min live webinar
 
-#+BEGIN_export html
-{{< pic
-src="/img/workinprogress.svg"
-title="Patience... patience..."
-width="200"
->}}
-#+END_export
+{{<img src="/img/workinprogress.svg" title="Patience... patience..." width="200">}}
+{{</img>}}
 
 # #+BEGIN_sticker
 # [[][Register for free webinar]]

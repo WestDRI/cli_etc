@@ -1,13 +1,7 @@
 #+title: Introduction to Project Jupyter
 #+slug: jupyter
 
-#+BEGIN_export html
-{{< pic
-src="/img/workinprogress.svg"
-title="Patience... patience..."
-width="200"
->}}
-#+END_export
+{{<img src="/img/workinprogress.svg" title="Patience... patience..." width="200">}}
 
 **** /Abstract/
 
