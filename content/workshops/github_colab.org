@@ -35,10 +35,7 @@ Each time you will push to a repo on GitHub (we will see what "pushing" means la
 
 An easy way to avoid having to do this all the time is to set up SSH for your account. [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][Here]] is the GitHub help file to do so. Try to follow these instructions and I will help you if you have issues. If you cannot set this up today, this is not a big deal for the workshop: you will simply have to enter your password a number of times. But ultimately, you will probably want to set this up.
 
-#+BEGIN_export html
-<br>
-<br>
-#+END_export
+{{<2br>}}
 
 -----
 
@@ -50,9 +47,7 @@ We are a team of virologists starting a new research project on COVID-19 and we 
 
 -----
 
-#+BEGIN_export html
-<br>
-#+END_export
+{{<br>}}
 
 * Project setup
 
