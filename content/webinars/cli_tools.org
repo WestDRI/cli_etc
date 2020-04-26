@@ -29,6 +29,6 @@ Click to open the slides in a new tab:
 
 * Video
 
-{{< youtube BFKT7aj-i80 >}}
+{{<youtube BFKT7aj-i80>}}
 
 * Comments & questions
