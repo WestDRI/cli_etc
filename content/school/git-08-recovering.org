@@ -113,3 +113,5 @@ Here is a very short demo:
 {{< youtube  >}}
 
 * Undoing
+
+* Comments & questions

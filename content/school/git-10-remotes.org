@@ -11,3 +11,5 @@
 #+BEGIN_export html
 <a href="https://westgrid-webinars.netlify.com/git_remotes/"><p align="center"><img src="/img/git/git_remotes_slides.png" title="Link to slides" width="100%" style="border:2px solid black"/></p></a>
 #+END_export
+
+* Comments & questions
