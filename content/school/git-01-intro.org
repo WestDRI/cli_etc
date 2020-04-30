@@ -1,4 +1,4 @@
-#+title: Introduction to WestGrid Summer School Git lesson
+#+title: Introduction to the Git lesson
 #+description: Zoom
 #+colordes: #cc0066
 #+slug: git-01-intro
