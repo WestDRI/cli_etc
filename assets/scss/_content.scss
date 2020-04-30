@@ -18,6 +18,16 @@
 	  line-height: 4.4rem;
 	}
       }
+      subtitle {
+	font-family: $heading-font-family;
+	font-weight: 700;
+	font-size: 2.7rem;
+	line-height: 3.6rem;
+	@media only screen and (max-width : 768px) {
+	  font-size: 2.4rem;
+	  line-height: 3.4rem;
+	}
+      }
     }
     footer {
       margin-top: 4.0rem;
@@ -31,7 +41,7 @@
   }
   .post {
     .post-title {
-      margin: 0 7.0rem 0 7.0rem;
+      margin: 0 7.0rem 1.0rem 7.0rem;
     }
     .post-meta {
       font-size: 1.5rem;
@@ -209,12 +219,15 @@ img[alt=radius] {
 }
 
 .updated {
-  text-align: right;
-  font-size: 1.3rem;
+  // text-align: center;
+  font-size: 1.4rem;
+  padding: 0.8rem 0 1.0rem 0;
+  font-style: italic;
   line-height: 0;
-  // font-family: $heading-font-family;
+  font-family: $heading-font-family;
   // color: #8c8c8c;
-  color: #978282;
+  // color: #978282;
+  color: #808080;
 }
 
 // .accordion {

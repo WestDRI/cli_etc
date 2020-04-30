@@ -8,6 +8,9 @@
     <header>
       <div class="post-title">
         <center><h1>{{ .Title }}</h1></center>
+	{{ with .Page.Params.Subtitle }}
+	<center><subtitle>{{ . }}</subtitle></center>
+	{{ end }}
       </div>
       <div class="post-meta">
         <center>Last updated: {{ now.Format "January 2, 2006" }}</center>

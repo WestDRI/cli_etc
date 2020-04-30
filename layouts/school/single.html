@@ -42,6 +42,12 @@
 	  {{ .Title }}
 	</span>
       </h1>
+      {{ with .Page.Params.Subtitle }}
+      <subtitle>{{ . }}</subtitle>
+      {{ end }}
+      <div class="updated">
+	Last updated: {{ now.Format "January 2, 2006" }}
+      </div>
       <div class="panelnotoggle">
 	{{ .TableOfContents }}
       </div>
@@ -49,13 +55,6 @@
     <div>
       {{ .Content }}
     </div>
-
-    <br>
-    <div class="updated">
-      Last updated: {{ now.Format "January 2, 2006" }}
-    </div>
-
-    <h4>Comments & questions</h4>
     <footer>
       {{ partial "posts/series.html" . }}
       {{ partial "posts/disqus.html" . }}
