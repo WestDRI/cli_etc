@@ -67,4 +67,8 @@ If one of the values doesn't look right or to change your configuration at any t
 {{<fr n="1" text="At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.">}}
 {{</fn>}}
 
+* Important note
+
+If you have issues installing or configuring Git, please sign up for the [[https://westgrid-cli.netlify.app/school/git-06-debug.html][debug session]] to make sure that you have a running installation before our next Zoom meeting (we will not have time to debug installation issues during that meeting).
+
 * Comments & questions
