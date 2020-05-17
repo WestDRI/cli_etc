@@ -11,5 +11,7 @@ In this session, I will present the schedule for our Git lesson and we will brie
 #+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
-*Please join the meeting ID: xxxxx.*
+*The meeting ID and password will be sent to people who registered for this course.*
 #+END_zoombox
+
+Note that *no recording* will be made during this session to encourage participation.

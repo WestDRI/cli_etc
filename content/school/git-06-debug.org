@@ -8,10 +8,12 @@
 
 /This *debugging session* is not part of the actual lesson./
 
-/Only sign up for it if you have carefully followed the session on [[https://westgrid-cli.netlify.com/school/git-03-config.html][configuring Git]] and have already tried everything you could on your own, but are still stuck with the installation or the configuration of Git./
+/Only join if you have carefully followed the session on [[https://westgrid-cli.netlify.com/school/git-03-config.html][configuring Git]] and have already tried everything you could on your own, but are still stuck with the installation or the configuration of Git./
 
 #+BEGIN_debugbox
 *This interactive session will be conducted through Zoom.*
 
-*Please join the meeting ID: xxxxx.*
+*The meeting ID and password will be sent to people who registered for this course.*
 #+END_debugbox
+
+Note that *no recording* will be made during this session, but that we may ask you *to share your screen* so that we can help you more efficiently and so that other participants having a similar issue can solve it at the same time while watching us debug your problem.

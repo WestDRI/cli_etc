@@ -17,8 +17,10 @@ We will start a project, put it under version control with Git and start taking 
 #+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
-*Please join the meeting ID: xxxxx.*
+*The meeting ID and password will be sent to people who registered for this course.*
 #+END_zoombox
+
+Note that *no recording* will be made during this session to encourage participation.
 
 #+BEGIN_export html
 <br>
