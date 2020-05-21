@@ -9,7 +9,7 @@
 #+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
 
-*The meeting ID and password will be sent to people who registered for this course.*
+*The meeting ID and password will be emailed to people who registered for this course.*
 #+END_zoombox
 
 Note that *no recording* will be made during this session to encourage participation.

@@ -13,7 +13,7 @@
 #+BEGIN_debugbox
 *This interactive session will be conducted through Zoom.*
 
-*The meeting ID and password will be sent to people who registered for this course.*
+*The meeting ID and password will be emailed to people who registered for this course.*
 #+END_debugbox
 
 Note that *no recording* will be made during this session, but that we may ask you *to share your screen* so that we can help you more efficiently and so that other participants having a similar issue can solve it at the same time while watching us debug your problem.
