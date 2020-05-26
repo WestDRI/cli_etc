@@ -1,4 +1,4 @@
-#+title: Configure Git
+#+title: Installing and configuring Git
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-03-config
