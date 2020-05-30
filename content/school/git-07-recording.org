@@ -20,7 +20,7 @@ We will start a project, put it under version control with Git and start taking 
 *The meeting ID and password will be emailed to people who registered for this course.*
 #+END_zoombox
 
-Note that *no recording* will be made during this session to encourage participation.
+Note that *no recording* will be made during this session so as not to discourage participation.
 
 #+BEGIN_export html
 <br>
