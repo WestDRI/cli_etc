@@ -21,13 +21,13 @@ Many of these GUIs do not allow to use the full capabilities of Git, they are so
 
 So, whenever we use Git, you will open:
 
-#+BEGIN_export html
-<b>Windows:</b> &emsp;Git BASH<br>
+*Windows:* {{<m>}}Git BASH \\
+*MacOS:* {{<m>}}{{<m>}}Terminal \\
+*Linux:* {{<m>}}{{<m>}}{{<n>}}any terminal emulator
 
-<b>MacOS:</b> &emsp;&emsp;Terminal<br>
-
-<b>Linux:</b> &emsp;&emsp;&ensp;any terminal emulator<br><br>
-#+END_export
+{{<fn2>}}
+{{<fr n="1" text="At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.">}}
+{{</fn2>}}
 
 * Configure Git
 
@@ -62,10 +62,6 @@ git config --list
 #+END_src
 
 If one of the values doesn't look right or to change your configuration at any time, just re-run the code with the proper value.
-
-{{<fn>}}
-{{<fr n="1" text="At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.">}}
-{{</fn>}}
 
 * Important note
 
