@@ -6,10 +6,48 @@
 
 {{< youtube xxxx >}}
 
-*** Slides
+* Recapitulation of commands
 
-#+BEGIN_export html
-<a href="https://westgrid-webinars.netlify.com/git_remotes/"><p align="center"><img src="/img/git/git_remotes_slides.png" title="Link to slides" width="100%" style="border:2px solid black"/></p></a>
-#+END_export
+** List remotes
+
+#+BEGIN_src sh
+git remote
+#+END_src
+
+And to see their address:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+** Add remote
+
+#+BEGIN_example
+git remote add &lt;remote-name&gt; &lt;remote-address&gt;
+#+END_example
+
+Example:
+
+#+BEGIN_SRC sh
+git remote add origin git@github.com:user/project.git
+#+END_SRC
+
+** Rename remote
+
+#+BEGIN_src sh
+git remote rename <old-remote-name> <new-remote-name>
+#+END_src
+
+** Remove remote
+
+#+BEGIN_src sh
+git remote remove <remote-name>
+#+END_src
+
+#+BEGIN_src sh
+git push --set-upstream origin master
+git remote rename pb paul
+git remote remove paul
+#+END_src
 
 * Comments & questions
