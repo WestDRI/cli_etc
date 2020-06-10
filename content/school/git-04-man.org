@@ -4,22 +4,22 @@
 #+slug: git-04-man
 #+weight: 4
 
-*** Man pages
+* Man pages
 
 [[https://en.wikipedia.org/wiki/Man_page][Man (manual) pages]] hold the documentation on [[https://en.wikipedia.org/wiki/Unix-like][*nix systems]].
 
 You can access the *man page for a git command* with either of:
 
 #+BEGIN_EXAMPLE
-git &lt;command&gt; --help
+git <command> --help
 #+END_EXAMPLE
 
 #+BEGIN_EXAMPLE
-git help &lt;command&gt;
+git help <command>
 #+END_EXAMPLE
 
 #+BEGIN_EXAMPLE
-man git-&lt;command&gt;
+man git-<command>
 #+END_EXAMPLE
 
 Example:
@@ -40,12 +40,12 @@ Man pages open in a [[https://en.wikipedia.org/wiki/Terminal_pager][pager]], usu
 
 So you navigate them with the usual {{<c>}}less{{</c>}} bindings (e.g. {{<b>}}Space{{</b>}} to scroll down and {{<b>}}q{{</b>}} to quit).
 
-*** Command options
+* Command options
 
 To get a *list of the options for a command*, type:
 
 #+BEGIN_EXAMPLE
-git &lt;command&gt; -h
+git <command> -h
 #+END_EXAMPLE
 
 Example:
@@ -54,4 +54,4 @@ Example:
 git commit -h
 #+END_SRC
 
-*** Comments & questions
+* Comments & questions
