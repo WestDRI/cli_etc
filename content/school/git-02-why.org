@@ -37,6 +37,12 @@ Well, if one knows how to use it that is...
 from <a href="https://xkcd.com/">xkcd.com</a>
 {{</img>}}
 
+* Branches
+
+[[https://westgrid-cli.netlify.app/school/git-09-branches.html][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch; or to have several developments happening in parallel.
+
+Merging such explorations into the main branch or discarding them are equally easy.
+
 * Backup tool
 
 An additional advantage of using Git is that online remotes such as [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allow to backup a project and its history online.
