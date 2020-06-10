@@ -22,11 +22,7 @@ We will start a project, put it under version control with Git and start taking 
 
 Note that *no recording* will be made during this session so as not to discourage participation.
 
-#+BEGIN_export html
-<br>
-#+END_export
-
-*** Slides
+* Slides
 
 Click to open the slides in a new tab:
 
@@ -34,4 +30,4 @@ Click to open the slides in a new tab:
 <a href="https://westgrid-webinars.netlify.app/git_recording/" target="_blank"><p align="center"><img src="/img/git/git_recording_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
-*** Comments & questions
+* Comments & questions
