@@ -1,8 +1,8 @@
-#+title: Going back in time
+#+title: Undoing
 #+description: Practice
 #+colordes: #dc7309
-#+slug: git-09-recovering
-#+weight: 9
+#+slug: git-10-undoing
+#+weight: 10
 
 * Exploring the past
 
