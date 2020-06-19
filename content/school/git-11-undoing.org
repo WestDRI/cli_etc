@@ -1,8 +1,8 @@
 #+title: Undoing
 #+description: Practice
 #+colordes: #dc7309
-#+slug: git-10-undoing
-#+weight: 10
+#+slug: git-11-undoing
+#+weight: 11
 
 
 * Comments & questions

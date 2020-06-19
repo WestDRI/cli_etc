@@ -1,8 +1,8 @@
 #+title: Tools for a friendlier Git
 #+description: Video
 #+colordes: #5c8a6f
-#+slug: git-11-tools
-#+weight: 11
+#+slug: git-10-tools
+#+weight: 10
 
 * fzf
 
