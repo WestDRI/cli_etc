@@ -1,8 +1,8 @@
 #+title: Working with branches
 #+description: Reading
 #+colordes: #538cc6
-#+slug: git-11-branches
-#+weight: 11
+#+slug: git-12-branches
+#+weight: 12
 
 
 * Comments & questions

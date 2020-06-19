@@ -1,8 +1,8 @@
 #+title: Collaborating though GitHub (or similar)
 #+description: Zoom
 #+colordes: #cc0066
-#+slug: git-13-collaborating
-#+weight: 13
+#+slug: git-14-collaborating
+#+weight: 14
 
 #+OPTIONS: toc:nil
 

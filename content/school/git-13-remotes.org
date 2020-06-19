@@ -1,8 +1,8 @@
 #+title: Remotes
 #+description: Practice
 #+colordes: #dc7309
-#+slug: git-12-remotes
-#+weight: 12
+#+slug: git-13-remotes
+#+weight: 13
 
 * Recapitulation of commands
 
