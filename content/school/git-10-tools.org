@@ -4,6 +4,8 @@
 #+slug: git-10-tools
 #+weight: 10
 
+[[https://westgrid-cli.netlify.app/school/git-09-history.html][In the last lesson]], you learnt how to explore your Git history. In this lesson, I'd like to show you two great open-source tools which allow to do so in a nice visual manner while remaining on the command line.
+
 * fzf
 
 [[https://github.com/junegunn/fzf][fzf]] is a fantastic multi-platform command line fuzzy finder with a huge versatility.\\
