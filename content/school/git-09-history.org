@@ -4,11 +4,9 @@
 #+slug: git-09-history
 #+weight: 9
 
-* Exploring the past
+* Getting an overview of history
 
-** Getting an overview of history
-
-*** As a list
+** As a list
 
 {{<c>}}git log{{</c>}} lists all past commits in a pager (so scroll down with {{<b>}}Space{{</b>}} and quit with {{<b>}}q{{</b>}}).
 
@@ -21,7 +19,7 @@ git log
 
 Of course, our history is very short, so our history tree is very simple. For long histories, this is a powerful way to get an overview of the full history.
 
-*** As a list with one line per commit
+** As a list with one line per commit
 
 For a compact version with a single line per commit, you can run:
 
@@ -29,7 +27,7 @@ For a compact version with a single line per commit, you can run:
 git log --oneline
 #+END_src
 
-*** Getting fancy
+** Getting fancy
 
 By playing with the various flags of {{<c>}}git log{{</c>}}, you can customize the commit log to your liking: different colors make it easier to read and you can information about commit author or time while keeping it compact.
 
@@ -41,7 +39,7 @@ Try for instance:
 git log --graph --date-order --date=short --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d %C(yellow)%s%+b %C(black)%ae'
 #+END_src
 
-*** As a graph
+** As a graph
 
 The {{<c>}}--graph{{</c>}} flag allows to view this history in the form of a graph.
 
@@ -51,11 +49,11 @@ git log --graph
 
 This may not seem very useful with our simple history because it is linear with a single branch (a single version of history). But in complex situations with several branches, this can be really useful.
 
-** Exploring past commits
+* Exploring past commits
 
 {{<c>}}git log{{</c>}} is great to view the whole history. But maybe you want to explore one particular commit in more detail.
 
-*** Checking out a commit
+** Checking out a commit
 
 In order to explore a commit, you "check" it "out". This replaces the current content of your working tree with the content of the working tree at that commit. In other words, it allows you to travel back in time to the state of your project at that commit.
 
@@ -70,7 +68,7 @@ git checkout e7447c2
 
 Once you have checked a commit out, you can look at the files.
 
-*** The concept of HEAD
+** The concept of HEAD
 
 When looking at the output of {{<c>}}git log{{</c>}}, you may have noticed this: {{<b>}}(HEAD -> master){{</b>}} and wondered what this was all about.
 
@@ -82,7 +80,7 @@ It is a pointer to the current branch. In our case, we only have one branch sinc
 
 If you run {{<c>}}git log{{</c>}} again now, you will see that {{<b>}}HEAD{{</b>}} is not pointing at {{<b>}}master{{</b>}} anymore. It is pointing directly at the commit we checked out. We are now in a "detached HEAD state". This is fine to look at the past, but it is not a state in which to work and make changes as the changes would be lost.
 
-*** Going back to "the present"
+** Going back to "the present"
 
 To return to the latest commit, you need to "reattach HEAD" and have it point again at the branch {{<b>}}master{{</b>}}.
 
@@ -91,7 +89,5 @@ This is done by ckecking out {{<b>}}master{{</b>}}:
 #+BEGIN_src sh
 git checkout master
 #+END_src
-
-* Undoing
 
 * Comments & questions
