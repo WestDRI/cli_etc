@@ -1,10 +1,8 @@
 #+title: Remotes
-#+description: Video
-#+colordes: #5c8a6f
-#+slug: git-10-remotes
-#+weight: 10
-
-{{< youtube xxxx >}}
+#+description: Practice
+#+colordes: #dc7309
+#+slug: git-12-remotes
+#+weight: 12
 
 * Recapitulation of commands
 
