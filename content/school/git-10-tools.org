@@ -1,0 +1,25 @@
+#+title: Tools for a friendlier Git
+#+description: Video
+#+colordes: #5c8a6f
+#+slug: git-10-tools
+#+weight: 10
+
+* fzf
+
+[[https://github.com/junegunn/fzf][fzf]] is a fantastic multi-platform command line fuzzy finder with a huge versatility.\\
+If you want to try it out, follow the installation instructions in the [[https://github.com/junegunn/fzf#installation][README]] and start playing with it.
+
+In this video, I demo quickly how it can be used with Git:
+
+{{< youtube WFy6JXBRSJc >}}
+
+* lazygit
+
+[[https://github.com/jesseduffield/lazygit][lazygit]] is an excellent multi-platform user interface for Git which works in the command line.\\
+The [[https://github.com/jesseduffield/lazygit#installation][README]] provides installation instructions.
+
+Here is a very short demo:
+
+{{< youtube  >}}
+
+* Comments & questions
