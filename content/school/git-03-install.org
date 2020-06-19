@@ -17,22 +17,15 @@ You can download Git from [[https://git-scm.com/downloads][the official Git down
 
 If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Git for Windows project]] is a better option as this will also provide you with a Bash emulation to run Git in the command line.
 
-* How to run Git from the command line?
+* How to run Git?
 
-There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this workshop, we will only run Git in the command line.{{<fl n="1">}}
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this course, we will run Git in the command line (the lesson [[https://westgrid-cli.netlify.app/school/git-11-tools.html][Tools for a friendlier Git]] will show you how to use Git in nice visual manners, but still within the command line). The Git GUIs are often buggy, slow, and limiting. So even if you use one, it is important to know how to run Git in the command line.
 
-Why?\\
-Many of these GUIs do not allow to use the full capabilities of Git, they are sometimes buggy, and even if you decide to use one of them in your workflow, it is always good to know how to run Git in the command line in case something does not work in the GUI.
-
-So, whenever we use Git, you will open:
+In this course, to run Git commands, open:
 
 *Windows:* {{<m>}}Git BASH \\
 *MacOS:* {{<m>}}{{<m>}}Terminal \\
 *Linux:* {{<m>}}{{<m>}}{{<n>}}any terminal emulator
-
-{{<fn2>}}
-{{<fr n="1" text="At the very end of this Git Summer School lesson, I will show you how to use a fun tool to use Git in a graphical manner, but still within the command line.">}}
-{{</fn2>}}
 
 * Configure Git
 
