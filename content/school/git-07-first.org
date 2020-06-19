@@ -6,16 +6,18 @@
 
 #+OPTIONS: toc:nil
 
-Now that you have an idea of what Git is about, let's dive in.
+Now that you have an idea of what Git is about, let's dive in: in this lesson, you will create your first repository, explore it, and make your first commit.
 
-We will start a project, put it under version control with Git and start taking "snapshots" of the project as we develop it.
-
-* Slides
-
-Click to open the slides in a new tab:
+Click to open the slides in a new tab and make sure to run all the commands as you follow along.
 
 #+BEGIN_export html
 <a href="https://westgrid-webinars.netlify.app/git_recording/" target="_blank"><p align="center"><img src="/img/git/git_recording_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
-* Comments & questions
+#+BEGIN_simplebox
+/Reminder/ {{<m>}}To run Git from the command line (what we will do in this course), open:
+
+*Windows:* {{<m>}}Git BASH \\
+*MacOS:* {{<m>}}{{<m>}}Terminal \\
+*Linux:* {{<m>}}{{<m>}}{{<n>}}any terminal emulator
+#+END_simplebox
