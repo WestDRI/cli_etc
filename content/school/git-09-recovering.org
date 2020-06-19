@@ -1,8 +1,8 @@
 #+title: Going back in time
 #+description: Practice
 #+colordes: #dc7309
-#+slug: git-08-recovering
-#+weight: 8
+#+slug: git-09-recovering
+#+weight: 9
 
 * Exploring the past
 
@@ -91,26 +91,6 @@ This is done by ckecking out {{<b>}}master{{</b>}}:
 #+BEGIN_src sh
 git checkout master
 #+END_src
-
-* Tools that make it easier to explore the past
-
-** fzf
-
-[[https://github.com/junegunn/fzf][fzf]] is a fantastic multi-platform command line fuzzy finder with a huge versatility.\\
-If you want to try it out, follow the installation instructions in the [[https://github.com/junegunn/fzf#installation][README]] and start playing with it.
-
-In this video, I demo quickly how it can be used with Git:
-
-{{< youtube WFy6JXBRSJc >}}
-
-** lazygit
-
-[[https://github.com/jesseduffield/lazygit][lazygit]] is an excellent multi-platform user interface for Git which works in the command line.\\
-The [[https://github.com/jesseduffield/lazygit#installation][README]] provides installation instructions.
-
-Here is a very short demo:
-
-{{< youtube  >}}
 
 * Undoing
 
