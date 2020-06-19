@@ -101,7 +101,7 @@ If you want to try it out, follow the installation instructions in the [[https:/
 
 In this video, I demo quickly how it can be used with Git:
 
-{{< youtube  >}}
+{{< youtube WFy6JXBRSJc >}}
 
 ** lazygit
 
