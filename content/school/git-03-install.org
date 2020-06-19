@@ -19,7 +19,7 @@ If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Gi
 
 * How to run Git?
 
-There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this course, we will run Git in the command line (the lesson [[https://westgrid-cli.netlify.app/school/git-11-tools.html][Tools for a friendlier Git]] will show you how to use Git in nice visual manners, but still within the command line). The Git GUIs are often buggy, slow, and limiting. So even if you use one, it is important to know how to run Git in the command line.
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this course, we will run Git in the command line (the lesson [[https://westgrid-cli.netlify.app/school/git-10-tools.html][Tools for a friendlier Git]] will show you how to use Git in nice visual manners, but still within the command line). The Git GUIs are often buggy, slow, and limiting. So even if you use one, it is important to know how to run Git in the command line.
 
 In this course, to run Git commands, open:
 
