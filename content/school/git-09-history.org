@@ -29,7 +29,7 @@ git log --oneline
 
 ** Getting fancy
 
-By playing with the various flags of {{<c>}}git log{{</c>}}, you can customize the commit log to your liking: different colors make it easier to read and you can information about commit author or time while keeping it compact.
+By playing with the various flags of {{<c>}}git log{{</c>}}, you can customize the commit log to your liking: different colors make it easier to read and you can get information about commit author or time while keeping it compact.
 
 To find out about all the available options of {{<c>}}git log{{</c>}}, run {{<c>}}man git-log{{</c>}}.
 
