@@ -36,7 +36,12 @@ To find out about all the available options of {{<c>}}git log{{</c>}}, run {{<c>
 Try for instance:
 
 #+BEGIN_src sh
-git log --graph --date-order --date=short --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d %C(yellow)%s%+b %C(black)%ae'
+git log \
+    --graph \
+    --date-order \
+    --date=short \
+    --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
+                   `'%C(yellow)%s%+b %C(black)%ae'
 #+END_src
 
 ** As a graph
