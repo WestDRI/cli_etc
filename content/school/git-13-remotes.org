@@ -4,9 +4,15 @@
 #+slug: git-13-remotes
 #+weight: 13
 
-* Recapitulation of commands
+Remotes are instances of a repository on a network, on the web, on external drives... Departmental servers, USB keys, and version control repository hosting services like [[https://github.com/][GitHub]], [[https://about.gitlab.com/][GitLab]], or [[https://bitbucket.org/][Bitbucket]] can all serve as remotes.
+
+In this course, we will use [[https://github.com/][GitHub]] as the host for our remotes. If you haven't yet done so, [[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-4][create a free GitHub account]].
+
+* Managing remotes
 
 ** List remotes
+
+To list the remotes associated with your project, run:
 
 #+BEGIN_src sh
 git remote
@@ -18,34 +24,78 @@ And to see their address:
 git remote -v
 #+END_src
 
+Since we haven't added any remote yet, this should not return anything.
+
 ** Add remote
 
+This is how you can add a remote:
+
 #+BEGIN_example
-git remote add &lt;remote-name&gt; &lt;remote-address&gt;
+git remote add <remote-name> <remote-address>
 #+END_example
 
-Example:
+{{<b>}}&lt;remote-name&gt;{{</b>}} is the name you give to your remote. Usually, the name {{<c>}}origin{{</c>}} is used.
+
+{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-5][if you have set SSH for your GitHub account]]—the SSH form.
+
+/Example (using an SSH address):/
 
 #+BEGIN_SRC sh
 git remote add origin git@github.com:user/project.git
 #+END_SRC
 
+Let's add a remote to our {{<b>}}git_lesson{{</b>}} project.
+
+
+
 ** Rename remote
 
-#+BEGIN_src sh
+You can rename a remote with:
+
+#+BEGIN_example
 git remote rename <old-remote-name> <new-remote-name>
-#+END_src
+#+END_example
 
 ** Remove remote
 
-#+BEGIN_src sh
+And you can delete a remote with:
+
+#+BEGIN_example
 git remote remove <remote-name>
+#+END_example
+
+* Working with remotes
+
+** Fetching
+
+#+BEGIN_example
+git fetch <remote-name>
+#+END_example
+
+/Example:/
+
+#+BEGIN_src sh
+git fetch origin
 #+END_src
+
+** Pulling
+
+
+** Pushing
+
+#+BEGIN_example
+git push <remote-name> <branch-name>
+#+END_example
+
+/Example:/
+
+#+BEGIN_src sh
+git push origin master
+#+END_src
+
 
 #+BEGIN_src sh
 git push --set-upstream origin master
-git remote rename pb paul
-git remote remove paul
 #+END_src
 
 * Comments & questions
