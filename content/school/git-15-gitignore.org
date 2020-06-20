@@ -6,6 +6,8 @@
 
 #+OPTIONS: toc:nil
 
+While writing your {{<b>}}.gitignore{{</b>}} file, you can add files to be excluded one by one. In many cases however, it is really convenient to use globing patterns to exclude many files at once. This annex presents the rules to write such patterns.
+
 * .gitignore rules
 
 - Each line in a {{<b>}}.gitignore{{</b>}} file specifies a pattern {{<2br>}}
