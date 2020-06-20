@@ -1,0 +1,106 @@
+#+title: .gitignore syntax
+#+description: Annex
+#+colordes: #2d5986
+#+slug: git-15-gitignore
+#+weight: 15
+
+#+OPTIONS: toc:nil
+
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+
+| *Pattern*           | *Example files ignored*                                                  | *Explanation*                                                                                  |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~**/logs~           | ~logs/debug.log~ ~logs/monday/foo.bar~ ~build/logs/debug.log~            | A double asterisk before a pattern matches directories anywhere in the repository              |
+|                     |                                                                          |                                                                                                |
+|                     |                                                                          |                                                                                                |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~**/logs/debug.log~ | ~logs/debug.log~ ~build/logs/debug.log~ /but not/ ~logs/build/debug.log~ | A double asterisk matches files based on their name and the name of their parent directory     |
+|                     |                                                                          |                                                                                                |
+|                     |                                                                          |                                                                                                |
+|                     |                                                                          |                                                                                                |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~*.log~             | ~debug.log~                                                              |                                                                                                |
+|                     | ~foo.log~                                                                |                                                                                                |
+|                     | ~.log~                                                                   |                                                                                                |
+|                     | ~logs/debug.log~                                                         | An asterisk is a wildcard that matches zero or more characters                                 |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~*.log~             | ~debug.log~                                                              |                                                                                                |
+| ~!important.log~    | ~trace.log~                                                              |                                                                                                |
+|                     | /but not/                                                                | an exclamation mark before a pattern negates it                                                |
+|                     | ~important.log~                                                          | if a file matches a pattern as well as a negating pattern defined *later* in the file,         |
+|                     | ~logs/important.log~                                                     | it will not be ignored                                                                         |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~*.log~             | ~debug.log~                                                              |                                                                                                |
+| ~!important/*.log~  | ~important/trace.log~                                                    |                                                                                                |
+| ~trace.*~           | /but not/                                                                |                                                                                                |
+|                     | ~important/debug.log~                                                    | patterns defined *after* a negating pattern will *cancel the negation*                         |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~/debug.log~        | ~debug.log~                                                              |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~logs/debug.log~                                                         | A slash before a file matches that file in the repository root only                            |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug.log~         | ~debug.log~                                                              |                                                                                                |
+|                     | ~logs/debug.log~                                                         | By default, patterns match files in any directory                                              |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug?.log~        | ~debug0.log~                                                             |                                                                                                |
+|                     | ~debugg.log~                                                             |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug10.log~                                                            | A question mark matches exactly one character                                                  |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug[0-9].log~    | ~debug0.log~                                                             |                                                                                                |
+|                     | ~debug1.log~                                                             |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug10.log~                                                            | Square brackets with a dash match a character from a specified range                           |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug[01].log~     | ~debug0.log~                                                             |                                                                                                |
+|                     | ~debug1.log~                                                             |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug2.log~                                                             |                                                                                                |
+|                     | ~debug01.log~                                                            | Square brackets match *a single* character from the specified set                              |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug[!01].log~    | ~debug2.log~                                                             |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug0.log~                                                             |                                                                                                |
+|                     | ~debug1.log~                                                             |                                                                                                |
+|                     | ~debug01.log~                                                            | An exclamation mark in square brackets excludes any character from the specified set           |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~debug[a-z].log~    | ~debuga.log~                                                             |                                                                                                |
+|                     | ~debugb.log~                                                             |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug1.log~                                                             | Ranges can be numeric or alphabetic                                                            |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs~              | ~logs~                                                                   |                                                                                                |
+|                     | ~logs/debug.log~                                                         |                                                                                                |
+|                     | ~logs/latest/foo.bar~                                                    |                                                                                                |
+|                     | ~build/logs~                                                             |                                                                                                |
+|                     | ~build/logs/debug.log~                                                   | With no slash, the pattern matches both files and the contents of directories with that name   |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs/~             | ~logs/debug.log~                                                         | With a slash, the pattern only matches directories                                             |
+|                     | ~logs/latest/foo.bar~                                                    | (= the entire contents of any directory in the repository matching that name,                  |
+|                     | ~build/logs/foo.bar~                                                     | including all of its files and subdirectories)                                                 |
+|                     | ~build/logs/a/debug.log~                                                 | (same as **/logs if I am correct)                                                              |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs/~             | ~logs/debug.log~                                                         | *warning*                                                                                      |
+| ~!logs/imp.log~     | ~logs/imp.log~                                                           | One *cannot* negate a file that is ignored due to a pattern matching a directory               |
+|                     |                                                                          | one way to go around that is to force the following of a file which is in an ignored directory |
+|                     |                                                                          | with the option -f (git add -f <file>)                                                         |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs/**/imp.log~   | ~logs/imp.log~                                                           |                                                                                                |
+|                     | ~logs/monday/imp.log~                                                    |                                                                                                |
+|                     | ~logs/monday/pm/imp.log~                                                 | A double asterisk matches zero or more directories                                             |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs/*day/imp.log~ | ~logs/monday/imp.log~                                                    |                                                                                                |
+|                     | ~logs/tuesday/imp.log~                                                   |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~logs/latest/imp.log~                                                    | Wildcards can be used in directory names as well                                               |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| ~logs/debug.log~    | ~logs/debug.log~                                                         |                                                                                                |
+|                     | /but not/                                                                |                                                                                                |
+|                     | ~debug.log~                                                              |                                                                                                |
+|                     | ~build/logs/debug.log~                                                   | Patterns specifying a file in a particular directory are relative to the repository root       |
+|---------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
+{{<cap line-height="0rem">}}
+{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<n>}}Modified from <a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore/">Atlassian tutorial</a>
+{{</cap>}}
+
+
