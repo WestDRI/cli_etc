@@ -4,5 +4,25 @@
 #+slug: git-11-undoing
 #+weight: 11
 
+* Amending the last commit
 
+A common scenario: you make a commit, then realize that you forgot to include some changes in that commit; or you aren't happy with the commit message; or both. You can edit your latest commit with the {{<c>}}--amend{{</c>}} flag:
+
+#+BEGIN_src sh
+git commit --amend
+#+END_src
+
+This will hide your last commit (as if it had never happened), add the changes in the staging area (if any) to the changes in that last commit, open a text editor showing the message of the last commit (you can keep or edit that message), and create a new commit which replaces your last commit.
+
+So if you only want to change the commit message, run that command with an empty staging area. If you want to add changes to the last commit, stage them, then run the command.
+
+In short, what this does is to replace your last commit with a new commit with the added changes and/or edited message. This prevents having a messy history with commits of the type "add missing file to last commit" or "better message for last commit: bla bla bla". If you made a typo in your last commit message (and if you care about having a nice, clean history), you can fix it easily this way.
+
+{{<exercise>}}
+- Run {{<c>}}git log --oneline{{</c>}} (notice the hash of the last commit)<br><br>
+- Edit your last commit message <br><br>
+- Run {{<c>}}git log --oneline{{</c>}} again to see that your last commit now has a new hash (so it is a different commit) and a new message <br><br>
+- Now, make some change in your project (add a file, edit a file, whatever you want)<br><br>
+- Then add that new change to your last commit without changing the message
+{{</exercise>}}
 * Comments & questions
