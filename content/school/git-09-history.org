@@ -83,7 +83,7 @@ It is a pointer to the current branch. In our case, we only have one branch sinc
 
 {{<b>}}(HEAD -> master){{</b>}} means that we are on the branch {{<b>}}master{{</b>}}. In other words, {{<b>}}HEAD{{</b>}} is pointing at the branch {{<b>}}master{{</b>}}.
 
-If you run {{<c>}}git log{{</c>}} again now, you will see that {{<b>}}HEAD{{</b>}} is not pointing at {{<b>}}master{{</b>}} anymore. It is pointing directly at the commit we checked out. We are now in a "detached HEAD state". This is fine to look at the past, but it is not a state in which to work and make changes as the changes would be lost.
+If you run {{<c>}}git log{{</c>}} again now, you will see that {{<b>}}HEAD{{</b>}} is not pointing at {{<b>}}master{{</b>}} anymore. It is pointing directly at the commit we checked out. We are now in a [[https://git-scm.com/docs/git-checkout#_detached_head]["detached HEAD state"]].
 
 ** Going back to "the present"
 
