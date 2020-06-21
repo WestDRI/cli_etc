@@ -1,6 +1,6 @@
 #+title: Working with branches
-#+description: Reading
-#+colordes: #538cc6
+#+description: Practice
+#+colordes: #dc7309
 #+slug: git-12-branches
 #+weight: 12
 
