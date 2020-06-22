@@ -58,9 +58,14 @@ git checkout <branch-name>
 Switch to your new branch {{<b>}}test{{</b>}}, then run {{<c>}}git log --oneline{{</c>}} again.
 {{</exercise>}}
 
+** Creating a branch and switching to it immediately
+
+When you create a branch, most of the time you want to switch to it. So there is a command which allows to create a branch and switch to it immediately without having to do this in two steps:
 
 #+BEGIN_example
 git checkout -b <name-new-branch>
 #+END_example
+
+This command is convenient: when you create a branch with {{<b>}}git branch &lt;branch-name&gt;{{</b>}}, it is easy to forget to switch to the new branch before making commits!
 
 * Comments & questions
