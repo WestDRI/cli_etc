@@ -4,7 +4,6 @@
 #+slug: git-14-collaborating
 #+weight: 15
 
-#+OPTIONS: toc:nil
 
 #+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
