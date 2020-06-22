@@ -13,3 +13,7 @@ In this interactive session, I will answer the questions you had while going thr
 #+END_zoombox
 
 Note that *no recording* will be made during this session so as not to discourage participation.
+
+* Inviting collaborators to a GitHub repo
+
+Go to the {{<b>}}Settings{{</b>}} tab, then the {{<b>}}Manage access{{</b>}} section on the left-hand side. Finally click {{<b>}}Invite a collaborator{{</b>}}.
