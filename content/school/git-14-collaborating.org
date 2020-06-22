@@ -28,3 +28,38 @@ git clone git@github.com:<user>/<repo>.git <name>
 #+END_example
 
 {{<b>}}&lt;name&gt;{{</b>}} is not necessary: this is only if you want to rename the repo on your machine.
+
+* Resolving conflicts
+
+Working on the same file is no problem at all as long as different sections of the file are being edited. But if the same section is changed by different people or on different branches, this creates a conflict.
+
+Ideally, you want to avoid conflicts with a good team workflow. But if they arise, there are great tools to help you deal with them.
+
+You can run:
+
+#+BEGIN_src sh
+git mergetool
+#+END_src
+
+Or you can use one of many GUI applications developed to make Git more friendly (the lucky people who use the Emacs text editor have access to an amazing tool: [[https://www.gnu.org/software/emacs/manual/html_mono/ediff.html][Ediff]]).
+
+Whatever tool you use, conflicts will look like some variation of this:
+
+#+BEGIN_src
+<<<<<<< HEAD
+One possible version of a this section of the file
+=======
+Another possible version of the same section of the file
+>>>>>>> some other version
+#+END_src
+
+Merge tools allow you to jump from conflict to conflict within a file and ask you to decide which version you want to choose for each of them (you can also write a combination of the two).
+
+If you don't use any merge tool, you can edit those sections manually in any text editor.
+
+You can also in one swoop keep all of your sections (i.e. the version of the branch you are currently on or {{<b>}}HEAD{{</b>}}) or all of "their" sections (the alternative version of the file you are merging into your branch) with:
+
+#+BEGIN_example
+git checkout --ours <file>
+git checkout --theirs <file>
+#+END_example
