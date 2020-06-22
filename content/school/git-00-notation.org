@@ -1,0 +1,41 @@
+#+title: Note on notation
+#+description: Reading
+#+colordes: #538cc6
+#+slug: git-00-notation
+#+weight: 1
+
+* Placeholders
+
+Throughout this course, I am using the {{<b>}}<{{</b>}} and {{<b>}}>{{</b>}} signs to indicate that an expression needs to be replaced by the information appropriate to your situation (without those signs).
+
+* Code blocks
+
+*** White background
+
+Any code with such placeholder that you need to edit has a white background.
+
+/Example:/
+
+#+BEGIN_example
+git remote add <remote-name> <remote-address>
+#+END_example
+
+*** Gray background
+
+Code that can be run without any modification has a gray background.
+
+/Example:/
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+* Inline code
+
+I follow the same rule in inline code. In addition, names of Git pointers and paths have a white background to distinguish them more easily from actual code.
+
+/Example:/
+
+This is how I write the {{<b>}}master{{</b>}} branch and {{<b>}}HEAD{{</b>}} (2 pointers) and this is how I write {{<b>}}/some/path{{</b>}}. In contrast, actual code such as {{<c>}}git status{{</c>}} is formatted in gray.
+
+* Comments & questions
