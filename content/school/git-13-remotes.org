@@ -8,6 +8,20 @@ Remotes are instances of a repository on a network, on the web, on external driv
 
 In this course, we will use [[https://github.com/][GitHub]] as the host for our remotes. If you haven't yet done so, [[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-4][create a free GitHub account]].
 
+* Creating a project on GitHub
+
+Your project ({{<b>}}git_lesson{{</b>}}), though under version control, for now only resides on your computer. If you want to collaborate with others, having a remote on the web is really convenient.
+
+Go to your GitHub account webpage, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
+
+Enter the name of your repo, avoiding spaces. It can be the name you had on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
+
+You can make your repository public or private. In a real scenario, you would make it private if it contained sensitive information (e.g. unpublished research) or public if you wanted to make it available to others or to develop an open source project.
+
+Here, we will go with the public option because, while GitHub free accounts allow private repositories, not all team options are available on private repositories for free accounts.
+
+Now, you have this empty repository on GitHub, but it is not connected to your local repository. So let's go back to our local repository (so back to Git Bash or your terminal).
+
 * Managing remotes
 
 ** List remotes
