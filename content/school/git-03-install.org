@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-03-install
-#+weight: 3
+#+weight: 4
 
 For this course, you need to:
 

@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-12-branches
-#+weight: 12
+#+weight: 13
 
 As you must be starting to realize, Git is a powerful tool. One of its greatest features is how easy it makes branching workflows.
 

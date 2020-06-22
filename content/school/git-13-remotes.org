@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-13-remotes
-#+weight: 13
+#+weight: 14
 
 Remotes are instances of a repository on a network, on the web, on external drives... Departmental servers, USB keys, and version control repository hosting services like [[https://github.com/][GitHub]], [[https://about.gitlab.com/][GitLab]], or [[https://bitbucket.org/][Bitbucket]] can all serve as remotes.
 
@@ -44,7 +44,10 @@ git remote add <remote-name> <remote-address>
 git remote add origin git@github.com:user/project.git
 #+END_SRC
 
+{{<exercise>}}
 Let's add a remote to our {{<b>}}git_lesson{{</b>}} project.
+{{</exercise>}}
+
 
 
 

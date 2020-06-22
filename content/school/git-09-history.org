@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-09-history
-#+weight: 9
+#+weight: 10
 
 * Getting an overview of history
 

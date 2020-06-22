@@ -2,7 +2,7 @@
 #+description: Reading
 #+colordes: #538cc6
 #+slug: git-02-why
-#+weight: 2
+#+weight: 3
 
 * The nightmare of versioning
 

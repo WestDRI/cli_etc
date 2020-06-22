@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-11-undoing
-#+weight: 11
+#+weight: 12
 
 * Amending the last commit
 

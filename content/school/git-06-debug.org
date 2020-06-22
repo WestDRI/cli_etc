@@ -2,7 +2,7 @@
 #+description: (Debug)
 #+colordes: #800040
 #+slug: git-06-debug
-#+weight: 6
+#+weight: 7
 
 #+OPTIONS: toc:nil
 

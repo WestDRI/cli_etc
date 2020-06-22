@@ -2,7 +2,7 @@
 #+description: Practice
 #+colordes: #dc7309
 #+slug: git-07-first
-#+weight: 7
+#+weight: 8
 
 #+OPTIONS: toc:nil
 

@@ -2,7 +2,7 @@
 #+description: Zoom
 #+colordes: #cc0066
 #+slug: git-01-intro
-#+weight: 1
+#+weight: 2
 
 #+OPTIONS: toc:nil
 
