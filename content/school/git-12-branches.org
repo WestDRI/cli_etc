@@ -114,4 +114,25 @@ In our previous scenario, you'd run:
 git branch -d experiment
 #+END_src
 
+* Branch summary
+
+Branches are a great way to experiment in projects in a safe way. If you don't like the result, you can simply get rid of the branch. If you like it, you can merge it with {{<b>}}master{{</b>}}.
+
+#+BEGIN_src sh
+# show all branches (current branch marked with *)
+git branch
+
+# create a new branch called <name>
+git branch <name>
+
+# checkout branch <name>
+git checkout <name>
+
+# create a branch called <name> and switch to it
+git checkout -b <name>
+
+# delete branch <name>
+git branch -d <name>
+#+END_src
+
 * Comments & questions
