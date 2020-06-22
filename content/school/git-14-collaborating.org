@@ -17,3 +17,14 @@ Note that *no recording* will be made during this session so as not to discourag
 * Inviting collaborators to a GitHub repo
 
 Go to the {{<b>}}Settings{{</b>}} tab, then the {{<b>}}Manage access{{</b>}} section on the left-hand side. Finally click {{<b>}}Invite a collaborator{{</b>}}.
+
+* Cloning a repo from GitHub
+
+Now, your collaborators can clone the project from GitHub to their machine to start working on it (with Git, everybody has a full version of the project and its history on their machine).
+
+#+BEGIN_example
+cd /place/where/you/want/to/have/your/project
+git clone git@github.com:<user>/<repo>.git <name>
+#+END_example
+
+{{<b>}}&lt;name&gt;{{</b>}} is not necessary: this is only if you want to rename the repo on your machine.
