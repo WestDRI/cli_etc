@@ -47,9 +47,9 @@ Whatever tool you use, conflicts will look like some variation of this:
 
 #+BEGIN_src
 <<<<<<< HEAD
-One possible version of a this section of the file
+Version of this section of the file on your checked out branch
 =======
-Another possible version of the same section of the file
+Alternative version of the same section of the file
 >>>>>>> some other version
 #+END_src
 
