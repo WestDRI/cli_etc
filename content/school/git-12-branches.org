@@ -68,4 +68,12 @@ git checkout -b <name-new-branch>
 
 This command is convenient: when you create a branch with {{<b>}}git branch &lt;branch-name&gt;{{</b>}}, it is easy to forget to switch to the new branch before making commits!
 
+* How to delete a branch?
+
+Once you have merged a branch into another or if you decide that the experiments on a branch are not worth keeping, you can delete that branch with:
+
+#+BEGIN_example
+git branch -d <branch-name>
+#+END_example
+
 * Comments & questions
