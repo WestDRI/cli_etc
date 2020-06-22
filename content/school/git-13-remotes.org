@@ -38,7 +38,7 @@ And to see their address:
 git remote -v
 #+END_src
 
-Since we haven't added any remote yet, this should not return anything.
+Since we haven't added any remote to our project yet, this should not return anything.
 
 ** Add remote
 
@@ -48,22 +48,25 @@ This is how you can add a remote:
 git remote add <remote-name> <remote-address>
 #+END_example
 
-{{<b>}}&lt;remote-name&gt;{{</b>}} is the name you give to your remote. Usually, the name {{<c>}}origin{{</c>}} is used.
+{{<b>}}&lt;remote-name&gt;{{</b>}} is the name you give to your remote. Usually, the name {{<b>}}origin{{</b>}} is used.
 
 {{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-5][if you have set SSH for your GitHub account]]—the SSH form.
 
 /Example (using an SSH address):/
 
-#+BEGIN_SRC sh
-git remote add origin git@github.com:user/project.git
-#+END_SRC
+#+BEGIN_example
+git remote add origin git@github.com:<github-username>/<repo-name>.git
+#+END_example
+
+/Example (using an HTTPS address):/
+
+#+BEGIN_example
+git remote add origin https://github.com/<github-username>/<repo-name>.git
+#+END_example
 
 {{<exercise>}}
-Let's add a remote to our {{<b>}}git_lesson{{</b>}} project.
+Add your new GitHub repo as the remote to your {{<b>}}git_lesson{{</b>}} project and call it {{<b>}}origin{{</b>}}
 {{</exercise>}}
-
-
-
 
 ** Rename remote
 
