@@ -1,0 +1,57 @@
+#+title: Contributing to someone else's project
+#+description: Annex
+#+colordes: #2d5986
+#+slug: git-16-contributing
+#+weight: 17
+
+There are countless free and open source tools on GitHub. If you use one such tool and find a problem, or think that you can improve the project, or if you would like to request a novel feature, how can you go about it?
+
+* To do before doing anything else
+
+There are a few rules to follow before starting to contribute to someone else's project:
+
+- Make sure that you have the latest version of the project (your issue/suggestion may have already been addressed in a recent version)
+- Some projects have guidelines as to how to contribute, so make sure to read them
+- Make sure that there isn't already an open issue on what you want to contribute
+
+* Opening issues
+
+The easiest thing to do if you find a bug or want to make a feature request is to open an issue:
+
+Go to the GitHub webpage of the project, select the {{<b>}}Issues{{</b>}} tab, then click on {{<b>}}New issue{{</b>}}.
+
+* Submitting a pull request
+
+Now, a more advanced approach is to actually suggest changes to the code of the project.
+
+If you want to develop your own version of the project, you can fork the project and keep it at that. You have all privileges on the forked project. So you can make any change you want there. You can clone it to your machine and develop the fork however you want. But your fork does not get updated to the improvements made to the initial project. It is an independent project of its own.
+
+If you want to keep your fork up to date with the initial project, you need to:
+
+1. Clone your fork on your machine (this will automatically set your fork on GitHub as a remote called {{<b>}}origin{{</b>}})
+2. Add a second remote, this one pointing to the initial project. Usually, that one is called {{<b>}}upstream{{</b>}}
+3. Pull from {{<b>}}upstream{{</b>}}
+
+From there on, you can pull from {{<b>}}upstream{{</b>}} (the initial project) and push/pull to/from {{<b>}}origin{{</b>}} (your fork).
+
+Of course, if your project and the initial one diverge in places, this will lead to conflicts that you will have to resolve as you merge the pulls from {{<b>}}upstream{{</b>}}.
+
+Most of the time however, you don't want to develop your own version of a project. Instead, you want to make it better by contributing to it. But you can't push changes to {{<b>}}upstream{{</b>}} directly since you are not part of that project. You don't have write access to that repository. If anybody could push to any project, that would be utter chaos.
+
+So how do you contribute code to someone else's project?
+
+Here is the proper workflow, as described on many websites and in the [[https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project][Git manual]] to submit a pull request (PR):
+
+#+BEGIN_box
+1. Fork the project
+2. Clone your fork to your machine
+3. Add the original fork as a remote called {{<b>}}upstream{{</b>}}
+4. If you forked your project a while ago, pull from {{<b>}}upstream{{</b>}} to make sure that your contributions are made on an up to date version of the project
+5. Create a branch on your cloned local project and make your changes in that branch
+6. Push that branch to your fork (that means to {{<b>}}origin{{</b>}}, not to {{<b>}}upstream{{</b>}}: you aren't allowed to push to {{<b>}}upstream{{</b>}} since it is not your project)
+7. Go to the original project GitHub's page and open a pull request from your fork (as soon as you have pushed your branch to {{<b>}}origin{{</b>}}, GitHub will automatically offer you to do so)
+#+END_box
+
+This is typically followed by some conversation on the pull request page between the project developer/maintainer and you. They may ask you to make some adjustments, so you may have to commit and push several changes to that branch. Once/if they are happy with your suggestion, they will merge your PR into their project. You can then delete the branch in which you developed those changes.
+
+* Comments & questions
