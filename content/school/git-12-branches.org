@@ -68,6 +68,36 @@ git checkout -b <name-new-branch>
 
 This command is convenient: when you create a branch with {{<b>}}git branch &lt;branch-name&gt;{{</b>}}, it is easy to forget to switch to the new branch before making commits!
 
+* How to merge branches back together?
+
+One thing that makes Git branches powerful is—as we just saw—how easy it is to create new branches and to switch from one branch to another. Another thing is how easy it is to /merge/ branches together.
+
+If you created an experimental branch and are happy with the result, you'll want to merge it into your main branch (usually {{<b>}}master{{</b>}}).
+
+- First, switch to the main development branch (e.g. {{<c>}}git checkout master{{</c>}})
+- Then, merge your experimental branch into the main branch:
+
+#+BEGIN_example
+git merge <branch-to-merge-into-current-branch>
+#+END_example
+
+/Example:/
+
+If your main development branch is {{<b>}}master{{</b>}} and your experimental branch is called {{<b>}}experiment{{</b>}}, you'd run:
+
+#+BEGIN_src sh
+git checkout master
+git merge experiment
+#+END_src
+
+** Merge conflicts
+
+As you were developing your experimental branch, maybe you were also developing your main branch. As long as the differences between the branches do not overlap (you have been working on different parts of the project in each branch, which can include different parts of the same file), there is no problem.
+
+If the two branches contain different versions of the same part of a file however, Git cannot know which of the versions you want to keep. The merge will then be interrupted and Git will ask you to resolve the conflict before the merge can be completed.
+
+We will talk about how to resolve merge conflicts in our Zoom session [[https://westgrid-cli.netlify.app/school/git-14-collaborating.html][Collaborating through GitHub]] since such conflicts can also arise when you work with other people on a project.
+
 * How to delete a branch?
 
 Once you have merged a branch into another or if you decide that the experiments on a branch are not worth keeping, you can delete that branch with:
@@ -75,5 +105,13 @@ Once you have merged a branch into another or if you decide that the experiments
 #+BEGIN_example
 git branch -d <branch-name>
 #+END_example
+
+/Example:/
+
+In our previous scenario, you'd run:
+
+#+BEGIN_src sh
+git branch -d experiment
+#+END_src
 
 * Comments & questions
