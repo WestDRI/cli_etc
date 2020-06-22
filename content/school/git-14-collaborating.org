@@ -4,6 +4,7 @@
 #+slug: git-14-collaborating
 #+weight: 15
 
+In this interactive session, I will answer the questions you had while going through the course material, then we will collaborate on a project though GitHub. Please go through the [[https://westgrid-cli.netlify.app/school/git-13-remotes.html][Remotes]] lesson and make sure [[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-4][you have a GitHub account]] before joining this interactive session.
 
 #+BEGIN_zoombox
 *This interactive session will be conducted through Zoom.*
