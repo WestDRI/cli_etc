@@ -42,7 +42,7 @@ Since we haven't added any remote to our project yet, this should not return any
 
 ** Add remote
 
-This is how you can add a remote:
+This is how you add a remote:
 
 #+BEGIN_example
 git remote add <remote-name> <remote-address>
@@ -65,12 +65,13 @@ git remote add origin https://github.com/<github-username>/<repo-name>.git
 #+END_example
 
 {{<exercise>}}
-Add your new GitHub repo as the remote to your {{<b>}}git_lesson{{</b>}} project and call it {{<b>}}origin{{</b>}}
+- Add your new GitHub repo as the remote to your {{<b>}}git_lesson{{</b>}} project and call it {{<b>}}origin{{</b>}}<br>
+- Run {{<c>}}git remote -v{{</c>}} now to see that you now have a remote
 {{</exercise>}}
 
 ** Rename remote
 
-You can rename a remote with:
+You rename a remote with:
 
 #+BEGIN_example
 git remote rename <old-remote-name> <new-remote-name>
@@ -78,7 +79,7 @@ git remote rename <old-remote-name> <new-remote-name>
 
 ** Remove remote
 
-And you can delete a remote with:
+And you delete a remote with:
 
 #+BEGIN_example
 git remote remove <remote-name>
