@@ -87,6 +87,50 @@ git remote remove <remote-name>
 
 * Working with remotes
 
+** Pushing
+
+You now have a remote, but it is empty. You need to /push/ the branches of your local repo to update your remote with your project history:
+
+#+BEGIN_example
+git push <remote-name> <branch-name>
+#+END_example
+
+/Example:/
+
+#+BEGIN_src sh
+git push origin master
+#+END_src
+
+...will push your {{<b>}}master{{</b>}} branch to your remote.
+
+{{<exercise>}}
+- Run this, then refresh your GitHub repo page <br>
+- You should see the content of your master branch <br>
+- There is a branch drop down menu above your username. If you click on it, you will see that {{<b>}}master{{</b>}} is the only branch <br>
+- Now pull your other branch to your remote and go make sure that it is there (you need to refresh the page)
+{{</exercise>}}
+
+You could use {{<b>}}git push &lt;remote-name&gt; &lt;branch-name&gt;{{</b>}} every time you want to push to your remote. But you can also associate a branch to a remote by pushing once with the flag {{<c>}}--set-upstream{{</c>}}:
+
+#+BEGIN_example
+git push --set-upstream <remote-name> <branch-name>
+#+END_example
+
+This will associate your local branch called {{<b>}}&lt;branch-name&gt;{{</b>}} with a branch of the same name in your remote.
+
+After you have run this once, when you have checked out the branch {{<b>}}&lt;branch-name&gt;{{</b>}}, you simply need to run {{<c>}}git push{{</c>}}.
+
+{{<exercise>}}
+Experiment with this. For instance: <br>
+- Associate {{<b>}}master{{</b>}} to your remote <br>
+- Try to run {{<c>}}git push{{</c>}} from {{<b>}}master{{</b>}}<br>
+- Check out another branch <br>
+- Try {{<c>}}git push{{</c>}} (it shouldn't work since you have not set any remote for that branch) <br>
+- Associate that branch to your remote <br>
+- Try {{<c>}}git push{{</c>}} again
+{{</exercise>}}
+
+
 ** Fetching
 
 #+BEGIN_example
@@ -101,22 +145,5 @@ git fetch origin
 
 ** Pulling
 
-
-** Pushing
-
-#+BEGIN_example
-git push <remote-name> <branch-name>
-#+END_example
-
-/Example:/
-
-#+BEGIN_src sh
-git push origin master
-#+END_src
-
-
-#+BEGIN_src sh
-git push --set-upstream origin master
-#+END_src
 
 * Comments & questions
