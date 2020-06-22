@@ -6,7 +6,7 @@
 
 * Amending the last commit
 
-A common scenario: you make a commit, then realize that you forgot to include some changes in that commit; or you aren't happy with the commit message; or both. You can edit your latest commit with the {{<c>}}--amend{{</c>}} flag:
+Here is a common scenario: you make a commit, then realize that you forgot to include some changes in that commit; or you aren't happy with the commit message; or both. You can edit your latest commit with the {{<c>}}--amend{{</c>}} flag:
 
 #+BEGIN_src sh
 git commit --amend
@@ -19,10 +19,50 @@ So if you only want to change the commit message, run that command with an empty
 In short, what this does is to replace your last commit with a new commit with the added changes and/or edited message. This prevents having a messy history with commits of the type "add missing file to last commit" or "better message for last commit: bla bla bla". If you made a typo in your last commit message (and if you care about having a nice, clean history), you can fix it easily this way.
 
 {{<exercise>}}
-- Run {{<c>}}git log --oneline{{</c>}} (notice the hash of the last commit)<br><br>
-- Edit your last commit message <br><br>
+- Run {{<c>}}git log --oneline{{</c>}} (notice the hash of the last commit)<br>
+- Edit your last commit message <br>
 - Run {{<c>}}git log --oneline{{</c>}} again to see that your last commit now has a new hash (so it is a different commit) and a new message <br><br>
-- Now, make some change in your project (add a file, edit a file, whatever you want)<br><br>
+- Now, make some change in your project (add a file, or edit a file... any change you want)<br>
 - Then add that new change to your last commit without changing the message
 {{</exercise>}}
+
+* Unstaging
+
+You know how to add changes to the staging area. But what if you want to unstage changes? You don't want to loose those changes. But you staged them and then realized that you don't want to include them in your next commit after all.
+
+Here is the command for this:
+
+#+BEGIN_example
+git restore --staged <file>
+#+END_example
+
+/Note that Git will remind you about the existence of this command when you run {{<c>}}git status{{</c>}} and have staged files ready to be committed./
+
+{{<exercise>}}
+- Make changes to one of your existing files <br>
+- Stage that file <br>
+- Run {{<c>}}git status{{</c>}} and notice Git's reminder about this command <br>
+- Unstage the changes on that file
+{{</exercise>}}
+
+* Erasing modifications
+
+Now, what if you made changes to a file, then decide that they were no good? You can easily get rid of these edits and restore the file to its last committed version:
+
+#+BEGIN_example
+git restore <file>
+#+END_example
+
+/Note that Git will tell you about this command when you run {{<c>}}git status{{</c>}} and have unstaged changes in tracked files./
+
+{{<exercise>}}
+- Run {{<c>}}git status{{</c>}} again and notice Git's reminder about the existence of this command <br>
+- Erase that last change of yours <br>
+- Open your file and notice that your edits are gone
+{{</exercise>}}
+
+#+BEGIN_sticker
+*Warning*: as you just experienced, this command leads to data loss. Those last edits are gone and unrecoverable. Be very careful when using this!
+#+END_sticker
+
 * Comments & questions
