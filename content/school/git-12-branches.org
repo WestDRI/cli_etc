@@ -41,7 +41,7 @@ Create a new branch called {{<b>}}test{{</b>}}.
 This creates a new pointer to the commit you are on (so now, there are 2 pointers to that commit). But {{<b>}}HEAD{{</b>}} is still pointing to {{<b>}}master{{</b>}}, so you are still on the same {{<b>}}master{{</b>}} branch you've been on all along.
 
 {{<exercise>}}
-Run {{<c>}}git log --online{{</c>}} to see that you are still on the branch {{<b>}}master{{</b>}}, but that there is now a second branch called {{<b>}}test{{</b>}}.
+Run {{<c>}}git log --oneline{{</c>}} to see that you are still on the branch {{<b>}}master{{</b>}}, but that there is now a second branch called {{<b>}}test{{</b>}}.
 {{</exercise>}}
 
 * How to switch branch?
