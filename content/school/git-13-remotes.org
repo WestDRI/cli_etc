@@ -129,8 +129,9 @@ After you have run this once, when you have checked out the branch {{<b>}}&lt;br
 - Try {{<c>}}git push{{</c>}} again
 {{</exercise>}}
 
-
 ** Fetching
+
+Now, if your collaborators also work on the project and push to it, you want to get their changes to your local repository:
 
 #+BEGIN_example
 git fetch <remote-name>
@@ -141,6 +142,8 @@ git fetch <remote-name>
 #+BEGIN_src sh
 git fetch origin
 #+END_src
+
+This downloads the updates to your local repository, but it does not merge it with your work. You have to do this with {{<c>}}git merge{{</c>}} as we saw in [[https://westgrid-cli.netlify.app/school/git-12-branches.html#headline-7][the branch lesson]].
 
 ** Pulling
 
