@@ -41,7 +41,7 @@ git log \
     --date-order \
     --date=short \
     --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
-                   `'%C(yellow)%s%+b %C(black)%ae'
+                   `'%C(yellow)%s%+b %C(magenta)%ae'
 #+END_src
 
 ** As a graph
