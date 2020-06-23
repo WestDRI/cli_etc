@@ -147,5 +147,6 @@ This downloads the updates to your local repository, but it does not merge it wi
 
 ** Pulling
 
+{{<c>}}git pull{{</c>}} fetches and merges in one command.
 
 * Comments & questions
