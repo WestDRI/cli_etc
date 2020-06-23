@@ -8,7 +8,7 @@
 
 [[https://en.wikipedia.org/wiki/Man_page][Man (manual) pages]] hold the documentation on [[https://en.wikipedia.org/wiki/Unix-like][*nix systems]].
 
-You can access the *man page for a git command* with either of:
+You can access the /man page/ for a git command with either of:
 
 #+BEGIN_EXAMPLE
 git <command> --help
@@ -22,7 +22,7 @@ git help <command>
 man git-<command>
 #+END_EXAMPLE
 
-Example:
+/Example:/
 
 #+BEGIN_src sh
 git commit --help
@@ -42,13 +42,13 @@ So you navigate them with the usual {{<c>}}less{{</c>}} bindings (e.g. {{<b>}}Sp
 
 * Command options
 
-To get a *list of the options for a command*, type:
+To get a list of the /options/ for a command, run:
 
 #+BEGIN_EXAMPLE
 git <command> -h
 #+END_EXAMPLE
 
-Example:
+/Example:/
 
 #+BEGIN_SRC sh
 git commit -h
