@@ -95,4 +95,53 @@ This is done by ckecking out {{<b>}}master{{</b>}}:
 git checkout master
 #+END_src
 
+* Showing changes between versions
+
+{{<c>}}git diff{{</c>}} shows changes between any two elements (between commits, between a commit and your working tree, between branches, etc.).
+
+/Examples:/
+
+Difference between the working tree and the index (i.e. all your unstaged changes on tracked files):
+
+#+BEGIN_src sh
+git diff
+#+END_src
+
+Difference between the index and your last commit (i.e. your staged changes). Note that this is what you would be committing if you ran {{<c>}}git commit{{</c>}}:
+
+#+BEGIN_src sh
+git diff --cached
+#+END_src
+
+Difference between the working tree and your last commit (so both of the above):
+
+#+BEGIN_src sh
+git diff HEAD
+#+END_src
+
+Difference between the last commit and the commit before that:
+
+#+BEGIN_src sh
+git diff HEAD~ HEAD
+#+END_src
+
+Difference between 2 commits of hash {{<b>}}&lt;hash1&gt;{{</b>}} and {{<b>}}&lt;hash2&gt;{{</b>}}:
+
+#+BEGIN_example
+git diff <hash2> <hash1>
+#+END_example
+
+Difference between the tips of 2 branches (both commands are equivalent):
+
+#+BEGIN_example
+git diff <branch2> <branch1>
+git diff <branch2>..<branch1>
+#+END_example
+
+Difference between the tip of {{<b>}}&lt;branch1&gt;{{</b>}} and the state of {{<b>}}&lt;branch1&gt;{{</b>}} when {{<b>}}&lt;branch2&gt;{{</b>}} was started from it:
+
+#+BEGIN_example
+git diff <branch2>...<branch1>
+#+END_example
+
 * Comments & questions
