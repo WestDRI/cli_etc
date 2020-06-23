@@ -16,7 +16,7 @@ Note that *no recording* will be made during this session so as not to discourag
 
 * Inviting collaborators to a GitHub repo
 
-Go to the {{<b>}}Settings{{</b>}} tab, then the {{<b>}}Manage access{{</b>}} section on the left-hand side. Finally click {{<b>}}Invite a collaborator{{</b>}}.
+In your GitHub project webpage, go to the {{<b>}}Settings{{</b>}} tab, then the {{<b>}}Manage access{{</b>}} section on the left-hand side. Finally click {{<b>}}Invite a collaborator{{</b>}}.
 
 * Cloning a repo from GitHub
 
