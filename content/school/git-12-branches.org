@@ -68,7 +68,7 @@ git checkout -b <name-new-branch>
 
 This command is convenient: when you create a branch with {{<b>}}git branch &lt;branch-name&gt;{{</b>}}, it is easy to forget to switch to the new branch before making commits!
 
-* How to merge branches back together?
+* How to merge branches?
 
 One thing that makes Git branches powerful is—as we just saw—how easy it is to create new branches and to switch from one branch to another. Another thing is how easy it is to /merge/ branches together.
 
