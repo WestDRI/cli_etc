@@ -3,25 +3,27 @@
 #+date: 2020-11-01
 #+place: 45 min live webinar
 
-{{<img src="/img/workinprogress.svg" title="Patience... patience..." width="200">}}
-{{</img>}}
+Coming in fall 2020.
 
-**** /Abstract/
+# {{<img src="/img/workinprogress.svg" title="Patience... patience..." width="200">}}
+# {{</img>}}
 
-#+BEGIN_definition
- how to ask a question on Stack Overflow, how to create a reproducible example, how to get help online, where to find resources
-#+END_definition
+# **** /Abstract/
 
-* Slides
+# #+BEGIN_definition
+#  how to ask a question on Stack Overflow, how to create a reproducible example, how to get help online, where to find resources
+# #+END_definition
 
-Click to open the slides in a new tab:
+# * Slides
 
-#+BEGIN_export html
-<a href="https://westgrid-webinars.netlify.app/getting_help/" target="_blank"><p align="center"><img src="/img/getting_help_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
-#+END_export
+# Click to open the slides in a new tab:
 
-* Video
+# #+BEGIN_export html
+# <a href="https://westgrid-webinars.netlify.app/getting_help/" target="_blank"><p align="center"><img src="/img/getting_help_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
+# #+END_export
 
-Coming in Fall 2020.
+# * Video
+
+# Coming in Fall 2020.
 
 * Comments & questions
