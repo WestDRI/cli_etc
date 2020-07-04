@@ -96,7 +96,7 @@ canonifyurls = true
   # name = "📓"
   name = "School"
   weight = 3
-  url  = "https://wgschool.netlify.app/"
+  url  = "https://wgschool.netlify.app/git/"
 [[menu.main]]
   # name = "🏠"
   name = "📚"
