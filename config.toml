@@ -91,11 +91,11 @@ canonifyurls = true
 [[menu.main]]
   name = "Workshops"
   weight = 1
-  url  = "/workshops/"
+  url  = "workshops/"
 [[menu.main]]
   name = "Webinars"
   weight = 2
-  url  = "/webinars/"
+  url  = "webinars/"
 [[menu.main]]
   # name = "📓"
   name = "School"
