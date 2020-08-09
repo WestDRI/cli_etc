@@ -1,0 +1,8 @@
+#+title: Version control with Git: 2-day course
+#+slug: git
+
+#+OPTIONS: toc:nil
+
+The [[https://wgschool.netlify.app/][2020 WestGrid Summer School]] (moved online due to Covid-19) had a 2-day course on version control with Git with videos, reading material, exercises, and links to other resources.
+
+Click [[https://wgschool.netlify.app/git/][here]] to open this course in a new tab.

@@ -84,12 +84,10 @@ canonifyurls = true
   weight = 2
   url  = "webinars/"
 [[menu.main]]
-  # name = "📓"
-  name = "School"
+  name = "Courses"
   weight = 3
-  url  = "https://wgschool.netlify.app/git/"
+  url  = "courses/"
 [[menu.main]]
-  # name = "🏠"
   name = "📚"
   weight = 4
   url  = "https://westgrid.github.io/trainingMaterials/"
