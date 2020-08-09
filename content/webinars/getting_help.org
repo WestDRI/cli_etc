@@ -1,4 +1,4 @@
-#+title: Tips and tricks to get help in any programming language
+#+title: Tips and tricks on getting programming help
 #+slug: getting_help
 #+date: 2020-10-14
 #+place: 45 min live webinar
