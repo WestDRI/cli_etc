@@ -1,6 +1,6 @@
 #+title: GIS in R
 #+slug: gis_r
-#+date: 2020-11-01
+#+date: 2020-12-09
 #+place: 45 min live webinar
 
 Coming in fall 2020.
