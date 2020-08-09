@@ -32,6 +32,8 @@ canonifyurls = true
 
 [params]
   # author = "Training Material on"
+  # description = ""
+  # keywords = ""
   # info = "Helping researchers with high-performance computing tools"
   repourl = "https://github.com/WestGrid/cli_etc"
   wgavatar = "/img/wg_top_padding_medium.png"
