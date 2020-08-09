@@ -1,4 +1,5 @@
 #+title: Version control with Git: 2-day course
+#+date: 2020-06-22
 #+slug: git
 
 #+OPTIONS: toc:nil
