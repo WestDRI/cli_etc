@@ -1,4 +1,4 @@
-#+title: GIS in R
+#+title: GIS with R
 #+slug: gis_r
 #+date: 2020-12-09
 #+place: 45 min live webinar
