@@ -93,6 +93,10 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
 
 /* body.rise-enabled div.inner_cell>div.text_cell_render.rendered_html { */
 
+.rise-enabled .reveal pre {
+  font-family: 'Source Code Pro', monospace;
+}
+
 .reveal code {
   font-family: 'Source Code Pro', monospace;
   /* text-transform: none; */
@@ -106,7 +110,7 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
 
 /* only the input area of the jupyter cell */
 div.input_area {
-  font-size: 3vmin;
+  font-size: 2.7vmin;
   /* background-color: #d3d5de; */
   background-color: #e2e3e9;
   padding: 0 1vmin;
@@ -339,51 +343,36 @@ img[alt=logo] {
 /* progress bar
 /* ************************************************************************ */
 
-#rectangle {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: #3a3a2c;
-}
-
-#navinfo {
-  position: absolute;
-  bottom: 3%;
-  right: 1%;
-  font-style: italic;
-}
-
-.reveal .progress {
+.rise-enabled .reveal .progress {
   position: absolute;
   display: none;
-  height: 5px;
+  height: 0.7vmin;
   width: 100%;
   bottom: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba( 0, 0, 0, 0.2 );
-  color: #fff;
+  background-color: #3a3a2c;
 }
 
-.reveal .progress span {
+.rise-enabled .reveal .progress span {
+  position: absolute;
   display: block;
-  height: 100%;
+  height: 0.4vmin;
   width: 0px;
-  background-color: #ff9900;
+  background-color: #ff7903;
   /* background-color: #00ffff; */
   /* background-color: #66ccff; */
   transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 }
 
-/* navigation control */
+/* ************************************************************************ */
+/* scroll bar
+/* ************************************************************************ */
 
-/* .reveal .controls { */
-/*   color: #d6d6f5; */
-/*   /\* color: #e68a00; *\/ */
-/*   /\* color: #ffc266; *\/ */
-/* } */
+/* make scroll bar invisible (same color as slide background color) */
+.rise-enabled ::-webkit-scrollbar-thumb {
+  background: #f8f8fd !important;
+}
 
 /* ************************************************************************ */
 /* slide number
