@@ -28,7 +28,10 @@ div.inner_cell>div.text_cell_render.rendered_html>pre {
   margin: 0px;
 }
 div.inner_cell>div.text_cell_render.rendered_html>pre>code {
-  font-size: 3.5vmin;
+  font-size: 2.5vmin;
+  background-color: #e2e3e9;
+  padding: 1vmin 2vmin;
+  line-height: 5vmin;
 }
 
 /* header */
@@ -74,6 +77,17 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
 .reveal h6 {
   font-size: 4vmin;
   color: #556464;
+}
+
+.rise-enabled .header {
+  position: fixed;
+  top: 3%;
+  right: 0;
+  font-size: 3vmin;
+  color: #22232a;
+  text-align: right;
+  font-weight: bold;
+  /* margin: 0 0 25vmin 0; */
 }
 
 /* paragraph */
@@ -147,7 +161,9 @@ div.input_area {
   max-height: 100%;
 }
 
-/* emphasis */
+/* ************************************************************************ */
+/* emphasis
+/* ************************************************************************ */
 
 .reveal strong,
 .reveal b {
@@ -158,7 +174,9 @@ div.input_area {
   font-style: italic;
 }
 
-/* list */
+/* ************************************************************************ */
+/* list
+/* ************************************************************************ */
 
 .reveal ol,
 .reveal dl,
@@ -290,6 +308,10 @@ div.input_area {
   border: none;
 }
 
+/* ************************************************************************ */
+/* toc
+/* ************************************************************************ */
+
 .reveal .toc {
   padding-left: 40vmin;
 }
@@ -371,7 +393,7 @@ img[alt=logo] {
 
 /* make scroll bar invisible (same color as slide background color) */
 .rise-enabled ::-webkit-scrollbar-thumb {
-  background: #f8f8fd !important;
+  background: transparent !important;
 }
 
 /* ************************************************************************ */
