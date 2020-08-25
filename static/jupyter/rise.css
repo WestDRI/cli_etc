@@ -29,7 +29,7 @@ div.inner_cell>div.text_cell_render.rendered_html>pre {
 }
 div.inner_cell>div.text_cell_render.rendered_html>pre>code {
   font-size: 2.5vmin;
-  background-color: #e2e3e9;
+  background-color: #f0f1f4;
   padding: 1vmin 2vmin;
   line-height: 5vmin;
 }
@@ -45,14 +45,24 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
   margin: 0 0 3vmin 0;
   font-family: 'Crimson Text', serif;
   font-weight: bold;
-  line-height: 4vmin;
   /* letter-spacing: normal; */
   /* text-transform: none; */
   /* text-shadow: none; */
   word-wrap: break-word;
 }
 .reveal h1 {
-  line-height: 5vmin;
+  line-height: 15vmin;
+}
+.reveal h2 {
+  line-height: 10vmin;
+}
+.reveal h3 {
+  line-height: 9vmin;
+}
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  line-height: 7vmin;
 }
 .reveal h1 {
   font-size: 10vmin;
@@ -60,7 +70,8 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
 }
 .reveal h2 {
   font-size: 8vmin;
-  color: #383D3D;
+  /* color: #383D3D; */
+  color: #3d4242;
 }
 .reveal h3 {
   font-size: 7vmin;
@@ -83,7 +94,7 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
   position: fixed;
   top: 3%;
   right: 0;
-  font-size: 3vmin;
+  font-size: 2.9vmin;
   color: #22232a;
   text-align: right;
   font-weight: bold;
@@ -93,7 +104,7 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
 /* paragraph */
 .reveal p {
   margin: 3vmin 0;
-  line-height: 1.3;
+  line-height: 4.5vmin;
   text-align: left;
 }
 
@@ -286,7 +297,7 @@ div.input_area {
 /* link
 /* ************************************************************************ */
 
-.reveal a {
+.rise-enabled .reveal a {
   line-height: 1.3rem;
   color: #547cc6;
   text-decoration: none;
@@ -294,15 +305,15 @@ div.input_area {
   -moz-transition: color .15s ease;
   transition: color .15s ease;
 }
-.reveal a:hover {
+.rise-enabled .reveal a:hover {
   color: lighten( #547cc6, 15% );
   text-shadow: none;
   border: none;
 }
-.reveal a:visited {
+.rise-enabled .reveal a:visited {
   color: #4a40bf;
 }
-.reveal a:visited:hover {
+.rise-enabled .reveal a:visited:hover {
   color: lighten( #4a40bf, 15% );
   text-shadow: none;
   border: none;
