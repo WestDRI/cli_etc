@@ -97,16 +97,16 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
   top: 3%;
   right: 0;
   font-size: 2.9vmin;
-  color: #22232a;
+  color: #4c4d67;
   text-align: right;
   font-weight: bold;
-  /* margin: 0 0 25vmin 0; */
+  margin: 0 0 7vmin 0;
 }
 
 /* paragraph */
 .reveal p {
   margin: 3vmin 0;
-  line-height: 4.5vmin;
+  line-height: 5vmin;
   text-align: left;
 }
 
