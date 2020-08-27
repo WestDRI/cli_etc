@@ -21,7 +21,7 @@ While writing your {{<b>}}.gitignore{{</b>}} file, you can add files to be exclu
 - Trailing spaces are ignored unless they are escaped with {{<c>}}\{{</c>}} {{<2br>}}
 
 - {{<c>}}!{{</c>}} negates patterns (matching files excluded by previous patterns become included again)
-{{<m>}}{{<m>}} *However* it is not possible to re-include a file if one of its parent directory is excluded (Git doesn’t list {{<m>}}{{<m>}} excluded directories for performance reasons).
+{{<m>}}{{<m>}} *However* it is not possible to re-include a file if one of its parent directories is excluded (Git doesn’t list {{<m>}}{{<m>}} excluded directories for performance reasons).
 
 {{<m>}}{{<m>}} One way to go around that is to force the inclusion of a file which is in an ignored directory with the {{<m>}}{{<m>}} option {{<c>}}-f{{</c>}}.
 
