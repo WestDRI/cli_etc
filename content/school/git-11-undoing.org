@@ -62,7 +62,8 @@ git restore <file>
 {{</exercise>}}
 
 #+BEGIN_sticker
-*Warning*: as you just experienced, this command leads to data loss. Those last edits are gone and unrecoverable. Be very careful when using this!
+*Warning*: as you just experienced, this command leads to data loss.<br>
+Those last edits are gone and unrecoverable. Be very careful when using this!
 #+END_sticker
 
 * Comments & questions
