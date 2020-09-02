@@ -80,15 +80,16 @@ div.inner_cell>div.text_cell_render.rendered_html>pre>code {
   color: #435069;
 }
 .reveal h4 {
-  font-size: 6vmin;
-  color: #4c4d67;
+  font-size: 5vmin;
+  /* color: #4c4d67; */
+  color: #6c6e93;
 }
 .reveal h5 {
-  font-size: 5vmin;
+  font-size: 4vmin;
   color: #644f67;
 }
 .reveal h6 {
-  font-size: 4vmin;
+  font-size: 3vmin;
   color: #556464;
 }
 
