@@ -19,8 +19,6 @@
 {{<n>}}{{<n>}}A free [[https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=d6a7eb9925781c7356331ce3eda5d0378c110295-1599623906-0-AQ1HOeAIWNL8AJ7U_v0kt3QlRK4uYA_zmS1__jAw6nO53JW6_1wp4YDAo_tVUuutDu-vl-x-lgIzHlVeSmXOQs8GcsWLBDtOe93ymvUxLHjrbXPTFOJhq5l_kAtGm3boRBhXOD3PriN6hPuTUjbx5CpI9uHsj2XMqNhJKV5TA9n5nUSIML9-c603Ch7ysTm_xHSKghlZqDcVDqMzTCWiowIHWm6r3PLwtAtRMGMMmtZFAWfELJOH0EcMtugU3GVJU_ByWuCmKv0m7GZG4X2k5cGgZ_pBFjWuKrpIfUw76RgNEBXm77UjYpfWzYloWdil1CO8fqSzQ8a7FH1hVq9oDjbJcgFkaoyq9pwj9Vv1geic#register-pane][GitLab account]].
 #+END_box
 
-**** Pdf of the workshop
-
-[[/jupyter/git.pdf][Version control with Git]]
+**** [[/jupyter/git.pdf][Pdf of the workshop]]
 
 * Comments & questions
