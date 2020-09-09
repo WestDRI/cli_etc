@@ -1,6 +1,8 @@
 #+title: Version control with Git
 #+slug: git
 
+#+OPTIONS: toc:nil
+
 **** /Abstract/
 
 #+BEGIN_definition
