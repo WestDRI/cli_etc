@@ -19,6 +19,20 @@
 
 **** Workshop material
 
+This workshop is run by doing live coding within a [[https://github.com/damianavila/RISE][RISE]] presentation from a [[https://jupyter.org/][Jupyter notebook]].
+
+With this format, making the material available outside of the actual workshop is not easy. Below are various formats, each with their pros and cons.
+
+***** Binder
+
+The presentation can be accessed and interacted with through binder:
+
+#+BEGIN_export html
+<a href="https://mybinder.org/v2/gh/WestGrid/jupyter.git/master?filepath=git.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg"/></a>
+#+END_export
+
+This preserves the full functionality of the RISE presentation, but it takes some time to load. As binder is quite slow, it may be best to stick to watching the presentation (by pressing the Space bar) rather than trying to run the code.
+
 ***** Pdf
 
 The presentation is also available as [[/jupyter/git.pdf][a pdf]]. While this preserves the formatting, the hyperlinks are not active on this pdf and the code is not easy to copy if you want to copy/paste.
