@@ -25,7 +25,7 @@ With this format, making the material available outside of the actual workshop i
 
 ***** Binder
 
-The presentation can be accessed and interacted with through binder:
+The presentation can be accessed and interacted with through Binder:
 
 #+BEGIN_export html
 <a href="https://mybinder.org/v2/gh/WestGrid/jupyter.git/master?filepath=git.ipynb" target="_blank"><img src="https://mybinder.org/badge_logo.svg"/></a>
