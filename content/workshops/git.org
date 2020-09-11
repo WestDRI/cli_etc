@@ -4,7 +4,7 @@
 **** /Abstract/
 
 #+BEGIN_definition
-This day-long workshop introduces version control with Git and covers the most common operations. It puts a particular emphasis on explaining the functioning of Git: understanding what commands really do brings the confidence to go beyond the limited use of "add, commit, push" that so many limit themselves to in the field of data science.
+This day-long workshop introduces version control with Git and covers the most common operations. It puts a particular emphasis on explaining the functioning of Git: understanding what commands really do brings the confidence to go beyond the limited use of "add, commit, push" so common in data science fields.
 #+END_definition
 
 **** /Workshop requirements/
