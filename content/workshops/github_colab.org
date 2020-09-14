@@ -13,7 +13,7 @@ Git is a version control tool: it allows to keep a record of files history. Not 
 In this workshop, we will go over the full workflow of creating a project, hosting it on GitHub, and collaborating on it.
 #+END_definition
 
-**** /Workshop requirements/
+**** /Software requirements/
 
 #+BEGIN_box
 *1 - Git* \\
