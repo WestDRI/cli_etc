@@ -16,10 +16,16 @@ In this workshop, we will go over the full workflow of creating a project, hosti
 **** /Software requirements/
 
 #+BEGIN_box
-*1 - Git* \\
+*1 - Properly configured Git*
+
 {{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
 
 *2 - GitHub account* \\
+{{<n>}}{{<n>}}These minimum configurations should be set properly: \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- the end of line formatting matching your operating system
 {{<n>}}{{<n>}}A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
 #+END_box
 
