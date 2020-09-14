@@ -33,6 +33,14 @@ In this workshop, we will go over the full workflow of creating a project, hosti
 {{<n>}}{{<n>}}(Optional) If you don't want to type your password all the time, [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]].
 #+END_box
 
+**** /Prerequisites/
+
+#+BEGIN_simplebox
+*Basic knowledge of Git*: \\
+{{<n>}}{{<n>}}familiarity with the concept of staging area, \\
+{{<n>}}{{<n>}}experience (even if limited) with staging and committing.
+#+END_simplebox
+
 * Before we start: setting up a GitHub account
 
 If you haven't done so yet, create a free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
@@ -40,7 +48,6 @@ If you haven't done so yet, create a free [[https://github.com/join?plan=free&so
 Each time you will push to a repo on GitHub (we will see what "pushing" means later today), you will be asked to enter your GitHub user name and password. This quickly gets tiring.
 
 An easy way to avoid having to do this all the time is to set up SSH for your account. [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][Here]] is the GitHub help file to do so. Try to follow these instructions and I will help you if you have issues. If you cannot set this up today, this is not a big deal for the workshop: you will simply have to enter your password a number of times. But ultimately, you will probably want to set this up.
-
 {{<2br>}}
 
 -----
