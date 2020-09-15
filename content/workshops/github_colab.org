@@ -18,7 +18,7 @@ In this workshop, you will clone a project hosted on GitHub and we will practice
 
 {{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
 
-{{<n>}}{{<n>}}These minimum configurations should be set properly: \\
+{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/school/git-03-install/#headline-3][should be set properly]]: \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
