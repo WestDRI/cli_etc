@@ -8,7 +8,7 @@
 
 /This *debugging session* is not part of the actual lesson./
 
-/Only join if you have carefully followed the lesson on [[https://westgrid-cli.netlify.com/school/git-03-install.html][Installing Git and creating a GitHub account]], but are having technical difficulties./
+/Only join if you have carefully followed the lesson on [[https://westgrid-cli.netlify.com/summerschool2020/git-03-install.html][Installing Git and creating a GitHub account]], but are having technical difficulties./
 
 #+BEGIN_debugbox
 *This interactive session will be conducted through Zoom.*

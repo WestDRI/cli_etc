@@ -39,7 +39,7 @@ from <a href="https://xkcd.com/">xkcd.com</a>
 
 * Branches
 
-[[https://westgrid-cli.netlify.app/school/git-12-branches.html][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch; or to have several developments happening in parallel.
+[[https://westgrid-cli.netlify.app/summerschool2020/git-12-branches.html][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch; or to have several developments happening in parallel.
 
 Merging such explorations into the main branch or discarding them are equally easy.
 

@@ -6,7 +6,7 @@
 
 Remotes are instances of a repository on a network, on the web, on external drives... Departmental servers, USB keys, and version control repository hosting services like [[https://github.com/][GitHub]], [[https://about.gitlab.com/][GitLab]], or [[https://bitbucket.org/][Bitbucket]] can all serve as remotes.
 
-In this course, we will use [[https://github.com/][GitHub]] as the host for our remotes. If you haven't yet done so, [[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-4][create a free GitHub account]].
+In this course, we will use [[https://github.com/][GitHub]] as the host for our remotes. If you haven't yet done so, [[https://westgrid-cli.netlify.app/summerschool2020/git-03-install.html#headline-4][create a free GitHub account]].
 
 * Creating a project on GitHub
 
@@ -50,7 +50,7 @@ git remote add <remote-name> <remote-address>
 
 {{<b>}}&lt;remote-name&gt;{{</b>}} is the name you give to your remote. Usually, the name {{<b>}}origin{{</b>}} is used.
 
-{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://westgrid-cli.netlify.app/school/git-03-install.html#headline-5][if you have set SSH for your GitHub account]]—the SSH form.
+{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://westgrid-cli.netlify.app/summerschool2020/git-03-install.html#headline-5][if you have set SSH for your GitHub account]]—the SSH form.
 
 /Example (using an SSH address):/
 
@@ -143,7 +143,7 @@ git fetch <remote-name>
 git fetch origin
 #+END_src
 
-This downloads the updates to your local repository, but it does not merge it with your work. You have to do this with {{<c>}}git merge{{</c>}} as we saw in [[https://westgrid-cli.netlify.app/school/git-12-branches.html#headline-7][the branch lesson]].
+This downloads the updates to your local repository, but it does not merge it with your work. You have to do this with {{<c>}}git merge{{</c>}} as we saw in [[https://westgrid-cli.netlify.app/summerschool2020/git-12-branches.html#headline-7][the branch lesson]].
 
 ** Pulling
 
