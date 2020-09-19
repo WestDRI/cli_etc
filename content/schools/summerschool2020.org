@@ -1,0 +1,4 @@
+#+title: Online summer school 2020
+#+schooltitle: Introduction to version control with Git
+#+schoollink: https://wgschool.netlify.app/git/
+#+weight: 10
