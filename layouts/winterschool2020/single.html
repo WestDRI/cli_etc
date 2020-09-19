@@ -1,0 +1,96 @@
+{{ define "title" }}
+{{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+
+<section class="container post">
+  <article>
+
+    <br>
+    <center>
+      {{ with .Site.Params.winterschool2020url }}
+      <a href="{{ . }}">
+	<i class="fas fa-level-up-alt fa-2x" style="color: #336699"></i>
+      </a>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-left fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &emsp;&nbsp;
+      {{ end }}
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-right fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &emsp;&nbsp;
+      {{ end }}
+    </center>
+
+    <header>
+      <h1 style="font-size: 3.0rem">
+	<strong>
+	  <font color="{{ .Params.colordes }}" style="font-family: Merriweather, Georgia, serif">
+	    {{ .Description }}
+	  </font>
+	</strong>
+	<span style="padding-left: 2.0rem">
+	  {{ .Title }}
+	</span>
+      </h1>
+      {{ with .Page.Params.Subtitle }}
+      <subtitle>{{ . }}</subtitle>
+      {{ end }}
+      <div class="updated">
+	Last updated: {{ now.Format "January 2, 2006" }}
+      </div>
+      <div class="panelnotoggle">
+	{{ .TableOfContents }}
+      </div>
+    </header>
+    <div>
+      {{ .Content }}
+    </div>
+    <footer>
+      {{ partial "posts/series.html" . }}
+      {{ partial "posts/disqus.html" . }}
+      {{ partial "posts/commento.html" . }}
+      {{ partial "posts/utteranc.html" . }}
+    </footer>
+
+    <br>
+    <center>
+      {{ with .Site.Params.winterschool2020url }}
+      <a href="{{ . }}">
+	<i class="fas fa-level-up-alt fa-2x" style="color: #336699"></i>
+      </a>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-left fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &emsp;&nbsp;
+      {{ end }}
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}">
+	<i class="fas fa-chevron-right fa-2x" style="color: #336699"></i>
+      </a>
+      {{ else }}
+      &emsp;&nbsp;
+      {{ end }}
+      <br>
+    </center>
+
+  </article>
+
+  {{ partial "posts/math.html" . }}
+</section>
+
+{{ end }}
