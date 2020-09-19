@@ -125,9 +125,31 @@ img[alt=radius] {
 	  text-align: left;
 	}
       }
+      .schoolname {
+	font-size: 1.7rem;
+	display: inline-block;
+	width: 30.0rem;
+	text-align: right;
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  text-align: right;
+	}
+      }
       .wstitle {
 	font-size: 1.9rem;
 	margin-left: 11.0rem;
+	line-height: 3.5rem;
+	color: $fg-color;
+	font-family: $heading-font-family;
+	font-weight: 700;
+	&:hover,
+	&:focus {
+	  color: $link-color
+	}
+      }
+      .schooltitle {
+	font-size: 1.9rem;
+	margin-left: 3.0rem;
 	line-height: 3.5rem;
 	color: $fg-color;
 	font-family: $heading-font-family;
