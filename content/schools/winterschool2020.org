@@ -1,4 +1,0 @@
-#+title: Online winter school 2020
-#+schooltitle: 
-#+schoollink: xxxx
-#+weight: 9
