@@ -13,6 +13,7 @@
 	{{ end }}
       </div>
       <div class="post-meta">
+	<br>
 	<i class="fas fa-calendar"></i>
         {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
         {{ with .Page.Params.Place }}
