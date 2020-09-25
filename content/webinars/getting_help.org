@@ -2,7 +2,7 @@
 #+topic: Help
 #+slug: getting_help
 #+date: 2020-10-14
-#+place: 45 min live webinar
+#+place: 60 min live webinar
 
 Coming in fall 2020.
 

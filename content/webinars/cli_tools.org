@@ -2,7 +2,7 @@
 #+topic: Shell
 #+slug: cli_tools
 #+date: 2020-02-19
-#+place: 45 min live webinar
+#+place: 60 min live webinar
 
 **** /Abstract/
 
