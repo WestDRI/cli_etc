@@ -115,7 +115,8 @@ img[alt=radius] {
 	margin: 1.6rem 0 1.6rem 0;
       }
       .date {
-	font-size: 1.7rem;
+	font-family: $heading-font-family;
+	font-size: 1.6rem;
 	display: inline-block;
 	width: 20.0rem;
 	text-align: right;
@@ -133,6 +134,36 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  display: block;
 	  text-align: right;
+	}
+      }
+      .wstopic {
+	font-family: $heading-font-family;
+	font-size: 1.6rem;
+	color: #669999;
+	font-weight: 700;
+	display: inline-block;
+	margin-left: 3.0rem;
+	margin-right: 5.0rem;
+	width: 0rem;
+	text-align: right;
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  text-align: right;
+	}
+      }
+      .wbtopic {
+	font-family: $heading-font-family;
+	font-size: 1.6rem;
+	color: #669999;
+	font-weight: 700;
+	display: inline-block;
+	margin-left: 3.0rem;
+	// margin-right: 0rem;
+	width: 0rem;
+	// text-align: right;
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  // text-align: right;
 	}
       }
       .wstitle {
