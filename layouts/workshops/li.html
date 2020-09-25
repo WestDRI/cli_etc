@@ -1,3 +1,4 @@
 <li>
-  <a class="wstitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+  <span class="wstopic">{{ .Params.topic }}</span>
+  <a class="schooltitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
 </li>
