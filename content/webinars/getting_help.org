@@ -1,4 +1,5 @@
-#+title: Tips and tricks on getting programming help
+#+title: You need help with your code? No problem: ask online!
+#+subtitle: … (but make sure you know how to ask)
 #+topic: Help
 #+slug: getting_help
 #+date: 2020-10-14
