@@ -16,14 +16,14 @@ In this workshop, I will present key online sites, their functioning, and their 
 
 
 
-# #+BEGIN_export html
-# <a href="https://westgrid-webinars.netlify.app/getting_help/" target="_blank"><p align="center"><img src="/img/getting_help_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
-# #+END_export
 
 * Slides
 
 Click to open the presentation:
 
+#+BEGIN_export html
+<a href="https://westgrid-slides.netlify.app/help/#/"><p align="center"><img src="/img/help/help_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+#+END_export
 
 * Video
 
