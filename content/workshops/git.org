@@ -1,4 +1,5 @@
 #+title: Version control with Git
+#+topic: Git
 #+slug: git
 
 **** /Abstract/
