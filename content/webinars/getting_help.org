@@ -1,5 +1,5 @@
 #+title: Need help with your code? Ask online!
-#+subtitle: … (but make sure you know how to ask)
+#+subtitle: … but make sure you know how to ask
 #+topic: Help
 #+slug: getting_help
 #+date: 2020-10-14
