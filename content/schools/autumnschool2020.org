@@ -1,4 +1,4 @@
 #+title: Online autumn school 2020
-#+schooltitle: Introduction to version control with Git
+#+schooltitle: Version control with Git
 #+schoollink: https://autumnschool.netlify.app/git/
 #+weight: 9
