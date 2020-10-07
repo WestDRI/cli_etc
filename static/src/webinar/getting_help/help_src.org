@@ -1,0 +1,31 @@
+* error messages
+
+#+BEGIN_src R
+"a" + "b"
+
+mtcars %>% filter(cyl == 4)
+
+a
+
+library(ggpubr)
+
+as.numeric(c(1, "a"))
+#+END_src
+
+#+BEGIN_src julia
+"a" + "b"
+
+a
+
+float("a")
+#+END_src
+
+#+BEGIN_src python
+
+
+a
+#+END_src
+
+#+BEGIN_src sh
+
+#+END_src
