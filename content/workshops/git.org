@@ -36,12 +36,12 @@ This preserves the full functionality of the RISE presentation, but it takes som
 
 ***** Pdf
 
-The presentation is also available as [[/src/workshop/git_jupyter-rise/git.pdf][a pdf]]. While this preserves the formatting, the hyperlinks are not active on this pdf and the code is not easy to copy if you want to copy/paste.
+The presentation is also available as [[/other/git_jupyter-rise/git.pdf][a pdf]]. While this preserves the formatting, the hyperlinks are not active on this pdf and the code is not easy to copy if you want to copy/paste.
 
 ***** Html
 
 #+BEGIN_export html
-Finally, it is available as <a href="/src/workshop/git_jupyter-rise/git.html" target="_blank">a simple html</a>. This format is fast (unlike Binder), has code easy to copy and working hyperlinks (unlike the pdf), but it does not have the reveal.js fancy formatting of the other options.
+Finally, it is available as <a href="/other/git_jupyter-rise/git.html" target="_blank">a simple html</a>. This format is fast (unlike Binder), has code easy to copy and working hyperlinks (unlike the pdf), but it does not have the reveal.js fancy formatting of the other options.
 #+END_export
 
 * Comments & questions
