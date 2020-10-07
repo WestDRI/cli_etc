@@ -1,13 +1,7 @@
 public/
 resources/
-!*.png
-!workinprogress.svg
 archetypes/default.md
-static/img/cc_regional_partner_brown_large.png
-static/src/workshop/github_contrib/bogusrepo
-static/tcldoc/git_interactive_sessions.org
-static/video/git_basic_thumb.png
-static/video/git_fzf_thumb.png
-static/tgit/
-content/school/gitignore_table.org
-static/jupyter/git_converted_by_decktape.pdf
+static/video/
+content/summerschool2020/gitignore_table.org
+static/other/git_jupyter-rise/git_converted_by_decktape.pdf
+static/practice_repos/
