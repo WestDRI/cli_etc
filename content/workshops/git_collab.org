@@ -295,3 +295,39 @@ The ~<<<<<<< HEAD~, ~=======~, and ~>>>>>>>~ are markers added by Git to identif
 
 You have to decide which version you want to keep (or write yet another version), remove the 3 lines with the markers, and remove the line(s) with the version(s) you do not want to keep.
 
+* Contributing to a project
+
+** Read/write access
+
+If you have write access to the project, you can directly push changes to it:
+
+#+BEGIN_src sh
+git push <remote-name> <branch-name>
+#+END_src
+
+If you want to push your ~master~ branch to ~origin~, you would run:
+
+#+BEGIN_src sh
+git push origin master
+#+END_src
+
+When you cloned the repository, Git also automatically associated your branch ~master~ with the ~master~ branch of ~origin~. So, if you are on the ~master~ branch, you could simply run:
+
+#+BEGIN_src sh
+git push
+#+END_src
+
+If you want to push another branch to ~origin~, you will have to run the full command:
+
+#+BEGIN_src sh
+git push origin <branch-name>
+#+END_src
+
+If you want to be able to push the content of that branch by simply running ~git push~ when you are on that branch, you need to set the upstream branch to track your local branch. This can be done by pushing once with the ~-u~ flag:
+
+#+BEGIN_src sh
+git push -u origin <branch-name>
+#+END_src
+
+From now on, ~git push~ will be enough to push from that branch to ~origin~.
+
