@@ -1,0 +1,5 @@
+#+title: Collaborating through Git
+#+subtitle: Example using GitHub as a remote
+#+topic: Git
+#+slug: git-collab
+
