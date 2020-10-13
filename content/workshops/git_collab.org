@@ -88,3 +88,112 @@ git clone https://github.com/<user>/<repo>.git <name-of-your-copy>
 
 The copy on GitHub is the central copy—the one allowing various team members to work jointly on the same project. But you now have a copy of it (as well as its entire history) on your machine. Your collaborators have their own clones on their own machines.
 
+* Remotes
+
+** What are remotes, really?
+
+Remotes are versions of your project that reside outside your project. "Outside" can be anywhere, even on the same machine. Often however, remotes are on a different machine to serve as backup or on a network (possibly the internet) to be accessible by several persons and serve as a syncing hub for collaborations.
+
+A number of online Git repository managers and hosting services have become popular remotes for Git projects. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]].
+
+A project can have several remotes. These remotes are characterized by an address (or a path if they are local) and identified by a name of your choice.
+
+When you clone a repository, the initial repository automatically becomes a remote of your newly created clone and is given the name ~origin~ by Git.
+
+This means that, now that we have cloned a project from GitHub, our new local version already has a remote called ~origin~. You could rename the remote to something else, but it is common practice to keep ~origin~ as the name of the first remote of a project.
+
+** How to see which remotes are associated with my project?
+
+To list your remotes, run:
+
+#+BEGIN_src sh
+git remote
+#+END_src
+
+To list the remotes with their addresses:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+You can verify that your local clone indeed has a remote and that its address matches that of the GitHub project we just cloned.
+
+To get yet more information about a particular remote, you can run:
+
+#+BEGIN_src sh
+git remote show <remote-name>
+#+END_src
+
+For instance, to inspect your new remote, run:
+
+#+BEGIN_src sh
+git remote show origin
+#+END_src
+
+** Managing remotes
+
+You can rename a remote with:
+
+#+BEGIN_src sh
+git remote rename <old-name> <new-name>
+#+END_src
+
+And you delete a remote with:
+
+#+BEGIN_src sh
+git remote rm <remote-name>
+#+END_src
+
+You can change the url of the remote with:
+
+#+BEGIN_src sh
+git remote set-url <remote-name> <new-url> [<old-url>]
+#+END_src
+
+* Keeping the repository up to date
+
+Another important thing is to make sure to keep your clone up to date. Your collaborators will make changes to the project on their local clones and push those changes to the GitHub repo. When you cloned the project, you obtained an up-to-date copy. Over time however, that copy will become outdated.
+
+To download new data from the remote (the copy of the project on GitHub), you have 2 options: ~git fetch~ and ~git pull~.
+
+** Fetching changes
+
+Fetching downloads the data from your remote that you don't already have in your local version of the project.
+
+#+BEGIN_src sh
+git fetch <remote-name>
+#+END_src
+
+The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
+
+To fetch from our GitHub remote, we would run:
+
+#+BEGIN_src sh
+git fetch origin
+#+END_src
+
+** Pulling changes
+
+Pulling does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
+
+#+BEGIN_src sh
+git pull <remote-name> <branch>
+#+END_src
+
+In our case:
+
+#+BEGIN_src sh
+git pull origin master
+#+END_src
+
+If your branch is already tracking a remote branch (see below), then you simply need to run:
+
+#+BEGIN_src sh
+git pull
+#+END_src
+
+{{<br>}}
+Now, how do you actually contribute to the project?
+
+You are in one of two scenarios: either you have write access to the project or you do not. Whatever the case, it is good practice to make use of Git's "killer features": branches.
+
