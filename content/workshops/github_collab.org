@@ -1,6 +1,6 @@
 #+title: Taking Git one step further: collaborating through GitHub
 #+topic: GitHub
-#+slug: github-colab
+#+slug: github-collab
 
 **** /Abstract/
 
