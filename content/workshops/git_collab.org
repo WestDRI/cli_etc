@@ -41,3 +41,50 @@ In this workshop, we will use the popular online hosting site GitHub to practice
 {{<n>}}{{<n>}}- experience (even if limited) with staging and committing.
 #+END_simplebox
 
+* Cloning a GitHub repository
+
+When you want to collaborate on a pre-existing project, the first thing you need to do is to clone it to have a local copy on your machine.
+
+First, navigate to the directory in which you want to clone the project:
+
+#+BEGIN_src sh
+cd /place/where/you/want/to/have/your/project
+#+END_src
+
+Then, clone the project.
+
+For this workshop, we will use [[https://github.com/prosoitos/git_workshop_collab][this project]].
+
+There are 2 ways to do this. If you have [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]], the command is:
+
+#+BEGIN_src sh
+git clone git@github.com:<user>/<repo>.git
+#+END_src
+
+In our case, this is:
+
+#+BEGIN_src sh
+git clone git@github.com:prosoitos/git_workshop_collab.git
+#+END_src
+
+If you haven't set SSH for your account, use the HTTPS address and enter your GitHub user name and password when prompted. The general command looks like this:
+
+#+BEGIN_src sh
+git clone https://github.com/<user>/<repo>.git
+#+END_src
+
+With our project:
+
+#+BEGIN_src sh
+git clone https://github.com/prosoitos/git_workshop_collab.git
+#+END_src
+
+Note that, if you want to give your copy of the project a different name, you can clone it with either of:
+
+#+BEGIN_src sh
+git clone git@github.com:<user>/<repo>.git <name-of-your-copy>
+git clone https://github.com/<user>/<repo>.git <name-of-your-copy>
+#+END_src
+
+The copy on GitHub is the central copy—the one allowing various team members to work jointly on the same project. But you now have a copy of it (as well as its entire history) on your machine. Your collaborators have their own clones on their own machines.
+
