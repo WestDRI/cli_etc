@@ -3,3 +3,13 @@
 #+topic: Git
 #+slug: git-collab
 
+**** /Abstract/
+
+#+BEGIN_definition
+Git is a powerful version control system allowing to record, access, and restore the history of projects.
+
+After setting up remotes on the internet or other network, Git is also a mighty collaboration tool.
+
+In this workshop, we will use the popular online hosting site GitHub to practice a collaboration workflow typical of research teams.
+#+END_definition
+
