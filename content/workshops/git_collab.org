@@ -13,3 +13,23 @@ After setting up remotes on the internet or other network, Git is also a mighty 
 In this workshop, we will use the popular online hosting site GitHub to practice a collaboration workflow typical of research teams.
 #+END_definition
 
+**** /Software requirements/
+
+#+BEGIN_box
+*1 - Properly configured Git*
+
+{{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
+
+{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/school/git-03-install/#headline-3][should be set properly]]: \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- the end of line formatting matching your operating system
+{{<2br>}}
+*2 - GitHub account*
+
+{{<n>}}{{<n>}}A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
+
+{{<n>}}{{<n>}}(Optional) If you don't want to type your password all the time, [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]].
+#+END_box
+
