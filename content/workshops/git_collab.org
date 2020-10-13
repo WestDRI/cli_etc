@@ -371,3 +371,90 @@ Once the PR is merged by the maintainer, you can delete the branch on your fork 
 
 [[https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project][This chapter of the Pro Git book]] covers this workflow in great details.
 
+* Initializing a collaborative project
+
+So far, we have seen how to clone, then contribute to, a project that was already started by someone else.
+
+What if you would like to start a project and allow others to contribute to it through a GitHub remote?
+
+** Initialize a project
+
+First, you need to start a project.
+
+If you are starting a project from scratch, navigate to the location where you would like to create it, then make a new directory for the project:
+
+#+BEGIN_src sh
+cd /path/where/you/want/your/project
+mkdir <project-name>
+#+END_src
+
+If you already have a project, but it is not under version control yet, simply ~cd~ to your project:
+
+#+BEGIN_src sh
+cd /path/to/project
+#+END_src
+
+Either way, once you hare inside your project, you need to put it under version control by initializing a Git repository:
+
+#+BEGIN_src sh
+git init
+#+END_src
+
+*Note: do make sure that you are inside the project before running ~git init~. A very common mistake is to run the command outside the project.*
+
+You now have a Git repo. You can verify by running ~ls -a~ from the root of the project and see that you have a ~.git~ directory.
+
+** Add a remote
+
+Your project does not have any remote:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+does not return anything.
+
+If you want to add a remote on GitHub, first you have to go create it.
+
+*** Create an empty repository on GitHub
+
+Go to https://github.com, login, and go to your home page (https://github.com/<user>).
+
+From there, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
+
+Enter the name you want for your repo, *without spaces*. It can be the same name you have for your project on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
+
+You can make your repository public or private. Choose the private option if your research contains sensitive data or you do not want to share your project with the world. If you want to develop open source projects, of course, you want to make them public.
+
+Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH or HTTPS and copy the address of the repo.
+
+*** Add the new GitHub repo as a remote
+
+Now, go back to your command line, ~cd~ inside your project if you aren't already there and run either of:
+
+#+BEGIN_src sh
+git remote add <remote-name> git@github.com:<user>/<repo>.git
+git remote add <remote-name> https://github.com/<user>/<repo>.git
+#+END_src
+
+(Paste the address you have just copied on GitHub after ~git remote add <name>~).
+
+~<name>~ is only a convenience name that will identify that remote. You can choose any name. But, since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
+
+You can now see that your local project now has a remote called ~origin~ and that it has the address of your GitHub repo if you run ~git remote -v~.
+
+If you were working alone on this project and only wanted to have a remote for backup, you would be set.
+
+If you don't want to grant others write access to the project and only accept contributions through pull requests, you are also set.
+
+If you want to grant your collaborators write access to the project however, you need to add them to it.
+
+** Invite collaborators to a GitHub repo
+
+- Go to your GitHub project page
+- Click on the {{<b>}}Settings{{</b>}} tab
+- Click on the {{<b>}}Manage access{{</b>}} section on the left-hand side (you will be prompted for your GitHub password)
+- Click on the {{<b>}}Invite a collaborator{{</b>}} green button
+- Invite your collaborators with one of their GitHub user name, their email address, or their full name
+
+* Comments & questions
