@@ -1,5 +1,5 @@
 #+title: Contributing to GitHub projects
-#+topic: GitHub
+#+topic: Git
 #+slug: github-contrib
 
 **** /Abstract/
@@ -50,7 +50,7 @@ If you want to keep your fork up to date with the initial project, you need to:
 
 From there on, you can pull from and push to "origin" (your fork) and you can pull from "upstream" (the initial repo).
 
-Of course, if your project and the initial one diverse in places, this will lead to conflicts that you will have to resolve as you merge the pulls from "upstream".
+Of course, if your project and the initial one diverge in places, this will lead to conflicts that you will have to resolve as you merge the pulls from "upstream".
 
 Most of the time however, you don't want to develop your own version of the project. Instead, you want to make it better by contributing to it. But you can't push changes to "upstream" directly since you are not part of that project. You don't have write access to that repository. If anybody could push to any project, that would be utter chaos.
 
