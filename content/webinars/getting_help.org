@@ -1,5 +1,4 @@
-#+title: Need help with your code? Ask online!
-#+subtitle: … but make sure you know how to ask
+#+title: So, you are stuck … now what?
 #+topic: Help
 #+slug: getting_help
 #+date: 2020-10-14
