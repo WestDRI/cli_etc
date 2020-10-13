@@ -10,10 +10,10 @@
 
 * Slides
 
-Click to open the slides in a new tab:
+Click to open the slides:
 
 #+BEGIN_export html
-<a href="https://westgrid-webinars.netlify.app/git_basics/" target="_blank"><p align="center"><img src="/img/git/git_basics_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
+<a href="https://westgrid-webinars.netlify.app/git_basics/"><p align="center"><img src="/img/git/git_basics_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
 #+END_export
 
 * Comments & questions
