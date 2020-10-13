@@ -33,3 +33,11 @@ In this workshop, we will use the popular online hosting site GitHub to practice
 {{<n>}}{{<n>}}(Optional) If you don't want to type your password all the time, [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]].
 #+END_box
 
+**** /Prerequisites/
+
+#+BEGIN_simplebox
+*Basic knowledge of Git*: \\
+{{<n>}}{{<n>}}- familiarity with the concept of staging area, \\
+{{<n>}}{{<n>}}- experience (even if limited) with staging and committing.
+#+END_simplebox
+
