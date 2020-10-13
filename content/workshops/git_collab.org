@@ -197,3 +197,101 @@ Now, how do you actually contribute to the project?
 
 You are in one of two scenarios: either you have write access to the project or you do not. Whatever the case, it is good practice to make use of Git's "killer features": branches.
 
+* Branches
+
+** Why branches?
+
+Branches allow for a convenient workflow:
+
+- you create a new branch for each new development idea
+- you experiment on the branch
+- if you don't like the result, you can simply delete that branch
+- if you like it, you can merge it into the main branch
+
+What are the advantages of this workflow over a linear one involving the main branch only?
+
+- if your changes are very disruptive and break code, you still have a fully functional main branch to go back to if needed while you experiment on your development branch
+- if you want to try an alternative idea, you can go back to the main branch and create a new branch from there to try that alternative approach on it. This allows you to jump back and forth between various approaches to implement an idea
+- if you want to start working on a totally different idea while you haven't finished that first development idea you were working on, you can go back to the main branch and create a new branch from there to work on it so that you don't have messy incomplete work all over the place on the same branch
+
+** Managing branches
+
+*** Creating branches
+
+#+BEGIN_src sh
+git branch <branch-name>
+#+END_src
+
+*** Checking out an existing branch
+
+#+BEGIN_src sh
+git checkout <branch-name>
+#+END_src
+
+*** Better: creating AND checking out a branch in one command
+
+Why better? Because it is easy to create a new branch and forget to switch to it.
+
+#+BEGIN_src sh
+git checkout -b <branch-name>
+#+END_src
+
+*** Deleting branches
+
+#+BEGIN_src sh
+git branch -d <branch-name>
+#+END_src
+
+*** Getting information on branches
+
+#+BEGIN_src sh
+# list local branches (current branch marked with *)
+git branch
+git branch -v   # show sha1 and commit message for each head
+git branch -vv  # also show upstream branch
+
+# list remote branches
+git branch -r
+
+# list all branches
+git branch -a
+#+END_src
+
+*** Merging branches
+
+- checkout the branch you want to merge /into/
+- then merge the branch
+
+For instance, to merge the branch ~devel~ into ~master~:
+
+#+BEGIN_src sh
+git checkout master   # of course, this is unnecessary if you were already on master
+git merge devel
+#+END_src
+
+For more information on branches, I recommend to read [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][the chapter on branches]] in the [[https://git-scm.com/book/en/v2][Pro Git book]], an open source project freely available online.
+
+*** Resolving conflicts
+
+If the same section of a file is changed on different branches, Git cannot know which version you would like to keep. The merge gets interrupted until you resolve the conflict.
+
+To resolve the conflict, you can use a merge tool. Run ~git mergetool --tool-help~ to get help setting this up.
+
+Many GUI applications for Git as well as powerful text editors such as Emacs and Vim offer merge tools.
+
+You can also resolve the conflict manually in a text editor:
+
+When a merge gets interrupted due to a conflict, Git tells you which file contains a conflict. Open this file and look for a section that looks like this:
+
+#+BEGIN_src
+<<<<<<< HEAD
+Version of this section of the file on your checkedout branch
+=======
+Alternative version of the same section of the file
+>>>>>>> alternative version
+#+END_src
+
+The ~<<<<<<< HEAD~, ~=======~, and ~>>>>>>>~ are markers added by Git to identify the alternative versions at the location of the conflict.
+
+You have to decide which version you want to keep (or write yet another version), remove the 3 lines with the markers, and remove the line(s) with the version(s) you do not want to keep.
+
