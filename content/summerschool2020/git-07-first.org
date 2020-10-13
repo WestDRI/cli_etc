@@ -8,7 +8,7 @@
 
 Now that you have an idea of what Git is about, let's dive in: in this lesson, you will create your first repository, explore it, and make your first commit.
 
-Click to open the slides and make sure to run all the commands as you follow along.
+Click to open the presentation and make sure to run all the commands as you follow along.
 
 #+BEGIN_export html
 <a href="https://westgrid-webinars.netlify.app/git_recording/"><p align="center"><img src="/img/git/git_recording_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
