@@ -125,14 +125,16 @@ h2 {
   color: #000;
   font-size: 2.7rem;
   line-height: 3.6rem;
+  // font-variant: small-caps;
   @media only screen and (max-width : 768px) {
     font-size: 3.0rem;
     line-height: 3.4rem;
   }
 }
 h3 {
-  color: #383D3D;
-  font-size: 2.3rem;
+  // color: #383D3D;
+  color: #444b4b;
+  font-size: 2.4rem;
   line-height: 3.2rem;
   @media only screen and (max-width : 768px) {
     font-size: 2.6rem;
@@ -141,7 +143,7 @@ h3 {
 }
 h4 {
   color: #435069;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   line-height: 2.8rem;
   @media only screen and (max-width : 768px) {
     font-size: 2.2rem;
@@ -150,7 +152,7 @@ h4 {
 }
 h5 {
   color: #4c4d67;
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   line-height: 2.6rem;
   @media only screen and (max-width : 768px) {
     font-size: 2.0rem;
@@ -159,7 +161,7 @@ h5 {
 }
 h6 {
   color: #644f67;
-  font-size: 2.0rem;
+  font-size: 1.7rem;
   line-height: 2.4rem;
   @media only screen and (max-width : 768px) {
     font-size: 1.8rem;
@@ -168,7 +170,7 @@ h6 {
 }
 h7 {
   color: #556464;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   line-height: 2.2rem;
   @media only screen and (max-width : 768px) {
     font-size: 1.6rem;
