@@ -123,8 +123,9 @@ h7 {
 h2 {
   // color: #890c0c;
   color: #000;
-  font-size: 2.7rem;
+  font-size: 2.9rem;
   line-height: 3.6rem;
+  // text-align: center;
   // font-variant: small-caps;
   @media only screen and (max-width : 768px) {
     font-size: 3.0rem;
@@ -134,7 +135,7 @@ h2 {
 h3 {
   // color: #383D3D;
   color: #444b4b;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   line-height: 3.2rem;
   @media only screen and (max-width : 768px) {
     font-size: 2.6rem;
@@ -142,8 +143,9 @@ h3 {
   }
 }
 h4 {
-  color: #435069;
-  font-size: 2.1rem;
+  // color: #435069;
+  color: #616b6b;
+  font-size: 2.2rem;
   line-height: 2.8rem;
   @media only screen and (max-width : 768px) {
     font-size: 2.2rem;
