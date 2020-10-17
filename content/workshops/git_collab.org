@@ -41,161 +41,9 @@ In this workshop, we will use the popular online hosting site GitHub to practice
 {{<n>}}{{<n>}}- experience (even if limited) with staging and committing.
 #+END_simplebox
 
-* Cloning a GitHub repository
-
-When you want to collaborate on a pre-existing project, the first thing you need to do is to clone it to have a local copy on your machine.
-
-First, navigate to the directory in which you want to clone the project:
-
-#+BEGIN_src sh
-cd /place/where/you/want/to/have/your/project
-#+END_src
-
-Then, clone the project.
-
-For this workshop, we will use [[https://github.com/prosoitos/git_workshop_collab][this project]].
-
-There are 2 ways to do this. If you have [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]], the command is:
-
-#+BEGIN_src sh
-git clone git@github.com:<user>/<repo>.git
-#+END_src
-
-In our case, this is:
-
-#+BEGIN_src sh
-git clone git@github.com:prosoitos/git_workshop_collab.git
-#+END_src
-
-If you haven't set SSH for your account, use the HTTPS address and enter your GitHub user name and password when prompted. The general command looks like this:
-
-#+BEGIN_src sh
-git clone https://github.com/<user>/<repo>.git
-#+END_src
-
-With our project:
-
-#+BEGIN_src sh
-git clone https://github.com/prosoitos/git_workshop_collab.git
-#+END_src
-
-Note that, if you want to give your copy of the project a different name, you can clone it with either of:
-
-#+BEGIN_src sh
-git clone git@github.com:<user>/<repo>.git <name-of-your-copy>
-git clone https://github.com/<user>/<repo>.git <name-of-your-copy>
-#+END_src
-
-The copy on GitHub is the central copy—the one allowing various team members to work jointly on the same project. But you now have a copy of it (as well as its entire history) on your machine. Your collaborators have their own clones on their own machines.
-
-* Remotes
-
-** What are remotes, really?
-
-Remotes are versions of your project that reside outside your project. "Outside" can be anywhere, even on the same machine. Often however, remotes are on a different machine to serve as backup or on a network (possibly the internet) to be accessible by several persons and serve as a syncing hub for collaborations.
-
-A number of online Git repository managers and hosting services have become popular remotes for Git projects. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]].
-
-A project can have several remotes. These remotes are characterized by an address (or a path if they are local) and identified by a name of your choice.
-
-When you clone a repository, the initial repository automatically becomes a remote of your newly created clone and is given the name ~origin~ by Git.
-
-This means that, now that we have cloned a project from GitHub, our new local version already has a remote called ~origin~. You could rename the remote to something else, but it is common practice to keep ~origin~ as the name of the first remote of a project.
-
-** How to see which remotes are associated with my project?
-
-To list your remotes, run:
-
-#+BEGIN_src sh
-git remote
-#+END_src
-
-To list the remotes with their addresses:
-
-#+BEGIN_src sh
-git remote -v
-#+END_src
-
-You can verify that your local clone indeed has a remote and that its address matches that of the GitHub project we just cloned.
-
-To get yet more information about a particular remote, you can run:
-
-#+BEGIN_src sh
-git remote show <remote-name>
-#+END_src
-
-For instance, to inspect your new remote, run:
-
-#+BEGIN_src sh
-git remote show origin
-#+END_src
-
-** Managing remotes
-
-You can rename a remote with:
-
-#+BEGIN_src sh
-git remote rename <old-name> <new-name>
-#+END_src
-
-And you delete a remote with:
-
-#+BEGIN_src sh
-git remote rm <remote-name>
-#+END_src
-
-You can change the url of the remote with:
-
-#+BEGIN_src sh
-git remote set-url <remote-name> <new-url> [<old-url>]
-#+END_src
-
-* Keeping the repository up to date
-
-Another important thing is to make sure to keep your clone up to date. Your collaborators will make changes to the project on their local clones and push those changes to the GitHub repo. When you cloned the project, you obtained an up-to-date copy. Over time however, that copy will become outdated.
-
-To download new data from the remote (the copy of the project on GitHub), you have 2 options: ~git fetch~ and ~git pull~.
-
-** Fetching changes
-
-Fetching downloads the data from your remote that you don't already have in your local version of the project.
-
-#+BEGIN_src sh
-git fetch <remote-name>
-#+END_src
-
-The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
-
-To fetch from our GitHub remote, we would run:
-
-#+BEGIN_src sh
-git fetch origin
-#+END_src
-
-** Pulling changes
-
-Pulling does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
-
-#+BEGIN_src sh
-git pull <remote-name> <branch>
-#+END_src
-
-In our case:
-
-#+BEGIN_src sh
-git pull origin master
-#+END_src
-
-If your branch is already tracking a remote branch (see below), then you simply need to run:
-
-#+BEGIN_src sh
-git pull
-#+END_src
-
 {{<br>}}
-Now, how do you actually contribute to the project?
 
-You are in one of two scenarios: either you have write access to the project or you do not. Whatever the case, it is good practice to make use of Git's "killer features": branches.
+Before jumping into our workshop on collaborating with Git using GitHub, we need to talk about branches and remotes.
 
 * Branches
 
@@ -295,11 +143,172 @@ The ~<<<<<<< HEAD~, ~=======~, and ~>>>>>>>~ are markers added by Git to identif
 
 You have to decide which version you want to keep (or write yet another version), remove the 3 lines with the markers, and remove the line(s) with the version(s) you do not want to keep.
 
+* Remotes
+
+** What are remotes, really?
+
+Remotes are versions of your project that reside outside your project. "Outside" can be anywhere, even on the same machine. Often however, remotes are on a different machine to serve as backup or on a network (possibly the internet) to be accessible by several persons and serve as a syncing hub for collaborations.
+
+A number of online Git repository managers and hosting services have become popular remotes for Git projects. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]].
+
+A project can have several remotes. These remotes are characterized by an address (or a path if they are local) and identified by a name of your choice.
+
+When you clone a repository, the initial repository automatically becomes a remote of your newly created clone and is given the name ~origin~ by Git.
+
+This means that, now that we have cloned a project from GitHub, our new local version already has a remote called ~origin~. You could rename the remote to something else, but it is common practice to keep ~origin~ as the name of the first remote of a project.
+
+** How to see which remotes are associated with my project?
+
+To list your remotes, run:
+
+#+BEGIN_src sh
+git remote
+#+END_src
+
+To list the remotes with their addresses:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+You can verify that your local clone indeed has a remote and that its address matches that of the GitHub project we just cloned.
+
+To get yet more information about a particular remote, you can run:
+
+#+BEGIN_src sh
+git remote show <remote-name>
+#+END_src
+
+For instance, to inspect your new remote, run:
+
+#+BEGIN_src sh
+git remote show origin
+#+END_src
+
+** Managing remotes
+
+You add a remote with:
+
+#+BEGIN_src sh
+git remote add <remote-name> <remote-url>
+#+END_src
+
+You can rename a remote with:
+
+#+BEGIN_src sh
+git remote rename <old-name> <new-name>
+#+END_src
+
+And you delete a remote with:
+
+#+BEGIN_src sh
+git remote rm <remote-name>
+#+END_src
+
+You can change the url of the remote with:
+
+#+BEGIN_src sh
+git remote set-url <remote-name> <new-url> [<old-url>]
+#+END_src
+
 * Contributing to a project
+
+While contributing to a project, you are in one of two scenarios: either you have write access to the project or you do not.
 
 ** Read/write access
 
-If you have write access to the project, you can directly push changes to it:
+If you have write access to the project, you can clone the project and directly push changes to it.
+
+*** Cloning a GitHub repository
+
+Cloning a repository creates a local version of a project on your machine.
+
+First, navigate to the directory in which you want to clone the project:
+
+#+BEGIN_src sh
+cd /place/where/you/want/to/have/your/project
+#+END_src
+
+Then, clone the project.
+
+There are 2 ways to do this. If you have [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]], the command is:
+
+#+BEGIN_src sh
+git clone git@github.com:<user>/<repo>.git
+#+END_src
+
+In our case, this is:
+
+#+BEGIN_src sh
+git clone git@github.com:prosoitos/git_workshop_collab.git
+#+END_src
+
+If you haven't set SSH for your account, use the HTTPS address and enter your GitHub user name and password when prompted. The general command looks like this:
+
+#+BEGIN_src sh
+git clone https://github.com/<user>/<repo>.git
+#+END_src
+
+With our project:
+
+#+BEGIN_src sh
+git clone https://github.com/prosoitos/git_workshop_collab.git
+#+END_src
+
+Note that, if you want to give your copy of the project a different name, you can clone it with either of:
+
+#+BEGIN_src sh
+git clone git@github.com:<user>/<repo>.git <name-of-your-copy>
+git clone https://github.com/<user>/<repo>.git <name-of-your-copy>
+#+END_src
+
+The copy on GitHub is the central copy—the one allowing various team members to work jointly on the same project. But you now have a copy of it (as well as its entire history) on your machine. Your collaborators have their own clones on their own machines.
+
+*** Keeping the repository up to date
+
+Another important thing is to make sure to keep your clone up to date. Your collaborators will make changes to the project on their local clones and push those changes to the GitHub repo. When you cloned the project, you obtained an up-to-date copy. Over time however, that copy will become outdated.
+
+To download new data from the remote (the copy of the project on GitHub), you have 2 options: ~git fetch~ and ~git pull~.
+
+**** Fetching changes
+
+Fetching downloads the data from your remote that you don't already have in your local version of the project.
+
+#+BEGIN_src sh
+git fetch <remote-name>
+#+END_src
+
+The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
+
+To fetch from our GitHub remote, we would run:
+
+#+BEGIN_src sh
+git fetch origin
+#+END_src
+
+**** Pulling changes
+
+Pulling does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
+
+#+BEGIN_src sh
+git pull <remote-name> <branch>
+#+END_src
+
+In our case:
+
+#+BEGIN_src sh
+git pull origin master
+#+END_src
+
+If your branch is already tracking a remote branch (see below), then you simply need to run:
+
+#+BEGIN_src sh
+git pull
+#+END_src
+
+Now, how do you push your changes to the remote?
+
+*** Pushing to a remote
 
 #+BEGIN_src sh
 git push <remote-name> <branch-name>
@@ -334,6 +343,8 @@ From now on, ~git push~ will be enough to push from that branch to ~origin~.
 ** Read access only
 
 If you do not have write access to the remote, you cannot push to it and you need to submit a pull request (PR).
+
+For this workshop, this is the scenario that we will practice, using [[https://github.com/prosoitos/git_collab][this project]].
 
 *** Fork setup
 
@@ -371,13 +382,13 @@ Once the PR is merged by the maintainer, you can delete the branch on your fork 
 
 [[https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project][This chapter of the Pro Git book]] covers this workflow in great details.
 
-* Initializing a collaborative project
+* Starting a collaborative project
 
 So far, we have seen how to clone, then contribute to, a project that was already started by someone else.
 
 What if you would like to start a project and allow others to contribute to it through a GitHub remote?
 
-** Initialize a project
+** Initializing a project
 
 First, you need to start a project.
 
@@ -404,19 +415,13 @@ git init
 
 You now have a Git repo. You can verify by running ~ls -a~ from the root of the project and see that you have a ~.git~ directory.
 
-** Add a remote
+** Adding a remote
 
-Your project does not have any remote:
-
-#+BEGIN_src sh
-git remote -v
-#+END_src
-
-does not return anything.
+Your project does not have any remote: ~git remote~ does not return anything.
 
 If you want to add a remote on GitHub, first you have to go create it.
 
-*** Create an empty repository on GitHub
+*** Creating an empty repository on GitHub
 
 Go to https://github.com, login, and go to your home page (https://github.com/<user>).
 
@@ -428,7 +433,7 @@ You can make your repository public or private. Choose the private option if you
 
 Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH or HTTPS and copy the address of the repo.
 
-*** Add the new GitHub repo as a remote
+*** Adding the new GitHub repo as a remote
 
 Now, go back to your command line, ~cd~ inside your project if you aren't already there and run either of:
 
@@ -437,9 +442,9 @@ git remote add <remote-name> git@github.com:<user>/<repo>.git
 git remote add <remote-name> https://github.com/<user>/<repo>.git
 #+END_src
 
-(Paste the address you have just copied on GitHub after ~git remote add <name>~).
+(Paste the address you have just copied on GitHub after ~git remote add <remote-name>~).
 
-~<name>~ is only a convenience name that will identify that remote. You can choose any name. But, since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
+~<remote-name>~ is only a convenience name that will identify that remote. You can choose any name. But, since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
 
 You can now see that your local project now has a remote called ~origin~ and that it has the address of your GitHub repo if you run ~git remote -v~.
 
@@ -449,7 +454,7 @@ If you don't want to grant others write access to the project and only accept co
 
 If you want to grant your collaborators write access to the project however, you need to add them to it.
 
-** Invite collaborators to a GitHub repo
+** Inviting collaborators to a GitHub repo
 
 - Go to your GitHub project page
 - Click on the {{<b>}}Settings{{</b>}} tab
