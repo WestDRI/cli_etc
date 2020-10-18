@@ -159,20 +159,20 @@ Here is what happened when you created that new commit:
 
 * Branches
 
-** Why branches?
+** Why use more than just the default master branch?
 
 Branches allow for a convenient workflow:
 
-- you create a new branch for each new development idea
-- you experiment on the branch
-- if you don't like the result, you can simply delete that branch
-- if you like it, you can merge it into the main branch
+- you create a new branch for each new development idea,
+- you experiment on the branch,
+- if you don't like the result, you can simply delete that branch,
+- if you like it, you can merge it into the main branch.
 
-What are the advantages of this workflow over a linear one involving the main branch only?
+What are the advantages of this workflow over a linear one involving only the main branch (automatically called ~master~ by Git)?
 
-- if your changes are very disruptive and break code, you still have a fully functional main branch to go back to if needed while you experiment on your development branch
-- if you want to try an alternative idea, you can go back to the main branch and create a new branch from there to try that alternative approach on it. This allows you to jump back and forth between various approaches to implement an idea
-- if you want to start working on a totally different idea while you haven't finished that first development idea you were working on, you can go back to the main branch and create a new branch from there to work on it so that you don't have messy incomplete work all over the place on the same branch
+- If your changes are very disruptive and break code, you still have a fully functional main branch to go back to if needed while you experiment on your development branch.
+- If you want to try an alternative idea, you can go back to the main branch and create a new branch from there to try that alternative approach on it. This allows you to jump back and forth between various approaches to implement an idea.
+- If you want to start working on a totally different idea while you haven't finished that first development idea you were working on, you can go back to the main branch and create a new branch from there to work on it so that you don't have messy incomplete work all over the place on the same branch.
 
 ** Managing branches
 
