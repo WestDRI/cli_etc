@@ -182,21 +182,49 @@ What are the advantages of this workflow over a linear one involving only the ma
 git branch <branch-name>
 #+END_src
 
+Imagine that you have created 4 commits and that you want to create a branch called "test". You run:
+
+#+BEGIN_src sh
+git branch test
+#+END_src
+
+And your history now looks like:
+
+{{<img src="/img/git/git_img/diagrams/23.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
 *** Checking out an existing branch
+
+Notice that ~HEAD~ still points to your branch ~master~. If you want to work on the branch ~test~, you have to move ~HEAD~ to it. You do this with:
 
 #+BEGIN_src sh
 git checkout <branch-name>
 #+END_src
 
+Here, we run:
+
+#+BEGIN_src sh
+git checkout test
+#+END_src
+
+And we get:
+
+{{<img src="/img/git/git_img/diagrams/24.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
 *** Better: creating AND checking out a branch in one command
 
-Why better? Because it is easy to create a new branch and forget to switch to it.
+You can create a new branch and switch to it immediately with:
 
 #+BEGIN_src sh
 git checkout -b <branch-name>
 #+END_src
 
+Why is this better? Because it is easy to create a new branch and forget to switch to it before recording new commits.
+
 *** Deleting branches
+
+You can delete a branch with:
 
 #+BEGIN_src sh
 git branch -d <branch-name>
@@ -219,15 +247,83 @@ git branch -a
 
 *** Merging branches
 
-- checkout the branch you want to merge /into/
-- then merge the branch
+Here is a classic workflow with branches:
 
-For instance, to merge the branch ~devel~ into ~master~:
+You just checked out the branch ~test~. Now you make a series of commits on that branch:
+
+{{<img src="/img/git/git_img/diagrams/26.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+You are happy with your changes and you want to merge them back into the main branch (~master~).
+
+First, you checkout master (to merge, you need to be on the branch you want to merge /into/):
 
 #+BEGIN_src sh
-git checkout master   # of course, this is unnecessary if you were already on master
-git merge devel
+git checkout master
 #+END_src
+
+{{<img src="/img/git/git_img/diagrams/27.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+Then you merge ~test~ into ~master~:
+
+#+BEGIN_src sh
+git merge test
+#+END_src
+
+{{<img src="/img/git/git_img/diagrams/28.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+This merge is called a *fast-forward merge*: the ~master~ branch could be fast-forwarded to the branch ~test~.
+
+Now, you can delete the branch ~test~ which has become useless:
+
+#+BEGIN_src sh
+git branch -d test
+#+END_src
+
+And you have:
+
+{{<img src="/img/git/git_img/diagrams/29.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<2br>}}
+Let's consider another common workflow with a branch ~test2~ starting from the same situation (you just created and checked out ~test2~):
+
+{{<img src="/img/git/git_img/diagrams/32.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+You create a number of commits on ~test2~:
+
+{{<img src="/img/git/git_img/diagrams/34.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+Then you checkout ~master~:
+
+{{<img src="/img/git/git_img/diagrams/35.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+and you create commits on ~master~:
+
+{{<img src="/img/git/git_img/diagrams/37.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+To merge ~test2~ into ~master~, you need to be on ~master~, but that's already the case. So you can run:
+
+#+BEGIN_src sh
+git merge test2
+#+END_src
+
+and you get:
+
+{{<img src="/img/git/git_img/diagrams/38.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+Note that in order to make the merge in this scenario, Git had to create a new commit, called *a merge commit* and that this commit has 2 parents.
+
+Finally, you can now delete the ~test2~ branch with ~git branch -d test2~ to get:
+
+{{<img src="/img/git/git_img/diagrams/39.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
 
 For more information on branches, I recommend to read [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][the chapter on branches]] in the [[https://git-scm.com/book/en/v2][Pro Git book]], an open source project freely available online.
 
