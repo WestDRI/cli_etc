@@ -44,7 +44,7 @@ In this workshop, we will use the popular online Git repository hosting site Git
 
 {{<br>}}
 
-Before jumping into our workshop on collaborating with Git using GitHub, we need to talk about branches and remotes.
+Before jumping into our workshop on collaborating with Git using GitHub, let's review key Git concepts.
 
 * Branches
 
