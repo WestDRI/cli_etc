@@ -46,6 +46,95 @@ In this workshop, we will use the popular online Git repository hosting site Git
 
 Before jumping into our workshop on collaborating with Git using GitHub, let's review key Git concepts.
 
+* Writing a project history with Git
+
+** The three trees of Git
+
+Git has a three-tree architecture:
+
+- The *working directory* or *working tree*:
+
+  An uncompressed version of your files that you can access and edit. You can think of it as a sandbox. This is what is in your project outside the ~.git~ folder and what you usually think of as "your files". {{<2br>}}
+
+- The *staging area* or *index*:
+
+  The snapshot that would be recorded by ~git commit~. {{<2br>}}
+
+- *HEAD*:
+
+  The snapshot of the project at the commit ~HEAD~ is pointing to. {{<2br>}}
+
+Here is an illustration of these three trees:
+
+{{<img src="/img/git/git_img/diagrams/05.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+To display the status of the Git trees, you run:
+
+#+BEGIN_src sh
+git status
+#+END_src
+
+When you make changes to one of your files, you make changes in the *working directory*. For instance, if you add a new file, your trees will look like this:
+
+{{<img src="/img/git/git_img/diagrams/10.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+and ~git status~ will return something like this:
+
+#+BEGIN_src sh
+On branch master
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File
+
+nothing added to commit but untracked files present (use "git add" to track)
+#+END_src
+
+You *stage* that file (meaning that you will include the changes of that file in the next commit) with:
+
+#+BEGIN_src sh
+git add File
+#+END_src
+
+After which, your Git trees look like:
+
+{{<img src="/img/git/git_img/diagrams/11.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+and ~git status~ returns something like:
+
+#+BEGIN_src sh
+On branch master
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   File
+#+END_src
+
+Finally, you make a commit, recording the staged changes to history with:
+
+#+BEGIN_src sh
+git commit -m "Added File"
+#+END_src
+
+And your trees look like:
+
+{{<img src="/img/git/git_img/diagrams/12.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+Now ~git status~ returns:
+
+#+BEGIN_src sh
+On branch master
+nothing to commit, working tree clean
+#+END_src
+
+This means that there are no uncommitted changes in your working tree or the staging area: all your changes have been written to history.
+
+The reason for this 2-stage process is that it allows you to pick and choose the changes that you want to include in a commit. Instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later in other commits. This allows for a much clearer history that will be much easier to revisit in the future.
+
 * Branches
 
 ** Why branches?
