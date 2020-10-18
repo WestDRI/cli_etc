@@ -36,9 +36,10 @@ In this workshop, we will use the popular online Git repository hosting site Git
 **** /Prerequisites/
 
 #+BEGIN_simplebox
-*Basic knowledge of Git*: \\
+*Basic knowledge of Git*:
+
 {{<n>}}{{<n>}}- familiarity with the concept of staging area, \\
-{{<n>}}{{<n>}}- experience (even if limited) with staging and committing.
+{{<n>}}{{<n>}}- experience with staging and committing.
 #+END_simplebox
 
 {{<br>}}
