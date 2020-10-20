@@ -1,4 +1,4 @@
-#+title: Collaborating though GitHub (or similar)
+#+title: Collaborating through GitHub (or similar)
 #+description: Zoom
 #+colordes: #cc0066
 #+slug: git-14-collaborating
