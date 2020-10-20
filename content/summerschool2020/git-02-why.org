@@ -47,7 +47,7 @@ Merging such explorations into the main branch or discarding them are equally ea
 
 An additional advantage of using Git is that online remotes such as [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]] allow to backup a project and its history online.
 {{<2br>}}
-{{<img src="/img/git/gitout.png" title="" width="200" line-height="0">}}
+{{<img src="/img/git/git_img/gitout.png" title="" width="200" line-height="0">}}
 by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&nbsp;&nbsp;
 {{</img>}}
 
