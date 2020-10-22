@@ -1,0 +1,68 @@
+#+title: Recording history
+#+description: Hands-on
+#+colordes: #9a3932
+#+slug: 05_git_record
+#+weight: 5
+
+In this lesson, you will apply what we just covered together to create a project, put it under version control, and start recording its history.
+
+* Create a project
+
+First, you need to create a toy project.
+
+Navigate to the location where you want to create your project:
+
+#+BEGIN_src sh
+cd </path/where/you/want/to/have/your/project>
+#+END_src
+
+Create a new directory with the name of your project. *Never use spaces in names or paths.*
+
+#+BEGIN_src sh
+mkdir 
+#+END_src
+
+* Put your project under version control with Git
+
+
+
+#+BEGIN_src sh
+git init
+#+END_src
+
+
+* Create several commits
+
+
+
+#+BEGIN_src sh
+git status
+#+END_src
+
+
+#+BEGIN_src sh
+git add File
+#+END_src
+
+
+
+#+BEGIN_src sh
+git commit -m "Added File"
+#+END_src
+
+
+* Look at your commit history
+
+
+
+#+BEGIN_src sh
+git log
+#+END_src
+
+* Inspect a particular commit
+
+#+BEGIN_src sh
+git show
+#+END_src
+
+* Comments & questions
