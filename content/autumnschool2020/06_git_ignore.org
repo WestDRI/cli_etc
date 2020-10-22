@@ -15,11 +15,13 @@ There are files you really want to put under version control, but there are file
 - Manuscripts and notes
 - Makefile and similar
 
-*Do not put under version control:*
+*Do NOT put under version control:*
 - Non-text files (e.g. images, office documents)
 - Outputs that can be recreated by running code (e.g. graphs, results)
 
 ** How to exclude
+
+*** The .gitignore file
 
 To exclude files from version control, create a file called .gitignore in the root of your project and add those files in it, one per line.
 
@@ -33,7 +35,8 @@ echo output.txt >> .gitignore # '>' would overwrite the content. '>>' appends
 echo /result/ >> .gitignore   # you can also ignore entire directories
 #+END_src
 
-{{<br>}}
+*** Globing patterns
+
 You can also use globing patterns.
 
 #+BEGIN_mhexample
@@ -44,8 +47,7 @@ Example:
 echo *.png >> .gitignore   # exclude all .png files
 #+END_src
 
-{{<br>}}
-*Here are the rules of .gitignore syntax:*
+*** .gitignore syntax
 
 Each line in a .gitignore file specifies a pattern.
 
