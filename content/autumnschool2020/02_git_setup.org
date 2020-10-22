@@ -33,16 +33,14 @@ In this course, to run Git commands, open:
 
 Before you can start using Git, there are few configurations that are necessary.
 
-*** Name and email address
+*** Name & email address
 
 Each recorded version of your project will have a Git object called a /commit/ pointing to it. Amongst the information contained in those commits are the name and email address of the commit author (i.e. you). You have to set those so that Git uses the proper information when you start creating commits.
 
 #+BEGIN_src sh
-git config --global user.name "Your Name"
-git config --global user.email "your@email"
+git config --global user.name "<Your Name>"
+git config --global user.email "<your@email>"
 #+END_src
-
-Replace ~"Your Name"~ by your actual name and ~"your@email"~ by your email address. 
 
 While you can use whatever name you want, it is common practice to use your actual name rather than a pseudo. The email address you choose does not have to be the one you are using for your GitHub account: both are unrelated. This is only the email address that will be associated with your commits.
 
