@@ -97,8 +97,28 @@ nothing to commit, working tree clean
 
 This means that there are no uncommitted changes in your working tree or the staging area: all your changes have been written to history.
 
-The reason for this 2-stage process is that it allows you to pick and choose the changes that you want to include in a commit. Instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later in other commits. This allows for a much clearer history that will be much easier to revisit in the future.
 ** Why a two-stage process?
+
+The reason for this two-stage process is that it allows you to pick and choose the changes that you want to include in a commit. Instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later in other commits. This allows for a much clearer history that will be much easier to revisit in the future.
+
+** Making more commits
+
+Now, let's see what happens when we create a second commit, for instance with changes to your file.
+
+{{<m>}}Make changes to your file:
+
+{{<img src="/img/git/git_img/diagrams/15.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+{{<m>}}Stage these changes:
+
+{{<img src="/img/git/git_img/diagrams/16.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+{{<m>}}And commit them to history:
+
+{{<img src="/img/git/git_img/diagrams/17.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
 
 * Commit history
 
@@ -122,5 +142,17 @@ Here is what happened when you created that new commit:
 - a new snapshot got archived,
 - a new commit (with a new unique SHA-1) points to it,
 - the ~master~ branch and ~HEAD~ which is pointing to it automatically moved to point to the new commit.
+
+{{<br>}}
+After another two commits, your history looks like this:
+
+{{<img src="/img/git/git_img/diagrams/21.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+{{<br>}}
+Later in this course, since every commit points to a snapshot of your project, I will simplify this graph to:
+
+{{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
 
 * Comments & questions
