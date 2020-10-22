@@ -404,6 +404,21 @@ img[alt=radius] {
   line-height: 25px;
 }
 
+.mhexample-block {
+  // color: #404040;
+  // color: #282d35;
+  color: #424a57;
+  font-family: 'Maven Pro', sans-serif;
+  // font-family: 'Antic Slab', serif;
+  // font-family: $code-font-family;
+  // font-family: 'Crimson Text', serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  margin-left: 15px;
+  // keep this line to have the verses indented
+  line-height: 25px;
+}
+
 .org-center-block {
   // center
   margin: auto;
