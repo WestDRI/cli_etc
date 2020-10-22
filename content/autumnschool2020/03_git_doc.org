@@ -24,7 +24,9 @@ git help <command>
 man git-<command>
 #+END_EXAMPLE
 
-/Example:/
+#+BEGIN_mhexample
+Example:
+#+END_mhexample
 
 #+BEGIN_src sh
 git commit --help
@@ -61,7 +63,9 @@ To get a list of the /options/ or /flags/ for a command, you can run:
 git <command> -h
 #+END_EXAMPLE
 
-/Example:/
+#+BEGIN_mhexample
+Example:
+#+END_mhexample
 
 #+BEGIN_SRC sh
 git commit -h

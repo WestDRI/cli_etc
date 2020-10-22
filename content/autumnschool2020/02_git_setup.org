@@ -44,8 +44,9 @@ git config --global user.email "<your@email>"
 
 While you can use whatever name you want, it is common practice to use your actual name rather than a pseudo. The email address you choose does not have to be the one you are using for your GitHub account: both are unrelated. This is only the email address that will be associated with your commits.
 
-
-/Example:/
+#+BEGIN_mhexample
+Example:
+#+END_mhexample
 
 #+BEGIN_src sh
 git config --global user.name "John Doe"
@@ -56,7 +57,9 @@ git config --global user.email "john.doe@gmail.com"
 
 Then, you need to pick the text editor you want Git to open whenever you need to type a message. Choose whatever text editor you are familiar with.
 
-/Example using the text editor nano:/
+#+BEGIN_mhexample
+Example using the text editor nano:
+#+END_mhexample
 
 #+BEGIN_src sh
 git config --global core.editor "nano"
