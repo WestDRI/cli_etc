@@ -1,8 +1,8 @@
 #+title: Documentation
 #+description: Reading
 #+colordes: #2d5986
-#+slug: 03_git_doc
-#+weight: 3
+#+slug: 04_git_doc
+#+weight: 4
 
 * Internal documentation
 

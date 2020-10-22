@@ -1,10 +1,12 @@
 #+title: Recording history
 #+description: Zoom
 #+colordes: #e86e0a
-#+slug: 05_git_record
-#+weight: 5
+#+slug: 07_git_record
+#+weight: 7
 
 #+OPTIONS: toc:nil
+
+*Second Zoom session, part 2*
 
 Now we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
 

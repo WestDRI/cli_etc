@@ -1,8 +1,8 @@
 #+title: Git & GitHub setup
 #+description: Hands-on
 #+colordes: #9a3932
-#+slug: 02_git_setup
-#+weight: 2
+#+slug: 03_git_setup
+#+weight: 3
 
 In order to follow this course, you will need to:
 

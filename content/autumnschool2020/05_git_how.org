@@ -1,8 +1,8 @@
-#+title: Recording history
+#+title: How Git works
 #+description: Reading
 #+colordes: #2d5986
-#+slug: 04_git_record
-#+weight: 4
+#+slug: 05_git_how
+#+weight: 5
 
 * How Git saves a project history
 

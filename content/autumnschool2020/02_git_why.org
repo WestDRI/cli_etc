@@ -1,8 +1,8 @@
 #+title: Why Git?
 #+description: Reading
 #+colordes: #2d5986
-#+slug: 01_git_why
-#+weight: 1
+#+slug: 02_git_why
+#+weight: 2
 
 * Why version control?
 

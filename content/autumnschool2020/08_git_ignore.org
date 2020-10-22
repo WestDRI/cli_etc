@@ -1,8 +1,8 @@
-#+title: .gitignore
+#+title: Ignoring files
 #+description: Reading
 #+colordes: #2d5986
-#+slug: 06_git_ignore
-#+weight: 6
+#+slug: 08_git_ignore
+#+weight: 8
 
 * Excluding from version control
 
