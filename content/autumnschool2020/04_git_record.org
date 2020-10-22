@@ -1,6 +1,6 @@
 #+title: Recording history
-#+description: Zoom
-#+colordes: #e86e0a
+#+description: Reading
+#+colordes: #2d5986
 #+slug: 04_git_record
 #+weight: 4
 
