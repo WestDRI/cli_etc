@@ -1,0 +1,103 @@
+#+title: Git & GitHub setup
+#+description: Hands-on
+#+colordes: #9a3932
+#+slug: 02_git_setup
+#+weight: 2
+
+In order to follow this course, you will need to:
+
+- Install Git
+- Configure Git
+- Create a GitHub account (if you don't have one already)
+- (Optionally) set up SSH for that account
+
+This lesson will guide you through this.
+
+* Install Git
+
+You can download Git from the [[https://git-scm.com/downloads][official website]].
+
+If you are on Windows, downloading Git from the [[https://gitforwindows.org/][Git for Windows project]] is a better option as it will also provide you with a Bash emulation to run Git in the command line.
+
+* How to run Git?
+
+There are many GUIs (Graphical User Interfaces) which allow to run Git, but for this course, we will run Git in the command line. Why? The Git GUIs are often buggy, slow, and limiting. When something goes wrong with them or when they cannot perform a complex command, you have to revert to the command line. So, even if you use one, it is important to know how to run Git in the command line. Additionally, if you run projects through SSH (for instance on the Compute Canada clusters), working with the command line is really your best option.
+
+In this course, to run Git commands, open:
+
+*Windows:* {{<m>}}Git BASH \\
+*MacOS:* {{<m>}}{{<m>}}Terminal \\
+*Linux:* {{<m>}}{{<m>}}{{<n>}}any terminal emulator
+
+* Configure Git
+
+Before you can start using Git, there are few configurations that are necessary.
+
+*** Name and email address
+
+Each recorded version of your project will have a Git object called a /commit/ pointing to it. Amongst the information contained in those commits are the name and email address of the commit author (i.e. you). You have to set those so that Git uses the proper information when you start creating commits.
+
+#+BEGIN_src sh
+git config --global user.name "Your Name"
+git config --global user.email "your@email"
+#+END_src
+
+Replace ~"Your Name"~ by your actual name and ~"your@email"~ by your email address. 
+
+While you can use whatever name you want, it is common practice to use your actual name rather than a pseudo. The email address you choose does not have to be the one you are using for your GitHub account: both are unrelated. This is only the email address that will be associated with your commits.
+
+
+/Example:/
+
+#+BEGIN_src sh
+git config --global user.name "John Doe"
+git config --global user.email "john.doe@gmail.com"
+#+END_src
+
+*** Text editor
+
+Then, you need to pick the text editor you want Git to open whenever you need to type a message. Choose whatever text editor you are familiar with.
+
+/Example using the text editor nano:/
+
+#+BEGIN_src sh
+git config --global core.editor "nano"
+#+END_src
+
+*** Line ending format
+
+Finally, you need to set the proper line ending format for your operating system.
+
+If you are using macOS or Linux, run:
+
+#+BEGIN_src sh
+git config --global core.autocrlf input
+#+END_src
+
+If you are using Windows, run instead:
+
+#+BEGIN_src sh
+git config --global core.autocrlf true
+#+END_src
+
+*** List settings
+
+If you want to see your current Git configuration, you can run:
+
+#+BEGIN_src sh
+git config --list
+#+END_src
+
+If one of the values isn't right, just re-run the code with the proper value.
+
+* Create a GitHub account
+
+If you don't already have one, create a free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
+
+* (Optional) set up SSH for your GitHub account
+
+Each time you will upload/download data to/from a GitHub repository, you will have to enter your GitHub username and password.
+
+If you want to avoid this, you can [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set up SSH for your GitHub account]].
+
+* Comments & questions
