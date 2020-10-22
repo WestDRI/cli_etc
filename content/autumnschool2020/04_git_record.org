@@ -4,6 +4,16 @@
 #+slug: 04_git_record
 #+weight: 4
 
+* How Git saves a project history
+
+Git saves the history of your project as a series of snapshots. Each of these snapshots has a little Git object called a /commit/ pointing to it. Each commit is identified by a unique 40-character checksum hash called a SHA-1 or simply hash.
+
+#+BEGIN_mhexample
+Example of a Git SHA-1: 1f5eaef51fcef3f3410dfe8696ff924b10d25b31
+#+END_mhexample
+
+The commit contains information about the author of the snapshot, the date and time when it was made, as well as the SHA-1 of its parent(s) commit(s) so that Git can keep track of where it fits in the history relative to other commits.
+
 * The three trees of Git
 
 Git has a three-tree architecture:
