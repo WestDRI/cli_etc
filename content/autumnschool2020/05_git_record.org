@@ -4,6 +4,12 @@
 #+slug: 05_git_record
 #+weight: 5
 
-In this lesson, we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
+#+OPTIONS: toc:nil
+
+Now we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
+
+The key commands for this lesson are:
+
+~git init~, ~git status~, ~git add~, ~git commit~, ~git log~, and ~git show~.
 
 * Comments & questions
