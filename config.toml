@@ -44,6 +44,7 @@ canonifyurls = true
   math = true
   [params.utteranc]
     repo = "WestGrid/cli_etc"
+    issueTerm = "url"
 
 [taxonomies]
   category = "categories"
