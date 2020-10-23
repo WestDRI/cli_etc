@@ -32,12 +32,19 @@ Git has a three-tree architecture:
 
   The snapshot of the project at the commit ~HEAD~ is pointing to. {{<2br>}}
 
-Here is an illustration of these three trees:
+* Making changes to the working tree
 
-{{<img src="/img/git/git_img/diagrams/05.png" title="" width="%" line-height="0.5rem">}}
+When you make changes to the files in your project, you make changes in the *working directory* or *working tree*.
+
+Here is an illustration of the three trees for a project with a single file called ~File~ after the first commit (so let's say that it is at version ~v1~):
+
+{{<img src="/img/git/git_img/diagrams/12.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-** Status of the trees
+You make a change to ~File~ (so let's say that it is now at version ~v2~):
+
+{{<img src="/img/git/git_img/diagrams/15.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
 
 To display the status of the Git trees, you run:
 
@@ -45,26 +52,19 @@ To display the status of the Git trees, you run:
 git status
 #+END_src
 
-** Making changes to the working tree
-
-When you make changes to one of your files, you make changes in the *working directory*. For instance, if you add a new file, your trees will look like this:
-
-{{<img src="/img/git/git_img/diagrams/10.png" title="" width="%" line-height="0rem">}}
-{{</img>}}
-
-and ~git status~ will return something like this:
+This is what you get:
 
 #+BEGIN_src sh
 On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   File
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        File
-
-nothing added to commit but untracked files present (use "git add" to track)
+no changes added to commit (use "git add" and/or "git commit -a")
 #+END_src
 
-** Staging changes
+* Staging changes
 
 You /stage/ that file (meaning that you will include the changes of that file in the next commit) with:
 
@@ -74,20 +74,19 @@ git add File
 
 After which, your Git trees look like:
 
-{{<img src="/img/git/git_img/diagrams/11.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams/16.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 and ~git status~ returns something like:
 
 #+BEGIN_src sh
 On branch master
-
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-        new file:   File
+  (use "git restore --staged <file>..." to unstage)
+	modified:   File
 #+END_src
 
-** Committing changes
+* Committing changes
 
 Finally, you make a /commit/, recording the staged changes to history with:
 
@@ -97,7 +96,7 @@ git commit -m "Added File"
 
 And your trees look like:
 
-{{<img src="/img/git/git_img/diagrams/12.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams/17.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 Now ~git status~ returns:
@@ -109,28 +108,69 @@ nothing to commit, working tree clean
 
 This means that there are no uncommitted changes in your working tree or the staging area: all your changes have been written to history.
 
-** Why a two-stage process?
+* Why a two-stage process?
 
 The reason for this two-stage process is that it allows you to pick and choose the changes that you want to include in a commit. Instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later. This allows for a clearer history that will be easier to revisit in the future.
 
-** Making more commits
+* Comparing trees with one another
 
-Now, let's see what happens when we create a second commit, for instance with changes to your file.
+~git diff~ can show the differences between any two of your three trees.
 
-First, you make changes to your file:
+Let's imagine that our three trees look like this:
 
-{{<img src="/img/git/git_img/diagrams/15.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams/50.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Then, you stage these changes:
+We have a markdown manuscript (symbolized by ~.md~ in the figure) and a Python script (symbolized by ~.py~).
 
-{{<img src="/img/git/git_img/diagrams/16.png" title="" width="%" line-height="0rem">}}
+In our last commit, we saved a snapshot while they were at version ~vx~ and ~vy~ respectively. This is what ~HEAD~ shows (~HEAD~ points to ~master~ which points to our last commit).
+
+Then we made changes to the manuscript (so it is now in version ~vx+1~ in the working directory) and we staged those changes (so ~.md~ is also at version ~vx+1~ in the index).
+
+Finally, we made changes to our script (which is thus now in version ~vy+1~ in the working directory), but we did not stage those changes.
+
+At this point, our three trees are all different from each other.
+
+** Difference between the working directory and the index
+
+{{<img src="/img/git/git_img/diagrams/51.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Finally, you commit these new changes to history by creating a new snapshot of the project:
+That's all your unstaged changes on tracked files (new files will not be shown)*.
 
-{{<img src="/img/git/git_img/diagrams/17.png" title="" width="%" line-height="0rem">}}
+You can get those differences with:
+
+#+BEGIN_src sh
+git diff
+#+END_src
+
+/*Git can detect new files you have never staged: it lists them in the output of ~git status~. Until you put them under version control by staging them for the first time however, Git has no information about their content: at this point, they are untracked and they are not part of the working tree yet. So their content never appears in the output of ~git diff~./
+
+** Difference between the index and your last commit
+
+{{<img src="/img/git/git_img/diagrams/52.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
+
+That's your staged changes ready to be committed. That is, that's what would be committed with ~git commit -m "Some message"~.
+
+You get those differences with:
+
+#+BEGIN_src sh
+git diff --cached
+#+END_src
+
+** Difference between the working directory and your last commit
+
+{{<img src="/img/git/git_img/diagrams/53.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+This is the combination of the other two, that is, all your staged and unstaged changes (again, only on tracked files).
+
+You can display those differences with:
+
+#+BEGIN_src sh
+git diff HEAD
+#+END_src
 
 * Commit history
 
@@ -168,5 +208,45 @@ From now on, since every commit points to a snapshot of your project, I will sim
 
 {{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
+
+* Displaying the commit history
+
+~git log~ lists past commits in a pager (~less~ by default) and allows you to get an overview of a project history.
+
+It comes with many flags which allow countless variations. Here are few useful ones.
+
+** Log as a list
+
+By default ~git log~ gives a lot of information for each commit. While this is sometimes useful, if you want to get a clear idea of your overall project history, it may be better to reduce each commit log to a one-liner:
+
+#+BEGIN_src sh
+git log --oneline
+#+END_src
+
+You can customize the commit log to your liking by playing with colors, time format, etc.
+
+Try for instance:
+
+#+BEGIN_src sh
+git log \
+    --graph \
+    --date-order \
+    --date=short \
+    --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
+                   `'%C(yellow)%s%+b %C(magenta)%ae'
+#+END_src
+
+To see all the available flags, run ~man git-log~.
+ 
+** Log as a graph
+
+The ~--graph~ flag allows to view this history in the form of a graph.
+
+#+BEGIN_src sh
+git log --graph
+#+END_src
+
+This may not seem very useful with our simple history because it is linear, with a single branch, but in complex histories with several branches, this is really useful.
+
 
 * Comments & questions
