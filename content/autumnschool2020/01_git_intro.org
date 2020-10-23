@@ -6,7 +6,7 @@
 
 #+OPTIONS: toc:nil
 
-*First Zoom session*
+*Zoom session 1*
 
 {{<m>}} /Access:/ You should have received the meeting id and password by email. \\
 {{<m>}} /Time:/ 9 am Pacific Time. \\

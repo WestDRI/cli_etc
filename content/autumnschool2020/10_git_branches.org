@@ -4,7 +4,7 @@
 #+slug: 10_git_branches
 #+weight: 10
 
-*Third Zoom session, part 1*
+*Zoom session 3 — part 1*
 
 {{<m>}} /Access:/ You should have received the meeting id and password by email. \\
 {{<m>}} /Time:/ 3 pm Pacific Time.

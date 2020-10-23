@@ -4,7 +4,7 @@
 #+slug: 11_git_timetravel
 #+weight: 11
 
-*Third Zoom session, part 2*
+*Zoom session 3 — part 2*
 
 It's great to record history, but if we don't know how to make use of it, it isn't exactly useful.
 
