@@ -1,0 +1,211 @@
+#+title: Remotes
+#+description: Zoom
+#+colordes: #e86e0a
+#+slug: 12_git_remotes
+#+weight: 12
+
+*Zoom session 3 — part 3*
+
+* What are remotes?
+
+Remotes are versions of a project that reside outside it. "Outside" can be anywhere, including on an external drive or even on the same machine. Often however, remotes are on a different machine to serve as backup or on a network (possibly the internet) to be accessible by several persons and serve as a syncing hub for collaborations.
+
+A number of online Git repository managers and hosting services have become popular remotes for Git projects. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]]. In this workshop, we will create a remote on GitHub.
+
+A project can have several remotes. These remotes are characterized by an address (or a path if they are local) and identified by a name of your choice.
+
+When you clone a repository, the initial repository automatically becomes a remote of your newly created clone and is given the name ~origin~ by Git.
+
+Since you started your project locally, it does not have any remote.
+
+* Adding a GitHub remote
+
+To add a GitHub remote to it, you first need to create a new GitHub repository.
+
+** Creating an empty repository on GitHub
+
+Go to https://github.com, login, and go to your home page (https://github.com/<user>).
+
+From there, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
+
+Enter the name you want for your repo, *without spaces*. It can be the same name you have for your project on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
+
+You can make your repository public or private. Choose the private option if your research contains sensitive data or you do not want to share your project with the world. If you want to develop open source projects, of course, you want to make them public.
+
+Now, you have this empty repository on GitHub, but it is not connected to your local repository.
+
+** Adding the new GitHub repo as a remote
+
+Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH (if you have set SSH for your GitHub account) or HTTPS (if you haven't) and copy the address.
+
+Then, go back to your command line, ~cd~ inside your project if you aren't already there and add your remote.
+
+You add a remote with:
+
+#+BEGIN_example
+git remote add <remote-name> <remote-address>
+#+END_example
+
+{{<b>}}&lt;remote-name&gt;{{</b>}} is only a convenience name that will identify that remote. You can choose any name, but since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
+
+{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh][if you have set SSH for your GitHub account]]—the SSH form.
+
+#+BEGIN_mhexample
+Example (using an SSH address):
+#+END_mhexample
+
+#+BEGIN_example
+git remote add origin git@github.com:<user>/<repo>.git
+#+END_example
+
+#+BEGIN_mhexample
+Example (using an HTTPS address):
+#+END_mhexample
+
+#+BEGIN_example
+git remote add origin https://github.com/<user>/<repo>.git
+#+END_example
+
+(Paste the address you have just copied on GitHub after ~git remote add origin~).
+
+If you were working alone on this project and only wanted to have a remote for backup, you would be set.
+
+If you don't want to grant others write access to the project and only accept contributions through pull requests, you are also set.
+
+If you want to grant your collaborators write access to the project however, you need to add them to it.
+
+** Inviting collaborators to a GitHub repo
+
+- Go to your GitHub project page
+- Click on the {{<b>}}Settings{{</b>}} tab
+- Click on the {{<b>}}Manage access{{</b>}} section on the left-hand side (you will be prompted for your GitHub password)
+- Click on the {{<b>}}Invite a collaborator{{</b>}} green button
+- Invite your collaborators with one of their GitHub user name, their email address, or their full name
+
+* Getting information on remotes
+
+To list remotes, run:
+
+#+BEGIN_src sh
+git remote
+#+END_src
+
+To list the remotes with their addresses:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+You can see that your local project now has a remote called ~origin~ and that it has the address of your GitHub repo.
+
+To get yet more information about a particular remote, you can run:
+
+#+BEGIN_example
+git remote show <remote-name>
+#+END_example
+
+For instance, to inspect your new remote, run:
+
+#+BEGIN_src sh
+git remote show origin
+#+END_src
+
+* Managing remotes
+
+You rename a remote with:
+
+#+BEGIN_example
+git remote rename <old-remote-name> <new-remote-name>
+#+END_example
+
+And you delete a remote with:
+
+#+BEGIN_example
+git remote remove <remote-name>
+#+END_example
+
+You can change the url of the remote with:
+
+#+BEGIN_example
+git remote set-url <remote-name> <new-url> [<old-url>]
+#+END_example
+
+* Working with remotes
+
+** Downloading data from the remote
+
+If you collaborate on your project through the GitHub remote, you will have to download data added by your teammates to keep your local project up to date.
+
+To download new data from the remote, you have 2 options: ~git fetch~ and ~git pull~.
+
+*** Fetching changes
+
+/Fetching/ downloads the data from your remote that you don't already have in your local version of the project.
+
+#+BEGIN_example
+git fetch <remote-name>
+#+END_example
+
+The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
+
+#+BEGIN_mhexample
+Example: To fetch from your new GitHub remote, you would run:
+#+END_mhexample
+
+#+BEGIN_src sh
+git fetch origin
+#+END_src
+
+*** Pulling changes
+
+/Pulling/ does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
+
+#+BEGIN_example
+git pull <remote-name> <branch>
+#+END_example
+
+#+BEGIN_mhexample
+Example
+#+END_mhexample
+
+#+BEGIN_src sh
+git pull origin master
+#+END_src
+
+If your branch is already tracking a remote branch (see below), then you simply need to run:
+
+#+BEGIN_src sh
+git pull
+#+END_src
+
+Now, how do you upload data /to/ the remote?
+
+** Pushing to a remote
+
+Uploading data to the remote is called /pushing/ and is done with:
+
+#+BEGIN_example
+git push <remote-name> <branch-name>
+#+END_example
+
+To push your branch ~master~ to the remote ~origin~:
+
+#+BEGIN_src sh
+git push origin master
+#+END_src
+
+You can also set an upstream branch to track a local branch with the ~-u~ flag:
+
+#+BEGIN_src sh
+git push -u origin master
+#+END_src
+
+From now on, all you have to run when you are on ~master~ is:
+
+#+BEGIN_src sh
+git push
+#+END_src
+
+Git knows that your local ~master~ branch is being tracked by the upstream ~master~ branch.
+
+* Comments & questions
