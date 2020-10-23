@@ -6,7 +6,7 @@
 
 #+OPTIONS: toc:nil
 
-*Third Zoom session, part 4*
+*Zoom session 3 — part 4*
 
 {{<m>}} /Topic:/ I will answer your last questions and wrap up the course.
 
