@@ -12,6 +12,6 @@ Now we will put into practice what you just learnt: we will create a project, pu
 
 The key commands for this lesson are:
 
-~git init~, ~git status~, ~git add~, ~git commit~, ~git log~, and ~git show~.
+~git init~, ~git status~, ~git add~, ~git commit~, ~git diff~, ~git log~, and ~git show~.
 
 * Comments & questions
