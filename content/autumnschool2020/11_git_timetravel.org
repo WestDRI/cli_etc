@@ -121,7 +121,7 @@ Here is a proper workflow if you have created commits from a detached HEAD state
 {{<img src="/img/git/git_img/diagrams/45.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-First, create a new branch (we will cover this in detail in the next lesson):
+First, create a new branch:
 
 {{<img src="/img/git/git_img/diagrams/48.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
