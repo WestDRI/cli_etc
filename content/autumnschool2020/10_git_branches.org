@@ -105,6 +105,8 @@ git branch -a
 
 * Merging branches
 
+** Fast-forward merge
+
 Here is a classic workflow with branches:
 
 You just checked out the branch ~test~. Now you make a series of commits on that branch:
@@ -144,7 +146,9 @@ And you have:
 
 {{<img src="/img/git/git_img/diagrams/29.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
-{{<2br>}}
+
+** Merge commit
+
 Let's consider another common workflow with a branch ~test2~ starting from the same situation (you just created and checked out ~test2~):
 
 {{<img src="/img/git/git_img/diagrams/32.png" title="" width="%" line-height="0.5rem">}}
