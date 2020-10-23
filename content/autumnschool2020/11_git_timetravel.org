@@ -1,13 +1,10 @@
 #+title: Time travel
 #+description: Zoom
 #+colordes: #e86e0a
-#+slug: 10_git_timetravel
-#+weight: 10
+#+slug: 11_git_timetravel
+#+weight: 11
 
-*Third Zoom session, part 1*
-
-{{<m>}} /Access:/ You should have received the meeting id and password by email. \\
-{{<m>}} /Time:/ 3 pm Pacific Time.
+*Third Zoom session, part 2*
 
 It's great to record history, but if we don't know how to make use of it, it isn't exactly useful.
 
