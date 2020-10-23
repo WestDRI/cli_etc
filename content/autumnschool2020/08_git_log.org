@@ -1,0 +1,42 @@
+#+title: Overview of history
+#+description: Reading
+#+colordes: #2d5986
+#+slug: 08_git_log
+#+weight: 8
+
+~git log~ lists past commits in a pager (~less~ by default) and allows to to get an overview of a project history. It comes with many flags which allow countless variations. Here are a few useful ones.
+
+* Log as a list
+
+By default ~git log~ gives a lot of information for each commit. While this is sometimes useful, if you want to get a clear idea of your overall project history, it may be better to reduce each commit log to a one-liner:
+
+#+BEGIN_src sh
+git log --oneline
+#+END_src
+
+You can customize the commit log to your liking by playing with colors, time format, etc.
+
+Try for instance:
+
+#+BEGIN_src sh
+git log \
+    --graph \
+    --date-order \
+    --date=short \
+    --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
+                   `'%C(yellow)%s%+b %C(magenta)%ae'
+#+END_src
+
+To see all the available flags, run ~man git-log~.
+ 
+* Log as a graph
+
+The ~--graph~ flag allows to view this history in the form of a graph.
+
+#+BEGIN_src sh
+git log --graph
+#+END_src
+
+This may not seem very useful with our simple history because it is linear, with a single branch, but in complex histories with several branches, this is really useful.
+
+* Comments & questions
