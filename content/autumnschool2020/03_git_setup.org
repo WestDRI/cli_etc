@@ -1,6 +1,6 @@
 #+title: Git & GitHub setup
 #+description: Hands-on
-#+colordes: #9a3932
+#+colordes: #8a2000
 #+slug: 03_git_setup
 #+weight: 3
 
@@ -95,7 +95,7 @@ If one of the values isn't right, just re-run the code with the proper value.
 
 If you don't already have one, create a free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
 
-* (Optional) set up SSH for your GitHub account
+* (Optional) Set up SSH for your GitHub account
 
 Each time you will upload/download data to/from a GitHub repository, you will have to enter your GitHub username and password.
 
