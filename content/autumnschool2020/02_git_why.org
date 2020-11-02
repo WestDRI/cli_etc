@@ -10,18 +10,18 @@
 <center>{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}from <a href="http://geek-and-poke.com/">Geek&Poke</a></center>
 {{</imgshadow>}}
 
-Without dedicated version control tools, many people instinctively use some form of DIY version control by saving several copies of important files at various stages of development.
+Without dedicated versioning tools, many people instinctively use some form of DIY version control by saving copies of important files at various stages of development.
 
-Those who are extremely organized may have a system including the date in the names of those file versions. It is tedious to maintain and really hard to work with.
+The extremely organized may have a system including the date in the names of those file versions. This is tedious to maintain and really hard to work with.
 
 For those who are not extremely organized however, it is pure chaos. I'm sure you know what I'm talking about.
 
 {{<imgshadow src="https://phdcomics.com/comics/archive/phd101212s.gif" margin="4rem" title="" width="500" line-height="">}}
 {{</imgshadow>}}
 
-Version control systems make versioning projects—that is, archiving multiple versions of projects into a history—part of a reasonable workflow that does not involve a nightmarish collection of files swamping your folders.
+Version control systems make versioning projects—that is, archiving multiple versions of projects into a history—part of a reasonable workflow that does not involve a confusing collection of files swamping your folders.
 
-They automatically record consistent information whenever you archive a version. They also offer easy ways to navigate projects histories, compare versions, or revert files to earlier versions.
+They automatically record consistent information whenever you archive versions. They also offer easy ways to navigate projects histories, compare versions, or revert files to earlier states.
 
 * Here comes Git
 
@@ -33,17 +33,17 @@ Git is an open source distributed version control system (DVCS) created in 2005 
 from <a href="https://trends.google.com/trends/">Google Trends</a>
 {{</img>}}{{<br>}}
 
-Git is extremely powerful. Well, if one knows how to use it that is...
+And for very good reasons: Git is extremely powerful. Well, if one knows how to use it that is...
 {{<2br>}}
 {{<img src="https://imgs.xkcd.com/comics/git.png" margin="0rem" title="" width="300" line-height="0.5rem">}}
 from <a href="https://xkcd.com/">xkcd.com</a>
 {{</img>}}
 
-* Easy experimentation
+** Easy experimentation
 
-[[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch of development. They also allow for multiple developments to happen in parallel.
+[[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch of development. They also allow for multiple developments to happen in parallel without interfering with each other.
 
-* Backup tool
+** Backup tool
 
 External remotes on a server or on the web (e.g. [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]]) provide an easy way to backup a project and its history.
 
@@ -51,8 +51,10 @@ External remotes on a server or on the web (e.g. [[https://github.com][GitHub]],
 by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&nbsp;&nbsp;
 {{</img>}}
 
-* Collaborative tool
+** Collaborative tool
 
-Finally, with easy branching and merging, Git is a great collaboration tool.
+With easy branching and merging, Git is a great collaboration tool: team members can work on separate branches without stepping on each other's toes, then integrate their work into the main branch.
+
+Finally, thanks to Git's distributed nature, everybody has the full project history on their machine. This is more secure (redundancy) and access to the internet/network is only needed to upload/download data to/from the remote.
 
 * Comments & questions
