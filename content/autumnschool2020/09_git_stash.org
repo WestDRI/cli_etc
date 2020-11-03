@@ -36,7 +36,7 @@ You can list them with:
 git stash list
 #+END_src
 
-Stashes are also shown when you run ~git log~ (with any of its variations) with the ~--all~ flag
+Stashes are also shown when you run ~git log~ (with any of its variations) with the ~--all~ flag.
 
 #+BEGIN_mhexample
 Example
@@ -54,7 +54,7 @@ To re-apply the changes (or apply them on another branch), you run:
 git stash apply
 #+END_src
 
-If you had staged changes, you can restore the state of the index with:
+If you had staged changes, you can also restore the state of the index by running instead:
 
 #+BEGIN_src sh
 git stash apply --index
@@ -85,6 +85,13 @@ git stash drop
 
 Here again, if you want to delete another stash, specify it with its reflog index.
 
+#+BEGIN_mhexample
+Example: To delete the antepenultimate stash:
+#+END_mhexample
+
+#+BEGIN_src sh
+git stash drop stash@{2}
+#+END_src
 
 You can apply and delete a stash at the same time with:
 
