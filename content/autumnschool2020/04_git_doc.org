@@ -41,7 +41,7 @@ man git-commit
 #+END_src
 
 {{<br>}}
-Man pages open in a [[https://en.wikipedia.org/wiki/Terminal_pager][pager]] (usually the pager [[https://en.wikipedia.org/wiki/Less_(Unix)][~less~]]).
+Man pages open in a [[https://en.wikipedia.org/wiki/Terminal_pager][pager]] (by default [[https://en.wikipedia.org/wiki/Less_(Unix)][less]]).
 
 {{<br>}}
 Some useful keybindings when you are in the pager:
@@ -73,7 +73,7 @@ git commit -h
 
 * Online documentation
 
-For online reference and documentation, you can look at:
+For online references and documentation, you can look at:
 
 - the official [[https://git-scm.com/docs][Git manual]]
 - the open source [[https://git-scm.com/book/en/v2][Pro Git book]]
