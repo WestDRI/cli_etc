@@ -9,7 +9,7 @@
 *Zoom session 2 — part 1*
 
 {{<m>}} /Access:/ You should have received the meeting id and password by email. \\
-{{<m>}} /Time:/ 10:30 am Pacific Time. \\
+{{<m>}} /Time:/ Noon Pacific Time. \\
 {{<m>}} /Topic:/ I will answer questions you may have had while going over the first few lessons for this course.
 
 * Comments & questions
