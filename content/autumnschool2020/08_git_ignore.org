@@ -13,7 +13,7 @@ There are files you really want to put under version control, but there are file
 *Put under version control:*
 - Scripts
 - Manuscripts and notes
-- Makefile and similar
+- Makefile & similar
 
 *Do NOT put under version control:*
 - Non-text files (e.g. images, office documents)
@@ -23,7 +23,7 @@ There are files you really want to put under version control, but there are file
 
 *** The .gitignore file
 
-To exclude files from version control, create a file called .gitignore in the root of your project and add those files in it, one per line.
+To exclude files from version control, create a file called .gitignore in the root of your project and add those files to it, one per line.
 
 #+BEGIN_mhexample
 Example:
@@ -37,7 +37,7 @@ echo /result/ >> .gitignore   # you can also ignore entire directories
 
 *** Globing patterns
 
-You can also use globing patterns.
+You can use globbing patterns.
 
 #+BEGIN_mhexample
 Example:
@@ -63,7 +63,7 @@ Trailing spaces are ignored unless they are escaped with ~\~.
 
 Patterns ending with ~/~ match directories. Otherwise patterns match both files and directories.
 
-~/~ at the beginning or within a search pattern indicates that the pattern is relative to the directory level of the .gitignore file. Otherwise the pattern matches anywhere below the .gitignore level.
+~/~ at the beginning or within a search pattern indicates that the pattern is relative to the directory level of the .gitignore file (usually the root of the project). Otherwise the pattern matches anywhere below the .gitignore level.
 
 
 #+BEGIN_mhexample
