@@ -22,10 +22,10 @@ In your GitHub project webpage, go to the {{<b>}}Settings{{</b>}} tab, then the 
 
 Now, your collaborators can clone the project from GitHub to their machine to start working on it (with Git, everybody has a full version of the project and its history on their machine).
 
-#+BEGIN_example
+#+BEGIN_syntax
 cd /place/where/you/want/to/have/your/project
 git clone git@github.com:<user>/<repo>.git <name>
-#+END_example
+#+END_syntax
 
 {{<b>}}&lt;name&gt;{{</b>}} is not necessary: this is only if you want to rename the repo on your machine.
 
@@ -59,7 +59,7 @@ If you don't use any merge tool, you can edit those sections manually in any tex
 
 You can also in one swoop keep all of your sections (i.e. the version of the branch you are currently on or {{<b>}}HEAD{{</b>}}) or all of "their" sections (the alternative version of the file you are merging into your branch) with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git checkout --ours <file>
 git checkout --theirs <file>
-#+END_example
+#+END_syntax

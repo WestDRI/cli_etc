@@ -44,9 +44,9 @@ Since we haven't added any remote to our project yet, this should not return any
 
 This is how you add a remote:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add <remote-name> <remote-address>
-#+END_example
+#+END_syntax
 
 {{<b>}}&lt;remote-name&gt;{{</b>}} is the name you give to your remote. Usually, the name {{<b>}}origin{{</b>}} is used.
 
@@ -54,15 +54,15 @@ git remote add <remote-name> <remote-address>
 
 /Example (using an SSH address):/
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add origin git@github.com:<github-username>/<repo-name>.git
-#+END_example
+#+END_syntax
 
 /Example (using an HTTPS address):/
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add origin https://github.com/<github-username>/<repo-name>.git
-#+END_example
+#+END_syntax
 
 {{<exercise>}}
 - Add your new GitHub repo as the remote to your {{<b>}}git_lesson{{</b>}} project and call it {{<b>}}origin{{</b>}}<br>
@@ -73,17 +73,17 @@ git remote add origin https://github.com/<github-username>/<repo-name>.git
 
 You rename a remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote rename <old-remote-name> <new-remote-name>
-#+END_example
+#+END_syntax
 
 ** Remove remotes
 
 And you delete a remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote remove <remote-name>
-#+END_example
+#+END_syntax
 
 * Working with remotes
 
@@ -91,9 +91,9 @@ git remote remove <remote-name>
 
 You now have a remote, but it is empty. You need to /push/ the branches of your local repo to update your remote with your project history:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git push <remote-name> <branch-name>
-#+END_example
+#+END_syntax
 
 /Example:/
 
@@ -112,9 +112,9 @@ git push origin master
 
 You could use {{<b>}}git push &lt;remote-name&gt; &lt;branch-name&gt;{{</b>}} every time you want to push to your remote. But you can also associate a branch to a remote by pushing once with the flag {{<c>}}--set-upstream{{</c>}}:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git push --set-upstream <remote-name> <branch-name>
-#+END_example
+#+END_syntax
 
 This will associate your local branch called {{<b>}}&lt;branch-name&gt;{{</b>}} with a branch of the same name in your remote.
 
@@ -133,9 +133,9 @@ After you have run this once, when you have checked out the branch {{<b>}}&lt;br
 
 Now, if your collaborators also work on the project and push to it, you want to get their changes to your local repository:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git fetch <remote-name>
-#+END_example
+#+END_syntax
 
 /Example:/
 

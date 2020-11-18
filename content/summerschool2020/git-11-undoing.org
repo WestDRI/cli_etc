@@ -32,9 +32,9 @@ You know how to add changes to the staging area. But what if you want to unstage
 
 Here is the command for this:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git restore --staged <file>
-#+END_example
+#+END_syntax
 
 /Note that Git will remind you about the existence of this command when you run {{<c>}}git status{{</c>}} and have staged files ready to be committed./
 
@@ -49,9 +49,9 @@ git restore --staged <file>
 
 Now, what if you made changes to a file, then decide that they were no good? You can easily get rid of these edits and restore the file to its last committed version:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git restore <file>
-#+END_example
+#+END_syntax
 
 /Note that Git will tell you about this command when you run {{<c>}}git status{{</c>}} and have unstaged changes in tracked files./
 

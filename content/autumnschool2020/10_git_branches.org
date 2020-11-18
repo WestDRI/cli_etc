@@ -36,9 +36,9 @@ This is also what ~(HEAD -> master)~ means when you run ~git log~ (you need to c
 
 You can create additional branches with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git branch <branch-name>
-#+END_example
+#+END_syntax
 
 #+BEGIN_mhexample
 Example:
@@ -57,9 +57,9 @@ Notice that ~HEAD~ still points to ~master~.
 
 You switch to a branch with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git checkout <branch-name>
-#+END_example
+#+END_syntax
 
 #+BEGIN_mhexample
 Example:
@@ -76,17 +76,17 @@ git checkout test
 
 When you create a branch, most of the time you want to switch to it. There is a handy way to create a branch and switch to it immediately:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git checkout -b <branch-name>
-#+END_example
+#+END_syntax
 
 * Deleting branches
 
 You can delete a branch with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git branch -d <branch-name>
-#+END_example
+#+END_syntax
 
 * Getting information on branches
 

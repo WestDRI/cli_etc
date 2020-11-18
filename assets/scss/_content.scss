@@ -320,6 +320,18 @@ img[alt=radius] {
   padding: 0em 1.5em;
 }
 
+.syntax-block {
+  // box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3);
+  font-family: $code-font-family;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1rem;
+  margin: 0rem 0rem;
+  padding: 0em 0.9em;
+  overflow-x: auto;
+}
+
 .challenge-block {
   color: #262626;
   margin: 45px 50px 45px 20px;

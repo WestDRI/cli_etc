@@ -127,21 +127,21 @@ git diff HEAD~ HEAD
 
 Difference between 2 commits of hash {{<b>}}&lt;hash1&gt;{{</b>}} and {{<b>}}&lt;hash2&gt;{{</b>}}:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git diff <hash2> <hash1>
-#+END_example
+#+END_syntax
 
 Difference between the tips of 2 branches (both commands are equivalent):
 
-#+BEGIN_example
+#+BEGIN_syntax
 git diff <branch2> <branch1>
 git diff <branch2>..<branch1>
-#+END_example
+#+END_syntax
 
 Difference between the tip of {{<b>}}&lt;branch1&gt;{{</b>}} and the state of {{<b>}}&lt;branch1&gt;{{</b>}} when {{<b>}}&lt;branch2&gt;{{</b>}} was started from it:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git diff <branch2>...<branch1>
-#+END_example
+#+END_syntax
 
 * Comments & questions

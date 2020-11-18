@@ -30,9 +30,9 @@ As you make commits, the {{<b>}}master{{</b>}} pointer and {{<b>}}HEAD{{</b>}} w
 
 You can create an additional branch with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git branch <branch-name>
-#+END_example
+#+END_syntax
 
 {{<exercise>}}
 Create a new branch called {{<b>}}test{{</b>}}.
@@ -50,9 +50,9 @@ To switch branch, you use a command we have already used many times to go to a p
 
 So switching branch is done with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git checkout <branch-name>
-#+END_example
+#+END_syntax
 
 {{<exercise>}}
 Switch to your new branch {{<b>}}test{{</b>}}, then run {{<c>}}git log --oneline{{</c>}} again.
@@ -62,9 +62,9 @@ Switch to your new branch {{<b>}}test{{</b>}}, then run {{<c>}}git log --oneline
 
 When you create a branch, most of the time you want to switch to it. So there is a command which allows to create a branch and switch to it immediately without having to do this in two steps:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git checkout -b <name-new-branch>
-#+END_example
+#+END_syntax
 
 This command is convenient: when you create a branch with {{<b>}}git branch &lt;branch-name&gt;{{</b>}}, it is easy to forget to switch to the new branch before making commits!
 
@@ -77,9 +77,9 @@ If you created an experimental branch and are happy with the result, you'll want
 - First, switch to the main development branch (e.g. {{<c>}}git checkout master{{</c>}})
 - Then, merge your experimental branch into the main branch:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git merge <branch-to-merge-into-current-branch>
-#+END_example
+#+END_syntax
 
 /Example:/
 
@@ -104,9 +104,9 @@ Once the conflict is resolved, you can finish the merge with {{<c>}}git commit{{
 
 Once you have merged a branch into another or if you decide that the experiments on a branch are not worth keeping, you can delete that branch with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git branch -d <branch-name>
-#+END_example
+#+END_syntax
 
 /Example:/
 

@@ -16,9 +16,9 @@ Any code with such placeholder that you need to edit has a white background.
 
 /Example:/
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add <remote-name> <remote-address>
-#+END_example
+#+END_syntax
 
 *** Gray background
 

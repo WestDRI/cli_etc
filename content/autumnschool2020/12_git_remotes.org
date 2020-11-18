@@ -42,9 +42,9 @@ Then, go back to your command line, ~cd~ inside your project if you aren't alrea
 
 You add a remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add <remote-name> <remote-address>
-#+END_example
+#+END_syntax
 
 {{<b>}}&lt;remote-name&gt;{{</b>}} is only a convenience name that will identify that remote. You can choose any name, but since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
 
@@ -54,17 +54,17 @@ git remote add <remote-name> <remote-address>
 Example (using an SSH address):
 #+END_mhexample
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add origin git@github.com:<user>/<repo>.git
-#+END_example
+#+END_syntax
 
 #+BEGIN_mhexample
 Example (using an HTTPS address):
 #+END_mhexample
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote add origin https://github.com/<user>/<repo>.git
-#+END_example
+#+END_syntax
 
 (Paste the address you have just copied on GitHub after ~git remote add origin~).
 
@@ -100,9 +100,9 @@ You can see that your local project now has a remote called ~origin~ and that it
 
 To get yet more information about a particular remote, you can run:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote show <remote-name>
-#+END_example
+#+END_syntax
 
 For instance, to inspect your new remote, run:
 
@@ -114,21 +114,21 @@ git remote show origin
 
 You rename a remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote rename <old-remote-name> <new-remote-name>
-#+END_example
+#+END_syntax
 
 And you delete a remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote remove <remote-name>
-#+END_example
+#+END_syntax
 
 You can change the url of the remote with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git remote set-url <remote-name> <new-url> [<old-url>]
-#+END_example
+#+END_syntax
 
 * Working with remotes
 
@@ -142,9 +142,9 @@ To download new data from the remote, you have 2 options: ~git fetch~ and ~git p
 
 /Fetching/ downloads the data from your remote that you don't already have in your local version of the project.
 
-#+BEGIN_example
+#+BEGIN_syntax
 git fetch <remote-name>
-#+END_example
+#+END_syntax
 
 The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
 
@@ -160,9 +160,9 @@ git fetch origin
 
 /Pulling/ does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
 
-#+BEGIN_example
+#+BEGIN_syntax
 git pull <remote-name> <branch>
-#+END_example
+#+END_syntax
 
 #+BEGIN_mhexample
 Example
@@ -184,9 +184,9 @@ Now, how do you upload data /to/ the remote?
 
 Uploading data to the remote is called /pushing/ and is done with:
 
-#+BEGIN_example
+#+BEGIN_syntax
 git push <remote-name> <branch-name>
-#+END_example
+#+END_syntax
 
 To push your branch ~master~ to the remote ~origin~:
 
