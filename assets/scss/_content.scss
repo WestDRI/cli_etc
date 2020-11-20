@@ -322,7 +322,9 @@ img[alt=radius] {
 
 .syntax-block {
   // box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3);
-  box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3);
+  // box-shadow: 0px 0px 1.5px rgba(0,0,0,0.3);
+  // background-color: #ffffff;
+  border-left: 3px solid #e7e7e7;
   font-family: $code-font-family;
   font-size: 1.6rem;
   font-weight: 400;
