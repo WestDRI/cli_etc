@@ -317,7 +317,7 @@ img[alt=radius] {
 
 .example-block {
   // this will be rendered as pre
-  padding: 0em 1.5em;
+  padding: 0rem 1.3rem;
 }
 
 .syntax-block {
@@ -326,9 +326,9 @@ img[alt=radius] {
   font-family: $code-font-family;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1rem;
+  // line-height: 2.5rem;
   margin: 0rem 0rem;
-  padding: 0em 0.9em;
+  padding: 0rem 1.3rem;
   overflow-x: auto;
 }
 
