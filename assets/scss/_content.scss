@@ -283,37 +283,37 @@ img[alt=radius] {
   color: #808080;
 }
 
-.accordion {
-  // button of the accordeon box
-  background-color: #c2d6d6;
-  color: #262626;
-  padding: 0em 0.8em;
-  font-size: 95%;
-  line-height: 22px;
-  border: 0.5pt solid #b3cccc;
-  border-radius: 3px;
-  box-shadow: 0pt 0pt 0pt #eee8d5;
-  transition: 0.4s;
-  cursor: pointer;
-  outline: none;
-}
+// .accordion {
+//   // button of the accordeon box
+//   background-color: #c2d6d6;
+//   color: #262626;
+//   padding: 0em 0.8em;
+//   font-size: 95%;
+//   line-height: 22px;
+//   border: 0.5pt solid #b3cccc;
+//   border-radius: 3px;
+//   box-shadow: 0pt 0pt 0pt #eee8d5;
+//   transition: 0.4s;
+//   cursor: pointer;
+//   outline: none;
+// }
 
-.active, .accordion:hover {
-  // button of the accordeon box while hover
-  background-color: #a3c2c2;
-  border: 0.5pt solid #94b8b8;
-}
+// .active, .accordion:hover {
+//   // button of the accordeon box while hover
+//   background-color: #a3c2c2;
+//   border: 0.5pt solid #94b8b8;
+// }
 
-.panel {
-  // accordeon box
-  padding: 0em 1em;
-  margin: 0.7em 0 0 0;
-  background-color: #e0ebeb;
-  border-radius: 3px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
+// .panel {
+//   // accordeon box
+//   padding: 0em 1em;
+//   margin: 0.7em 0 0 0;
+//   background-color: #e0ebeb;
+//   border-radius: 3px;
+//   max-height: 0;
+//   overflow: hidden;
+//   transition: max-height 0.2s ease-out;
+// }
 
 .example-block {
   // this will be rendered as pre
