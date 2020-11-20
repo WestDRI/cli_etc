@@ -332,10 +332,32 @@ img[alt=radius] {
   overflow-x: auto;
 }
 
+.exsimple-block {
+  color: #262626;
+  margin: 45px 50px 45px 20px;
+  border-left: 4px solid #ff3399;
+  padding-left: 1.3rem;
+  line-height: 3.0rem;
+}
+
+.exsimplec-block {
+  color: #262626;
+  margin: 45px 50px 45px 20px;
+  padding-left: 1.3rem;
+  line-height: 3.0rem;
+}
+
 .challenge-block {
   color: #262626;
   margin: 45px 50px 45px 20px;
   border-left: 5px solid #ff3399;
+  padding-left: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.challengec-block {
+  color: #262626;
+  margin: 45px 50px 45px 20px;
   padding-left: 1.3rem;
   line-height: 2.5rem;
 }
