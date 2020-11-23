@@ -50,17 +50,17 @@ git remote add <remote-name> <remote-address>
 
 {{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh][if you have set SSH for your GitHub account]]—the SSH form.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example (using an SSH address):
-#+END_mhexample
+#+END_note
 
 #+BEGIN_syntax
 git remote add origin git@github.com:<user>/<repo>.git
 #+END_syntax
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example (using an HTTPS address):
-#+END_mhexample
+#+END_note
 
 #+BEGIN_syntax
 git remote add origin https://github.com/<user>/<repo>.git
@@ -148,9 +148,9 @@ git fetch <remote-name>
 
 The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: To fetch from your new GitHub remote, you would run:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git fetch origin
@@ -164,9 +164,9 @@ git fetch origin
 git pull <remote-name> <branch>
 #+END_syntax
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git pull origin master

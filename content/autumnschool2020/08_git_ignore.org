@@ -25,9 +25,9 @@ There are files you really want to put under version control, but there are file
 
 To exclude files from version control, create a file called .gitignore in the root of your project and add those files to it, one per line.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 echo graph.png > .gitignore   # this creates .gitignore and adds 'graph.png' to it
@@ -39,9 +39,9 @@ echo /result/ >> .gitignore   # you can also ignore entire directories
 
 You can use globbing patterns.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 echo *.png >> .gitignore   # exclude all .png files
@@ -66,11 +66,11 @@ Patterns ending with ~/~ match directories. Otherwise patterns match both files 
 ~/~ at the beginning or within a search pattern indicates that the pattern is relative to the directory level of the .gitignore file (usually the root of the project). Otherwise the pattern matches anywhere below the .gitignore level.
 
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Examples: \\
 {{<m>}} ~foo/bar/~ matches the directory {{<b>}}foo/bar{{</b>}}, but not the directory {{<b>}}a/foo/bar{{</b>}} \\
 {{<m>}} ~bar/~ matches both the directories {{<b>}}foo/bar{{</b>}} and {{<b>}}a/foo/bar{{</b>}}
-#+END_mhexample
+#+END_note
 
 ~*~ matches anything except ~/~.
 
@@ -80,20 +80,20 @@ The range notation (e.g. ~[a-zA-Z]~) can be used to match one of the characters 
 
 A leading ~**/~ matches all directories.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: {{<n>}} ~**/foo~ matches file or directory {{<b>}}foo{{</b>}} anywhere. This is the same as ~foo~.
-#+END_mhexample
+#+END_note
 
 A trailing ~/**~ matches everything inside what it precedes.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: {{<n>}} ~abc/**~ matches all files (recursively) inside directory {{<b>}}abc{{</b>}}
-#+END_mhexample
+#+END_note
 
 ~/**/~ matches zero or more directories.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: {{<n>}} ~a/**/b~ matches {{<b>}}a/b{{</b>}}, {{<b>}}a/x/b{{</b>}}, and {{<b>}}a/x/y/b{{</b>}}
-#+END_mhexample
+#+END_note
 
 * Comments & questions

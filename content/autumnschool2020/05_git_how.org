@@ -10,9 +10,9 @@ Git saves the history of your project as a series of snapshots. Small Git object
 
 Each commit is identified by a unique 40-character checksum SHA-1 often simply referred to as a "hash".
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example of a Git SHA-1: 1f5eaef51fcef3f3410dfe8696ff924b10d25b31
-#+END_mhexample
+#+END_note
 
 Commits contain information about the author of the snapshot, the date and time when it was made, as well as the SHA-1 of its parent commit(s) so that Git can keep track of where it fits in the project history relative to other commits.
 

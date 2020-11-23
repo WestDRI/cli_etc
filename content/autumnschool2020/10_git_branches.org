@@ -40,9 +40,9 @@ You can create additional branches with:
 git branch <branch-name>
 #+END_syntax
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git branch test
@@ -61,9 +61,9 @@ You switch to a branch with:
 git checkout <branch-name>
 #+END_syntax
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git checkout test

@@ -54,9 +54,9 @@ git config --global user.name "<Your Name>"
 git config --global user.email "<your@email>"
 #+END_src
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git config --global user.name "John Doe"
@@ -71,9 +71,9 @@ Then, you need to pick the text editor you want Git to open whenever you need to
 git config --global core.editor "<text-editor>"
 #+END_src
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example using the text editor nano:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git config --global core.editor "nano"

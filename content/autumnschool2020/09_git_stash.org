@@ -38,9 +38,9 @@ git stash list
 
 Stashes are also shown when you run ~git log~ (with any of its variations) with the ~--all~ flag.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git log --graph --oneline --all
@@ -67,9 +67,9 @@ If you created multiple stashes, this will apply the last one you created. If th
 ~stash@{2}~ the one before that \\
 etc.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: To apply the stash before last:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git stash apply stash@{1}
@@ -85,9 +85,9 @@ git stash drop
 
 Here again, if you want to delete another stash, specify it with its reflog index.
 
-#+BEGIN_mhexample
+#+BEGIN_note
 Example: To delete the antepenultimate stash:
-#+END_mhexample
+#+END_note
 
 #+BEGIN_src sh
 git stash drop stash@{2}
