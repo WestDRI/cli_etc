@@ -70,31 +70,15 @@ A number of online Git repository managers have become popular remote hosting si
 
 
 
-** Managing remotes
 
 You add a remote with:
 
-#+BEGIN_src sh
-git remote add <remote-name> <remote-url>
-#+END_src
 
-You can rename a remote with:
 
-#+BEGIN_src sh
-git remote rename <old-name> <new-name>
-#+END_src
 
-And you delete a remote with:
 
-#+BEGIN_src sh
-git remote rm <remote-name>
-#+END_src
 
-You can change the url of the remote with:
 
-#+BEGIN_src sh
-git remote set-url <remote-name> <new-url> [<old-url>]
-#+END_src
 
 * Contributing to a project
 
