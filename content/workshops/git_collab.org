@@ -64,11 +64,18 @@ A project can have several remotes. An address (or a path if they are local) spe
 
 A number of online Git repository managers have become popular remote hosting sites. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]]. Today, we will use GitHub.
 
+* Collaborating on projects through Git and GitHub
 
+There are multiple scenarios:
 
+- You created a project on your machine, put it under version control, and now you want others to contribute to it.
+- You want to contribute to a project started by others.
 
+   {{<m>}}◦{{<n>}}You do not have write access to the GitHub repository.
 
+   {{<m>}}◦{{<n>}}You were granted write access to it.
 
+Let's go over these scenarios.
 
 
 You add a remote with:
