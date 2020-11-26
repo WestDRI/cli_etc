@@ -56,37 +56,19 @@ Git projects are local and self-contained: except for a few configuration files,
 
 Git has a great solution for this: remotes.
 
-** How to see which remotes are associated with my project?
 ** What are remotes, really?
 
-To list your remotes, run:
 Remotes are copies of a project that reside outside of it and are connected to it so that data can be synced back and forth. "Outside" can be anywhere, including on an external drive, or even on the same machine. If you want your remotes to serve as backups, you want them outside your machine. And if you want your remotes to allow for collaboration, you want them on a network your collaborators have access to. One option, of course, is the internet.
 
-#+BEGIN_src sh
-git remote
-#+END_src
 A project can have several remotes. An address (or a path if they are local) specifies their location.
 
-To list the remotes with their addresses:
 A number of online Git repository managers have become popular remote hosting sites. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]]. Today, we will use GitHub.
 
-#+BEGIN_src sh
-git remote -v
-#+END_src
 
-You can verify that your local clone indeed has a remote and that its address matches that of the GitHub project we just cloned.
 
-To get yet more information about a particular remote, you can run:
 
-#+BEGIN_src sh
-git remote show <remote-name>
-#+END_src
 
-For instance, to inspect your new remote, run:
 
-#+BEGIN_src sh
-git remote show origin
-#+END_src
 
 ** Managing remotes
 
