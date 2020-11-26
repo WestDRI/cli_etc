@@ -4,7 +4,7 @@
 #+date: 2020-02-19
 #+place: 60 min live webinar
 
-**** /Abstract/
+*** /Abstract/
 
 #+BEGIN_definition
 Working in the command-line has many advantages and it is often necessary, but can it be fun?

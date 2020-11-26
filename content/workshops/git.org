@@ -2,13 +2,13 @@
 #+topic: Git
 #+slug: git
 
-**** /Abstract/
+*** /Abstract/
 
 #+BEGIN_definition
 This day-long workshop introduces version control with Git and covers the most common operations. It puts a particular emphasis on explaining the functioning of Git: understanding what commands really do brings the confidence to go beyond the limited use of "add, commit, push" so common in data science fields.
 #+END_definition
 
-**** /Workshop requirements/
+*** /Workshop requirements/
 
 #+BEGIN_box
 *1 - Git* \\
@@ -18,7 +18,7 @@ This day-long workshop introduces version control with Git and covers the most c
 {{<n>}}{{<n>}}You can create a free GitLab account [[https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=d6a7eb9925781c7356331ce3eda5d0378c110295-1599623906-0-AQ1HOeAIWNL8AJ7U_v0kt3QlRK4uYA_zmS1__jAw6nO53JW6_1wp4YDAo_tVUuutDu-vl-x-lgIzHlVeSmXOQs8GcsWLBDtOe93ymvUxLHjrbXPTFOJhq5l_kAtGm3boRBhXOD3PriN6hPuTUjbx5CpI9uHsj2XMqNhJKV5TA9n5nUSIML9-c603Ch7ysTm_xHSKghlZqDcVDqMzTCWiowIHWm6r3PLwtAtRMGMMmtZFAWfELJOH0EcMtugU3GVJU_ByWuCmKv0m7GZG4X2k5cGgZ_pBFjWuKrpIfUw76RgNEBXm77UjYpfWzYloWdil1CO8fqSzQ8a7FH1hVq9oDjbJcgFkaoyq9pwj9Vv1geic#register-pane][here]].
 #+END_box
 
-**** Workshop material
+*** Workshop material
 
 This workshop is run by doing live coding within a [[https://github.com/damianavila/RISE][RISE]] presentation from a [[https://jupyter.org/][Jupyter notebook]].
 

@@ -5,7 +5,7 @@
 #+place: 60 min live webinar
 
 
-**** /Abstract/
+*** /Abstract/
 
 #+BEGIN_definition
 Stack Overflow, Stack Exchange, online forums ... the internet is a treasure trove of online communities where you can find solutions to your coding problems. To have a positive experience and get the answers you need however, you have to know where to ask, how to ask, and when not to ask: if countless people are willing to give you their time for free, they usually expect that you do your part.

@@ -13,7 +13,7 @@ Coming in fall 2020.
 # [[][Register for free webinar]]
 # #+END_sticker
 
-# **** /Abstract/
+# *** /Abstract/
 
 # #+BEGIN_definition
 

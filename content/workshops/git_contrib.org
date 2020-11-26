@@ -2,13 +2,13 @@
 #+topic: Git
 #+slug: git-contrib
 
-**** /Abstract/
+*** /Abstract/
 
 #+BEGIN_definition
 In this workshop, we will learn how to contribute to open source projects hosted on GitHub by opening issues and submitting pull requests.
 #+END_definition
 
-**** /Workshop requirements/
+*** /Workshop requirements/
 
 #+BEGIN_box
 *1 - Git* \\
