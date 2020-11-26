@@ -24,7 +24,7 @@ To add a GitHub remote to it, you first need to create a new GitHub repository.
 
 ** Creating an empty repository on GitHub
 
-Go to https://github.com, login, and go to your home page (https://github.com/<user>).
+Go to [[https://github.com][https://github.com]], login, and go to your home page (https://github.com/<user>).
 
 From there, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
 
