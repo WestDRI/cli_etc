@@ -4,8 +4,13 @@
 #+date: 2020-12-09
 #+place: 60 min live webinar
 
+*** /Abstract/
 
+#+BEGIN_definition
+This webinar introduces basic GIS data manipulation and mapping in R with the packages ~sf~ and ~tmap~.
 
+We will use data on North American glaciers as an example.
+#+END_definition
 
 
 
