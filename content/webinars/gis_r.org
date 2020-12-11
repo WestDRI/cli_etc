@@ -12,10 +12,18 @@ This webinar introduces basic GIS data manipulation and mapping in R with the pa
 We will use data on North American glaciers as an example.
 #+END_definition
 
+* Datasets
 
+A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
 
+The datasets that we will use for this webinars are the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0 {{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]] {{<fl n="2">}}.
 
+For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]].
 
+{{<fn>}}
+{{<fl n="1">}}RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60.{{<2br>}}
+{{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
+{{</fn>}}
 
 
 
