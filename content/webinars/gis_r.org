@@ -4,31 +4,15 @@
 #+date: 2020-12-09
 #+place: 60 min live webinar
 
-Coming in fall 2020.
 
-# {{<img src="/img/workinprogress.svg" title="Patience... patience..." width="200">}}
-# {{</img>}}
 
-# #+BEGIN_sticker
-# [[][Register for free webinar]]
-# #+END_sticker
 
-# *** /Abstract/
 
-# #+BEGIN_definition
 
-# #+END_definition
 
-# * Slides
 
-# Click to open the presentation:
 
-# #+BEGIN_export html
-# <a href="https://westgrid-webinars.netlify.app/gis_r/"><p align="center"><img src="/img/gis_r_slides.png" title="" width="100%" style="border-style: solid; border-width: 2.5px 2px 0 2.5px; border-color: black"/></p></a>
-# #+END_export
 
-# * Video
 
-# Coming in Fall 2020.
 
 * Comments & questions
