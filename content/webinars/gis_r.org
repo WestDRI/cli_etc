@@ -61,6 +61,61 @@ Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories con
 
 ~ak~ and ~wes~ are objects of class ~sf~ and ~data.frame~: they are data frames with a ~geometry~ list column as their last column.
 
+** Map all the glaciers of Western North America
+
+~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~, then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element. To see the various options, you can run ~?tmap-element~.
+
+As with ~ggplot2~ or GIS GUIs, the order matters as the layers stack up on top of each other.
+
+You can even add new sf objects by adding new ~tm_shape()~.
+
+Finally, you can add elements such as layouts, compass, and scale bars.
+
+~tmap~ functions have many arguments. Don't hesitate to make use of the help pages to see how you can customize your maps.
+
+#+BEGIN_src R
+?tm_layout
+?tm_compass
+?tm_scale_bar
+#+END_src
+
+We could thus plot the glaciers of Alaska with any of the options below:
+
+#+BEGIN_src R
+tm_shape(ak) +
+  tm_borders()
+
+tm_shape(ak) +
+  tm_fill()
+
+tm_shape(ak) +
+  tm_polygons()      # shows both borders and fill
+#+END_src
+
+Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map.
+
+Before doing so, it is very important to ensure that they have the same coordinate reference system (CRS).
+
+#+BEGIN_src R
+st_crs(wes)
+st_crs(ak)
+
+st_crs(wes) == st_crs(ak)
+#+END_src
+
+They do, so we are good to go.
+
+#+BEGIN_src R
+tm_shape(ak) +
+  tm_polygons() + 
+  tm_shape(wes) +
+  tm_polygons()
+#+END_src
+
+If you run the code above however, you may be surprised that you are still only plotting the map of Alaska.
+
+This is because each map comes with a spatial bounding box (~bbox~). In the code above, the ~bbox~ is set by the first shape. This means that our entire map uses the ~bbox~ of the Alaska map.
+
 * Retreat of glaciers
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
