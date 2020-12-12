@@ -25,8 +25,8 @@ The datasets that we will use for this webinar are the Alaska and the Western Ca
 For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages ~rnaturalearth~ (which provides the functions) and ~rnaturalearthdata~ (which provides the data).
 
 {{<fn>}}
-{{<fl n="1">}}RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60.{{<2br>}}
-{{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
+{{<fr n="1" text="RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60.">}}
+{{<fr n="2" text="Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.">}}
 {{</fn>}}
 
 * Loading and exploring data
