@@ -167,10 +167,6 @@ tm_shape(ag) +
   )
 #+END_src
 
-#+BEGIN_note
-Note: I didn't want to show the legend title and because there is no option to remove it, I set its color to that of the background.
-#+END_note
-
 {{<br>}}
 {{<img src="/img/gis_r/ag.png" margin="rem" title="" width="50%" line-height="0.5rem">}}
 {{</img>}}
