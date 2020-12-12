@@ -38,6 +38,52 @@ library(rnaturalearthdata)
 library(grid)
 #+END_src
 
+** Map of a single glacier
+
+Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
+
+Let's zoom on the Agassiz glacier.
+
+#+BEGIN_src R
+## select the data points corresponding to the Agassiz Glacier
+agassiz <- g %>% filter(glacname == "Agassiz Glacier")
+#+END_src
+
+And map it.
+
+#+BEGIN_src R
+tm_shape(ag) +
+  tm_polygons("year", palette = "Blues") +
+  tm_layout(
+    title = "Agassiz Glacier",
+    title.position = c("center", "top"),
+    legend.position = c("left", "bottom"),
+    legend.title.color = "#fcfcfc",
+    legend.text.size = 1,
+    bg.color = "#fcfcfc",
+    inner.margins = c(0.07, 0.03, 0.07, 0.03),
+    outer.margins = 0
+  ) +
+  tm_compass(
+    type = "arrow",
+    position = c("right", "top"),
+    text.size = 0.7
+  ) +
+  tm_scale_bar(
+    breaks = c(0, 0.5, 1),
+    position = c("right", "BOTTOM"),
+    text.size = 1
+  )
+#+END_src
+
+#+BEGIN_note
+Note: I didn't want to show the legend title and because there is no option to remove it, I set its color to that of the background.
+#+END_note
+
+{{<br>}}
+{{<img src="/img/gis_r/ag.png" margin="rem" title="" width="50%" line-height="0.5rem">}}
+{{</img>}}
+
 * Video
 
 {{<ytmh vWwbwROqn6w>}}
