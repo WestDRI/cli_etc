@@ -12,6 +12,10 @@ This webinar introduces basic GIS data manipulation and mapping in R with the pa
 We will use data on the retreat of North American glaciers as an example.
 #+END_definition
 
+* Video
+
+{{<ytmh vWwbwROqn6w>}}
+
 * Datasets
 
 A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
@@ -25,7 +29,9 @@ For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natu
 {{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
 {{</fn>}}
 
-* Load the necessary packages
+* Code
+
+** Load the necessary packages
 
 #+BEGIN_src R
 library(sf)
@@ -39,11 +45,11 @@ library(rnaturalearthdata)
 library(grid)
 #+END_src
 
-* Glaciers of Western North America
+** Glaciers of Western North America
 
 First, we will map the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
 
-** Load and explore the data
+*** Load and explore the data
 
 #+BEGIN_src R
 ak <- st_read("01_rgi60_Alaska")
@@ -62,7 +68,7 @@ Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories con
 
 ~ak~ and ~wes~ are objects of class ~sf~: they are data frames with a ~geometry~ list-column as their last column.
 
-** Map all the glaciers of Western North America
+*** Map all the glaciers of Western North America
 
 ~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~. Then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element.
 
@@ -163,7 +169,7 @@ tm_shape(ak, bbox = nwa_bbox) +
 {{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="5rem">}}
 {{</img>}}
 
-** View mode
+*** View mode
 
 ~tmap~ has 2 modes: ~plot~ and ~view~. \\
 ~plot~ is the default mode for static maps that we have used so far. \\
@@ -180,13 +186,13 @@ tmap_last()
 {{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="5rem">}}
 {{</imgshadow>}}
 
-* Retreat of glaciers
+** Retreat of glaciers
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
 
 To look at glacier retreat, we will look at the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These 4 datasets have the contour lines of 39 glaciers for the years 1966, 1998, 2005, and 2015.
 
-** Load and prepare the data
+*** Load and prepare the data
 
 We could load and clean these datasets one by one. Copying and pasting code however is inefficient and error-prone. A better approach is to do this in a functional programming framework: create a function which does all the data loading and cleaning, then pass each element of a vector of the paths of all 4 datasets to it using ~purrr::map()~.
 
@@ -236,7 +242,7 @@ g
 str(g)
 #+END_src
 
-** Overal map of the Glacier National Park glaciers
+*** Overal map of the Glacier National Park glaciers
 
 We can now map the data:
 
@@ -270,7 +276,8 @@ Note: I didn't want to show the legend title and because there is no option to r
 
 {{<img src="/img/gis_r/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
-** Map of a single glacier
+
+*** Map of a single glacier
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
 
@@ -311,7 +318,7 @@ tm_shape(ag) +
 {{<img src="/img/gis_r/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-** Animated map
+*** Animated map
 
 We can also create an animation to show the retreat of the Agassiz glacier:
 
@@ -346,8 +353,6 @@ tmap_animation(agassiz_anim, filename = "ag.gif", delay = 100)
 {{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
 {{</img>}}
 
-* Video
 
-{{<ytmh vWwbwROqn6w>}}
 
 * Comments & questions
