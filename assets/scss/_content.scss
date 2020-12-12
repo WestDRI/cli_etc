@@ -570,7 +570,11 @@ img[alt=radius] {
 
 .footnote-definition {
   font-size: 83%;
-  margin-left: 2rem;
-  margin-top: 4rem;
-  line-height: 2rem;
+  margin: 4rem 0 0 0.5rem;
+  line-height: 2.5rem;
+  ol {
+    p {
+      margin: 1.8rem 0 0 0.2rem;
+    }
+  }
 }
