@@ -16,7 +16,7 @@ We will use data on the retreat of North American glaciers as an example.
 
 {{<ytmh vWwbwROqn6w>}}
 
-* Datasets
+* Getting data
 
 A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
 
@@ -29,9 +29,9 @@ For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natu
 {{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
 {{</fn>}}
 
-* Code
+* Loading and exploring data
 
-** Load the necessary packages
+First, let's load the necessary packages for this webinar.
 
 #+BEGIN_src R
 library(sf)
@@ -45,11 +45,7 @@ library(rnaturalearthdata)
 library(grid)
 #+END_src
 
-** Glaciers of Western North America
-
-First, we will map the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
-
-*** Load and explore the data
+We will start by mapping the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
 
 #+BEGIN_src R
 ak <- st_read("01_rgi60_Alaska")
@@ -68,7 +64,7 @@ Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories con
 
 ~ak~ and ~wes~ are objects of class ~sf~: they are data frames with a ~geometry~ list-column as their last column.
 
-*** Map all the glaciers of Western North America
+* Mapping with tmap
 
 ~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~. Then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element.
 
@@ -76,20 +72,6 @@ To see the available options, run:
 
 #+BEGIN_src R
 ?tmap-element
-#+END_src
-
-As with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
-
-You can also add new shapes to your map.
-
-Finally, you can add elements such as layouts, compass, and scale bars.
-
-~tmap~ functions have many arguments. Don't hesitate to make use of the help pages to see how you can customize your maps:
-
-#+BEGIN_src R
-?tm_layout
-?tm_compass
-?tm_scale_bar
 #+END_src
 
 We could thus plot the glaciers of Alaska with any of the options below:
@@ -105,9 +87,52 @@ tm_shape(ak) +
   tm_polygons()      # shows both borders and fill
 #+END_src
 
-Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map.
+Here, we will use ~tm_polygons()~ which combines ~tm_borders()~ and ~tm_fill()~.
 
-Before doing so, it is very important to ensure that they have the same coordinate reference system (CRS):
+* Layout elements and attribute layers
+
+A map without title, compass, or scale bars is not very useful though. We need to add layout elements and attribute layers to the map.
+
+You can loop up the many arguments of the tmap functions in the help pages to see how you can customize your maps:
+
+#+BEGIN_src R
+?tm_layout
+?tm_compass
+?tm_scale_bar
+#+END_src
+
+Let's now map the glaciers of Alaska:
+
+#+BEGIN_src R
+tm_shape(ak) +
+  tm_polygons() +
+  tm_layout(
+    title = "Glaciers of Western North America",
+    title.position = c("center", "top"),
+    title.size = 1.1,
+    bg.color = "#fcfcfc",
+    inner.margins = c(0.06, 0.01, 0.09, 0.01),
+    outer.margins = 0,
+    frame.lwd = 0.2
+  ) +
+  tm_compass(
+    type = "arrow",
+    position = c("right", "top"),
+    size = 1.2,
+    text.size = 0.6
+  ) +
+  tm_scale_bar(
+    breaks = c(0, 1000, 2000),
+    position = c("right", "BOTTOM")
+  )
+#+END_src
+
+{{<img src="/img/gis_r/ak.png" margin="5rem" title="" width="%" line-height="5rem">}}
+{{</img>}}
+
+* Union of bounding boxes
+
+Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map. A map can contain multiple shapes: you only need to "add" a ~tm_shape~ and its element(s). Before doing so however, it is very important to ensure that they have the same coordinate reference system (CRS):
 
 #+BEGIN_src R
 st_crs(wes)
@@ -116,7 +141,9 @@ st_crs(ak)
 st_crs(wes) == st_crs(ak)
 #+END_src
 
-They do, so we are good to go:
+They do, so we are good to go.
+
+Note that, as with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
 
 #+BEGIN_src R
 tm_shape(ak) +
@@ -146,7 +173,7 @@ tm_shape(ak, bbox = nwa_bbox) +
   tm_shape(wes) +
   tm_polygons() +
   tm_layout(
-    title = "Glaciers of Western North America",
+    title = "Glaciers of Alaska",
     title.position = c("center", "top"),
     title.size = 1.1,
     bg.color = "#fcfcfc",
@@ -169,7 +196,7 @@ tm_shape(ak, bbox = nwa_bbox) +
 {{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="5rem">}}
 {{</img>}}
 
-*** View mode
+* tmap maps with leaflet
 
 ~tmap~ has 2 modes: ~plot~ and ~view~. \\
 ~plot~ is the default mode for static maps that we have used so far. \\
@@ -186,13 +213,11 @@ tmap_last()
 {{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="5rem">}}
 {{</imgshadow>}}
 
-** Retreat of glaciers
+* Maps based on an attribute variable
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
 
 To look at glacier retreat, we will look at the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These 4 datasets have the contour lines of 39 glaciers for the years 1966, 1998, 2005, and 2015.
-
-*** Load and prepare the data
 
 We could load and clean these datasets one by one. Copying and pasting code however is inefficient and error-prone. A better approach is to do this in a functional programming framework: create a function which does all the data loading and cleaning, then pass each element of a vector of the paths of all 4 datasets to it using ~purrr::map()~.
 
@@ -242,8 +267,6 @@ g
 str(g)
 #+END_src
 
-*** Overal map of the Glacier National Park glaciers
-
 We can now map the data:
 
 #+BEGIN_src R
@@ -277,7 +300,7 @@ Note: I didn't want to show the legend title and because there is no option to r
 {{<img src="/img/gis_r/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-*** Map of a single glacier
+* Mapping a subset of the data
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
 
@@ -318,7 +341,7 @@ tm_shape(ag) +
 {{<img src="/img/gis_r/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-*** Animated map
+* Animated maps
 
 We can also create an animation to show the retreat of the Agassiz glacier:
 
@@ -352,6 +375,7 @@ tmap_animation(agassiz_anim, filename = "ag.gif", delay = 100)
 
 {{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
 {{</img>}}
+
 
 
 
