@@ -142,11 +142,11 @@ tm_shape(ak, bbox = nwa_bbox) +
   tm_layout(
     title = "Glaciers of Western North America",
     title.position = c("center", "top"),
-    title.size = 1.2,
+    title.size = 1.1,
     bg.color = "#fcfcfc",
     inner.margins = c(0.06, 0.01, 0.09, 0.01),
     outer.margins = 0,
-    frame.lwd = 0.1
+    frame.lwd = 0.2
   ) +
   tm_compass(
     type = "arrow",
