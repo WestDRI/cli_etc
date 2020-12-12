@@ -38,6 +38,29 @@ library(rnaturalearthdata)
 library(grid)
 #+END_src
 
+* Glaciers of Western North America
+
+We will map the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
+
+** Load and explore the data
+
+#+BEGIN_src R
+ak <- st_read("01_rgi60_Alaska")
+wes <- st_read("02_rgi60_WesternCanadaUS")
+
+ak
+wes
+
+str(ak)
+str(wes)
+#+END_src
+
+#+BEGIN_note~
+Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~.
+#+END_note
+
+~ak~ and ~wes~ are objects of class ~sf~ and ~data.frame~: they are data frames with a ~geometry~ list column as their last column.
+
 * Retreat of glaciers
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
