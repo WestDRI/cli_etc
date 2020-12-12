@@ -16,7 +16,7 @@ We will use data on the retreat of North American glaciers as an example.
 
 A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
 
-The datasets that we will use for this webinar are the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from the respective websites.
+The datasets that we will use for this webinar are the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from their respective websites.
 
 For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages ~rnaturalearth~ (which provides the functions) and ~rnaturalearthdata~ (which provides the data).
 
@@ -25,7 +25,7 @@ For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natu
 {{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
 {{</fn>}}
 
-* Load necessary packages
+* Load the necessary packages
 
 #+BEGIN_src R
 library(sf)
@@ -40,7 +40,7 @@ library(grid)
 
 * Glaciers of Western North America
 
-We will map the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
+First, we will map the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
 
 ** Load and explore the data
 
@@ -56,22 +56,28 @@ str(wes)
 #+END_src
 
 #+BEGIN_note~
-Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~.
+Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
 #+END_note
 
-~ak~ and ~wes~ are objects of class ~sf~ and ~data.frame~: they are data frames with a ~geometry~ list column as their last column.
+~ak~ and ~wes~ are objects of class ~sf~: they are data frames with a ~geometry~ list-column as their last column.
 
 ** Map all the glaciers of Western North America
 
-~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~, then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element. To see the various options, you can run ~?tmap-element~.
+~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~. Then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element.
 
-As with ~ggplot2~ or GIS GUIs, the order matters as the layers stack up on top of each other.
+To see the available options, run:
 
-You can even add new sf objects by adding new ~tm_shape()~.
+#+BEGIN_src R
+?tmap-element
+#+END_src
+
+As with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
+
+You can also add new shapes to your map.
 
 Finally, you can add elements such as layouts, compass, and scale bars.
 
-~tmap~ functions have many arguments. Don't hesitate to make use of the help pages to see how you can customize your maps.
+~tmap~ functions have many arguments. Don't hesitate to make use of the help pages to see how you can customize your maps:
 
 #+BEGIN_src R
 ?tm_layout
@@ -94,7 +100,7 @@ tm_shape(ak) +
 
 Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map.
 
-Before doing so, it is very important to ensure that they have the same coordinate reference system (CRS).
+Before doing so, it is very important to ensure that they have the same coordinate reference system (CRS):
 
 #+BEGIN_src R
 st_crs(wes)
@@ -103,7 +109,7 @@ st_crs(ak)
 st_crs(wes) == st_crs(ak)
 #+END_src
 
-They do, so we are good to go.
+They do, so we are good to go:
 
 #+BEGIN_src R
 tm_shape(ak) +
@@ -114,19 +120,19 @@ tm_shape(ak) +
 
 If you run the code above however, you may be surprised that you are still only plotting the map of Alaska.
 
-This is because each map comes with a spatial bounding box (~bbox~). In the code above, the ~bbox~ is set by the first shape. This means that our entire map uses the ~bbox~ of the Alaska map.
+This is because each map comes with a spatial bounding box (~bbox~). In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska sf object.
 
 * Retreat of glaciers
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
 
-To look at glacier retreat, we will thus look at the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These 4 datasets have contour lines of 39 glaciers for the years 1966, 1998, 2005, and 2015.
+To look at glacier retreat, we will look at the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These 4 datasets have the contour lines of 39 glaciers for the years 1966, 1998, 2005, and 2015.
 
 ** Load and prepare the data
 
-We could load and clean the datasets one by one. Copying and pasting code however is inefficient and error-prone. A better approach is to do this in a functional programming framework: create a function which does all the data loading and cleaning, then pass each element of a vector of the paths of all 4 datasets to it using ~purrr::map~.
+We could load and clean these datasets one by one. Copying and pasting code however is inefficient and error-prone. A better approach is to do this in a functional programming framework: create a function which does all the data loading and cleaning, then pass each element of a vector of the paths of all 4 datasets to it using ~purrr::map()~.
 
-"Cleaning" here consists of selecting the variables we are interested in, putting them in the same order in all datasets (they were not initially) and giving the exact same name across all datasets (there were case inconsistencies between datasets and R is case sensitive).
+"Cleaning" here consists of selecting the variables we are interested in, putting them in the same order in each dataset (they were not initially) and giving the exact same name across all datasets (there were case inconsistencies between datasets and R is case sensitive).
 
 #+BEGIN_src R
 ## create a function that reads and cleans the data
@@ -155,7 +161,7 @@ g <- map(dirs, prep)
 
 ~map()~ returns a list, so we now have a list (~g~) of 4 elements: the 4 sf objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single sf object.
 
-Before doing so however, we want to make sure that they all have the same CRS.
+Before doing so however, we want to make sure that they all have the same CRS:
 
 #+BEGIN_src R
 st_crs(g[[1]]) == st_crs(g[[2]])
@@ -170,12 +176,11 @@ g <- do.call("rbind", g)
 
 g
 str(g)
-st_crs(g)
 #+END_src
 
-** Overal map of the glaciers
+** Overal map of the Glacier National Park glaciers
 
-We can now map the data. 
+We can now map the data:
 
 #+BEGIN_src R
 tm_shape(g) +
@@ -211,14 +216,14 @@ Note: I didn't want to show the legend title and because there is no option to r
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
 
-Let's zoom on the Agassiz glacier.
+Let's zoom on the Agassiz glacier:
 
 #+BEGIN_src R
 ## select the data points corresponding to the Agassiz Glacier
 agassiz <- g %>% filter(glacname == "Agassiz Glacier")
 #+END_src
 
-And map it.
+And map it:
 
 #+BEGIN_src R
 tm_shape(ag) +
@@ -250,7 +255,7 @@ tm_shape(ag) +
 
 ** Animated map
 
-We can create an animation to show the retreat of the Agassiz glacier.
+We can also create an animation to show the retreat of the Agassiz glacier:
 
 #+BEGIN_src R
 agassiz_anim <- tm_shape(ag) +
