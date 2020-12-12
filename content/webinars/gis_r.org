@@ -16,9 +16,9 @@ We will use data on the retreat of North American glaciers as an example.
 
 A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
 
-The datasets that we will use for this webinars are the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}.
+The datasets that we will use for this webinars are the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from the respective websites.
 
-For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]].
+For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages ~rnaturalearth~ (which provides the functions) and ~rnaturalearthdata~ (which provides the data).
 
 {{<fn>}}
 {{<fl n="1">}}RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60.{{<2br>}}
