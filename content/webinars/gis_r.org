@@ -341,7 +341,47 @@ tm_shape(ag) +
 {{<img src="/img/gis_r/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-* Animated maps
+* Faceted map
+
+#+BEGIN_src R
+tm_shape(ag) +
+  tm_polygons(col = "#86baff") +
+  tm_layout(
+    main.title = "Agassiz Glacier",
+    main.title.position = c("center", "top"),
+    main.title.size = 1.2,
+    legend.position = c("left", "bottom"),
+    legend.title.color = "#fcfcfc",
+    legend.text.size = 1,
+    bg.color = "#fcfcfc",
+    ## inner.margins = c(0, 0.03, 0, 0.03),
+    outer.margins = 0,
+    panel.label.bg.color = "#fcfcfc",
+    frame = F,
+    asp = 0.6
+  ) +
+  tm_compass(
+    type = "arrow",
+    position = c("right", "top"),
+    size = 1,
+    text.size = 0.6
+  ) +
+  tm_scale_bar(
+    breaks = c(0, 0.5, 1),
+    position = c("right", "BOTTOM"),
+    text.size = 0.6
+  ) +
+  tm_facets(
+    by = "year",
+    free.coords = F,
+    ncol = 4
+  )
+#+END_src
+
+{{<img src="/img/gis_r/agfacet.png" margin="5rem" title="" width="100%" line-height="0rem">}}
+{{</img>}}
+
+* Animated map
 
 We can also create an animation to show the retreat of the Agassiz glacier:
 
@@ -368,7 +408,10 @@ agassiz_anim <- tm_shape(ag) +
     position = c("right", "BOTTOM"),
     text.size = 1
   ) +
-  tm_facets(along = "year", free.coords = F)
+  tm_facets(
+    along = "year",
+    free.coords = F
+  )
 
 tmap_animation(agassiz_anim, filename = "ag.gif", delay = 100)
 #+END_src
