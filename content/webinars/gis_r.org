@@ -123,6 +123,46 @@ If you run the code above however, you may be surprised that you are still only 
 
 This is because each map comes with a spatial bounding box (~bbox~). In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska sf object.
 
+We first need to create a new bounding box encompassing both bounding boxes:
+
+#+BEGIN_src R
+nwa_bbox <- st_bbox(ak) %>%
+  st_as_sfc() %>%
+  st_union(st_as_sfc(st_bbox(wes))) %>%
+  st_bbox()
+#+END_src
+
+We can now plot the glaciers of Western North America:
+
+#+BEGIN_src R
+tm_shape(ak, bbox = nwa_bbox) +
+  tm_polygons() +
+  tm_shape(wes) +
+  tm_polygons() +
+  tm_layout(
+    title = "Glaciers of Western North America",
+    title.position = c("center", "top"),
+    title.size = 1.2,
+    bg.color = "#fcfcfc",
+    inner.margins = c(0.06, 0.01, 0.09, 0.01),
+    outer.margins = 0,
+    frame.lwd = 0.1
+  ) +
+  tm_compass(
+    type = "arrow",
+    position = c("right", "top"),
+    size = 1.2,
+    text.size = 0.6
+  ) +
+  tm_scale_bar(
+    breaks = c(0, 1000, 2000),
+    position = c("right", "BOTTOM")
+  )
+#+END_src
+
+{{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="5rem">}}
+{{</img>}}
+
 * Retreat of glaciers
 
 What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
