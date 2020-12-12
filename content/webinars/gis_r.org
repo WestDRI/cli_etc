@@ -25,7 +25,18 @@ For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natu
 {{<fl n="2">}}Fagre, D.B., McKeon, L.A., Dick, K.A., and Fountain, A.G., 2017, Glacier margin time series (1966, 1998, 2005, 2015) of the named glaciers of Glacier National Park, MT, USA: U.S. Geological Survey data release, https://doi.org/10.5066/F7P26WB1.
 {{</fn>}}
 
+* Load necessary packages
 
+#+BEGIN_src R
+library(sf)
+library(tmap)
+library(dplyr)
+library(magrittr)
+library(purrr)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(grid)
+#+END_src
 
 * Video
 
