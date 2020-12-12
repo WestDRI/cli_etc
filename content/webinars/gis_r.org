@@ -38,6 +38,63 @@ library(rnaturalearthdata)
 library(grid)
 #+END_src
 
+* Retreat of glaciers
+
+What is interesting about glacier maps is to see their evolution through time as glaciers retreat due to climate change. While the Randolph Glacier Inventory (RGI) has an amazing map in terms of spacial coverage, it doesn't yet have much temporal data.
+
+To look at glacier retreat, we will thus look at the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These 4 datasets have contour lines of 39 glaciers for the years 1966, 1998, 2005, and 2015.
+
+** Load and prepare the data
+
+We could load and clean the datasets one by one. Copying and pasting code however is inefficient and error-prone. A better approach is to do this in a functional programming framework: create a function which does all the data loading and cleaning, then pass each element of a vector of the paths of all 4 datasets to it using ~purrr::map~.
+
+"Cleaning" here consists of selecting the variables we are interested in, putting them in the same order in all datasets (they were not initially) and giving the exact same name across all datasets (there were case inconsistencies between datasets and R is case sensitive).
+
+#+BEGIN_src R
+## create a function that reads and cleans the data
+prep <- function(dir) {
+  g <- st_read(dir)
+  g %<>% rename_with(~ tolower(gsub("Area....", "area", .x)))
+  g %<>% select(
+    year,
+    objectid,
+    glacname,
+    area,
+    shape_leng,
+    x_coord,
+    y_coord,
+    source_sca,
+    source
+  )
+}
+
+## create a vector of dataset names
+dirs <- grep("GNPglaciers_.*", list.dirs(), value = T)
+
+## pass each element of that vector through prep() thanks to map()
+g <- map(dirs, prep)
+#+END_src
+
+~map()~ returns a list, so we now have a list (~g~) of 4 elements: the 4 sf objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single sf object.
+
+Before doing so however, we want to make sure that they all have the same CRS.
+
+#+BEGIN_src R
+st_crs(g[[1]]) == st_crs(g[[2]])
+st_crs(g[[1]]) == st_crs(g[[3]])
+st_crs(g[[1]]) == st_crs(g[[4]])
+#+END_src
+
+They do, so we can turn ~g~ into a single sf object:
+
+#+BEGIN_src R
+g <- do.call("rbind", g)
+
+g
+str(g)
+st_crs(g)
+#+END_src
+
 ** Map of a single glacier
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
