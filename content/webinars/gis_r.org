@@ -106,6 +106,79 @@ Let's now map the glaciers of Alaska:
 tm_shape(ak) +
   tm_polygons() +
   tm_layout(
+    title = "Glaciers of Alaska",
+    title.position = c("center", "top"),
+    title.size = 1.1,
+    bg.color = "#fcfcfc",
+    inner.margins = c(0.06, 0.01, 0.09, 0.01),
+    outer.margins = 0,
+    frame.lwd = 0.2
+  ) +
+  tm_compass(
+    type = "arrow",
+    position = c("right", "top"),
+    size = 1.2,
+    text.size = 0.6
+  ) +
+  tm_scale_bar(
+    breaks = c(0, 500, 1000),
+    position = c("right", "BOTTOM")
+  )
+#+END_src
+
+{{<img src="/img/gis_r/ak.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+* Union of bounding boxes
+
+Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map. A map can contain multiple shapes: you only need to "add" a ~tm_shape~ and its element(s). Before doing so however, it is very important to ensure that they have the same coordinate reference system (CRS):
+
+#+BEGIN_src R
+st_crs(ak)
+st_crs(wes)
+
+st_crs(ak) == st_crs(wes)
+#+END_src
+
+They do, so we are good to go.
+
+Note that, as with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
+
+#+BEGIN_src R
+tm_shape(ak) +
+  tm_polygons() +
+  tm_shape(wes) +
+  tm_polygons()
+#+END_src
+
+If you run the code above however, you may be surprised that you are still only plotting the map of Alaska.
+
+This is because each map comes with a spatial bounding box (~bbox~).
+
+#+BEGIN_src R
+st_bbox(ak)
+st_bbox(wes)
+#+END_src
+
+In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska sf object.
+
+We first need to create a new bounding box encompassing both bounding boxes:
+
+#+BEGIN_src R
+nwa_bbox <- st_bbox(ak) %>%
+  st_as_sfc() %>%
+  st_union(st_as_sfc(st_bbox(wes))) %>%
+  st_bbox()
+#+END_src
+
+We can now plot the glaciers of Western North America:
+
+#+BEGIN_src R
+tm_shape(ak, bbox = nwa_bbox) +
+  tm_polygons() +
+  tm_shape(wes) +
+  tm_polygons() +
+  tm_layout(
     title = "Glaciers of Western North America",
     title.position = c("center", "top"),
     title.size = 1.1,
@@ -126,73 +199,7 @@ tm_shape(ak) +
   )
 #+END_src
 
-{{<img src="/img/gis_r/ak.png" margin="5rem" title="" width="%" line-height="5rem">}}
-{{</img>}}
-
-* Union of bounding boxes
-
-Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map. A map can contain multiple shapes: you only need to "add" a ~tm_shape~ and its element(s). Before doing so however, it is very important to ensure that they have the same coordinate reference system (CRS):
-
-#+BEGIN_src R
-st_crs(wes)
-st_crs(ak)
-
-st_crs(wes) == st_crs(ak)
-#+END_src
-
-They do, so we are good to go.
-
-Note that, as with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
-
-#+BEGIN_src R
-tm_shape(ak) +
-  tm_polygons() + 
-  tm_shape(wes) +
-  tm_polygons()
-#+END_src
-
-If you run the code above however, you may be surprised that you are still only plotting the map of Alaska.
-
-This is because each map comes with a spatial bounding box (~bbox~). In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska sf object.
-
-We first need to create a new bounding box encompassing both bounding boxes:
-
-#+BEGIN_src R
-nwa_bbox <- st_bbox(ak) %>%
-  st_as_sfc() %>%
-  st_union(st_as_sfc(st_bbox(wes))) %>%
-  st_bbox()
-#+END_src
-
-We can now plot the glaciers of Western North America:
-
-#+BEGIN_src R
-tm_shape(ak, bbox = nwa_bbox) +
-  tm_polygons() +
-  tm_shape(wes) +
-  tm_polygons() +
-  tm_layout(
-    title = "Glaciers of Alaska",
-    title.position = c("center", "top"),
-    title.size = 1.1,
-    bg.color = "#fcfcfc",
-    inner.margins = c(0.06, 0.01, 0.09, 0.01),
-    outer.margins = 0,
-    frame.lwd = 0.2
-  ) +
-  tm_compass(
-    type = "arrow",
-    position = c("right", "top"),
-    size = 1.2,
-    text.size = 0.6
-  ) +
-  tm_scale_bar(
-    breaks = c(0, 1000, 2000),
-    position = c("right", "BOTTOM")
-  )
-#+END_src
-
-{{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="5rem">}}
+{{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * tmap maps with leaflet
@@ -209,8 +216,15 @@ tmap_mode("view")
 tmap_last()
 #+END_src
 
-{{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="5rem">}}
+{{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</imgshadow>}}
+
+Afterwards, if you want to create new static plots, don't forget to get back to ~plot~ view with either of:
+
+#+BEGIN_src R
+ttmp()
+tmap_mode("plot")
+#+END_src
 
 * Maps based on an attribute variable
 
@@ -307,7 +321,7 @@ Let's zoom on the Agassiz glacier:
 
 #+BEGIN_src R
 ## select the data points corresponding to the Agassiz Glacier
-agassiz <- g %>% filter(glacname == "Agassiz Glacier")
+ag <- g %>% filter(glacname == "Agassiz Glacier")
 #+END_src
 
 And map it:
@@ -341,6 +355,8 @@ tm_shape(ag) +
 {{</img>}}
 
 * Faceted map
+
+Instead of having all temporal data in a single map, it can be split across facets:
 
 #+BEGIN_src R
 tm_shape(ag) +
@@ -382,11 +398,12 @@ tm_shape(ag) +
 
 * Animated map
 
-We can also create an animation to show the retreat of the Agassiz glacier:
+The temporal data of the Agassiz Glacier retreat can also be conveyed through an animation:
 
 #+BEGIN_src R
 agassiz_anim <- tm_shape(ag) +
-  tm_polygons("year", palette = "Blues") +
+  tm_borders() +
+  tm_fill(col = "#86baff") +
   tm_layout(
     title = "Agassiz Glacier",
     title.position = c("center", "top"),
@@ -394,7 +411,7 @@ agassiz_anim <- tm_shape(ag) +
     legend.title.color = "#fcfcfc",
     legend.text.size = 1,
     bg.color = "#fcfcfc",
-    inner.margins = c(0.07, 0.03, 0.07, 0.03),
+    inner.margins = c(0.08, 0, 0.08, 0),
     outer.margins = 0
   ) +
   tm_compass(
@@ -412,13 +429,16 @@ agassiz_anim <- tm_shape(ag) +
     free.coords = F
   )
 
-tmap_animation(agassiz_anim, filename = "ag.gif", delay = 100)
+tmap_animation(
+  agassiz_anim,
+  filename = "ag.gif",
+  dpi = 300,
+  inner.margins = c(0.08, 0, 0.08, 0),
+  delay = 100
+)
 #+END_src
 
 {{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
 {{</img>}}
-
-
-
 
 * Comments & questions
