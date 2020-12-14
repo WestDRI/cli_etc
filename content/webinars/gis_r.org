@@ -485,4 +485,7 @@ tmap_animation(
 *Mailing list* \\
 [[https://stat.ethz.ch/mailman/listinfo/r-sig-geo][R Special Interest Group on using Geographical data and Mapping]]
 
+*Open GIS data:* \\
+[[https://freegisdata.rtwilson.com/][Free GIS Data]]: list of free GIS datasets
+
 * Comments & questions
