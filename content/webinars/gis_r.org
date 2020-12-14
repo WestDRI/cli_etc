@@ -7,7 +7,7 @@
 *** /Abstract/
 
 #+BEGIN_definition
-This webinar introduces the basics of GIS data manipulation and mapping in R with the packages ~sf~ and ~tmap~.
+This webinar introduces the basics of GIS data manipulation and mapping in R with the packages /sf/ and /tmap/.
 
 We will use data on the retreat of North American glaciers as an example.
 #+END_definition
@@ -22,7 +22,7 @@ A good starting place to look for open source GIS datasets is the  [[https://fre
 
 The datasets that we will use for this webinar are the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from their respective websites.
 
-For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages ~rnaturalearth~ (which provides the functions) and ~rnaturalearthdata~ (which provides the data).
+For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages /rnaturalearth/ (which provides the functions) and /rnaturalearthdata/ (which provides the data).
 
 {{<fn>}}
 {{<fr n="1" text="RGI Consortium (2017). Randolph Glacier Inventory – A Dataset of Global Glacier Outlines: Version 6.0: Technical Report, Global Land Ice Measurements from Space, Colorado, USA. Digital Media. DOI: https://doi.org/10.7265/N5-RGI-60.">}}
@@ -46,7 +46,7 @@ library(grid)
 
 We will start by mapping the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
 
-Data get imported and turned into sf objects by the function ~sf::st_read()~:
+Data get imported and turned into /sf/ objects by the function ~sf::st_read()~:
 
 #+BEGIN_src R
 ak <- st_read("01_rgi60_Alaska")
@@ -63,11 +63,11 @@ str(wes)
 Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the downloaded and unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
 #+END_note
 
-~sf~ objects are data.frame-like objects with a ~geometry~ list-column as their last column. That column is itself an object of class ~sfc~ (simple feature geometry list column).
+/sf/ objects are data.frame-like objects with a ~geometry~ list-column as their last column. That column is itself an object of class /sfc/ (simple feature geometry list column).
 
 * Mapping with tmap
 
-~tmap~ follows a grammar of graphic similar to that of ~ggplot2~: you first need to set a shape (a spatial data object) by passing an sf object to ~tm_shape()~. Then you plot one or several layers with one of several ~tmap~ functions and you use the ~+~ sign between each element.
+/tmap/ follows a grammar of graphic similar to that of /ggplot2/: you first need to set a shape (a spatial data object) by passing an /sf/ object to ~tm_shape()~. Then you plot one or several layers with one of several /tmap/ functions and you use the ~+~ sign between each element.
 
 To see the available options, run:
 
@@ -94,7 +94,7 @@ Here, we will use ~tm_polygons()~ which combines ~tm_borders()~ and ~tm_fill()~.
 
 A map without title, compass, or scale bars is not very useful though. We need to add layout elements and attribute layers to the map.
 
-You can loop up the many arguments of the tmap functions in the help pages to see how you can customize your maps:
+You can loop up the many arguments of the /tmap/ functions in the help pages to see how you can customize your maps:
 
 #+BEGIN_src R
 ?tm_layout
@@ -133,7 +133,7 @@ tm_shape(ak) +
 
 * Union of bounding boxes
 
-Now, if we want to plot all the glaciers of Western North America, we want to combine both sf objects in the same map. A map can contain multiple shapes: you only need to "add" a ~tm_shape~ and its element(s). Before doing so however, it is very important to ensure that they have the same coordinate reference system (CRS):
+Now, if we want to plot all the glaciers of Western North America, we want to combine both /sf/ objects in the same map. A map can contain multiple shapes: you only need to "add" a ~tm_shape~ and its element(s). Before doing so however, it is very important to ensure that they have the same coordinate reference system (CRS):
 
 #+BEGIN_src R
 st_crs(ak)
@@ -144,7 +144,7 @@ st_crs(ak) == st_crs(wes)
 
 They do, so we are good to go.
 
-Note that, as with ~ggplot2~ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
+Note that, as with /ggplot2/ or GIS graphical user interfaces, the order matters since the layers stack up on top of each other.
 
 #+BEGIN_src R
 tm_shape(ak) +
@@ -162,7 +162,7 @@ st_bbox(ak)
 st_bbox(wes)
 #+END_src
 
-In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska sf object.
+In the code above, the ~bbox~ is set by the first shape, i.e. our entire map uses the ~bbox~ of the Alaska /sf/ object.
 
 We first need to create a new bounding box encompassing both bounding boxes:
 
@@ -206,11 +206,11 @@ tm_shape(ak, bbox = nwa_bbox) +
 
 * tmap maps with leaflet
 
-~tmap~ has 2 modes: ~plot~ and ~view~. \\
-~plot~ is the default mode for static maps that we have used so far. \\
-~view~ mode is an interactive viewing mode using [[https://leafletjs.com/][leaflet]] in a browser. There, you can zoom in/out, select/deselect the different layers, and choose to display one of Esri.WorldGrayCanvas, OpenStreetMap, or Esri.WorldTopoMap basemaps.
+/tmap/ has 2 modes: /plot/ and /view/. \\
+/plot/ is the default mode for static maps that we have used so far. \\
+/view/ mode is an interactive viewing mode using [[https://leafletjs.com/][leaflet]] in a browser. There, you can zoom in/out, select/deselect the different layers, and choose to display one of Esri.WorldGrayCanvas, OpenStreetMap, or Esri.WorldTopoMap basemaps.
 
-You can toggle between the ~plot~ and ~view~ modes with ~ttm()~. \\
+You can toggle between the /plot/ and /view/ modes with ~ttm()~. \\
 You can also switch to either mode with ~tmap_mode("view")~ and ~tmap_mode("plot")~.
 
 #+BEGIN_src R
@@ -221,7 +221,7 @@ tmap_last()
 {{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</imgshadow>}}
 
-Afterwards, if you want to create new static plots, don't forget to get back to ~plot~ view with either of:
+Afterwards, if you want to create new static plots, don't forget to get back to /plot/ mode with either of:
 
 #+BEGIN_src R
 ttmp()
@@ -263,7 +263,7 @@ dirs <- grep("GNPglaciers_.*", list.dirs(), value = T)
 gnp <- map(dirs, prep)
 #+END_src
 
-~map()~ returns a list, so we now have a list (~gnp~) of 4 elements: the 4 sf objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single sf object.
+~map()~ returns a list, so we now have a list (~gnp~) of 4 elements: the 4 /sf/ objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single /sf/ object.
 
 Before doing so however, we want to make sure that they all have the same CRS:
 
@@ -273,7 +273,7 @@ st_crs(gnp[[1]]) == st_crs(gnp[[3]])
 st_crs(gnp[[1]]) == st_crs(gnp[[4]])
 #+END_src
 
-They do, so we can turn ~gnp~ into a single sf object:
+They do, so we can turn ~gnp~ into a single /sf/ object:
 
 #+BEGIN_src R
 gnp <- do.call("rbind", gnp)
@@ -327,7 +327,7 @@ st_crs(gnp)
 #+END_src
 
 #+BEGIN_note
-Note that we could use ~wes~ instead of ~ak~ since we know that both sf objects have the same CRS.
+Note that we could use ~wes~ instead of ~ak~ since we know that both /sf/ objects have the same CRS.
 #+END_note
 
 They don't. So we reproject ~gnp~ by transforming its data from its current CRS to that of ~ak~.
