@@ -7,7 +7,7 @@
 *** /Abstract/
 
 #+BEGIN_definition
-This webinar introduces basic GIS data manipulation and mapping in R with the packages ~sf~ and ~tmap~.
+This webinar introduces the basics of GIS data manipulation and mapping in R with the packages ~sf~ and ~tmap~.
 
 We will use data on the retreat of North American glaciers as an example.
 #+END_definition
