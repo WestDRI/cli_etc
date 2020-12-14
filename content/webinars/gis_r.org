@@ -465,26 +465,24 @@ tmap_animation(
 {{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
 {{</img>}}
 
-* Resources
+* Additional resources
 
-Below are some resources on GIS in R:
-
-*Books:* \\
+*Books* \\
 [[https://geocompr.robinlovelace.net/][Geocomputation with R]] by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow\\
 [[https://keen-swartz-3146c4.netlify.app/][Spatial Data Science]] by Edzer Pebesma, Roger Bivand\\
 [[https://rspatial.org/][Spatial Data Science with R]] by Robert J. Hijmans\\
 [[https://cengel.github.io/R-spatial/][Using Spatial Data with R]] by Claudia A. Engel
 
-*Tutorial:* \\
+*Tutorial* \\
 [[https://data.cdrc.ac.uk/dataset/introduction-spatial-data-analysis-and-visualisation-r][An Introduction to Spatial Data Analysis and Visualisation in R]] by the CDRC
 
-*Website:* \\
+*Website* \\
 [[https://www.r-spatial.org/][r-spatial]] by Edzer Pebesma, Marius Appel, and Daniel Nüst
 
-*CRAN package list:* \\
+*CRAN package list* \\
 [[https://cran.r-project.org/web/views/Spatial.html][Analysis of Spatial Data]]
 
-*Mailing list:* \\
+*Mailing list* \\
 [[https://stat.ethz.ch/mailman/listinfo/r-sig-geo][R Special Interest Group on using Geographical data and Mapping]]
 
 * Comments & questions
