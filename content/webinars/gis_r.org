@@ -260,32 +260,32 @@ prep <- function(dir) {
 dirs <- grep("GNPglaciers_.*", list.dirs(), value = T)
 
 ## pass each element of that vector through prep() thanks to map()
-g <- map(dirs, prep)
+gnp <- map(dirs, prep)
 #+END_src
 
-~map()~ returns a list, so we now have a list (~g~) of 4 elements: the 4 sf objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single sf object.
+~map()~ returns a list, so we now have a list (~gnp~) of 4 elements: the 4 sf objects containing our cleaned datasets. A list is not really convenient and we will turn it into a single sf object.
 
 Before doing so however, we want to make sure that they all have the same CRS:
 
 #+BEGIN_src R
-st_crs(g[[1]]) == st_crs(g[[2]])
-st_crs(g[[1]]) == st_crs(g[[3]])
-st_crs(g[[1]]) == st_crs(g[[4]])
+st_crs(gnp[[1]]) == st_crs(gnp[[2]])
+st_crs(gnp[[1]]) == st_crs(gnp[[3]])
+st_crs(gnp[[1]]) == st_crs(gnp[[4]])
 #+END_src
 
-They do, so we can turn ~g~ into a single sf object:
+They do, so we can turn ~gnp~ into a single sf object:
 
 #+BEGIN_src R
-g <- do.call("rbind", g)
+gnp <- do.call("rbind", gnp)
 
-g
-str(g)
+gnp
+str(gnp)
 #+END_src
 
 We can now map the data:
 
 #+BEGIN_src R
-tm_shape(g) +
+tm_shape(gnp) +
   tm_polygons("year", palette = "Blues") +
   tm_layout(
     title = "Glaciers of Glacier National Park",
