@@ -315,6 +315,28 @@ Note: I didn't want to show the legend title and because there is no option to r
 {{<img src="/img/gis_r/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
+* CRS transformation
+
+Wouldn't it be nice to have this map as an inset of the previous map so that we can situate it within North America?
+
+Before we can do this, we need to make sure that both maps use the same CRS:
+
+#+BEGIN_src R
+st_crs(ak)
+st_crs(gnp)
+#+END_src
+
+#+BEGIN_note
+Note that we could use ~wes~ instead of ~ak~ since we know that both sf objects have the same CRS.
+#+END_note
+
+They don't. So we reproject ~gnp~ by transforming its data from its current CRS to that of ~ak~.
+
+#+BEGIN_src R
+gnp <- st_transform(gnp, st_crs(ak))
+st_crs(gnp)
+#+END_src
+
 * Mapping a subset of the data
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
