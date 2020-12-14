@@ -330,7 +330,7 @@ st_crs(gnp)
 Note that we could use ~wes~ instead of ~ak~ since we know that both /sf/ objects have the same CRS.
 #+END_note
 
-They don't. So we reproject ~gnp~ by transforming its data from its current CRS to that of ~ak~.
+They don't have the same CRS, so we reproject ~gnp~ by transforming its data from its current CRS to that of ~ak~.
 
 #+BEGIN_src R
 gnp <- st_transform(gnp, st_crs(ak))
