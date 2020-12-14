@@ -46,6 +46,8 @@ library(grid)
 
 We will start by mapping the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
 
+Data get imported and turned into sf objects by the function ~sf::st_read()~:
+
 #+BEGIN_src R
 ak <- st_read("01_rgi60_Alaska")
 wes <- st_read("02_rgi60_WesternCanadaUS")
@@ -58,10 +60,10 @@ str(wes)
 #+END_src
 
 #+BEGIN_note~
-Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
+Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the downloaded and unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
 #+END_note
 
-~ak~ and ~wes~ are objects of class ~sf~: they are data frames with a ~geometry~ list-column as their last column.
+~sf~ objects are data.frame-like objects with a ~geometry~ list-column as their last column. That column is itself an object of class ~sfc~ (simple feature geometry list column).
 
 * Mapping with tmap
 
