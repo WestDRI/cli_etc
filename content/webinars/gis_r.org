@@ -1,4 +1,4 @@
-#+title: GIS with R
+#+title: Basic GIS mapping in R
 #+topic: R
 #+slug: gis_r
 #+date: 2020-12-09
