@@ -201,7 +201,7 @@ tm_shape(ak, bbox = nwa_bbox) +
 {{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-* tmap maps with leaflet
+* tmap maps with Leaflet
 
 /tmap/ has 2 modes: /plot/ and /view/. \\
 /plot/ is the default mode for static maps that we have used so far. \\
