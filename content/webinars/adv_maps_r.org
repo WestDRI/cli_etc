@@ -7,11 +7,15 @@
 *** /Abstract/
 
 #+BEGIN_definition
-Following our introductory webinar on GIS in R, this webinar will show an array of techniques to display GIS maps in R.
+This webinar will build upon our [[https://westgrid-cli.netlify.app/webinars/gis_r/][introduction to GIS in R]] and go much further:
 
-We will create inset maps, faceted maps, raster maps, animated maps, interactive mapping applications, cartograms, and bridge over from R to QGIS thanks to the packages sf, tmap, raster, leaflet, shiny, ggplot2, ggmap, grid, mapview, cartogram, and qgisprocess.
+# we will create inset maps, faceted maps, animated maps, interactive mapping applications, cartograms, raster maps, and bridge over from R to QGIS thanks to the packages sf, tmap, raster, leaflet, shiny, ggplot2, ggmap, grid, mapview, cartogram, and qgisprocess.
 
-There is a lot to cover, so expect a much faster pace than last time!
+We will create inset maps, faceted maps, animated maps, cartograms, and raster maps. We will also add basemaps from OpenStreetMap and Google Maps.
+
+All this thanks to the packages sf, tmap, raster, ggplot2, ggmap, grid, mapview, cartogram, and RgoogleMaps.
+
+There is a lot to cover, so expect a much faster pace than in the introductory webinar!
 #+END_definition
 
 * Video
