@@ -18,9 +18,7 @@ We will use data on the retreat of North American glaciers as an example.
 
 * Getting data
 
-A good starting place to look for open source GIS datasets is the  [[https://freegisdata.rtwilson.com/][Free GIS Data]] page.
-
-The datasets that we will use for this webinar are the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from their respective websites.
+The datasets that we will use for this webinar are the Alaska as well as the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]] version 6.0{{<fl n="1">}} and the [[https://www.sciencebase.gov/catalog/item/58af7022e4b01ccd54f9f542][USGS time series of the named glaciers of Glacier National Park]]{{<fl n="2">}}. These datasets can be downloaded as zip files from their respective websites.
 
 For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natural Earth]]. This dataset can be accessed direction from within R thanks to the packages /rnaturalearth/ (which provides the functions) and /rnaturalearthdata/ (which provides the data).
 
@@ -31,7 +29,7 @@ For our basemap, we will use data from [[https://www.naturalearthdata.com/][Natu
 
 * Loading and exploring data
 
-First, let's load the necessary packages for this webinar.
+First, let's load the necessary packages for this webinar:
 
 #+BEGIN_src R
 library(sf)
@@ -497,6 +495,7 @@ tm_shape(ag) +
 {{</img>}}
 
 * Animated map
+Now we can clearly see the retreat of the Agassiz Glacier between 1966 and 2015.
 
 The temporal data of the Agassiz Glacier retreat can also be conveyed through an animation:
 
@@ -537,11 +536,15 @@ tmap_animation(
   delay = 100
 )
 #+END_src
+* Additional resources
 
 {{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
 {{</img>}}
+*Webinar* \\
+Our next webinar on [[https://westgrid-cli.netlify.app/webinars/adv_gis_r/][Advanced GIS mapping in R]]
 
-* Additional resources
+*Open GIS data:* \\
+[[https://freegisdata.rtwilson.com/][Free GIS Data]]: list of free GIS datasets
 
 *Books* \\
 [[https://geocompr.robinlovelace.net/][Geocomputation with R]] by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow\\
@@ -560,8 +563,5 @@ tmap_animation(
 
 *Mailing list* \\
 [[https://stat.ethz.ch/mailman/listinfo/r-sig-geo][R Special Interest Group on using Geographical data and Mapping]]
-
-*Open GIS data:* \\
-[[https://freegisdata.rtwilson.com/][Free GIS Data]]: list of free GIS datasets
 
 * Comments & questions
