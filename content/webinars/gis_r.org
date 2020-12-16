@@ -39,7 +39,6 @@ library(magrittr)
 library(purrr)
 library(rnaturalearth)
 library(rnaturalearthdata)
-library(grid)
 #+END_src
 
 We will start by mapping the data contained in the Alaska and the Western Canada and USA subsets of the [[http://www.glims.org/RGI/][Randolph Glacier Inventory]], i.e. all the glaciers of Western North America.
@@ -313,104 +312,6 @@ Note: I didn't want to show the legend title and because there is no option to r
 {{<img src="/img/gis_r/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-* CRS transformation
-
-Wouldn't it be nice to have this map as an inset of the previous map so that we can situate it within North America?
-
-Before we can do this, we need to make sure that both maps use the same CRS:
-
-#+BEGIN_src R
-st_crs(ak)
-st_crs(gnp)
-#+END_src
-
-#+BEGIN_note
-Note that we could use ~wes~ instead of ~ak~ since we know that both /sf/ objects have the same CRS.
-#+END_note
-
-They don't have the same CRS, so we reproject ~gnp~ by transforming its data from its current CRS to that of ~ak~.
-
-#+BEGIN_src R
-gnp <- st_transform(gnp, st_crs(ak))
-st_crs(gnp)
-#+END_src
-
-* Inset map
-
-Now we can create our map with an inset: the map of the Western North America glaciers (from the /sf/ object ~nwa~) will be our main map and the map of Glacier National Park (from the /sf/ object ~gnp~) will be the inset.
-
-If the goal of this new map is to show the location of the ~gnp~ map within the ~nwa~ one, we need to add a rectangle showing the bounding box of ~gnp~ in the ~nwa~ map as a new layer.
-
-For this, we create a new /sfc_POLYGON/ from the bounding box of ~gnp~:
-
-#+BEGIN_src R
-gnp_zone <- st_bbox(gnp) %>%
-  st_as_sfc()
-#+END_src
-
-We will use it as the following layer within the new map:
-
-#+BEGIN_src R
-tm_shape(gnp_zone) +
-  tm_borders(lwd = 1.5, col = "#ff9900")
-#+END_src
-
-We assign our new map (with an updated suitable title) to the object ~main_map~:
-
-#+BEGIN_src R
-main_map <- tm_shape(ak, bbox = nwa_bbox) +
-  tm_polygons() +
-  tm_shape(wes) +
-  tm_polygons() +
-  tm_shape(gnp_zone) +
-  tm_borders(lwd = 1.5, col = "#ff9900") +
-  tm_layout(
-    title = "Glaciers of Glacier National Park",
-    title.position = c("center", "top"),
-    title.size = 1.1,
-    bg.color = "#fcfcfc",
-    inner.margins = c(0.06, 0.01, 0.09, 0.01),
-    outer.margins = 0,
-    frame.lwd = 0.2
-  ) +
-  tm_compass(
-    type = "arrow",
-    position = c("right", "top"),
-    size = 1.2,
-    text.size = 0.6
-  ) +
-  tm_scale_bar(
-    breaks = c(0, 500, 1000),
-    position = c("right", "BOTTOM")
-  )
-#+END_src
-
-Next, we will change the frame of the ~gnp~ inset to match the color of this new rectangle (to make it visually clear that this is a close-up view of that rectangle). We can also remove the title, compass and scale bar since this is an inset within a map which already have them. We assign this new map to the object ~inset_map~:
-
-#+BEGIN_src R
-inset_map <- tm_shape(gnp) +
-  tm_polygons("year", palette = "Blues") +
-  tm_layout(
-    legend.title.color = "#fcfcfc",
-    legend.text.size = 0.7,
-    bg.color = "#fcfcfc",
-    inner.margins = c(0.03, 0.03, 0.03, 0.03),
-    outer.margins = 0,
-    frame = "#ff9900",
-    frame.lwd = 3
-  )
-#+END_src
-
-Finally, we combine the two maps with ~grid::viewport()~:
-
-#+BEGIN_src R
-main_map
-print(inset_map, vp = viewport(0.41, 0.26, width = 0.5, height = 0.5))
-#+END_src
-
-{{<img src="/img/gis_r/inset.png" margin="5rem" title="" width="%" line-height="0rem">}}
-{{</img>}}
-
 * Mapping a subset of the data
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
@@ -452,94 +353,10 @@ tm_shape(ag) +
 {{<img src="/img/gis_r/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
-* Faceted map
-
-Instead of having all temporal data in a single map, it can be split across facets:
-
-#+BEGIN_src R
-tm_shape(ag) +
-  tm_polygons(col = "#86baff") +
-  tm_layout(
-    main.title = "Agassiz Glacier",
-    main.title.position = c("center", "top"),
-    main.title.size = 1.2,
-    legend.position = c("left", "bottom"),
-    legend.title.color = "#fcfcfc",
-    legend.text.size = 1,
-    bg.color = "#fcfcfc",
-    ## inner.margins = c(0, 0.03, 0, 0.03),
-    outer.margins = 0,
-    panel.label.bg.color = "#fcfcfc",
-    frame = F,
-    asp = 0.6
-  ) +
-  tm_compass(
-    type = "arrow",
-    position = c("right", "top"),
-    size = 1,
-    text.size = 0.6
-  ) +
-  tm_scale_bar(
-    breaks = c(0, 0.5, 1),
-    position = c("right", "BOTTOM"),
-    text.size = 0.6
-  ) +
-  tm_facets(
-    by = "year",
-    free.coords = F,
-    ncol = 4
-  )
-#+END_src
-
-{{<img src="/img/gis_r/agfacet.png" margin="5rem" title="" width="100%" line-height="0rem">}}
-{{</img>}}
-
-* Animated map
 Now we can clearly see the retreat of the Agassiz Glacier between 1966 and 2015.
 
-The temporal data of the Agassiz Glacier retreat can also be conveyed through an animation:
-
-#+BEGIN_src R
-agassiz_anim <- tm_shape(ag) +
-  tm_borders() +
-  tm_fill(col = "#86baff") +
-  tm_layout(
-    title = "Agassiz Glacier",
-    title.position = c("center", "top"),
-    legend.position = c("left", "bottom"),
-    legend.title.color = "#fcfcfc",
-    legend.text.size = 1,
-    bg.color = "#fcfcfc",
-    inner.margins = c(0.08, 0, 0.08, 0),
-    outer.margins = 0
-  ) +
-  tm_compass(
-    type = "arrow",
-    position = c("right", "top"),
-    text.size = 0.7
-  ) +
-  tm_scale_bar(
-    breaks = c(0, 0.5, 1),
-    position = c("right", "BOTTOM"),
-    text.size = 1
-  ) +
-  tm_facets(
-    along = "year",
-    free.coords = F
-  )
-
-tmap_animation(
-  agassiz_anim,
-  filename = "ag.gif",
-  dpi = 300,
-  inner.margins = c(0.08, 0, 0.08, 0),
-  delay = 100
-)
-#+END_src
 * Additional resources
 
-{{<img src="/img/gis_r/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
-{{</img>}}
 *Webinar* \\
 Our next webinar on [[https://westgrid-cli.netlify.app/webinars/adv_gis_r/][Advanced GIS mapping in R]]
 
