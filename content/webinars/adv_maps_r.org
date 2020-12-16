@@ -411,6 +411,101 @@ print(inset_map, vp = viewport(0.41, 0.26, width = 0.5, height = 0.5))
 {{<img src="/img/gis_r/inset.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
+* Tiled web maps with Leaflet
+
+Tiled web maps are interactive maps in a browser using web servers such as Google Maps or OpenStreetMap. Several packages allow to use [[https://leafletjs.com/][Leaflet]] to create tile maps.
+
+The simplest option is to use ~mapview::mapview()~:
+
+#+BEGIN_src R
+mapview(gnp)
+#+END_src
+
+This will open a page in your browser in which you can pan, zoom, select/deselect data layers, and choose from a number of basemap layer options:
+
+# #+BEGIN_export html
+# <figure style="display: table; margin: 5rem auto">
+#   <div class="row">
+#     <div class="column">
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/gis_r/mapview4.png">
+#       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
+# 	<figcaption>
+# 	  <em>
+# 	    CartoDB.Positron
+# 	  </em>
+# 	</figcaption>
+#       </div>
+#     </div>
+#     <div class="column">
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/gis_r/mapview1.png"  >
+#       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
+# 	<figcaption>
+# 	  <em>
+# 	    OpenTopoMap
+# 	  </em>
+# 	</figcaption>
+#       </div>
+#     </div>
+#   </div>
+#   <div class="row">
+#     <div class="column">
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/gis_r/mapview3.png" margin="5rem" >
+#       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
+# 	<figcaption>
+# 	  <em>
+# 	    OpenStreetMap
+# 	  </em>
+# 	</figcaption>
+#       </div>
+#     </div>
+#     <div class="column">
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/gis_r/mapview2.png" margin="5rem" >
+#       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
+# 	<figcaption>
+# 	  <em>
+# 	    Esri.WorldImagery
+# 	  </em>
+# 	</figcaption>
+#       </div>
+#     </div>
+#   </div>
+# </figure>
+# #+END_export
+
+{{<imgshadow src="/img/gis_r/mapview4.png" margin="5rem" title="" width="%" line-height="2rem">}}
+CartoDB.Positron
+{{</imgshadow>}}
+
+{{<imgshadow src="/img/gis_r/mapview1.png" margin="5rem" title="" width="%" line-height="2rem">}}
+OpenTopoMap
+{{</imgshadow>}}
+
+{{<imgshadow src="/img/gis_r/mapview3.png" margin="5rem" title="" width="%" line-height="2rem">}}
+OpenStreetMap
+{{</imgshadow>}}
+
+{{<imgshadow src="/img/gis_r/mapview2.png" margin="5rem" title="" width="%" line-height="2rem">}}
+Esri.WorldImagery
+{{</imgshadow>}}
+
+/tmap/ has similar capabilities. The package has 2 modes:
+- /plot/, the default mode for static maps that we have used so far
+- /view/, an interactive viewing mode using [[https://leafletjs.com/][Leaflet]]
+
+You can toggle between the /plot/ and /view/ modes with ~ttm()~. \\
+You can also switch to either mode with ~tmap_mode("view")~ and ~tmap_mode("plot")~.
+
+#+BEGIN_src R
+tmap_mode("view")
+tmap_last()
+#+END_src
+
+Afterwards, if you want to create new static plots, don't forget to get back to /plot/ mode with either of:
+
+#+BEGIN_src R
+ttmp()
+tmap_mode("plot")
+#+END_src
 * Mapping a subset of the data
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
