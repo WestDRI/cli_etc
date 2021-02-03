@@ -18,6 +18,14 @@ All this thanks to the packages sf, tmap, raster, ggplot2, ggmap, grid, mapview,
 There is a lot to cover, so expect a much faster pace than in the introductory webinar!
 #+END_definition
 
+* Slides
+
+Click to open the presentation:
+
+#+BEGIN_export html
+<a href="https://westgrid-slides.netlify.app/r_gis/#/"><p align="center"><img src="/img/r_gis/rgis_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+#+END_export
+
 * Video
 
 Coming on February 3, 2021.
