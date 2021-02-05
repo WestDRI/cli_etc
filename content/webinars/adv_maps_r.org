@@ -199,10 +199,12 @@ In the code above, the ~bbox~ is set by the first shape, i.e. our entire map use
 We first need to create a new bounding box encompassing both bounding boxes:
 
 #+BEGIN_src R
-nwa_bbox <- st_bbox(ak) %>%
-  st_as_sfc() %>%
-  st_union(st_as_sfc(st_bbox(wes))) %>%
-  st_bbox()
+nwa_bbox <- st_bbox(
+  st_union(
+    st_as_sfc(st_bbox(wes)),
+    st_as_sfc(st_bbox(ak))
+  )
+)
 #+END_src
 
 We can now plot the glaciers of Western North America:
