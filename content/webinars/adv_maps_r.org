@@ -505,8 +505,8 @@ Esri.WorldImagery
 ** With /tmap/
 
 /tmap/ has similar capabilities. The package has 2 modes:
-- /plot/, the default mode for static maps that we have used so far
-- /view/, an interactive viewing mode using [[https://leafletjs.com/][Leaflet]]
+- /plot/, the default mode for static maps that we have used so far,
+- /view/, an interactive viewing mode using [[https://leafletjs.com/][Leaflet]].
 
 You can toggle between the /plot/ and /view/ modes with ~ttm()~, after which you can re-plot your last plot in the new mode with ~tmap_last()~. You can also do both of these at once with ~ttmp()~.
 
