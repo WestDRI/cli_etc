@@ -125,7 +125,7 @@ tm_shape(ak) +
   )
 #+END_src
 
-{{<img src="/img/gis_r/ak.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/ak.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * Union of bounding boxes
@@ -198,7 +198,7 @@ tm_shape(ak, bbox = nwa_bbox) +
   )
 #+END_src
 
-{{<img src="/img/gis_r/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * tmap maps with Leaflet
@@ -215,7 +215,7 @@ tmap_mode("view")
 tmap_last()
 #+END_src
 
-{{<imgshadow src="/img/gis_r/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<imgshadow src="/img/r_gis/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</imgshadow>}}
 
 Afterwards, if you want to create new static plots, don't forget to get back to /plot/ mode with either of:
@@ -309,7 +309,7 @@ tm_shape(gnp) +
 Note: I didn't want to show the legend title and because there is no option to remove it, I set its color to that of the background.
 #+END_note
 
-{{<img src="/img/gis_r/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
+{{<img src="/img/r_gis/gnp.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
 * Mapping a subset of the data
@@ -350,7 +350,7 @@ tm_shape(ag) +
   )
 #+END_src
 
-{{<img src="/img/gis_r/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
+{{<img src="/img/r_gis/ag.png" margin="5rem" title="" width="50%" line-height="0rem">}}
 {{</img>}}
 
 Now we can clearly see the retreat of the Agassiz Glacier between 1966 and 2015.
