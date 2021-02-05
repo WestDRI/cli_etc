@@ -28,7 +28,8 @@ Click to open the presentation:
 
 * Video
 
-Coming soon.
+{{<youtube 7QoccXWqeUs>}}
+
 * Getting data
 
 ** Datasets
