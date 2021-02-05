@@ -642,8 +642,8 @@ tmap_animation(
 )
 #+END_src
 
-# {{<img src="/img/r_gis/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
-# {{</img>}}
+{{<img src="/img/r_gis/ag.gif" margin="5rem" title="" width="70%" line-height="0rem">}}
+{{</img>}}
 
 * Additional resources
 
