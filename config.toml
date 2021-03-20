@@ -88,7 +88,7 @@ canonifyurls = true
 [[menu.main]]
   name = "Courses"
   weight = 3
-  url  = "schools/"
+  url  = "courses/"
 [[menu.main]]
   name = "📚"
   weight = 4
