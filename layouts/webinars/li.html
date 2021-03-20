@@ -1,5 +1,5 @@
 <li>
   <span class="topic">{{ .Params.topic }}</span>
   <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-  <a class="wbtitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+  <a class="wbtitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}{{ with .Page.Params.Subtitle }}:&ensp;{{ end }}<span>{{ .Params.subtitle }}</span></a>
 </li>
