@@ -1,0 +1,44 @@
+Eventbrite ad:
+
+Git is a powerful version control system allowing to record, access, and restore the history of projects. Free, open source, and extremely popular both in research and industry, Git is also an efficient collaboration tool.
+
+This two-day course, which does not require any prior knowledge of version control, covers all key operations. It puts a particular emphasis on explaining the functioning of Git: understanding what commands really do brings the confidence to go beyond a skimpy usage of the software and to harness its full capability. A large hands-on component will let you practice the workflow typical of many research teams and organizations.
+
+You will learn:
+
+- the benefits of a good version control system,
+- a robust and efficient workflow,
+- how to install and run Git on your machine,
+- how to record the history of your projects,
+- how to navigate your projects history,
+- how to revert changes,
+- how to experiment safely with your code thanks to branches,
+- how to set up remote repositories on hosting services such as GitHub and GitLab or on remote servers,
+- and how to collaborate effectively with others through remotes.
+
+Who should take this course?
+
+Anyone can benefit tremendously from the use of versioning.
+This course is suitable to version control novices and to those who wish to bring their expertise with Git to a new level.
+
+Schedule
+
+Day 1:
+
+- Why version control?
+- What is Git?
+- Configuration
+- Documentation
+- Troubleshooting & getting help
+- Recording history
+- Navigating history
+
+Day 2:
+
+- Working with branches
+- Undoing
+- Remotes (GitHub, GitLab, remote server …)
+- Collaborating through Git
+
+More advanced topic that can be added depending on time and group level:
+- Rewriting history
