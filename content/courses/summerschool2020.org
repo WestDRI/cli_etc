@@ -1,5 +1,5 @@
 #+title: WestGrid Summer School 2020
 #+topic: Git
-#+schooltitle: Introduction to version control with Git
-#+schoollink: https://wgschool.netlify.app/git/
+#+coursetitle: Introduction to version control with Git
+#+courselink: https://wgschool.netlify.app/git/
 #+weight: 10
