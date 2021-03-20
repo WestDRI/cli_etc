@@ -1,0 +1,4 @@
+#+title: Spatial data analysis and visualisation in R
+#+topic: R
+#+slug: gis_r
+#+weight: 17
