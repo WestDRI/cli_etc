@@ -192,6 +192,12 @@ img[alt=radius] {
 	  color: $link-color
 	}
       }
+      .wbtitle span {
+	font-size: 1.7rem;
+	@media only screen and (max-width : 768px) {
+	  font-size: 1.55rem;
+	}
+      }
       .coursetitle {
 	font-size: 1.75rem;
 	margin-left: 1.0rem;
@@ -208,6 +214,12 @@ img[alt=radius] {
 	&:hover,
 	&:focus {
 	  color: $link-color
+	}
+      }
+      .coursetitle span {
+	font-size: 1.7rem;
+	@media only screen and (max-width : 768px) {
+	  font-size: 1.55rem;
 	}
       }
     }
