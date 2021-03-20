@@ -1,4 +1,4 @@
-#+title: Online autumn school 2020
+#+title: WestGrid Autumn School 2020
 #+topic: Git
 #+schooltitle: Version control with Git
 #+schoollink: https://autumnschool.netlify.app/git/
