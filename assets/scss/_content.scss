@@ -114,88 +114,83 @@ img[alt=radius] {
       @media only screen and (max-width : 768px) {
 	margin: 1.6rem 0 1.6rem 0;
       }
+      .topic {
+	font-family: $heading-font-family;
+	font-size: 1.7rem;
+	color: #669999;
+	font-weight: 700;
+	display: inline-block;
+	margin-left: 2.0rem;
+	width: 1.5rem;
+	@media only screen and (max-width : 768px) {
+	  font-size: 1.5rem;
+	  display: block;
+	  margin-left: 0;
+	}
+      }
       .date {
 	font-family: $heading-font-family;
-	font-size: 1.6rem;
+	font-size: 1.55rem;
 	display: inline-block;
-	width: 20.0rem;
-	text-align: right;
-	margin-right: 3.0rem;
+	width: 17.0rem;
+	margin-left: 6.0rem;
 	@media only screen and (max-width : 768px) {
 	  display: block;
-	  text-align: left;
+	  // text-align: left;
 	}
       }
       .schoolname {
-	font-size: 1.7rem;
+	font-size: 1.65rem;
 	display: inline-block;
 	width: 36.0rem;
 	margin-left: 7rem;
-	// text-align: right;
-	@media only screen and (max-width : 768px) {
-	  display: block;
-	  text-align: right;
-	}
-      }
-      .wstopic {
-	font-family: $heading-font-family;
-	font-size: 1.6rem;
-	color: #669999;
-	font-weight: 700;
-	display: inline-block;
-	margin-left: 3.0rem;
-	margin-right: 3.0rem;
-	width: 0rem;
-	text-align: right;
-	@media only screen and (max-width : 768px) {
-	  display: block;
-	  text-align: right;
-	}
-      }
-      .wbtopic {
-	font-family: $heading-font-family;
-	font-size: 1.7rem;
-	color: #669999;
-	font-weight: 700;
-	display: inline-block;
-	margin-left: 2rem;
-	// margin-right: 0rem;
-	width: 1.5rem;
-	// text-align: right;
 	@media only screen and (max-width : 768px) {
 	  display: block;
 	  // text-align: right;
 	}
       }
       .wstitle {
-	font-size: 1.9rem;
-	margin-left: 11.0rem;
-	line-height: 3.5rem;
+	font-size: 1.8rem;
+	margin-left: 4.0rem;
+	line-height: 3.8rem;
 	color: $fg-color;
 	font-family: $heading-font-family;
 	font-weight: 700;
-	&:hover,
-	&:focus {
-	  color: $link-color
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  // text-align: right;
 	}
-      }
-      .schooltitle {
-	font-size: 1.7rem;
-	margin-left: 1.0rem;
-	line-height: 3.5rem;
-	color: $fg-color;
-	font-family: $heading-font-family;
-	font-weight: 700;
 	&:hover,
 	&:focus {
 	  color: $link-color
 	}
       }
       .wbtitle {
-	font-size: 1.9rem;
+	font-size: 1.75rem;
+	line-height: 3.5rem;
 	color: $fg-color;
 	font-family: $heading-font-family;
 	font-weight: 700;
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  text-align: right;
+	}
+	&:hover,
+	&:focus {
+	  color: $link-color
+	}
+      }
+      .coursetitle {
+	font-size: 1.75rem;
+	margin-left: 1.0rem;
+	line-height: 3.5rem;
+	color: $fg-color;
+	font-family: $heading-font-family;
+	font-weight: 700;
+	@media only screen and (max-width : 768px) {
+	  display: block;
+	  // text-align: right;
+	}
 	&:hover,
 	&:focus {
 	  color: $link-color

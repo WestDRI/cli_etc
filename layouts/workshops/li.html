@@ -1,4 +1,4 @@
 <li>
-  <span class="wstopic">{{ .Params.topic }}</span>
-  <a class="schooltitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}{{ with .Page.Params.Subtitle }}:&ensp;{{ end }}<span style="font-size: 1.7rem;">{{ .Params.subtitle }}</span></a>
+  <span class="topic">{{ .Params.topic }}</span>
+  <a class="wstitle" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}{{ with .Page.Params.Subtitle }}:&ensp;{{ end }}<span style="font-size: 1.7rem;">{{ .Params.subtitle }}</span></a>
 </li>
