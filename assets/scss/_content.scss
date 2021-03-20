@@ -125,7 +125,7 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  font-size: 1.45rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  // line-height: 1.5rem;
 	  margin-left: 0;
 	}
       }
@@ -138,7 +138,7 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  font-size: 1.5rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  // line-height: 1.5rem;
 	  margin-left: 0;
 	}
       }
@@ -150,20 +150,21 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  font-size: 1.5rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  // line-height: 1.5rem;
 	  margin-left: 0;
 	}
       }
       .wstitle {
-	font-size: 1.8rem;
+	font-size: 1.75rem;
 	margin-left: 4.0rem;
-	line-height: 3.8rem;
+	line-height: 3.5rem;
 	color: $fg-color;
 	font-family: $heading-font-family;
 	font-weight: 700;
 	@media only screen and (max-width : 768px) {
+	  font-size: 1.6rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  line-height: 2.5rem;
 	  margin-left: 0;
 	}
 	&:hover,
@@ -180,7 +181,7 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  font-size: 1.6rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  line-height: 2.5rem;
 	  margin-left: 0;
 	}
 	&:hover,
@@ -198,7 +199,7 @@ img[alt=radius] {
 	@media only screen and (max-width : 768px) {
 	  font-size: 1.6rem;
 	  display: block;
-	  line-height: 1.5rem;
+	  line-height: 2.5rem;
 	  margin-left: 0;
 	}
 	&:hover,
