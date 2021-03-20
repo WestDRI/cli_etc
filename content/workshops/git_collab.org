@@ -2,6 +2,7 @@
 #+subtitle: Example using GitHub as a remote
 #+topic: Git
 #+slug: git-collab
+#+weight: 19
 
 *** /Abstract/
 

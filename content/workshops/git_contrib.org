@@ -1,6 +1,7 @@
 #+title: Contributing to GitHub projects
 #+topic: Git
 #+slug: git-contrib
+#+weight: 18
 
 *** /Abstract/
 
