@@ -1,0 +1,93 @@
+#+title: Documentation
+#+description: Reading
+#+colordes: #2d5986
+#+slug: 04_git_doc
+#+weight: 4
+
+* Internal documentation
+
+** Man pages
+
+On [[https://en.wikipedia.org/wiki/Unix-like][*nix systems]], most commands are documented by [[https://en.wikipedia.org/wiki/Man_page][man (manual) pages]].
+
+You can access the /man page/ of any Git command with one of (some of these may not work, depending on your system):
+
+#+BEGIN_EXAMPLE
+git <command> --help
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+git help <command>
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+man git-<command>
+#+END_EXAMPLE
+
+#+BEGIN_note
+Example:
+#+END_note
+
+#+BEGIN_src sh
+git commit --help
+#+END_src
+
+#+BEGIN_src sh
+git help commit
+#+END_src
+
+#+BEGIN_src sh
+man git-commit
+#+END_src
+
+{{<br>}}
+Man pages open in a [[https://en.wikipedia.org/wiki/Terminal_pager][pager]] (by default [[https://en.wikipedia.org/wiki/Less_(Unix)][less]]).
+
+{{<br>}}
+Some useful keybindings when you are in the pager:
+
+#+BEGIN_monofont
+SPACE {{<m>}} {{<s>}} scroll one screen down \\
+b {{<m>}} {{<m>}} {{<m>}} {{<n>}} scroll one screen up \\
+q {{<m>}} {{<m>}} {{<m>}} {{<n>}} quit
+#+END_monofont
+
+{{<br>}}
+For more keybindings, type ~man less~ in the command line and look for the "COMMANDS" section.
+
+** Command options
+
+To get a list of the /options/ or /flags/ for a command, you can run:
+
+#+BEGIN_EXAMPLE
+git <command> -h
+#+END_EXAMPLE
+
+#+BEGIN_note
+Example:
+#+END_note
+
+#+BEGIN_SRC sh
+git commit -h
+#+END_SRC
+
+* Online documentation
+
+For online references and documentation, you can look at:
+
+- the official [[https://git-scm.com/docs][Git manual]]
+- the open source [[https://git-scm.com/book/en/v2][Pro Git book]]
+
+* Additional resources
+
+*** Courses and workshops
+
+- [[https://westgrid-cli.netlify.app/workshops/][WestGrid's Git workshops]]
+- [[https://wgschool.netlify.app/git/][last summer's WestGrid Git course]]
+- the [[http://swcarpentry.github.io/git-novice/][Software Carpentry Git lesson]]
+
+*** Q & A
+
+- [[https://stackoverflow.com/questions/tagged/git][Stack Overflow's Git tag]]
+
+* Comments & questions

@@ -1,0 +1,60 @@
+#+title: Why Git?
+#+description: Reading
+#+colordes: #2d5986
+#+slug: 02_git_why
+#+weight: 2
+
+* Why version control?
+
+{{<imgshadow src="/img/git/git_img/vc_nw.png" margin="4rem" title="" width="70%" line-height="2.0rem">}}
+<center>{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}from <a href="http://geek-and-poke.com/">Geek&Poke</a></center>
+{{</imgshadow>}}
+
+Without dedicated versioning tools, many people instinctively use some form of DIY version control by saving copies of important files at various stages of development.
+
+The extremely organized may have a system including the date in the names of those file versions. This is tedious to maintain and really hard to work with.
+
+For those who are not extremely organized however, it is pure chaos. I'm sure you know what I'm talking about.
+
+{{<imgshadow src="https://phdcomics.com/comics/archive/phd101212s.gif" margin="4rem" title="" width="500" line-height="">}}
+{{</imgshadow>}}
+
+Version control systems make versioning projects—that is, archiving multiple versions of projects into a history—part of a reasonable workflow that does not involve a confusing collection of files swamping your folders.
+
+They automatically record consistent information whenever you archive versions. They also offer easy ways to navigate projects histories, compare versions, or revert files to earlier states.
+
+* Here comes Git
+
+Git is an open source distributed version control system (DVCS) created in 2005 by Linus Torvalds for the versioning of the Linux kernel. For the past 10 years, it has dominated the version control system world. {{<2br>}}
+
+{{<img src="/img/git/git_img/legend_nw.png" margin="0rem" title="" width="60%" line-height="rem">}}
+{{</img>}}
+{{<img src="/img/git/git_img/git_nw.png" margin="1rem" title="" width="%" line-height="0rem">}}
+from <a href="https://trends.google.com/trends/">Google Trends</a>
+{{</img>}}{{<br>}}
+
+And for very good reasons: Git is extremely powerful. Well, if one knows how to use it that is...
+{{<2br>}}
+{{<img src="https://imgs.xkcd.com/comics/git.png" margin="0rem" title="" width="300" line-height="0.5rem">}}
+from <a href="https://xkcd.com/">xkcd.com</a>
+{{</img>}}
+
+** Easy experimentation
+
+[[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][Branches]] provide an easy way to experiment with a project without risking to mess up the stable branch of development. They also allow for multiple developments to happen in parallel without interfering with each other.
+
+** Backup tool
+
+External remotes on a server or on the web (e.g. [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], or [[https://bitbucket.org][Bitbucket]]) provide an easy way to backup a project and its history.
+
+{{<img src="/img/git/git_img/gitout.png" margin="3rem" title="" width="200" line-height="0">}}
+by <a href="https://www.redbubble.com/people/jscript/shop#profile">jscript</a>&nbsp;&nbsp;
+{{</img>}}
+
+** Collaborative tool
+
+With easy branching and merging, Git is a great collaboration tool: team members can work on separate branches without stepping on each other's toes, then integrate their work into the main branch.
+
+Finally, thanks to Git's distributed nature, everybody has the full project history on their machine. This is more secure (redundancy) and access to the internet/network is only needed to upload/download data to/from the remote.
+
+* Comments & questions

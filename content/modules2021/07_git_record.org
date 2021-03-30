@@ -1,0 +1,63 @@
+#+title: Recording history
+#+description: Zoom
+#+colordes: #e86e0a
+#+slug: 07_git_record
+#+weight: 7
+
+#+OPTIONS: toc:nil
+
+*Zoom session 2 — part 2*
+
+Now we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
+
+The key commands for this lesson are:
+
+~git init~, ~git status~, ~git add~, ~git commit~, ~git diff~, ~git log~, and ~git show~.
+
+This is what our session might look like:
+
+#+BEGIN_src sh
+cd /path/to/suitable/dir
+mkdir snow_level
+cd snow_level
+pwd
+
+git init
+git status
+
+mkdir data ms output src
+git status
+
+nano src/script.py
+git status
+
+git add src/script.py
+git status
+
+git commit -m $'Initial commit\n
+\n
+Add first draft of Python script'
+
+git status
+git log
+
+nano ms/paper.md
+git status
+git add .
+git status
+git commit -m "Add first draft of manuscript"
+git status
+
+nano src/script.py
+git status
+git add src/script.py
+git status
+git diff
+git diff --cached
+git diff HEAD
+
+git log
+git show HEAD
+#+END_src
+
+* Comments & questions

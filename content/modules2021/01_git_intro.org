@@ -1,0 +1,15 @@
+#+title: Introduction to the course
+#+description: Zoom
+#+colordes: #e86e0a
+#+slug: 01_git_intro
+#+weight: 1
+
+#+OPTIONS: toc:nil
+
+*Zoom session 1*
+
+{{<m>}} /Access:/ You should have received the meeting id and password by email. \\
+{{<m>}} /Time:/ 9 am Pacific Time. \\
+{{<m>}} /Topic:/ Quick presentation of how this course will run.
+
+* Comments & questions

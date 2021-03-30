@@ -1,0 +1,216 @@
+#+title: Branches
+#+description: Zoom
+#+colordes: #e86e0a
+#+slug: 10_git_branches
+#+weight: 10
+
+*Zoom session 3 — part 1*
+
+{{<m>}} /Access:/ You should have received the meeting id and password by email. \\
+{{<m>}} /Time:/ 3 pm Pacific Time.
+
+* What is a branch?
+
+A branch is a pointer to a commit (under the hood, it is a small file containing the 40 character SHA-1 checksum of the commit it points to).
+
+* Why use multiple branches?
+
+If your changes are very disruptive and break code, you still have a fully functional branch to go back to if needed.
+
+You can create a branch for each alternative approach. This allows you to jump back and forth between various alternatives to implement an idea.
+
+If you want to start working on a totally different aspect of the project while you haven't finished a development idea, you can go back to the main branch and create a new branch from there. This prevents having messy incomplete work all over the place on the same branch.
+
+* How to create a branch?
+
+** Initial branch (master)
+
+When you run ~git init~ to initialize a repository, a branch gets created and it is called ~master~ (you could rename it to something else if you wanted—that initial branch, despite its name, has nothing special).
+
+So as soon as you start working on your project, there is one branch (~master~) and you are on it. Wait... what does this mean to be /on a branch/? There is another pointer called ~HEAD~ that keeps track of where you are. And ~HEAD~ points to ~master~.
+
+This is what ~On branch master~ means in the output of ~git status~. \\
+This is also what ~(HEAD -> master)~ means when you run ~git log~ (you need to create at least one commit before you can run ~git log~).
+
+** Additional branches
+
+You can create additional branches with:
+
+#+BEGIN_syntax
+git branch <branch-name>
+#+END_syntax
+
+#+BEGIN_note
+Example:
+#+END_note
+
+#+BEGIN_src sh
+git branch test
+#+END_src
+
+{{<img src="/img/git/git_img/diagrams/23.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+Notice that ~HEAD~ still points to ~master~.
+
+* How to switch to a branch?
+
+You switch to a branch with:
+
+#+BEGIN_syntax
+git checkout <branch-name>
+#+END_syntax
+
+#+BEGIN_note
+Example:
+#+END_note
+
+#+BEGIN_src sh
+git checkout test
+#+END_src
+
+{{<img src="/img/git/git_img/diagrams/24.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+* Creating a branch and switching to it immediately
+
+When you create a branch, most of the time you want to switch to it. There is a handy way to create a branch and switch to it immediately:
+
+#+BEGIN_syntax
+git checkout -b <branch-name>
+#+END_syntax
+
+* Deleting branches
+
+You can delete a branch with:
+
+#+BEGIN_syntax
+git branch -d <branch-name>
+#+END_syntax
+
+* Getting information on branches
+
+#+BEGIN_src sh
+# list local branches (current branch marked with *)
+git branch
+git branch -v   # show sha1 and commit message for each head
+git branch -vv  # also show upstream branch
+
+# list remote branches
+git branch -r
+
+# list all branches
+git branch -a
+#+END_src
+
+* Merging branches
+
+** Fast-forward merge
+
+Here is a classic workflow with branches:
+
+You just checked out the branch ~test~. Now you make a series of commits on that branch:
+
+{{<img src="/img/git/git_img/diagrams/26.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+You are happy with your changes and you want to merge them back into the main branch (~master~).
+
+First, you checkout master (to merge, you need to be on the branch you want to merge /into/):
+
+#+BEGIN_src sh
+git checkout master
+#+END_src
+
+{{<img src="/img/git/git_img/diagrams/27.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+Then you merge ~test~ into ~master~:
+
+#+BEGIN_src sh
+git merge test
+#+END_src
+
+{{<img src="/img/git/git_img/diagrams/28.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+This merge is called a *fast-forward merge*: the ~master~ branch could be fast-forwarded to the branch ~test~.
+
+Now, you can delete the branch ~test~ which has become useless:
+
+#+BEGIN_src sh
+git branch -d test
+#+END_src
+
+And you have:
+
+{{<img src="/img/git/git_img/diagrams/29.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+** Merge commit
+
+Let's consider another common workflow with a branch ~test2~ starting from the same situation (you just created and checked out ~test2~):
+
+{{<img src="/img/git/git_img/diagrams/32.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+You create a number of commits on ~test2~:
+
+{{<img src="/img/git/git_img/diagrams/34.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+Then you checkout ~master~:
+
+{{<img src="/img/git/git_img/diagrams/35.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+and you create commits on ~master~:
+
+{{<img src="/img/git/git_img/diagrams/37.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+{{<br>}}
+To merge ~test2~ into ~master~, you need to be on ~master~, but that's already the case. So you can run:
+
+#+BEGIN_src sh
+git merge test2
+#+END_src
+
+and you get:
+
+{{<img src="/img/git/git_img/diagrams/38.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+Note that in order to make the merge in this scenario, Git had to create a new commit, called *a merge commit* and that this commit has 2 parents.
+
+Finally, you can now delete the ~test2~ branch with ~git branch -d test2~ to get:
+
+{{<img src="/img/git/git_img/diagrams/39.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+For more information on branches, I recommend to read [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell][the chapter on branches]] in the [[https://git-scm.com/book/en/v2][Pro Git book]], an open source project freely available online.
+
+* Resolving conflicts
+
+If the same section of a file is changed on different branches, Git cannot know which version you would like to keep. The merge gets interrupted until you resolve the conflict.
+
+To resolve the conflict, you can use a merge tool. Run ~git mergetool --tool-help~ to get help setting this up.
+
+Many GUI applications for Git as well as powerful text editors such as Emacs and Vim offer merge tools.
+
+You can also resolve the conflict manually in a text editor:
+
+When a merge gets interrupted due to a conflict, Git tells you which file contains a conflict. Open this file and look for a section that looks like this:
+
+#+BEGIN_src
+<<<<<<< HEAD
+Version of this section of the file on your checkedout branch
+=======
+Alternative version of the same section of the file
+>>>>>>> alternative version
+#+END_src
+
+The ~<<<<<<< HEAD~, ~=======~, and ~>>>>>>>~ are markers added by Git to identify the alternative versions at the location of the conflict.
+
+You have to decide which version you want to keep (or write yet another version), remove the 3 lines with the markers, and remove the line(s) with the version(s) you do not want to keep.
+
+* Comments & questions

@@ -1,0 +1,118 @@
+#+title: Git & GitHub setup
+#+description: Hands-on
+#+colordes: #8a2000
+#+slug: 03_git_setup
+#+weight: 3
+
+In order to follow this course, you will need to:
+
+- Install Git
+- Configure Git
+- Create a GitHub account (if you don't already have one)
+
+Optionally, you can also set up SSH for your GitHub account.
+
+This lesson will guide you through these.
+
+* Install Git
+
+Linux, MacOS, and WSL users can download Git from the [[https://git-scm.com/downloads][official website]].
+
+While that version also works on Windows, Windows users are advised to download Git from the [[https://gitforwindows.org/][Git for Windows project]] as this also provides a Bash emulation to run Git in the command line.
+
+** How to run Git?
+
+There are many GUIs (Graphical User Interfaces) which allow to run Git in a friendly, visual manner, but for this course, we will run Git in the command line.
+
+Why?
+- The Git GUIs are often buggy, slow, and limiting.
+- Whenever something goes wrong with a Git GUI, or when it cannot perform a complex command, you have to revert to the command line anyway.
+- If you use SSH (for instance to access Compute Canada clusters), working with the command line is really the best option.
+
+So, even if you choose to use a GUI in your everyday versioning, it is important to know how to run Git in the command line.
+
+In this course, to run Git commands, open:
+
+*Windows users:* {{<m>}}{{<m>}}Git BASH \\
+*MacOS users:* {{<m>}}{{<m>}}{{<m>}}Terminal \\
+*Linux/WSL users:* {{<m>}}{{<n>}}Your usual terminal emulator
+
+* Configure Git
+
+Before you start using Git, you need to set it up.
+
+*** Name & email address
+
+Each recorded version of your project will have a Git object called a /commit/ pointing to it. Amongst the information contained in those commits are the name and email address of the author (i.e. you). You have to set those so that Git uses the proper information.
+
+While you can use a pseudo, it is common practice to use your full name here.
+
+The email address you choose does not have to be the one you are using for your GitHub account: both are totally unrelated. This is only the email address that will be associated with your commits. If you have a work and a personal address, your work address is probably the one you want. But again, this is up to you.
+
+#+BEGIN_src sh
+git config --global user.name "<Your Name>"
+git config --global user.email "<your@email>"
+#+END_src
+
+#+BEGIN_note
+Example:
+#+END_note
+
+#+BEGIN_src sh
+git config --global user.name "John Doe"
+git config --global user.email "john.doe@gmail.com"
+#+END_src
+
+*** Text editor
+
+Then, you need to pick the text editor you want Git to open whenever you need to type a message. Choose whatever text editor you are familiar with.
+
+#+BEGIN_src sh
+git config --global core.editor "<text-editor>"
+#+END_src
+
+#+BEGIN_note
+Example using the text editor nano:
+#+END_note
+
+#+BEGIN_src sh
+git config --global core.editor "nano"
+#+END_src
+
+*** Line ending format
+
+Finally, you need to set the proper line ending format for your operating system.
+
+If you are using macOS, Linux, or WSL, run:
+
+#+BEGIN_src sh
+git config --global core.autocrlf input
+#+END_src
+
+If you are using Windows, run instead:
+
+#+BEGIN_src sh
+git config --global core.autocrlf true
+#+END_src
+
+*** List settings
+
+If you want to see your current Git configuration, you can run:
+
+#+BEGIN_src sh
+git config --list
+#+END_src
+
+If one of the values isn't right, just re-run the relevant command with the proper value.
+
+* Create a GitHub account
+
+If you don't already have one, create a free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
+
+** (Optional) Set up SSH for your GitHub account
+
+Each time you will upload/download data to/from a GitHub repository, you will have to enter your GitHub username and password.
+
+If you want to avoid this, you can [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set up SSH for your GitHub account]].
+
+* Comments & questions
