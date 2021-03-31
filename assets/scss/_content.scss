@@ -17,6 +17,12 @@
 	  font-size: 3.2rem;
 	  line-height: 4.4rem;
 	}
+	@media only screen and (max-width : 480px) {
+	  font-size: 2.1rem;
+	  line-height: 2.6rem;
+	  margin-top: 3rem;
+	  margin-bottom: 1.5rem;
+	}
       }
       subtitle {
 	font-family: $heading-font-family;
@@ -82,6 +88,9 @@
   height: auto;
   @media only screen and (max-width : 768px) {
     width: 10rem;
+  }
+  @media only screen and (max-width : 480px) {
+    width: 7rem;
   }
 }
 
@@ -235,6 +244,13 @@ img[alt=radius] {
     h1 {
       margin-top: 2.0rem;
       margin-bottom: 0.5rem;
+      @media only screen and (max-width : 768px) {
+	font-size: 4.0rem;
+      }
+      @media only screen and (max-width : 480px) {
+	font-size: 2.5rem;
+	line-height: 3.5rem;
+      }
     }
     h2 {
       margin-top: 1.0rem;
@@ -242,6 +258,12 @@ img[alt=radius] {
       font-size: 2.4rem;
       @media only screen and (max-width : 768px) {
 	font-size: 2.0rem;
+      }
+      @media only screen and (max-width : 768px) {
+	font-size: 2.0rem;
+      }
+      @media only screen and (max-width : 480px) {
+	font-size: 1.2rem;
       }
     }
     ul {
