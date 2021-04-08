@@ -1,4 +1,4 @@
-#+title: Spatial data analysis and visualisation in R (WIP)
+#+title: Spatial data analysis and visualisation in R
 #+topic: R
 #+slug: gis_r_rc
 #+weight: 17
