@@ -1,0 +1,4 @@
+#+title: Introduction to GIS & Spacial Analysis in R
+#+topic: R
+#+slug: gis_r_brc
+#+weight: 16
