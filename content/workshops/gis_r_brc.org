@@ -2,6 +2,13 @@
 #+topic: R
 #+slug: gis_r_brc
 #+weight: 16
+
+#+BEGIN_export html
+<center>Workshop for <a href="https://biodiversity.ubc.ca/">the University of British Columbia Biodiversity Research Centre</a>.</center>
+#+END_export
+
+{{<imgshadow src="/img/r_gis/gis-r-workshop_ubc-brc_2021.jpg" margin="rem" title="" width="70%" line-height="0.5rem">}}
+{{</imgshadow>}}
 * Slides
 
 Click to open the presentation:
