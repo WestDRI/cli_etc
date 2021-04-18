@@ -7,7 +7,7 @@
 Click to open the presentation:
 
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/r_gis_rc/#/"><p align="center"><img src="/img/r_gis/rgis_rc_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://westgrid-slides.netlify.app/r_gis_rc/#/"><p align="center"><img src="/img/r_gis/rgis_rc_slides.jpg" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Comments & questions

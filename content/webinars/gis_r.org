@@ -125,7 +125,7 @@ tm_shape(ak) +
   )
 #+END_src
 
-{{<img src="/img/r_gis/ak.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/ak.jpg" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * Union of bounding boxes
@@ -198,7 +198,7 @@ tm_shape(ak, bbox = nwa_bbox) +
   )
 #+END_src
 
-{{<img src="/img/r_gis/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/nwa.jpg" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * tmap maps with Leaflet
@@ -215,7 +215,7 @@ tmap_mode("view")
 tmap_last()
 #+END_src
 
-{{<imgshadow src="/img/r_gis/nwa_leaflet.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<imgshadow src="/img/r_gis/nwa_leaflet.jpg" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</imgshadow>}}
 
 Afterwards, if you want to create new static plots, don't forget to get back to /plot/ mode with either of:

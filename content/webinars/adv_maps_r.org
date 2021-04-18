@@ -23,7 +23,7 @@ There is a lot to cover, so expect a much faster pace than in the introductory w
 Click to open the presentation:
 
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/r_gis/#/"><p align="center"><img src="/img/r_gis/rgis_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://westgrid-slides.netlify.app/r_gis/#/"><p align="center"><img src="/img/r_gis/rgis_slides.jpg" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Video
@@ -160,7 +160,7 @@ tm_shape(ak) +
   )
 #+END_src
 
-{{<img src="/img/r_gis/ak.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/ak.jpg" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * Union of bounding boxes
@@ -235,7 +235,7 @@ tm_shape(ak, bbox = nwa_bbox) +
   )
 #+END_src
 
-{{<img src="/img/r_gis/nwa.png" margin="5rem" title="" width="%" line-height="0rem">}}
+{{<img src="/img/r_gis/nwa.jpg" margin="5rem" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 * Maps based on an attribute variable
@@ -441,7 +441,7 @@ This will open a page in your browser in which you can pan, zoom, select/deselec
 # <figure style="display: table; margin: 5rem auto">
 #   <div class="row">
 #     <div class="column">
-#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview4.png">
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview4.jpg">
 #       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
 # 	<figcaption>
 # 	  <em>
@@ -451,7 +451,7 @@ This will open a page in your browser in which you can pan, zoom, select/deselec
 #       </div>
 #     </div>
 #     <div class="column">
-#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview1.png"  >
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview1.jpg"  >
 #       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
 # 	<figcaption>
 # 	  <em>
@@ -463,7 +463,7 @@ This will open a page in your browser in which you can pan, zoom, select/deselec
 #   </div>
 #   <div class="row">
 #     <div class="column">
-#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview3.png" margin="5rem" >
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview3.jpg" margin="5rem" >
 #       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
 # 	<figcaption>
 # 	  <em>
@@ -473,7 +473,7 @@ This will open a page in your browser in which you can pan, zoom, select/deselec
 #       </div>
 #     </div>
 #     <div class="column">
-#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview2.png" margin="5rem" >
+#       <img style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3)" src="/img/r_gis/mapview2.jpg" margin="5rem" >
 #       <div align="right" style="font-size: 1.3rem; color: #978282; line-height: 1rem">
 # 	<figcaption>
 # 	  <em>
@@ -486,19 +486,19 @@ This will open a page in your browser in which you can pan, zoom, select/deselec
 # </figure>
 # #+END_export
 
-{{<imgshadow src="/img/r_gis/mapview4.png" margin="5rem" title="" width="%" line-height="2rem">}}
+{{<imgshadow src="/img/r_gis/mapview4.jpg" margin="5rem" title="" width="%" line-height="2rem">}}
 CartoDB.Positron
 {{</imgshadow>}}
 
-{{<imgshadow src="/img/r_gis/mapview1.png" margin="5rem" title="" width="%" line-height="2rem">}}
+{{<imgshadow src="/img/r_gis/mapview1.jpg" margin="5rem" title="" width="%" line-height="2rem">}}
 OpenTopoMap
 {{</imgshadow>}}
 
-{{<imgshadow src="/img/r_gis/mapview3.png" margin="5rem" title="" width="%" line-height="2rem">}}
+{{<imgshadow src="/img/r_gis/mapview3.jpg" margin="5rem" title="" width="%" line-height="2rem">}}
 OpenStreetMap
 {{</imgshadow>}}
 
-{{<imgshadow src="/img/r_gis/mapview2.png" margin="5rem" title="" width="%" line-height="2rem">}}
+{{<imgshadow src="/img/r_gis/mapview2.jpg" margin="5rem" title="" width="%" line-height="2rem">}}
 Esri.WorldImagery
 {{</imgshadow>}}
 
