@@ -26,7 +26,8 @@ You will be given access to an RStudio server, so no prior local installation is
 
 * Slides
 
-Click to open the presentation:
+/Click below to open the presentation.\\
+Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
 
 #+BEGIN_export html
 <a href="https://westgrid-slides.netlify.app/r_gis_brc/#/"><p align="center"><img src="/img/r_gis/rgis_brc_slides.jpg" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
