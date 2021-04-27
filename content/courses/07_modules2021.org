@@ -1,0 +1,5 @@
+#+title: WestGrid Training Modules 2021
+#+topic: Git
+#+coursetitle: Git: the basics
+#+courselink: https://wgtm21.netlify.app/programming_git/
+#+weight: 7
