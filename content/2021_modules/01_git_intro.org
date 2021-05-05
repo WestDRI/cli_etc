@@ -1,4 +1,4 @@
-#+title: Introduction to the course
+#+title: Opening session
 #+description: Zoom
 #+colordes: #e86e0a
 #+slug: 01_git_intro
@@ -6,10 +6,11 @@
 
 #+OPTIONS: toc:nil
 
-*Zoom session 1*
+* Zoom session 1
 
-{{<m>}} /Access:/ You should have received the meeting id and password by email. \\
-{{<m>}} /Time:/ 9 am Pacific Time. \\
-{{<m>}} /Topic:/ Quick presentation of how this course will run.
+#+BEGIN_def
+/Time:/ {{<m>}} 9 am Pacific Time \\
+/Access:/ {{<s>}}{{<s>}} You should have received the meeting id and password by email.
+#+END_def
 
 * Comments & questions
