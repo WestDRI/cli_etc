@@ -4,15 +4,17 @@
 #+slug: 03_git_setup
 #+weight: 3
 
+#+BEGIN_simplebox
 In order to follow this course, you will need to:
 
 - Install Git
 - Configure Git
 - Create a GitHub account (if you don't already have one)
+#+END_simplebox
 
 Optionally, you can also set up SSH for your GitHub account.
 
-This lesson will guide you through these.
+This lesson will guide you through the initial setup.
 
 * Install Git
 
@@ -33,9 +35,11 @@ So, even if you choose to use a GUI in your everyday versioning, it is important
 
 In this course, to run Git commands, open:
 
+#+BEGIN_simplebox
 *Windows users:* {{<m>}}{{<m>}}Git BASH \\
-*MacOS users:* {{<m>}}{{<m>}}{{<m>}}Terminal \\
+*MacOS users:* {{<m>}}{{<m>}}{{<n>}}{{<s>}}Terminal \\
 *Linux/WSL users:* {{<m>}}{{<n>}}Your usual terminal emulator
+#+END_simplebox
 
 * Configure Git
 
@@ -104,6 +108,11 @@ git config --list
 #+END_src
 
 If one of the values isn't right, just re-run the relevant command with the proper value.
+
+#+BEGIN_note
+Note that there are many additional configurations that can make Git work better for you. \\
+The customizations you just set represent the minimum to start using Git.
+#+END_note
 
 * Create a GitHub account
 
