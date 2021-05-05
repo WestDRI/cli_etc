@@ -81,7 +81,7 @@ After which, your Git trees look like this:
 {{<img src="/img/git/git_img/diagrams/16.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Now, the index also have ~File~ at version ~v2~.
+Now, the index also has ~File~ at version ~v2~.
 
 ~git status~ now returns:
 
