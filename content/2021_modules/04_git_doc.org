@@ -12,17 +12,17 @@ On [[https://en.wikipedia.org/wiki/Unix-like][*nix systems]], most commands are 
 
 You can access the /man page/ of any Git command with one of (some of these may not work, depending on your system):
 
-#+BEGIN_EXAMPLE
+#+BEGIN_src sh
 git <command> --help
-#+END_EXAMPLE
+#+END_src
 
-#+BEGIN_EXAMPLE
+#+BEGIN_src sh
 git help <command>
-#+END_EXAMPLE
+#+END_src
 
-#+BEGIN_EXAMPLE
+#+BEGIN_src sh
 man git-<command>
-#+END_EXAMPLE
+#+END_src
 
 #+BEGIN_note
 Example:
@@ -59,9 +59,9 @@ For more keybindings, type ~man less~ in the command line and look for the "COMM
 
 To get a list of the /options/ or /flags/ for a command, you can run:
 
-#+BEGIN_EXAMPLE
+#+BEGIN_src sh
 git <command> -h
-#+END_EXAMPLE
+#+END_src
 
 #+BEGIN_note
 Example:
