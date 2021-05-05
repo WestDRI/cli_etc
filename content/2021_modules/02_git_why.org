@@ -4,7 +4,7 @@
 #+slug: 02_git_why
 #+weight: 2
 
-* Why version control?
+* First off, why version control?
 
 {{<imgshadow src="/img/git/git_img/vc_nw.png" margin="4rem" title="" width="70%" line-height="2.0rem">}}
 <center>{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}{{<m>}}from <a href="http://geek-and-poke.com/">Geek&Poke</a></center>
