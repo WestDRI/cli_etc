@@ -410,6 +410,15 @@ img[alt=radius] {
   line-height: 2.5rem;
 }
 
+.challenge_dark-block {
+  text-align: left;
+  color: #e5e5e6;
+  border-left: 5px solid #f6903c;
+  margin: 45px 50px 45px 20px;
+  padding-left: 4rem;
+  line-height: 2rem;
+}
+
 .exercise-block {
   color: #262626;
   margin: 45px 50px 45px 0px;
@@ -484,6 +493,23 @@ img[alt=radius] {
   // color: #3e3e3e;
   padding: 0.7rem 3.5rem;
   font-size: 1.8rem;
+  // line-height: 22px;
+  // border: 0.5pt solid #ebeae0;
+  border: 0.5pt solid #e8e2e9;
+  border-radius: 3px;
+}
+
+.def-block {
+  // small font in dull gray box
+  // background-color: #f0efe7;
+  // background-color: #f3f0f4;
+  background-color: #eae8f0;
+  // font-family: 'Playfair Display', serif;
+  font-family: 'Crimson Text', serif;
+  // color: #3e3e3e;
+  margin: 4rem 0;
+  padding: 0rem 3.5rem;
+  font-size: 2rem;
   // line-height: 22px;
   // border: 0.5pt solid #ebeae0;
   border: 0.5pt solid #e8e2e9;
@@ -613,6 +639,15 @@ img[alt=radius] {
   font-family: 'Montserrat';
   margin: 30px 100px;
   color: #911808;
+}
+
+.emph-block {
+  line-height: 2.6rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
+  color: #e8761e;
+  // margin: 10px 0;
 }
 
 .footnote-definition {
