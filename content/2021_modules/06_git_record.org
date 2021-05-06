@@ -13,6 +13,12 @@
 /Access:/ {{<s>}}{{<s>}} You should have received the meeting id and password by email.
 #+END_def
 
+** Any questions so far?
+
+I will answer questions about the material covered so far. If some things didn't make sense, the practice we will do together should help clarify everything.
+
+** Let's try it together
+
 Now we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
 
 The key commands for this lesson are:
