@@ -1,4 +1,4 @@
-#+title: Final questions
+#+title: Wrapping up
 #+description: Zoom
 #+colordes: #e86e0a
 #+slug: 13_git_wrapup
