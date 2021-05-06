@@ -83,7 +83,8 @@ For online references and documentation, you can look at:
 *** Courses and workshops
 
 - [[https://westgrid-cli.netlify.app/workshops/][WestGrid's Git workshops]]
-- [[https://wgschool.netlify.app/git/][last summer's WestGrid Git course]]
+- [[https://wgschool.netlify.app/git/][last summer WestGrid Git course]]
+- [[https://autumnschool.netlify.app/git/][last fall WestGrid Git course]]
 - the [[http://swcarpentry.github.io/git-novice/][Software Carpentry Git lesson]]
 
 *** Q & A
