@@ -70,10 +70,10 @@ Notice that ~HEAD~ is not pointing at a branch anymore: it is pointing directly 
 
 If you look at your files, you will see that they match their state when you committed ~31fukv1~: your working directory got updated to match the current position of ~HEAD~.
 
-You can look at your project at that point in its history, then go back to your main branch (here ~master~) with:
+You can look at your project at that point in its history, then go back to your main branch (here ~main~) with:
 
 #+BEGIN_src sh
-git checkout master
+git checkout main
 #+END_src
 
 {{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
@@ -88,7 +88,7 @@ Now, when you are at commit ~31fukv1~, maybe you wanted to try something.
 {{<img src="/img/git/git_img/diagrams/41.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-You can safely try anything you want: when you checkout master to come back to "the present", those experimental changes will get lost.
+You can safely try anything you want: when you checkout main to come back to "the present", those experimental changes will get lost.
 
 But what if you want to keep those changes you made at ~31fukv1~?
 
@@ -106,7 +106,7 @@ The thing is that you are still in this detached HEAD state. ~HEAD~ is not point
 
 *** Bad workflow
 
-Well, it becomes a problem if you checkout master from there:
+Well, it becomes a problem if you checkout main from there:
 
 {{<img src="/img/git/git_img/diagrams/46.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
@@ -131,7 +131,7 @@ First, create a new branch:
 {{<img src="/img/git/git_img/diagrams/48.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Only then can you safely checkout ~master~:
+Only then can you safely checkout ~main~:
 
 {{<img src="/img/git/git_img/diagrams/49.png" title="" width="%" line-height="0rem">}}
 {{</img>}}

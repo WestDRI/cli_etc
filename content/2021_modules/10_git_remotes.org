@@ -167,7 +167,7 @@ Example
 #+END_note
 
 #+BEGIN_src sh
-git pull origin master
+git pull origin main
 #+END_src
 
 If your branch is already tracking a remote branch (see below), then you simply need to run:
@@ -186,24 +186,24 @@ Uploading data to the remote is called /pushing/ and is done with:
 git push <remote-name> <branch-name>
 #+END_syntax
 
-To push your branch ~master~ to the remote ~origin~:
+To push your branch ~main~ to the remote ~origin~:
 
 #+BEGIN_src sh
-git push origin master
+git push origin main
 #+END_src
 
 You can also set an upstream branch to track a local branch with the ~-u~ flag:
 
 #+BEGIN_src sh
-git push -u origin master
+git push -u origin main
 #+END_src
 
-From now on, all you have to run when you are on ~master~ is:
+From now on, all you have to run when you are on ~main~ is:
 
 #+BEGIN_src sh
 git push
 #+END_src
 
-Git knows that your local ~master~ branch is being tracked by the upstream ~master~ branch.
+Git knows that your local ~main~ branch is being tracked by the upstream ~main~ branch.
 
 * Comments & questions

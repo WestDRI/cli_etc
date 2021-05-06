@@ -18,14 +18,14 @@ If you want to start working on a totally different aspect of the project while 
 
 * How to create a branch?
 
-** Initial branch (master)
+** Initial branch (main)
 
-When you run ~git init~ to initialize a repository, a branch gets created and it is called ~master~ (you could rename it to something else if you wanted—that initial branch, despite its name, has nothing special).
+When you run ~git init~ to initialize a repository, a branch gets created and it is called ~main~ (you could rename it to something else if you wanted—that initial branch, despite its name, has nothing special).
 
-So as soon as you start working on your project, there is one branch (~master~) and you are on it. Wait... what does this mean to be /on a branch/? There is another pointer called ~HEAD~ that keeps track of where you are. And ~HEAD~ points to ~master~.
+So as soon as you start working on your project, there is one branch (~main~) and you are on it. Wait... what does this mean to be /on a branch/? There is another pointer called ~HEAD~ that keeps track of where you are. And ~HEAD~ points to ~main~.
 
-This is what ~On branch master~ means in the output of ~git status~. \\
-This is also what ~(HEAD -> master)~ means when you run ~git log~ (you need to create at least one commit before you can run ~git log~).
+This is what ~On branch main~ means in the output of ~git status~. \\
+This is also what ~(HEAD -> main)~ means when you run ~git log~ (you need to create at least one commit before you can run ~git log~).
 
 ** Additional branches
 
@@ -46,7 +46,7 @@ git branch test
 {{<img src="/img/git/git_img/diagrams/23.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
-Notice that ~HEAD~ still points to ~master~.
+Notice that ~HEAD~ still points to ~main~.
 
 * How to switch to a branch?
 
@@ -109,18 +109,18 @@ You just checked out the branch ~test~. Now you make a series of commits on that
 {{<img src="/img/git/git_img/diagrams/26.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-You are happy with your changes and you want to merge them back into the main branch (~master~).
+You are happy with your changes and you want to merge them back into the main branch (~main~).
 
-First, you checkout master (to merge, you need to be on the branch you want to merge /into/):
+First, you checkout main (to merge, you need to be on the branch you want to merge /into/):
 
 #+BEGIN_src sh
-git checkout master
+git checkout main
 #+END_src
 
 {{<img src="/img/git/git_img/diagrams/27.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-Then you merge ~test~ into ~master~:
+Then you merge ~test~ into ~main~:
 
 #+BEGIN_src sh
 git merge test
@@ -129,7 +129,7 @@ git merge test
 {{<img src="/img/git/git_img/diagrams/28.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-This merge is called a *fast-forward merge*: the ~master~ branch could be fast-forwarded to the branch ~test~.
+This merge is called a *fast-forward merge*: the ~main~ branch could be fast-forwarded to the branch ~test~.
 
 Now, you can delete the branch ~test~ which has become useless:
 
@@ -154,17 +154,17 @@ You create a number of commits on ~test2~:
 {{<img src="/img/git/git_img/diagrams/34.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-Then you checkout ~master~:
+Then you checkout ~main~:
 
 {{<img src="/img/git/git_img/diagrams/35.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-and you create commits on ~master~:
+and you create commits on ~main~:
 
 {{<img src="/img/git/git_img/diagrams/37.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 {{<br>}}
-To merge ~test2~ into ~master~, you need to be on ~master~, but that's already the case. So you can run:
+To merge ~test2~ into ~main~, you need to be on ~main~, but that's already the case. So you can run:
 
 #+BEGIN_src sh
 git merge test2
