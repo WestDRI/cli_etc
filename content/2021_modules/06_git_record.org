@@ -23,9 +23,10 @@ Now we will put into practice what you just learnt: we will create a project, pu
 
 The key commands for this lesson are:
 
-~git init~, ~git status~, ~git add~, ~git commit~, ~git diff~, ~git log~, and ~git show~.
+- ~git init~, which initiates a Git repository,
+- ~git status~, ~git add~, ~git commit~, ~git diff~, ~git log~, and ~git show~, which you read about in the previous lesson.
 
-This is what our session might look like:
+This is what our live session might look like:
 
 #+BEGIN_src sh
 cd /path/to/suitable/dir
