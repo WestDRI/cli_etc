@@ -1,12 +1,17 @@
-#+title: Recording history
+#+title: Let's create a project history together
 #+description: Zoom
 #+colordes: #e86e0a
-#+slug: 07_git_record
-#+weight: 7
+#+slug: 06_git_record
+#+weight: 6
 
 #+OPTIONS: toc:nil
 
-*Zoom session 2 — part 2*
+* Zoom session 2
+
+#+BEGIN_def
+/Time:/ {{<m>}} Noon Pacific Time. \\
+/Access:/ {{<s>}}{{<s>}} You should have received the meeting id and password by email.
+#+END_def
 
 Now we will put into practice what you just learnt: we will create a project, put it under version control, and start recording its history.
 
