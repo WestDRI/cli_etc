@@ -1,8 +1,8 @@
 #+title: Remotes
 #+description: Zoom
 #+colordes: #e86e0a
-#+slug: 12_git_remotes
-#+weight: 12
+#+slug: 11_git_remotes
+#+weight: 11
 
 *Zoom session 3 — part 3*
 

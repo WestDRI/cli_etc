@@ -1,8 +1,8 @@
 #+title: Stashing changes
 #+description: Reading
 #+colordes: #2d5986
-#+slug: 09_git_stash
-#+weight: 9
+#+slug: 08_git_stash
+#+weight: 8
 
 * What are Git stashes?
 
