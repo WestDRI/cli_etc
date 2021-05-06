@@ -1,76 +1,147 @@
-#+title: How Git works
+#+title: Understanding Git
 #+description: Reading
 #+colordes: #2d5986
 #+slug: 05_git_how
 #+weight: 5
 
-* How Git saves a project history
+* Project history
 
-Git saves the history of your project as a series of snapshots. Small Git objects called /commits/ point to these snapshots.
+One of the main goals of Git is to record the history of a project. Let's start with the big picture and see what a project history is.
 
-Each commit is identified by a unique 40-character checksum SHA-1 often simply referred to as a "hash".
+** Git saves the history of a project as a series of snapshots
+
+{{<img src="/img/git/git_img/diagrams2/01.png" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+*** What is a snapshot?
+
+[[https://stackoverflow.com/a/32806416/9210961][A Stack Overflow user had this sentence about Git snapshots]]:
+
+#+BEGIN_quote
+Snapshot is to a repository as screenshot is to a video.
+#+END_quote
+
+It is a good metaphor: if you think of the entire life of your project, a snapshot is a record of its state at a moment in time. It is a version of the project.
+
+** Snapshots metadata
+
+Now, for these snapshots to be of any use, we need a system and some metadata to organize and access them.
+
+Whenever you record a snapshot, a Git object pointing at this snapshot and called a /commit/ is created. Each commit is identified by a unique 40-character checksum SHA-1 often simply referred to as a "hash".
 
 #+BEGIN_note
-Example of a Git SHA-1: 1f5eaef51fcef3f3410dfe8696ff924b10d25b31
+Example of a Git hash: 1f5eaef51fcef3f3410dfe8696ff924b10d25b31
 #+END_note
 
-Commits contain information about the author of the snapshot, the date and time when it was made, as well as the SHA-1 of its parent commit(s) so that Git can keep track of where it fits in the project history relative to other commits.
+We usually only use the first 7 characters of the hash, which is always enough to identify it:
 
-* The three trees of Git
+#+BEGIN_note
+In the example above: 1f5eaef
+#+END_note
 
-Git has a three-tree architecture:
+Each commit contains the following metadata:
 
-- The *working directory* or *working tree*:
+- the author of the snapshot,
+- the date and time at which the snapshot was taken,
+- the hash of its parent commit(s) so that Git can keep track of where it fits in the project history relative to other commits,
+- a commit message.
 
-  An uncompressed version of your files that you can access and edit. You can think of it as a sandbox. This is what is in your project outside the ~.git~ folder and what you usually think of as "your files". {{<2br>}}
+The first three are generated automatically by Git. The commit message is a summary of the commit that you write for future you or for your collaborator and which will make it easier to identify this commit and what is in the snapshot it points to in the future.
 
-- The *index* or *staging area*:
-
-  The suggested future snapshot that would be recorded if you ran ~git commit~. {{<2br>}}
-
-- *HEAD*:
-
-  The snapshot of the project at the commit ~HEAD~ is pointing to. {{<2br>}}
-
-* Making changes to the working tree
-
-When you make changes to your project, you make changes in the *working directory* or *working tree*.
-
-Here is an illustration of the three trees for a project with a single file called ~File~ after the first commit (let's say that it is at version ~v1~):
-
-{{<img src="/img/git/git_img/diagrams/12.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams2/02.png" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
-The three trees are at the same stage. Your working tree is "clean".
+Thanks to the commits, we don't have a messy list of versions, but an organized chronological history. Commits also allow us to identify, inspect, or retrieve specific versions of the project.
 
-Now, you make a change to ~File~ —for instance you add a few lines of code—(let's say that it is now at version ~v2~):
+Since commits and snapshots are so closely associated, people often use the word "commit" to mean "the snapshot a commit is pointing to".
 
-{{<img src="/img/git/git_img/diagrams/15.png" title="" width="%" line-height="0rem">}}
-{{</img>}}
+* How are these snapshots created?
 
-When you edit files in your project, you are making changes in the working tree. The other trees remain at version ~v1~.
+Now, let's zoom in a bit and try to understand how these snapshots are created. This becomes a little bit more technical, but it is important to understand Git.
 
-To display the status of the Git trees, you can run:
+** The 3 trees of Git
+
+*** Working directory
+
+Let's imagine that you are starting to work on a project.
+
+First, you create a directory. \\
+In it, you create several sub-directories. \\
+In those, you create a number of files.
+
+You can open these files, read them, edit them, etc. This is something you are very familiar with.
+
+In the Git world, this is the {{<emph>}}working directory{{</emph>}} or {{<emph>}}working tree{{</emph>}} of the project. \\
+That is: an uncompressed version of your files that you can access and edit.\\
+You can think of it as a sandbox because this is where you can experiment with the project. This is where the project gets developed.
+
+Now, Git has two other important pieces in its architecture.
+
+*** Index
+
+If you want the project history to be useful to future you, it has to be nice and tidy. You don't want to record snapshots haphazardly or you will never be able to find anything back.
+
+Before you record a snapshot, you carefully select the elements of the project as it is now that would be useful to write to the project history together. The {{<emph>}}index{{</emph>}} or {{<emph>}}staging area{{</emph>}} is what allows to do that: it contains the suggested future snapshot.
+
+*** HEAD
+
+Finally, the last important piece of Git's architecture is the last snapshot you created: if you want to see what you have been experimenting on in your "sandbox", you need to compare the state of the working directory with that snapshot.
+
+There is a little pointer called "HEAD" pointing at the commit of that snapshot. By extension {{<emph>}}HEAD{{</emph>}} is often used to refer to that snapshot.
+
+#+BEGIN_note
+Note that we can move the pointer "HEAD" around. So it is not always at the last commit you created, but let's keep things simple for now.
+#+END_note
+
+*** Status of the 3 trees
+
+To display the status of these trees, you run:
 
 #+BEGIN_src sh
 git status
 #+END_src
 
-This is what you get:
+** Workflow
+
+Let's see what happens as you work on a project under version control with Git.
+
+After you have created a snapshot, the three trees are in the same state (we say that the working tree is "clean").
+
+#+BEGIN_note
+Here is an example for a project with a single file called ~File~ after the first snapshot was created. Let's say that it is at version ~v1~:
+#+END_note
+
+{{<img src="/img/git/git_img/diagrams/12.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+*** Making changes to the working tree
+
+When you edit files in your project, you make changes in the *working directory* or *working tree*.
+
+#+BEGIN_note
+For instance, you make a change to ~File~. Let's say that it is now at version ~v2~:
+#+END_note
+
+{{<img src="/img/git/git_img/diagrams/15.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+The other two trees remain at version ~v1~.
+
+If you run ~git status~, this is what you get:
 
 #+BEGIN_src sh
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   File
+        modified:   File
 
 no changes added to commit (use "git add" and/or "git commit -a")
 #+END_src
 
-* Staging changes
+*** Staging changes
 
-You /stage/ that file (meaning that you will include the changes of that file in the next commit) with:
+You /stage/ that file (meaning that you will include the changes of that file in the next snapshot) with:
 
 #+BEGIN_src sh
 git add File
@@ -81,42 +152,68 @@ After which, your Git trees look like this:
 {{<img src="/img/git/git_img/diagrams/16.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Now, the index also have ~File~ at version ~v2~.
-
-~git status~ now returns:
+Now, the index also has ~File~ at version ~v2~ and ~git status~ returns:
 
 #+BEGIN_src sh
-On branch master
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	modified:   File
+        modified:   File
 #+END_src
 
-* Committing changes
+*** Committing changes
 
-Finally, you make a /commit/, recording the staged changes to history with:
+Finally, you create a snapshot and the commit pointing to it—recording the staged changes to history—with:
 
 #+BEGIN_src sh
 git commit -m "Added File"
 #+END_src
 
-And your trees look like:
+~-m~ is a flag that allows to provide the commit message directly in the command line. If you don't use it, Git will open a text editor so that you can type the message. Without a message, there can be no commit.
+
+Now your trees look like this:
 
 {{<img src="/img/git/git_img/diagrams/17.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
-Now ~git status~ returns:
+We are back where we were at the start of this section, except that we have created an additional snapshot.
+
+Our working tree is clean again and ~git status~ returns:
 
 #+BEGIN_src sh
-On branch master
+On branch main
 nothing to commit, working tree clean
 #+END_src
 
-This means that there are no uncommitted changes in your working tree or the staging area: all your changes have been written to history and your working tree is clean again.
+This means that there are no uncommitted changes in the working tree or the staging area: all the changes have been written to history.
 
-* Why a two-stage process?
+#+BEGIN_note
+Note that you don't have to stage *all* the changes in the working directory before making a commit; that is actually the whole point of the staging area (see below).
 
-The reason for this two-stage process is that it allows you to pick and choose the changes that you want to include in a commit. Instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later. This allows for a clearer history that will be easier to revisit in the future.
+This means that the working directory is not necessarily clean after you have created a new commit.
+#+END_note
+
+*** Why a two-stage process?
+
+Why do we first need to stage before we can commit? This allows you to pick and choose the changes that you want to include in a commit.
+
+As a result, instead of having a messy bag of all your current changes whenever you write a commit, you can select changes that constitute a coherent unit and commit them together, leaving unrelated changes to be committed later.
+
+This allows for a clearer history that will be much more useful in the future.
+
+#+BEGIN_note
+*Example scenario:*
+
+You are working on a paper.
+
+While writing the introduction of the manuscript, you realize that you made a mistake in your code and fix it. This leads to changes in the result section that you had already written and committed.
+
+At the end of all this, without this two-stage process, you would have to create a commit with totally unrelated changes.
+
+With this system, you can stage the correction of your code and of the result section of the manuscript and create a meaningful commit with only those ("Fix error caused by ..."). Then, separately, you can stage and commit the introduction ("Add first draft of introduction").
+#+END_note
+
+We don't work in perfectly linear and organized fashion: we tend to jump from one thing to another. To make it a lot easier when we will need to revisit our project history, it is better to create a history that is more organized that the real chronological history of our work events.
 
 * Comparing trees with one another
 
