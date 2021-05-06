@@ -4,6 +4,20 @@
 #+slug: 05_git_how
 #+weight: 5
 
+Many people learn Git commands without ever understanding how Git works.
+
+This has two huge drawbacks:
+
+- they can't use Git beyond basic commands—hence missing out on most of Git's power,
+- they get stuck whenever something unexpected happens.
+
+Here, I try to explain how Git works. It may sound complicated, but it is really worth your time to read through this and try to understand as much as possible. As we practice together later today, things will make more and more sense. At the end of the workshop, this is a lesson that you might want to revisit, with your new Git understanding.
+
+There are two main parts to this lesson:
+
+- In [[http://localhost:1313/2021_modules/05_git_how/#headline-1][Project history]], I give an overview of what a project history looks like.
+- In the [[http://localhost:1313/2021_modules/05_git_how/#headline-9][How does Git work?]] section, I try to explain the actual functioning of Git.
+
 * Project history
 
 One of the main goals of Git is to record the history of a project. Let's start with the big picture and see what a project history is.
