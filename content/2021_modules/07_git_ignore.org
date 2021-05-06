@@ -67,7 +67,7 @@ Patterns ending with ~/~ match directories. Otherwise patterns match both files 
 
 
 #+BEGIN_note
-Examples: \\
+Examples:\\
 {{<m>}} ~foo/bar/~ matches the directory {{<b>}}foo/bar{{</b>}}, but not the directory {{<b>}}a/foo/bar{{</b>}} \\
 {{<m>}} ~bar/~ matches both the directories {{<b>}}foo/bar{{</b>}} and {{<b>}}a/foo/bar{{</b>}}
 #+END_note
@@ -81,19 +81,22 @@ The range notation (e.g. ~[a-zA-Z]~) can be used to match one of the characters 
 A leading ~**/~ matches all directories.
 
 #+BEGIN_note
-Example: {{<n>}} ~**/foo~ matches file or directory {{<b>}}foo{{</b>}} anywhere. This is the same as ~foo~.
+Example:\\
+{{<m>}} ~**/foo~ matches file or directory {{<b>}}foo{{</b>}} anywhere. This is the same as ~foo~.
 #+END_note
 
 A trailing ~/**~ matches everything inside what it precedes.
 
 #+BEGIN_note
-Example: {{<n>}} ~abc/**~ matches all files (recursively) inside directory {{<b>}}abc{{</b>}}
+Example:\\
+{{<m>}} ~abc/**~ matches all files (recursively) inside directory {{<b>}}abc{{</b>}}
 #+END_note
 
 ~/**/~ matches zero or more directories.
 
 #+BEGIN_note
-Example: {{<n>}} ~a/**/b~ matches {{<b>}}a/b{{</b>}}, {{<b>}}a/x/b{{</b>}}, and {{<b>}}a/x/y/b{{</b>}}
+Example:\\
+{{<m>}} ~a/**/b~ matches {{<b>}}a/b{{</b>}}, {{<b>}}a/x/b{{</b>}}, and {{<b>}}a/x/y/b{{</b>}}
 #+END_note
 
 * Comments & questions
