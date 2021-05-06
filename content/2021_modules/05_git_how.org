@@ -69,7 +69,7 @@ Thanks to the commits, we don't have a messy list of versions, but an organized 
 
 Since commits and snapshots are so closely associated, people often use the word "commit" to mean "the snapshot a commit is pointing to".
 
-* How are these snapshots created?
+* How does Git work?
 
 Now, let's zoom in a bit and try to understand how these snapshots are created. This becomes a little bit more technical, but it is important to understand Git.
 
