@@ -4,8 +4,6 @@
 #+slug: 10_git_remotes
 #+weight: 10
 
-*Zoom session 3 — part 3*
-
 * What are remotes?
 
 Remotes are versions of a project that reside outside it. "Outside" can be anywhere, including on an external drive or even on the same machine. Often however, remotes are on a different machine to serve as backup or on a network (possibly the internet) to be accessible by several persons and serve as a syncing hub for collaborations.

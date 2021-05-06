@@ -4,11 +4,6 @@
 #+slug: 11_git_branches
 #+weight: 11
 
-*Zoom session 3 — part 1*
-
-{{<m>}} /Access:/ You should have received the meeting id and password by email. \\
-{{<m>}} /Time:/ 3 pm Pacific Time.
-
 * What is a branch?
 
 A branch is a pointer to a commit (under the hood, it is a small file containing the 40 character SHA-1 checksum of the commit it points to).
