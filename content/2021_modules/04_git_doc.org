@@ -40,11 +40,11 @@ git help commit
 man git-commit
 #+END_src
 
-{{<br>}}
 Man pages open in a [[https://en.wikipedia.org/wiki/Terminal_pager][pager]] (by default [[https://en.wikipedia.org/wiki/Less_(Unix)][less]]).
 
-{{<br>}}
+#+BEGIN_note
 Some useful keybindings when you are in the pager:
+#+END_note
 
 #+BEGIN_monofont
 SPACE {{<m>}} {{<s>}} scroll one screen down \\
@@ -52,8 +52,9 @@ b {{<m>}} {{<m>}} {{<m>}} {{<n>}} scroll one screen up \\
 q {{<m>}} {{<m>}} {{<m>}} {{<n>}} quit
 #+END_monofont
 
-{{<br>}}
+#+BEGIN_note
 For more keybindings, type ~man less~ in the command line and look for the "COMMANDS" section.
+#+END_note
 
 ** Command options
 
