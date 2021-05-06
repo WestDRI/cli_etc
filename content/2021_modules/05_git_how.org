@@ -37,6 +37,8 @@ Snapshot is to a repository as screenshot is to a video.
 
 It is a good metaphor: if you think of the entire life of your project, a snapshot is a record of its state at a moment in time. It is a version of the project.
 
+This version is archived in a compressed form in a special {{<b>}}.git{{</b>}} directory inside your project.
+
 ** Snapshots metadata
 
 Now, for these snapshots to be of any use, we need a system and some metadata to organize and access them.
@@ -69,11 +71,104 @@ Thanks to the commits, we don't have a messy list of versions, but an organized 
 
 Since commits and snapshots are so closely associated, people often use the word "commit" to mean "the snapshot a commit is pointing to".
 
+** Pointers and more pointers
+
+One of the things that make Git very powerful is that it is based on a system of very lightweight objects called pointers. These make many operations fast and efficient, but they can be a little confusing at first.
+
+We already saw that a commit points to a snapshot.
+
+Now, as soon as you create a Git repository, Git will create another pointer called a /branch/. By default, the first branch created is called ~main~ (it used to be called ~master~ until recently so you will see this a lot as well). You can rename it to whatever you want and it is not any different from any other branch you could create later on: they are all little pointers.
+
+Finally, there is another pointer called ~HEAD~ which indicates where you currently are in the commit history.
+
+As soon as you make your first commit, ~main~ points to that first commit and ~HEAD~ points to ~main~:
+
+{{<img src="/img/git/git_img/diagrams/13.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+Each time you make a new commit,
+
+- a new snapshot gets archived,
+- a new commit (with a new unique hash) pointing to that snapshot gets created,
+- the ~main~ branch pointer and ~HEAD~ move to point to the new commit:
+
+{{<img src="/img/git/git_img/diagrams/18.png" title="" width="%" line-height="0.5rem">}}
+{{</img>}}
+
+After another two commits, your history looks like this:
+
+{{<img src="/img/git/git_img/diagrams/21.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+From now on, since every commit points to a snapshot, I will represent simplified graphs this way:
+
+{{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
+{{</img>}}
+
+** Displaying the commit history
+
+These diagrams are nice, but how can we visualize them while we work on a project?
+
+The command for this is: ~git log~.
+
+By default, this lists, in the pager [[https://en.wikipedia.org/wiki/Less_(Unix)][less]], the commits in the history of the branch HEAD is pointing to. For each commit, it gives its author, full hash, date and time, and message.
+
+#+BEGIN_note
+Reminder: useful keybindings when you are in less:
+#+END_note
+
+#+BEGIN_monofont
+SPACE {{<m>}} {{<s>}} scroll one screen down \\
+b {{<m>}} {{<m>}} {{<m>}} {{<n>}} scroll one screen up \\
+q {{<m>}} {{<m>}} {{<m>}} {{<n>}} quit
+#+END_monofont
+
+~git log~ comes with many flags which allow countless variations. Here are few useful ones:
+
+*** Log as a list
+
+By default ~git log~ gives a lot of information for each commit. While this is sometimes useful, if you want to get a clear picture of your overall project history, it may be better to reduce each commit log to a one-liner:
+
+#+BEGIN_src sh
+git log --oneline
+#+END_src
+
+You can customize the commit log to your liking by playing with colors, time format, etc.
+
+Try for instance:
+
+#+BEGIN_src sh
+git log \
+    --graph \
+    --date-order \
+    --date=short \
+    --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
+                   `'%C(yellow)%s%+b %C(magenta)%ae'
+#+END_src
+
+To see all the available flags, run ~man git-log~.
+
+*** Log as a graph
+
+The ~--graph~ flag allows to view this history in the form of a graph.
+
+#+BEGIN_src sh
+git log --graph
+#+END_src
+
+*** Log of all branches
+
+The ~--all~ flag shows all commits that are attached to the history, including those on other branches or "above" HEAD.
+
+This may not make much sense yet, but it will this afternoon. It is an important flag to remember if you are ever wondering where some of your commits are when you run ~git log~!
+
 * How does Git work?
 
 Now, let's zoom in a bit and try to understand how these snapshots are created. This becomes a little bit more technical, but it is important to understand Git.
 
-** The 3 trees of Git
+[[https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified][One useful mental representation of Git functioning is to imagine three file trees.]]
+
+** The three trees of Git
 
 *** Working directory
 
@@ -99,15 +194,13 @@ Before you record a snapshot, you carefully select the elements of the project a
 
 *** HEAD
 
-Finally, the last important piece of Git's architecture is the last snapshot you created: if you want to see what you have been experimenting on in your "sandbox", you need to compare the state of the working directory with that snapshot.
+Finally, the last tree in Git architecture is one snapshot in the project history that serves as a reference version of the project: if you want to see what you have been experimenting on in your "sandbox", you need to compare the state of the working directory with some snapshot.
 
-There is a little pointer called "HEAD" pointing at the commit of that snapshot. By extension {{<emph>}}HEAD{{</emph>}} is often used to refer to that snapshot.
+Remember that HEAD is a pointer pointing at a branch, that a branch is itself a pointer pointing at a commit, and finally that a commit is a Git object pointing at a snapshot. When the HEAD pointer moves around, whatever snapshot it points to populates the {{<emph>}}HEAD{{</emph>}} tree.
 
-#+BEGIN_note
-Note that we can move the pointer "HEAD" around. So it is not always at the last commit you created, but let's keep things simple for now.
-#+END_note
+As we saw earlier, when you create a commit, HEAD automatically points to the new commit. So the HEAD tree is often filled with the last snapshot you created. But—as we will see later—we can move the HEAD pointer around through other ways. So the HEAD tree can be populated by any snapshot in your project history.
 
-*** Status of the 3 trees
+*** Status of the three trees
 
 To display the status of these trees, you run:
 
@@ -229,7 +322,9 @@ With this system, you can stage the correction of your code and of the result se
 
 We don't work in perfectly linear and organized fashion: we tend to jump from one thing to another. To make it a lot easier when we will need to revisit our project history, it is better to create a history that is more organized that the real chronological history of our work events.
 
-* Comparing trees with one another
+** Comparing trees with one another
+
+It is very useful to compare the different trees:
 
 ~git diff~ can show the differences between any two of your three trees.
 
@@ -248,7 +343,7 @@ Finally, we made changes to our script (which is thus now at version ~vy+1~ in t
 
 At this point, our three trees are all different from each other.
 
-** Difference between the working directory and the index
+*** Difference between the working directory and the index
 
 {{<img src="/img/git/git_img/diagrams/51.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
@@ -265,7 +360,7 @@ This will show you all the differences in the Python script between versions ~vy
 
 /*Git can detect new files you have never staged: it lists them in the output of ~git status~. Until you put them under version control by staging them for the first time however, Git has no information about their content: at this point, they are untracked and they are not part of the working tree yet. So their content never appears in the output of ~git diff~./
 
-** Difference between the index and your last commit
+*** Difference between the index and your last commit
 
 {{<img src="/img/git/git_img/diagrams/52.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
@@ -280,7 +375,7 @@ git diff --cached
 
 This will show you all the differences in the markdown manuscript between versions ~vx~ and ~vx+1~.
 
-** Difference between the working directory and your last commit
+*** Difference between the working directory and your last commit
 
 {{<img src="/img/git/git_img/diagrams/53.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
@@ -294,82 +389,5 @@ git diff HEAD
 #+END_src
 
 This will show you the differences in the Python script between versions ~vy~ and ~vy+1~ and in the markdown manuscript between versions ~vx~ and ~vx+1~.
-
-* Commit history
-
-When you write a commit, the proposed snapshot that was in your staging area gets archived inside the ~.git~ repository in a compressed form and is now part of your project history.
-
-~HEAD~ is a pointer indicating where you currently are in the commit history.
-
-After you have made your first commit, this is what your history looks like:
-
-{{<img src="/img/git/git_img/diagrams/13.png" title="" width="%" line-height="0.5rem">}}
-{{</img>}}
-
-~HEAD~ points to ~master~ which is the name Git gives to the default branch when you initialize a Git repository. We will talk about branches later. ~24duu71~ is the short SHA-1 of your first commit (the 7 first characters of the SHA-1 for that commit).
-
-{{<br>}}
-If you make new changes in your project, stage all or some of them, and create a new commit, as we saw earlier, your history will then look like:
-
-{{<img src="/img/git/git_img/diagrams/18.png" title="" width="%" line-height="0.5rem">}}
-{{</img>}}
-
-Here is what happened when you created that new commit:
-
-- a new snapshot got archived,
-- a new commit (with a new unique SHA-1) pointing to that snapshot got created,
-- the ~master~ branch and ~HEAD~ moved to point to the new commit.
-
-{{<br>}}
-After another two commits, your history looks like this:
-
-{{<img src="/img/git/git_img/diagrams/21.png" title="" width="%" line-height="0rem">}}
-{{</img>}}
-
-{{<br>}}
-From now on, since every commit points to a snapshot of your project, I will represent simplified graphs in this way:
-
-{{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
-{{</img>}}
-
-* Displaying the commit history
-
-~git log~ lists past commits in a pager (~less~ by default) and allows you to get an overview of a project history.
-
-It comes with many flags which allow countless variations. Here are few useful ones:
-
-** Log as a list
-
-By default ~git log~ gives a lot of information for each commit. While this is sometimes useful, if you want to get a clear picture of your overall project history, it may be better to reduce each commit log to a one-liner:
-
-#+BEGIN_src sh
-git log --oneline
-#+END_src
-
-You can customize the commit log to your liking by playing with colors, time format, etc.
-
-Try for instance:
-
-#+BEGIN_src sh
-git log \
-    --graph \
-    --date-order \
-    --date=short \
-    --pretty=format:'%C(cyan)%h %C(blue)%ar %C(auto)%d'`
-                   `'%C(yellow)%s%+b %C(magenta)%ae'
-#+END_src
-
-To see all the available flags, run ~man git-log~.
- 
-** Log as a graph
-
-The ~--graph~ flag allows to view this history in the form of a graph.
-
-#+BEGIN_src sh
-git log --graph
-#+END_src
-
-This may not seem very useful with our simple history because it is linear with a single branch, but in complex histories with several branches, this is really helpful.
-
 
 * Comments & questions
