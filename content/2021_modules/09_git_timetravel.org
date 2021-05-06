@@ -4,11 +4,16 @@
 #+slug: 09_git_timetravel
 #+weight: 9
 
-*Zoom session 3 — part 2*
+* Zoom session 3
+
+#+BEGIN_def
+/Time:/ {{<m>}} 3 pm Pacific Time. \\
+/Access:/ {{<s>}}{{<s>}} You should have received the meeting id and password by email.
+#+END_def
 
 It's great to record history, but if we don't know how to make use of it, it isn't exactly useful.
 
-In this lesson, you will travel through the history of your project.
+In this lesson, we will travel through the history of our project.
 
 * Looking at the past without travelling
 
