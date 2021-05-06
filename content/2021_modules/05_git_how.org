@@ -24,7 +24,7 @@ One of the main goals of Git is to record the history of a project. Let's start 
 
 ** Git saves the history of a project as a series of snapshots
 
-{{<img src="/img/git/git_img/diagrams2/01.png" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<img src="/img/git/git_img/diagrams2/02.png" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
 *** What is a snapshot?
@@ -64,7 +64,7 @@ Each commit contains the following metadata:
 
 The first three are generated automatically by Git. The commit message is a summary of the commit that you write for future you or for your collaborator and which will make it easier to identify this commit and what is in the snapshot it points to in the future.
 
-{{<img src="/img/git/git_img/diagrams2/02.png" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<img src="/img/git/git_img/diagrams2/03.png" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
 Thanks to the commits, we don't have a messy list of versions, but an organized chronological history. Commits also allow us to identify, inspect, or retrieve specific versions of the project.
@@ -83,7 +83,7 @@ Finally, there is another pointer called ~HEAD~ which indicates where you curren
 
 As soon as you make your first commit, ~main~ points to that first commit and ~HEAD~ points to ~main~:
 
-{{<img src="/img/git/git_img/diagrams/13.png" title="" width="%" line-height="0.5rem">}}
+{{<img src="/img/git/git_img/diagrams2/08.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
 Each time you make a new commit,
@@ -92,17 +92,17 @@ Each time you make a new commit,
 - a new commit (with a new unique hash) pointing to that snapshot gets created,
 - the ~main~ branch pointer and ~HEAD~ move to point to the new commit:
 
-{{<img src="/img/git/git_img/diagrams/18.png" title="" width="%" line-height="0.5rem">}}
+{{<img src="/img/git/git_img/diagrams2/05.png" title="" width="%" line-height="0.5rem">}}
 {{</img>}}
 
 After another two commits, your history looks like this:
 
-{{<img src="/img/git/git_img/diagrams/21.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams2/04.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 From now on, since every commit points to a snapshot, I will represent simplified graphs this way:
 
-{{<img src="/img/git/git_img/diagrams/22.png" title="" width="%" line-height="0rem">}}
+{{<img src="/img/git/git_img/diagrams2/13.png" title="" width="%" line-height="0rem">}}
 {{</img>}}
 
 ** Displaying the commit history
