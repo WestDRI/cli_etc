@@ -1,8 +1,8 @@
 #+title: Time travel
 #+description: Zoom
 #+colordes: #e86e0a
-#+slug: 10_git_timetravel
-#+weight: 10
+#+slug: 09_git_timetravel
+#+weight: 9
 
 *Zoom session 3 — part 2*
 
