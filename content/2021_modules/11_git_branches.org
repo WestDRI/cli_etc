@@ -8,7 +8,9 @@
 
 * Zoom session 3, part 3
 
+Branches are said to be Git [[https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell]["killer feature"]]. We talked about them a little already, but really, what are they?
 
+This lesson will explain the unique features of Git branches and why they are so useful.
 
 * Slides
 
