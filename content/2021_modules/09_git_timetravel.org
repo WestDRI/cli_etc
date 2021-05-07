@@ -4,7 +4,9 @@
 #+slug: 09_git_timetravel
 #+weight: 9
 
-* Zoom session 3
+#+OPTIONS: toc:nil
+
+* Zoom session 3, part 1
 
 #+BEGIN_def
 /Time:/ {{<m>}} 3 pm Pacific Time. \\
