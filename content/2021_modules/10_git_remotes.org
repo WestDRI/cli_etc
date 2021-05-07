@@ -8,7 +8,9 @@
 
 * Zoom session 3, part 2
 
+Beside all the version control features it provides, Git is also a powerful collaboration tool. But how do you collaborate with other people if your repository only lives on your machine?
 
+In this lesson, we will talk about remotes such as GitHub and how they can be used to collaborate on a project.
 
 * Slides
 
