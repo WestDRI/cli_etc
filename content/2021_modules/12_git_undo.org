@@ -1,0 +1,24 @@
+#+title: Undoing
+#+description: Zoom
+#+colordes: #e86e0a
+#+slug: 12_git_undo
+#+weight: 12
+
+#+OPTIONS: toc:nil
+
+* Zoom session 3, part 4
+
+Recording a project history is useful to revisit past versions. But sometimes, you want to undo some of the work.
+
+This gets into more advanced and dangerous Git territories, so we will only have a little peak into it.
+
+* Slides
+
+/Click below to open the presentation.\\
+Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
+
+#+BEGIN_export html
+<a href="https://westgrid-slides.netlify.app/git_rewrite/#/"><p align="center"><img src="/img/git/git_rewrite_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+#+END_export
+
+* Comments & questions
