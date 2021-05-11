@@ -15,8 +15,8 @@ Here, I try to explain how Git works. It may sound complicated, but it is really
 
 There are two main parts to this lesson:
 
-- In [[http://localhost:1313/2021_modules/05_git_how/#headline-1][Project history]], I give an overview of what a project history looks like.
-- In the [[http://localhost:1313/2021_modules/05_git_how/#headline-9][How does Git work?]] section, I try to explain the actual functioning of Git.
+- In [[https://westgrid-cli.netlify.app/2021_modules/05_git_how/#headline-1][Project history]], I give an overview of what a project history looks like.
+- In the [[https://westgrid-cli.netlify.app/2021_modules/05_git_how/#headline-10][How does Git work?]] section, I try to explain the actual functioning of Git.
 
 * Project history
 
