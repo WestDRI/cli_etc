@@ -390,4 +390,18 @@ git diff HEAD
 
 This will show you the differences in the Python script between versions ~vy~ and ~vy+1~ and in the markdown manuscript between versions ~vx~ and ~vx+1~.
 
+** Getting information about Git objects
+
+~git show~ will show you more information about Git objects.
+
+#+BEGIN_note
+For instance:
+#+END_note
+
+#+BEGIN_src sh
+git show <commit-hash>
+#+END_src
+
+will show you all the commit information (hash, author, date, message) as well as the diff.
+
 * Comments & questions
