@@ -18,7 +18,7 @@ This lesson will explain the unique features of Git branches and why they are so
 Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
 
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/git_branches/#/"><p align="center"><img src="/img/git/git_branches_slides2.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://westgrid-slides.netlify.app/git_branches/#/"><p align="center"><img src="/img/git/git_branches2_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Comments & questions
