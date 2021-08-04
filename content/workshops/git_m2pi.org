@@ -1,0 +1,44 @@
+#+title: Git & GitHub
+#+subtitle: Effective Versioning & Teamwork
+#+topic: Git
+#+slug: git_m2pi
+#+weight: 15
+
+#+BEGIN_export html
+<center style="font-size: 2rem;">Workshop for the <a href="https://m2pi.ca/">Math<sup>Industry</sup> 2021</a> workshop, August 3–27, 2021.</center>
+#+END_export
+
+*** /Abstract/
+
+#+BEGIN_definition
+Git is a powerful version control system allowing to record, access, and restore the history of projects. After setting up remotes on the internet or other network, Git is also a mighty collaboration tool.
+
+In this workshop, we will:
+
+- explaining what version control is and what the benefits are,
+- get you started with Git,
+- use the popular online Git repository hosting site GitHub to introduce a workflow typical of many companies.
+#+END_definition
+
+*** /Workshop requirements/
+
+#+BEGIN_box
+1. Install Git:
+   + Windows users: install Git for Windows from https://gitforwindows.org/
+   + MacOS and Linux users: install Git from https://git-scm.com/downloads
+
+2. Sign up for a free GitHub account at https://github.com/
+
+3. /(Optional) if you don’t want to type your password all the time and if you feel up to the challenge, you can try to [[https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set up SSH for your account]]/
+#+END_box
+
+* Slides
+
+/Click below to open the presentation.\\
+Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
+
+#+BEGIN_export html
+<a href="https://westgrid-slides.netlify.app/git_m2pi/#/"><p align="center"><img src="/img/git/git_m2pi_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+#+END_export
+
+* Comments & questions
