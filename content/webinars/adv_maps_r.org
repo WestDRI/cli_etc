@@ -512,9 +512,6 @@ You can toggle between the /plot/ and /view/ modes with ~ttm()~, after which you
 
 Alternatively, you can switch to either mode with ~tmap_mode("view")~ and ~tmap_mode("plot")~.
 
-
-#+BEGIN_src R
-#+END_src
 * Mapping a subset of the data
 
 Each glacier has 4 borders: one for each year of survey. They are however quite hard to see on such a large map.
