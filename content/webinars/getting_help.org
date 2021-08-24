@@ -13,9 +13,6 @@ Stack Overflow, Stack Exchange, online forums ... the internet is a treasure tro
 In this workshop, I will present key online sites, their functioning, and their culture; then I will go over the magic trick to get answers to your questions: knowing how to create minimum reproducible examples. I will not focus on any particular language as the principles (how to create a minimal dataset, how to deal with private data, how to create self-sufficient code, how to reproduce the problem, etc.) can apply to any language.
 #+END_definition
 
-
-
-
 * Slides
 
 Click to open the presentation:
