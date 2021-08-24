@@ -2,6 +2,7 @@
 #+topic: R
 #+slug: gis_r_rc
 #+weight: 17
+
 * Slides
 
 Click to open the presentation:
