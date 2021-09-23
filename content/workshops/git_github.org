@@ -113,8 +113,8 @@ git remote -v
 This means that you can *pull* updates from the repo (getting new changes from your collaborators) and you can *push* your own changes to the repo (so that your collaborators can pull them).
 
 The GitHub repo now serves as a syncing hub between everybody's local repositories.
-#+BEGIN_simplebox
 
+#+BEGIN_simplebox
 **** Note: managing remotes
 
 You can rename a remote with:
@@ -199,7 +199,7 @@ Example
 #+END_note
 
 #+BEGIN_src sh
-git pull origin m
+git pull origin main
 #+END_src
 
 When you clone a repo, your local branch is set to track the equivalent remote branch, so in our case, you can simply run:
@@ -220,10 +220,10 @@ Uploading data to the remote is called /pushing/ and is done with:
 git push <remote-name> <branch-name>
 #+END_src
 
-To push your branch {{<c>}}m{{</c>}} to the remote {{<c>}}origin{{</c>}}:
+To push your branch {{<c>}}main{{</c>}} to the remote {{<c>}}origin{{</c>}}:
 
 #+BEGIN_src sh
-git push origin m
+git push origin main
 #+END_src
 
 Again, because the cloning process associates your local branch with its remote equivalent, you can simply run:
