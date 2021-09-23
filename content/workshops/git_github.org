@@ -1,0 +1,396 @@
+#+title: Collaborating on a project hosted on GitHub
+#+topic: Git
+#+slug: git-github
+#+weight: 14
+
+*** /Abstract/
+
+#+BEGIN_definition
+Git is a powerful version control system allowing to record, access, and restore the history of projects.
+
+After setting up remotes on the internet or other network, Git is also a mighty collaboration tool.
+
+In this workshop, we will use the popular online Git repository hosting site GitHub to practice a collaboration workflow typical of many research teams.
+#+END_definition
+
+*** /Software requirements/
+
+#+BEGIN_box
+*1 - Properly configured Git*
+
+{{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
+
+{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/school/git-03-install/#headline-3][should be set properly]]: \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- the end of line formatting matching your operating system
+{{<2br>}}
+*2 - GitHub account*
+
+{{<n>}}{{<n>}}A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
+
+{{<n>}}{{<n>}}(Optional) If you don't want to type your password all the time, [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]].
+#+END_box
+
+*** /Prerequisites/
+
+#+BEGIN_box
+*Basic knowledge of Git*:
+
+{{<n>}}{{<n>}}- familiarity with the concept of staging area, \\
+{{<n>}}{{<n>}}- experience with staging and committing.
+#+END_box
+
+* Collaborating on a project hosted on GitHub
+
+_Here is our scenario today:_
+
+#+BEGIN_simplebox
+You just started a collaboration with a research team outside UBC for one of your thesis chapters.
+
+You have a first meeting on Zoom and during that meeting, one of your new collaborators tells you casually:
+
+#+BEGIN_quote
+I just added you to our repo. Feel free to push.
+#+END_quote
+
+But... horror... while you have used Git a little bit before, you have no idea how to collaborate with them this way.
+#+END_simplebox
+
+Today's workshop will guide you through this so that you know how to handle collaborations through GitHub without panic (or embarrassment ;) ).
+
+We will use a toy repo to practice. You can find it [[https://github.com/prosoitos/git_workshop_collab][here]].
+
+* First step: you need to clone the repo
+
+First of all, you need to clone the repo, meaning, you get a copy of the repo on your local machine:
+
+#+BEGIN_src sh
+cd /suitable/location/
+
+git clone https://github.com/prosoitos/git_workshop_collab.git
+#+END_src
+
+* Inspect your new repo
+
+Let's explore this new repo to understand its structure and see what our new collaborators have done.
+
+First, you need to enter the repo you just cloned. If you run {{<c>}}ls{{</c>}}, you should see that it was added in your current working directory. Now, enter it:
+
+#+BEGIN_src sh
+cd git_workshop_collab
+#+END_src
+
+*** Our new repo is still associated to the repo on GitHub
+
+In fact, the repo on GitHub is now the *remote* for our repo and that remote was automatically named by Git *origin*.
+
+#+BEGIN_simplebox
+**** Note: what are remotes, really?
+
+Remotes are copies of a project that reside outside it and are connected to it so that data can be synced back and forth. "Outside" can be anywhere, including on an external drive, or even on the same machine. If you want your remotes to serve as backups, you want them outside your machine. And if you want your remotes to allow for collaboration, you want them on a network your collaborators have access to. One option, of course, is the internet.
+
+A project can have several remotes. An address (or a path if they are local) specifies their location.
+
+A number of online Git repository managers have become popular remote hosting sites. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]].
+#+END_simplebox
+
+You can list the remotes of a project with:
+
+#+BEGIN_src sh
+git remote
+#+END_src
+
+Here, our project has only one remote called {{<c>}}origin{{</c>}}.
+
+To have the address of the remote, you can add the {{<c>}}v{{</c>}} (verbose) flag:
+
+#+BEGIN_src sh
+git remote -v
+#+END_src
+
+This means that you can *pull* updates from the repo (getting new changes from your collaborators) and you can *push* your own changes to the repo (so that your collaborators can pull them).
+
+The GitHub repo now serves as a syncing hub between everybody's local repositories.
+#+BEGIN_simplebox
+
+**** Note: managing remotes
+
+You can rename a remote with:
+
+#+BEGIN_src sh
+git remote rename <old-remote-name> <new-remote-name>
+#+END_src
+
+You can delete a remote with:
+
+#+BEGIN_src sh
+git remote remove <remote-name>
+#+END_src
+
+You can change the url of a remote with:
+
+#+BEGIN_src sh
+git remote set-url <remote-name> <new-url> [<old-url>]
+#+END_src
+#+END_simplebox
+
+*** Look at the files
+
+You can look at the files that your collaborators have created the way you are familiar with (using Windows Explorer, Finder, etc.) or using the command line:
+
+#+BEGIN_src sh
+ls
+#+END_src
+
+This is a Git repository, so, of course, it has a {{<c>}}.git{{</c>}} directory. In Unix-like systems, dot files and dot directories are hidden files, so to see it, you need to add the {{<c>}}a{{</c>}} (all) flag:
+
+#+BEGIN_src sh
+ls -a
+#+END_src
+
+*** Look at the history of the project
+
+It might be useful to have a look at the history of this project to get a feel for your collaborators work.
+
+For this, you can use {{<c>}}git log{{</c>}} followed by various flags to customize the output to make it more readable.
+
+For instance:
+
+#+BEGIN_src sh
+git log --graph --oneline --all
+#+END_src
+
+*** Keep the project up to date
+
+As you work on this collaboration, you will have to download changes made by your collaborators to the project in order to keep your local clone up to date.
+
+To download new data from the remote, you have 2 options: {{<c>}}git fetch{{</c>}} and {{<c>}}git pull{{</c>}}.
+
+***** Fetching changes
+
+/Fetching/ downloads the data that you don't already have, from your remote, into your local clone.
+
+#+BEGIN_src sh
+git fetch <remote-name>
+#+END_src
+
+The branches on the remote are now accessible locally as {{<c>}}<remote-name>/<branch>{{</c>}}. You can inspect them or you can merge them into your local branches.
+
+#+BEGIN_note
+Example: To fetch from your new GitHub remote, you would run:
+#+END_note
+
+#+BEGIN_src sh
+git fetch origin
+#+END_src
+
+***** Pulling changes
+
+/Pulling/ does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
+
+#+BEGIN_src sh
+git pull <remote-name> <branch>
+#+END_src
+
+#+BEGIN_note
+Example
+#+END_note
+
+#+BEGIN_src sh
+git pull origin m
+#+END_src
+
+When you clone a repo, your local branch is set to track the equivalent remote branch, so in our case, you can simply run:
+
+#+BEGIN_src sh
+git pull
+#+END_src
+
+*** Work on the project
+
+Now, it's time to start working on the project.
+
+Once you have made changes to the project (e.g. you edited or added some files), you will have to upload those changes to the remote.
+
+Uploading data to the remote is called /pushing/ and is done with:
+
+#+BEGIN_src sh
+git push <remote-name> <branch-name>
+#+END_src
+
+To push your branch {{<c>}}m{{</c>}} to the remote {{<c>}}origin{{</c>}}:
+
+#+BEGIN_src sh
+git push origin m
+#+END_src
+
+Again, because the cloning process associates your local branch with its remote equivalent, you can simply run:
+
+#+BEGIN_src sh
+git push
+#+END_src
+
+-----
+
+* Extra 1
+
+** You create a project and want others to contribute to it
+
+Let's quickly create a project:
+
+#+BEGIN_src sh
+cd /location/of/new/project
+mkdir myproject
+cd myproject
+echo "This is our great project" > README
+#+END_src
+
+This is the content of our project:
+
+#+BEGIN_src sh
+ls -a
+.  ..  README
+#+END_src
+
+Then, let's put it under version control with Git:
+
+#+BEGIN_src sh
+git init
+#+END_src
+
+You can see that this is now a Git repository:
+
+#+BEGIN_src sh
+ls -a
+.  ..  .git  README
+#+END_src
+
+Let's create a first commit:
+
+#+BEGIN_src sh
+git add README
+git commit -m "Initial commit: add README"
+#+END_src
+
+Now, you need to create a remote on GitHub.
+
+First, you need to create a new GitHub repository.
+
+*** Creating an empty repository on GitHub
+
+Go to [[https://github.com][https://github.com]], login, and go to your home page (https://github.com/<user>).
+
+From there, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
+
+Enter the name you want for your repo, *without spaces*. It can be the same name you have for your project on your computer (it would be sensible and make things less confusing), but it doesn't have to be.
+
+You can make your repository public or private. Choose the private option if your research contains sensitive data or you do not want to share your project with the world. If you want to develop open source projects, of course, you want to make them public.
+
+Then, you have this empty repository on GitHub, but it is not connected to your local repository.
+
+*** Adding the new GitHub repo as a remote
+
+Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH (if you have set SSH for your GitHub account) or HTTPS (if you haven't) and copy the address.
+
+Then, go back to your command line, {{<c>}}cd{{</c>}} inside your project if you aren't already there and add your remote.
+
+You add a remote with:
+
+#+BEGIN_syntax
+git remote add <remote-name> <remote-address>
+#+END_syntax
+
+{{<b>}}&lt;remote-name&gt;{{</b>}} is only a convenience name that will identify that remote. You can choose any name, but since Git automatically call the remote {{<c>}}origin{{</c>}} when you clone a repo, it is common practice to use {{<c>}}origin{{</c>}} as the name for the first remote.
+
+{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh][if you have set SSH for your GitHub account]]—the SSH form.
+
+#+BEGIN_note
+Example (using an SSH address):
+#+END_note
+
+#+BEGIN_syntax
+git remote add origin git@github.com:<user>/<repo>.git
+#+END_syntax
+
+In our case:
+
+#+BEGIN_src sh
+git remote add origin git@github.com:<user>/myproject.git
+#+END_src
+
+#+BEGIN_note
+Example (using an HTTPS address):
+#+END_note
+
+#+BEGIN_syntax
+git remote add origin https://github.com/<user>/<repo>.git
+#+END_syntax
+
+In our case:
+
+#+BEGIN_src sh
+git remote add origin https://github.com/<user>/myproject.git
+#+END_src
+
+(Type: {{<c>}}git remote add origin{{</c>}}, then paste the address you have just copied on GitHub).
+
+Finally, if you want to grant your collaborators write access to the project, you need to add them to it (note that you don't have to give them write access: we will see later how one can contribute to a project without having write access to it. But if you are involved in a serious collaboration with others on a project, you might want to facilitate the process by letting them edit the project directly).
+
+*** Inviting collaborators to a GitHub repo
+
+- Go to your GitHub project page
+- Click on the {{<b>}}Settings{{</b>}} tab
+- Click on the {{<b>}}Manage access{{</b>}} section on the left-hand side (you will be prompted for your GitHub password)
+- Click on the {{<b>}}Invite a collaborator{{</b>}} green button
+- Invite your collaborators with one of their GitHub user name, their email address, or their full name
+  
+* Extra 2
+
+** You want to contribute to a project for which you don't have write access
+
+If you do not have write access to a remote, you cannot push to it and you need to submit a pull request (PR).
+
+*** PR workflow
+
+#+BEGIN_box
+1. Fork the project
+2. Clone your fork on your machine (this will automatically set your fork as a remote to your new local project and that remote is automatically called {{<c>}}origin{{</c>}})
+3. Add a second remote, this one pointing to the initial project. Usually, people call that remote {{<c>}}upstream{{</c>}}
+4. Pull from {{<c>}}upstream{{</c>}} to make sure that your contributions are made on an up-to-date version of the project
+5. Create and checkout a new branch
+6. Make and commit your changes on that branch
+7. Push that branch to your fork (i.e. {{<c>}}origin{{</c>}} — remember that you do not have write access on {{<c>}}upstream{{</c>}})
+8. Go to the original project GitHub's page and open a pull request from your fork. Note that after you have pushed your branch to origin, GitHub will automatically offer you to do so.
+#+END_box
+
+**** Fork the repo
+
+First, go to GitHub and fork the project by clicking on the {{<b>}}Fork{{</b>}} button in the top right corner.
+
+**** Clone your fork
+
+Then, navigate to the directory in which you want to clone the project and clone your fork.
+
+**** Add the initial project as upstream
+
+#+BEGIN_src sh
+git remote add upstream <address-of-initial-project>
+#+END_src
+
+From there on, you can:
+
+- Pull from {{<c>}}upstream{{</c>}} (the repo to which you do not have write access and to which you want to contribute). This allows you to keep your fork up-to-date.
+
+- Push to and pull from {{<c>}}origin{{</c>}} (this is your fork, to which you have read and write access).
+
+**** Pull request
+
+You are now ready to submit pull requests: push your development branch to your fork, then go to the original project on GitHub and open a pull request from there (at this point GitHub will offer you to do so).
+
+The maintainer of the original project may accept or decline your PR. They may also make comments and ask you to make changes. If so, make new changes and push additional commits to that branch.
+
+Once the PR is merged by the maintainer, you can delete the branch on your fork and pull from {{<c>}}upstream{{</c>}} to update your local fork with the recently accepted changes.
+
+* Comments & questions
