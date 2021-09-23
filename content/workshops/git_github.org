@@ -20,7 +20,7 @@ In this workshop, we will use the popular online Git repository hosting site Git
 
 {{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
 
-{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/school/git-03-install/#headline-3][should be set properly]]: \\
+{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/2021_modules/03_git_setup/#headline-3][should be set properly]]: \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
 {{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
