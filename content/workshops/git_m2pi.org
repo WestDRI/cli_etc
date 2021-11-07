@@ -34,11 +34,26 @@ In this workshop, we will:
 
 * Slides
 
-/Click below to open the presentation.\\
-Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
-
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/git_m2pi/#/"><p align="center"><img src="/img/git/git_m2pi_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<figure style="display: table;">
+  <div class="row">
+	<div style="float: left; width: 65%">
+	  <img style="border-style: solid; border-color: black" src="/img/git/git_m2pi_slides.png">
+	</div>
+	<div style="float: left; width: 35%">
+	  <div style="padding: 20% 0 0 15%;">
+        <a href="https://westgrid-slides.netlify.app/git_m2pi/#/" target="_blank">Web version</a>
+	  </div>
+	  <div style="padding: 5% 0 0 15%;">
+	  <a href="/pdf/git_m2pi.pdf">Pdf version</a>
+	  </div>
+	</div>
+  </div>
+</figure>
 #+END_export
+
+#+BEGIN_note
+In the web version, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here.
+#+END_note
 
 * Comments & questions
