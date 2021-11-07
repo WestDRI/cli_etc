@@ -24,7 +24,8 @@
 #+END_export
 
 #+BEGIN_note
-In the web version, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here.
+Both versions open in a new tab.\\
+In the web version, use the left and right arrows to navigate the slides.
 #+END_note
 
 * Comments & questions
