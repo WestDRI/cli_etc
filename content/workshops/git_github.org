@@ -242,9 +242,31 @@ Again, because the cloning process associates your local branch with its remote 
 git push
 #+END_src
 
-#+BEGIN_vertbarsmall
-Remember to pull (or fetch/merge) before pushing your changes.
-#+END_vertbarsmall
+Before you are allowed to push to the project, if the project changed upstream (i.e. if one of your collaborators pushed changes of their own onto the remote), you will have to pull (or fetch and merge) their changes as we saw above.
+
+Now... what if your local changes and the changes that your colleagues pushed to GitHub conflict with each other?
+
+In that case, the merging process will get interrupted and Git will give you an error message. You have to resolve the conflict before the merge can be finalized.
+
+*** Resolving conflicts
+
+There are many tools (e.g. Emacs, Vim, some GUI) to resolve conflicts. But you actually don't need any of them, they just make it nicer with keybindings and syntax highlighting.
+
+To resolve the conflict in any text editor, open each file in which conflicts occurs (when a merge gets interrupted due to a conflict, Git tells you which files contain conflicts) and look for sections that look like this:
+
+#+BEGIN_src
+<<<<<<< HEAD
+Version of this section of the file on the current branch
+=======
+Alternative version of the same section of the file
+>>>>>>> alternative version
+#+END_src
+
+The ~<<<<<<< HEAD~, ~=======~, and ~>>>>>>>~ are markers added by Git to identify the alternative versions at the location of a particular conflict.
+
+You have to decide which version you want to keep (or write yet another version), remove the 3 lines with the markers, and remove the line(s) with the version(s) you do not want to keep.
+
+Once you have done this for all conflicts, save the file. And once you have done this for all files in which conflicts occurred, stage those files. You can now create a commit to finalize the merge.
 
 {{<br>}}
 -----
