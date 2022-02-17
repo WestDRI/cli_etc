@@ -93,6 +93,41 @@ cd git_workshop_collab
 
 Have a look at the files that your collaborators have created. You can use ways you are familiar with such as Windows Explorer, Finder, etc., or you can use the command line:
 
+#+BEGIN_src sh
+ls
+#+END_src
+
+Since this is a Git repository, it contains a ~.git~ subdirectory. In Unix-like systems, dot files and dot directories are hidden files. In order to see hidden files/directories, you need to add the ~a~ (all) flag:
+
+#+BEGIN_src sh
+ls -a
+#+END_src
+
+*** Project history
+
+It might be useful to have a look at the history of this project to get a feel for your collaborators workflow.
+
+For this, you can use ~git log~ followed by various flags to customize the output to make it more readable.
+
+For instance:
+
+#+BEGIN_src sh
+git log --graph --oneline --all
+#+END_src
+
+To view the various flags for the ~git log~ command, you can type:
+
+#+BEGIN_src sh
+man git-log
+
+# If you are on Windows, use instead:
+git help log
+#+END_src
+
+*** Project remote
+
+Your new repository is still closely associated with the repository on GitHub. In fact, the repo on GitHub is now the /remote/ for your repo and that remote was automatically named *origin* by Git.
+
 #+BEGIN_simplebox
 **** What are remotes, really?
 
@@ -140,32 +175,6 @@ You can change the url of a remote with:
 git remote set-url <remote-name> <new-url> [<old-url>]
 #+END_src
 #+END_simplebox
-
-*** Look at the files
-
-You can look at the files that your collaborators have created the way you are familiar with (using Windows Explorer, Finder, etc.) or using the command line:
-
-#+BEGIN_src sh
-ls
-#+END_src
-
-This is a Git repository, so, of course, it has a ~.git~ directory. In Unix-like systems, dot files and dot directories are hidden files, so to see it, you need to add the ~a~ (all) flag:
-
-#+BEGIN_src sh
-ls -a
-#+END_src
-
-*** Look at the history of the project
-
-It might be useful to have a look at the history of this project to get a feel for your collaborators work.
-
-For this, you can use ~git log~ followed by various flags to customize the output to make it more readable.
-
-For instance:
-
-#+BEGIN_src sh
-git log --graph --oneline --all
-#+END_src
 
 ** 3. Keep the project up to date
 
