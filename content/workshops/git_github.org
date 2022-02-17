@@ -186,6 +186,16 @@ Example: To fetch from your new GitHub remote, you would run:
 git fetch origin
 #+END_src
 
+*** Merging changes
+
+After fetching the changes, you need to incorporate ("merge") them into your local branch. This is done with:
+
+#+BEGIN_src sh
+git merge FETCH_HEAD
+#+END_src
+
+~FETCH_HEAD~ is a temporary file (in ~.git/FETCH_HEAD~) with references to all the branches that just got fetched from the remote and a special notation for the remote branch corresponding to the branch you fetched from. ~git merge FETCH_HEAD~ will merge that branch into your current branch.
+
 *** Pulling changes
 
 /Pulling/ does both of these at once: it fetches the data and it merges the changes onto your local branches.
