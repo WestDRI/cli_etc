@@ -62,7 +62,7 @@ Today's workshop will guide you through this so that you know how to handle coll
 
 We will use a toy repo to practice. You can find it {{<a "https://github.com/prosoitos/git_workshop_collab" "here.">}}
 
-* First step: you need to clone the repo
+** First step: you need to clone the repo
 
 First of all, you need to clone the repo, meaning, you get a copy of the repo on your local machine:
 
@@ -72,7 +72,7 @@ cd /suitable/location/
 git clone https://github.com/prosoitos/git_workshop_collab.git
 #+END_src
 
-* Inspect your new repo
+** Inspect your new repo
 
 Let's explore this new repo to understand its structure and see what our new collaborators have done.
 
@@ -162,13 +162,13 @@ For instance:
 git log --graph --oneline --all
 #+END_src
 
-*** Keep the project up to date
+** Keep the project up to date
 
 As you work on this collaboration, you will have to download changes made by your collaborators to the project in order to keep your local clone up to date.
 
 To download new data from the remote, you have 2 options: ~git fetch~ and ~git pull~.
 
-***** Fetching changes
+*** Fetching changes
 
 /Fetching/ downloads the data that you don't already have, from your remote, into your local clone.
 
@@ -186,7 +186,7 @@ Example: To fetch from your new GitHub remote, you would run:
 git fetch origin
 #+END_src
 
-***** Pulling changes
+*** Pulling changes
 
 /Pulling/ does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
 
@@ -208,7 +208,7 @@ When you clone a repo, your local branch is set to track the equivalent remote b
 git pull
 #+END_src
 
-*** Work on the project
+** Work on the project
 
 Now, it's time to start working on the project.
 
@@ -278,7 +278,7 @@ Now, you need to create a remote on GitHub.
 
 First, you need to create a new GitHub repository.
 
-*** Creating an empty repository on GitHub
+*** Create an empty repository on GitHub
 
 Go to {{<a "https://github.com" "https://github.com,">}} login, and go to your home page (~https://github.com/<user>~).
 
@@ -290,7 +290,7 @@ You can make your repository public or private. Choose the private option if you
 
 Then, you have this empty repository on GitHub, but it is not connected to your local repository.
 
-*** Adding the new GitHub repo as a remote
+*** Add the new GitHub repo as a remote
 
 Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH (if you have set SSH for your GitHub account) or HTTPS (if you haven't) and copy the address.
 
@@ -338,7 +338,7 @@ git remote add origin https://github.com/<user>/myproject.git
 
 Finally, if you want to grant your collaborators write access to the project, you need to add them to it (note that you don't have to give them write access: we will see later how one can contribute to a project without having write access to it. But if you are involved in a serious collaboration with others on a project, you might want to facilitate the process by letting them edit the project directly).
 
-*** Inviting collaborators to a GitHub repo
+*** Invite collaborators to a GitHub repo
 
 - Go to your GitHub project page
 - Click on the {{<b>}}Settings{{</b>}} tab
@@ -353,9 +353,7 @@ Finally, if you want to grant your collaborators write access to the project, yo
 
 ** You want to contribute to a project for which you don't have write access
 
-If you do not have write access to a remote, you cannot push to it and you need to submit a pull request (PR).
-
-*** PR workflow
+If you do not have write access to a remote, you cannot push to it and you need to submit a pull request (PR). Here is a summary of the workflow:
 
 #+BEGIN_box
 1. Fork the project
@@ -368,15 +366,15 @@ If you do not have write access to a remote, you cannot push to it and you need 
 8. Go to the original project GitHub's page and open a pull request from your fork. Note that after you have pushed your branch to origin, GitHub will automatically offer you to do so.
 #+END_box
 
-**** Fork the repo
+*** Fork the repo
 
 First, go to GitHub and fork the project by clicking on the {{<b>}}Fork{{</b>}} button in the top right corner.
 
-**** Clone your fork
+*** Clone your fork
 
 Then, navigate to the directory in which you want to clone the project and clone your fork.
 
-**** Add the initial project as upstream
+*** Add the initial project as upstream
 
 #+BEGIN_src sh
 git remote add upstream <address-of-initial-project>
@@ -388,7 +386,7 @@ From there on, you can:
 
 - Push to and pull from ~origin~ (this is your fork, to which you have read and write access).
 
-**** Pull request
+*** Pull request
 
 You are now ready to submit pull requests: push your development branch to your fork, then go to the original project on GitHub and open a pull request from there (at this point GitHub will offer you to do so).
 
