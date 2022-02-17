@@ -58,7 +58,7 @@ I just added you to our repo. Feel free to push.
 But... horror... while you have used Git a little bit before, you have no idea how to collaborate with them this way.
 #+END_simplebox
 
-Today's workshop will guide you through this so that you know how to handle collaborations through GitHub without panic (or embarrassment 😉).
+Today's workshop will guide you through this so that you know how to handle collaborations through GitHub without panic (or embarrassment 😉). At the bottom of this page, you will also find two extra sections for other common collaboration scenarios, although we won't cover these today.
 
 We will use a toy repo to practice. You can find it {{<a "https://github.com/prosoitos/git_workshop_collab" "here.">}}
 
@@ -243,6 +243,8 @@ Remember to pull (or fetch/merge) before pushing your changes.
 
 ** You create a project and want others to contribute to it
 
+/Another common scenario is this: you are the one creating a project and inviting colleagues to collaborate to it. This first extra section covers how this goes./
+
 Let's quickly create a project:
 
 #+BEGIN_src sh
@@ -357,6 +359,8 @@ Finally, if you want to grant your collaborators write access to the project, yo
 * Extra 2
 
 ** You want to contribute to a project for which you don't have write access
+
+/Finally, another common scenario is very similar to the first one (you are invited to collaborate to an existing project), with the difference that you are not granted write access to the project on GitHub. This extra section covers the workflow in this case./
 
 If you do not have write access to a remote, you cannot push to it and you need to submit a pull request (PR). Here is a summary of the workflow:
 
