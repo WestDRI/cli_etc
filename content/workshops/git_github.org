@@ -18,19 +18,19 @@ In this workshop, we will use the popular online Git repository hosting site Git
 #+BEGIN_box
 *1 - Properly configured Git*
 
-{{<n>}}{{<n>}}You can download Git [[https://gitforwindows.org/][here]]  if you are on Windows and [[https://git-scm.com/downloads][here]] if you use MacOS or Linux.
+{{<n>}}{{<n>}}You can download Git {{<a "https://gitforwindows.org/" "here">}} if you are on Windows and {{<a "https://git-scm.com/downloads" "here">}} if you use MacOS or Linux.
 
-{{<n>}}{{<n>}}These minimum configurations [[https://westgrid-cli.netlify.app/2021_modules/03_git_setup/#headline-3][should be set properly]]: \\
-{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name \\
-{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address \\
-{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor \\
-{{<n>}}{{<n>}}{{<n>}}{{<n>}}- the end of line formatting matching your operating system
+{{<n>}}{{<n>}}These minimum configurations {{<a "https://westgrid-cli.netlify.app/2021_modules/03_git_setup/#headline-3" "should be set properly:">}} \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your user name, \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your email address, \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- your preferred text editor, \\
+{{<n>}}{{<n>}}{{<n>}}{{<n>}}- the end of line formatting matching your operating system.
 {{<2br>}}
 *2 - GitHub account*
 
-{{<n>}}{{<n>}}A free [[https://github.com/join?plan=free&source=pricing-card-free][GitHub account]].
-
-{{<n>}}{{<n>}}(Optional) If you don't want to type your password all the time, [[https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][set SSH for your account]].
+{{<n>}}{{<n>}}- If you don't already have one, create a free {{<a "https://github.com/join?plan=free&source=pricing-card-free" "GitHub account.">}}
+{{<br>}}
+{{<n>}}{{<n>}}- {{<a "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token" "Create a personal access token">}} or—if you don't want to create a token and type your username + token all the time—{{<a "https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" "set SSH for your account.">}}
 #+END_box
 
 *** /Prerequisites/
@@ -58,9 +58,9 @@ I just added you to our repo. Feel free to push.
 But... horror... while you have used Git a little bit before, you have no idea how to collaborate with them this way.
 #+END_simplebox
 
-Today's workshop will guide you through this so that you know how to handle collaborations through GitHub without panic (or embarrassment ;) ).
+Today's workshop will guide you through this so that you know how to handle collaborations through GitHub without panic (or embarrassment 😉).
 
-We will use a toy repo to practice. You can find it [[https://github.com/prosoitos/git_workshop_collab][here]].
+We will use a toy repo to practice. You can find it {{<a "https://github.com/prosoitos/git_workshop_collab" "here.">}}
 
 * First step: you need to clone the repo
 
@@ -76,13 +76,13 @@ git clone https://github.com/prosoitos/git_workshop_collab.git
 
 Let's explore this new repo to understand its structure and see what our new collaborators have done.
 
-First, you need to enter the repo you just cloned. If you run {{<c>}}ls{{</c>}}, you should see that it was added in your current working directory. Now, enter it:
+First, you need to enter the repo you just cloned. If you run ~ls~, you should see that it was added in your current working directory. Now, enter it:
 
 #+BEGIN_src sh
 cd git_workshop_collab
 #+END_src
 
-*** Our new repo is still associated to the repo on GitHub
+*** Our new repo is still closely associated with the repo on GitHub
 
 In fact, the repo on GitHub is now the *remote* for our repo and that remote was automatically named by Git *origin*.
 
@@ -93,7 +93,7 @@ Remotes are copies of a project that reside outside it and are connected to it s
 
 A project can have several remotes. An address (or a path if they are local) specifies their location.
 
-A number of online Git repository managers have become popular remote hosting sites. These include [[https://github.com][GitHub]], [[https://gitlab.com][GitLab]], and [[https://bitbucket.org][Bitbucket]].
+A number of online Git repository managers have become popular remote hosting sites. These include {{<a "https://github.com" "GitHub,">}} {{<a "https://gitlab.com" "GitLab,">}} and {{<a "https://bitbucket.org" "Bitbucket.">}}
 #+END_simplebox
 
 You can list the remotes of a project with:
@@ -102,9 +102,9 @@ You can list the remotes of a project with:
 git remote
 #+END_src
 
-Here, our project has only one remote called {{<c>}}origin{{</c>}}.
+Here, our project has only one remote called ~origin~.
 
-To have the address of the remote, you can add the {{<c>}}v{{</c>}} (verbose) flag:
+To have the address of the remote, you can add the ~v~ (verbose) flag:
 
 #+BEGIN_src sh
 git remote -v
@@ -144,7 +144,7 @@ You can look at the files that your collaborators have created the way you are f
 ls
 #+END_src
 
-This is a Git repository, so, of course, it has a {{<c>}}.git{{</c>}} directory. In Unix-like systems, dot files and dot directories are hidden files, so to see it, you need to add the {{<c>}}a{{</c>}} (all) flag:
+This is a Git repository, so, of course, it has a ~.git~ directory. In Unix-like systems, dot files and dot directories are hidden files, so to see it, you need to add the ~a~ (all) flag:
 
 #+BEGIN_src sh
 ls -a
@@ -154,7 +154,7 @@ ls -a
 
 It might be useful to have a look at the history of this project to get a feel for your collaborators work.
 
-For this, you can use {{<c>}}git log{{</c>}} followed by various flags to customize the output to make it more readable.
+For this, you can use ~git log~ followed by various flags to customize the output to make it more readable.
 
 For instance:
 
@@ -166,7 +166,7 @@ git log --graph --oneline --all
 
 As you work on this collaboration, you will have to download changes made by your collaborators to the project in order to keep your local clone up to date.
 
-To download new data from the remote, you have 2 options: {{<c>}}git fetch{{</c>}} and {{<c>}}git pull{{</c>}}.
+To download new data from the remote, you have 2 options: ~git fetch~ and ~git pull~.
 
 ***** Fetching changes
 
@@ -176,7 +176,7 @@ To download new data from the remote, you have 2 options: {{<c>}}git fetch{{</c>
 git fetch <remote-name>
 #+END_src
 
-The branches on the remote are now accessible locally as {{<c>}}<remote-name>/<branch>{{</c>}}. You can inspect them or you can merge them into your local branches.
+The branches on the remote are now accessible locally as ~<remote-name>/<branch>~. You can inspect them or you can merge them into your local branches.
 
 #+BEGIN_note
 Example: To fetch from your new GitHub remote, you would run:
@@ -220,7 +220,7 @@ Uploading data to the remote is called /pushing/ and is done with:
 git push <remote-name> <branch-name>
 #+END_src
 
-To push your branch {{<c>}}main{{</c>}} to the remote {{<c>}}origin{{</c>}}:
+To push your branch ~main~ to the remote ~origin~:
 
 #+BEGIN_src sh
 git push origin main
@@ -231,7 +231,7 @@ Again, because the cloning process associates your local branch with its remote 
 #+BEGIN_src sh
 git push
 #+END_src
-
+{{<br>}}
 -----
 
 * Extra 1
@@ -280,7 +280,7 @@ First, you need to create a new GitHub repository.
 
 *** Creating an empty repository on GitHub
 
-Go to [[https://github.com][https://github.com]], login, and go to your home page (https://github.com/<user>).
+Go to {{<a "https://github.com" "https://github.com,">}} login, and go to your home page (~https://github.com/<user>~).
 
 From there, select the {{<b>}}Repositories{{</b>}} tab, then click the green {{<b>}}New{{</b>}} button.
 
@@ -294,7 +294,7 @@ Then, you have this empty repository on GitHub, but it is not connected to your 
 
 Click on the {{<b>}}Code{{</b>}} green drop-down button, select SSH (if you have set SSH for your GitHub account) or HTTPS (if you haven't) and copy the address.
 
-Then, go back to your command line, {{<c>}}cd{{</c>}} inside your project if you aren't already there and add your remote.
+Then, go back to your command line, ~cd~ inside your project if you aren't already there and add your remote.
 
 You add a remote with:
 
@@ -302,9 +302,9 @@ You add a remote with:
 git remote add <remote-name> <remote-address>
 #+END_syntax
 
-{{<b>}}&lt;remote-name&gt;{{</b>}} is only a convenience name that will identify that remote. You can choose any name, but since Git automatically call the remote {{<c>}}origin{{</c>}} when you clone a repo, it is common practice to use {{<c>}}origin{{</c>}} as the name for the first remote.
+{{<b>}}&lt;remote-name&gt;{{</b>}} is only a convenience name that will identify that remote. You can choose any name, but since Git automatically call the remote ~origin~ when you clone a repo, it is common practice to use ~origin~ as the name for the first remote.
 
-{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—[[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh][if you have set SSH for your GitHub account]]—the SSH form.
+{{<b>}}&lt;remote-address&gt;{{</b>}} is the address of your remote in the https form or—{{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}}—the SSH form.
 
 #+BEGIN_note
 Example (using an SSH address):
@@ -334,7 +334,7 @@ In our case:
 git remote add origin https://github.com/<user>/myproject.git
 #+END_src
 
-(Type: {{<c>}}git remote add origin{{</c>}}, then paste the address you have just copied on GitHub).
+(Type: ~git remote add origin~, then paste the address you have just copied on GitHub).
 
 Finally, if you want to grant your collaborators write access to the project, you need to add them to it (note that you don't have to give them write access: we will see later how one can contribute to a project without having write access to it. But if you are involved in a serious collaboration with others on a project, you might want to facilitate the process by letting them edit the project directly).
 
@@ -345,7 +345,10 @@ Finally, if you want to grant your collaborators write access to the project, yo
 - Click on the {{<b>}}Manage access{{</b>}} section on the left-hand side (you will be prompted for your GitHub password)
 - Click on the {{<b>}}Invite a collaborator{{</b>}} green button
 - Invite your collaborators with one of their GitHub user name, their email address, or their full name
-  
+
+    {{<2br>}}
+-----
+
 * Extra 2
 
 ** You want to contribute to a project for which you don't have write access
@@ -356,12 +359,12 @@ If you do not have write access to a remote, you cannot push to it and you need 
 
 #+BEGIN_box
 1. Fork the project
-2. Clone your fork on your machine (this will automatically set your fork as a remote to your new local project and that remote is automatically called {{<c>}}origin{{</c>}})
-3. Add a second remote, this one pointing to the initial project. Usually, people call that remote {{<c>}}upstream{{</c>}}
-4. Pull from {{<c>}}upstream{{</c>}} to make sure that your contributions are made on an up-to-date version of the project
+2. Clone your fork on your machine (this will automatically set your fork as a remote to your new local project and that remote is automatically called ~origin~)
+3. Add a second remote, this one pointing to the initial project. Usually, people call that remote ~upstream~
+4. Pull from ~upstream~ to make sure that your contributions are made on an up-to-date version of the project
 5. Create and checkout a new branch
 6. Make and commit your changes on that branch
-7. Push that branch to your fork (i.e. {{<c>}}origin{{</c>}} — remember that you do not have write access on {{<c>}}upstream{{</c>}})
+7. Push that branch to your fork (i.e. ~origin~ — remember that you do not have write access on ~upstream~)
 8. Go to the original project GitHub's page and open a pull request from your fork. Note that after you have pushed your branch to origin, GitHub will automatically offer you to do so.
 #+END_box
 
@@ -381,9 +384,9 @@ git remote add upstream <address-of-initial-project>
 
 From there on, you can:
 
-- Pull from {{<c>}}upstream{{</c>}} (the repo to which you do not have write access and to which you want to contribute). This allows you to keep your fork up-to-date.
+- Pull from ~upstream~ (the repo to which you do not have write access and to which you want to contribute). This allows you to keep your fork up-to-date.
 
-- Push to and pull from {{<c>}}origin{{</c>}} (this is your fork, to which you have read and write access).
+- Push to and pull from ~origin~ (this is your fork, to which you have read and write access).
 
 **** Pull request
 
@@ -391,6 +394,6 @@ You are now ready to submit pull requests: push your development branch to your 
 
 The maintainer of the original project may accept or decline your PR. They may also make comments and ask you to make changes. If so, make new changes and push additional commits to that branch.
 
-Once the PR is merged by the maintainer, you can delete the branch on your fork and pull from {{<c>}}upstream{{</c>}} to update your local fork with the recently accepted changes.
+Once the PR is merged by the maintainer, you can delete the branch on your fork and pull from ~upstream~ to update your local fork with the recently accepted changes.
 
 * Comments & questions
