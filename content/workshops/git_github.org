@@ -238,6 +238,24 @@ Now, it's time to start working on the project.
 
 Once you have made changes to the project (e.g. you edited or added some files, staged the changes, and created new commits), you will have to upload those changes to the remote.
 
+#+BEGIN_simplebox
+**** Review of Git basics: staging and committing
+
+After you make changes to a project, you first need to stage them with:
+
+#+BEGIN_src sh
+git stage <some-files-or-sections-of-files>
+#+END_src
+
+Then you create a commit:
+
+#+BEGIN_src sh
+git commit -m "<some-message-describing-the-commit>"
+#+END_src
+
+For an introduction to Git, you can have a look at {{<a "https://wgtm21.netlify.app/programming_git/" "our Git intro course,">}} in particular {{<a "https://westgrid-cli.netlify.app/2021_modules/05_git_how/" "the section explaining the functioning of Git.">}}
+#+END_simplebox
+
 Uploading commits to the remote is called /pushing/ and is done with:
 
 #+BEGIN_src sh
