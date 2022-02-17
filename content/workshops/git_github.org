@@ -62,7 +62,7 @@ Today's workshop will guide you through this so that you know how to handle coll
 
 We will use a toy repo to practice. You can find it {{<a "https://github.com/prosoitos/git_workshop_collab" "here.">}}
 
-** First step: you need to clone the repo
+** 1. Clone the repo
 
 First of all, you need to clone the repo, meaning, you get a copy of the repo on your local machine:
 
@@ -72,7 +72,7 @@ cd /suitable/location/
 git clone https://github.com/prosoitos/git_workshop_collab.git
 #+END_src
 
-** Inspect your new repo
+** 2. Inspect your new repo
 
 Let's explore this new repo to understand its structure and see what our new collaborators have done.
 
@@ -162,7 +162,7 @@ For instance:
 git log --graph --oneline --all
 #+END_src
 
-** Keep the project up to date
+** 3. Keep the project up to date
 
 As you work on this collaboration, you will have to download changes made by your collaborators to the project in order to keep your local clone up to date.
 
@@ -208,7 +208,7 @@ When you clone a repo, your local branch is set to track the equivalent remote b
 git pull
 #+END_src
 
-** Work on the project
+** 4. Work on the project
 
 Now, it's time to start working on the project.
 
