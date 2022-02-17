@@ -188,7 +188,7 @@ git fetch origin
 
 *** Pulling changes
 
-/Pulling/ does 2 things: it fetches the data (as we just saw) and it then merges the changes onto your local branches.
+/Pulling/ does both of these at once: it fetches the data and it merges the changes onto your local branches.
 
 #+BEGIN_src sh
 git pull <remote-name> <branch>
@@ -212,9 +212,9 @@ git pull
 
 Now, it's time to start working on the project.
 
-Once you have made changes to the project (e.g. you edited or added some files), you will have to upload those changes to the remote.
+Once you have made changes to the project (e.g. you edited or added some files, staged the changes, and created new commits), you will have to upload those changes to the remote.
 
-Uploading data to the remote is called /pushing/ and is done with:
+Uploading commits to the remote is called /pushing/ and is done with:
 
 #+BEGIN_src sh
 git push <remote-name> <branch-name>
@@ -237,6 +237,7 @@ Remember to pull (or fetch/merge) before pushing your changes.
 #+END_vertbarsmall
 
 {{<br>}}
+-----
 -----
 
 * Extra 1
@@ -354,6 +355,7 @@ Finally, if you want to grant your collaborators write access to the project, yo
 - Invite your collaborators with one of their GitHub user name, their email address, or their full name
 
     {{<2br>}}
+-----
 -----
 
 * Extra 2
