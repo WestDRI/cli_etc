@@ -231,6 +231,11 @@ Again, because the cloning process associates your local branch with its remote 
 #+BEGIN_src sh
 git push
 #+END_src
+
+#+BEGIN_vertbarsmall
+Remember to pull (or fetch/merge) before pushing your changes.
+#+END_vertbarsmall
+
 {{<br>}}
 -----
 
