@@ -244,7 +244,7 @@ Once you have made changes to the project (e.g. you edited or added some files, 
 After you make changes to a project, you first need to stage them with:
 
 #+BEGIN_src sh
-git stage <some-files-or-sections-of-files>
+git add <some-files-or-sections-of-files>
 #+END_src
 
 Then you create a commit:
