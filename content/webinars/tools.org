@@ -50,6 +50,6 @@ In the web version, use the left and right arrows to navigate the slides.
 
 * Video
 
-Coming soon.
+{{<ytmh nshNKPFDrV8>}}
 
 * Comments & questions
