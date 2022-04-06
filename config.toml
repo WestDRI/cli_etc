@@ -29,7 +29,8 @@ canonifyurls = true
 
 [params]
   repourl = "https://github.com/WestGrid/cli_etc"
-  wgavatar = "/img/wg_top_padding_medium.png"
+  sfuavatar = "/img/sfu.png"
+  dracavatar = "/img/drac.png"
   siteavatar = "/img/cli_etc.png"
   error = "/img/404.png"
   favicon_32 = "/img/favicon.png"
