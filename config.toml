@@ -52,11 +52,6 @@ canonifyurls = true
   tag = "tags"
 
 [[params.social]]
-  name = "Compute Canada"
-  icon = "fas fa-user-friends fa-2x"
-  weight = 2
-  url = "https://www.computecanada.ca/"
-[[params.social]]
   name = "Github"
   icon = "fab fa-github fa-2x"
   weight = 3
