@@ -75,7 +75,7 @@ canonifyurls = true
   name = "Events"
   icon = "fa fa-calendar-alt fa-2x"
   weight = 6
-  url = "https://www.westgrid.ca/events"
+  url = "https://westgrid.github.io/trainingMaterials/blog/"
 
 [[menu.main]]
   name = "Workshops"
