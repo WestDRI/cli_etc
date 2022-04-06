@@ -103,9 +103,16 @@ img[alt=photoid] {
   border-radius: 2px;
 }
 
-img[alt=wgavatar] {
-  width: 250px;
-  border-radius: 2px;
+img[alt=sfuavatar] {
+  width: 30.5rem;
+  border-radius: 0px;
+  box-shadow: 0.5px 0.2px 1px #b3b3b3;
+}
+
+img[alt=dracavatar] {
+  width: 29rem;
+  border-radius: 0px;
+  box-shadow: 0.2px 0.5px 1.5px #b3b3b3;
 }
 
 img[alt=radius] {
