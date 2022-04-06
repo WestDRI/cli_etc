@@ -5,10 +5,10 @@
     {{ end }}
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
-      © {{ if lt . now.Year }}{{ . }}–{{ end }}{{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      © {{ if lt . now.Year }}{{ . }}–{{ end }}{{ now.Year }} <a href="https://www.sfu.ca/">SFU</a> & <a href="https://alliancecan.ca/">DRAC</a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{ else }}
-      © {{ now.Year }} <a href="https://www.westgrid.ca/">WestGrid</a>
+      © {{ now.Year }} <a href="https://www.sfu.ca/">Simon Fraser University</a> & <a href="https://alliancecan.ca/">Digital Research Alliance of Canada</a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {{ end }}
     {{ end }}
