@@ -15,19 +15,22 @@
       </span>
     </div>
     {{ end }}
+    <br>
     <h2>by</h2>
+    <br>
     <br>
     {{ if and (.Site.Params.sfuavatar) (.Site.Params.dracavatar) }} 
     <div>
       <a href="https://www.sfu.ca/">
 	<img src="{{ $.Site.Params.sfuavatar | relURL }}" alt="sfuavatar">
       </a>
-      &emsp;&emsp;&ensp;
+      &emsp;&emsp;
      <a href="https://alliancecan.ca/">
 	<img src="{{ $.Site.Params.dracavatar | relURL }}" alt="dracavatar">
      </a>
     </div>
     {{ end }}
+    <br>
     <br>
     {{ with .Site.Params.social }}
     <ul>
