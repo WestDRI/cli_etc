@@ -60,7 +60,7 @@ canonifyurls = true
   name = "Twitter"
   icon = "fab fa-twitter fa-2x"
   weight = 4
-  url = "https://twitter.com/WestGrid"
+  url = "https://twitter.com/Alliance_Can"
 [[params.social]]
   name = "YouTube"
   icon = "fab fa-youtube fa-2x"
