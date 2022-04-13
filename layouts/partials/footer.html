@@ -3,6 +3,7 @@
     {{ with .Site.Params.footercontent | safeHTML }}
       <p>{{.}}</p>
     {{ end }}
+    <div class="copyright">
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
       © {{ if lt . now.Year }}{{ . }}–{{ end }}{{ now.Year }} <a href="https://www.sfu.ca/">SFU</a> & <a href="https://alliancecan.ca/">DRAC</a>
@@ -22,5 +23,6 @@
       {{ if or (not .Site.Params.hideCredits) (not .Site.Params.hideCopyright) }} · {{ end }}
       [<a href="{{ .Site.Params.commit }}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]
     {{ end }}
+    </div>
   </section>
 </footer>
