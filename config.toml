@@ -71,6 +71,11 @@ canonifyurls = true
   icon = "fa fa-calendar-alt fa-2x"
   weight = 6
   url = "https://westgrid.github.io/trainingMaterials/blog/"
+[[params.social]]
+  name = "EventBrite"
+  icon = "fa fa-ticket-alt fa-2x"
+  weight = 7
+  url = "https://www.eventbrite.ca/o/sfu-research-computing-45632777983"
 
 [[menu.main]]
   name = "Workshops"
