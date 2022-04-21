@@ -1,5 +1,5 @@
 #+title: Digital Humanities Summer Institute 2022
 #+topic: Python
-#+coursetitle: Coding fundamentals for humanists
+#+coursetitle: Python for the digital humanities
 #+courselink: https://dhsi-2022.netlify.app/
 #+weight: 6
