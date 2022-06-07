@@ -6,7 +6,7 @@
   <div align="right" style="font-size: 1.3rem; color: #978282; line-height: {{ .Get "line-height" }}">
     <figcaption>
       <em>
- 	{{ .Inner }}
+ 	{{ .Inner | markdownify }}
       </em>
     </figcaption>
   </div>
