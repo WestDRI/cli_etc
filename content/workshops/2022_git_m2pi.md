@@ -42,6 +42,21 @@ from <a href="https://xkcd.com/" target="_blank">xkcd.com &nbsp;</a>
 {{</imgbshadow>}}
 
 ## Configuration
+## Install Git
+
+### MacOS & Linux users
+
+Install Git from {{<a "https://git-scm.com/downloads" "the official website.">}}
+
+### Windows users
+
+Install {{<a "https://gitforwindows.org/" "Git for Windows.">}} This will also install Git Bash, a Bash emulator.
+
+## Create a free GitHub account
+
+Sign up for a {{<a "https://github.com/" "free GitHub account.">}}
+
+Later on, to avoid having to type your password all the time, you should {{<a "https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" "set up SSH for your account.">}}
 
 ### User identity
 
