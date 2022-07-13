@@ -151,17 +151,17 @@ git commit -h
 
 Git saves the history of a project as a series of snapshots
 
-{{<imgb2 src="/img/git/diagrams_v3/02.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/02.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 Those snapshots are called commits
 
-{{<imgb2 src="/img/git/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 Commits are identified by unique *hash*
 
-{{<imgb2 src="/img/git/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 Each commit contains these metadata:
@@ -176,31 +176,31 @@ Each commit contains these metadata:
 
 As soon as you create the first commit, a pointer called a *branch* is created and it points to that commit. By default, that first branch is called `main`
 
-{{<imgb2 src="/img/git/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 Another pointed (`HEAD`) points to the branch `main`
 
 `HEAD` indicates where we are in the project history
 
-{{<imgb2 src="/img/git/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ### Recording history
 
 As you create more commits, the history grows ...
 
-{{<imgb2 src="/img/git/diagrams_v3/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ... and the pointers `HEAD` and `main` automatically move to the last commit
 
-{{<imgb2 src="/img/git/diagrams_v3/04.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/04.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
-For simplicity, the diagrams can be simplified this way
+For simplicity, the git_img/diagrams can be simplified this way
 
-{{<imgb2 src="/img/git/diagrams_v3/13.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v3/13.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ### Displaying the commit history
@@ -240,14 +240,14 @@ git log --graph --all
 
 A useful representation of Git's functioning is to imagine three file trees
 
-{{<imgb2 src="/img/git/diagrams_v2/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v2/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ### Making changes to the working tree
 
 When you work on your project, your working tree changes
 
-{{<imgb2 src="/img/git/diagrams_v2/10.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v2/10.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ### Staging changes
@@ -260,7 +260,7 @@ git add <what-you-want-to-commit-next>
 
 Those changes move to the *index* or *staging area*
 
-{{<imgb2 src="/img/git/diagrams_v2/11.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v2/11.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ### Creating a commit
@@ -273,7 +273,7 @@ git commit -m "<message>"
 
 Finally you create a commit with what is in the staging area
 
-{{<imgb2 src="/img/git/diagrams_v2/12.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{<imgb2 src="/img/git/git_img/diagrams_v2/12.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgb2>}}
 
 ## Remotes
@@ -312,7 +312,7 @@ Popular online Git repository managers & hosting services:
 
 Go to {{<a "https://github.com" "https://github.com">}}, login, & go to your home page
 
-Look for the {{<bdark>}}Repositories{{</bdark>}} tab & click the green {{<bdark>}}New{{</bdark>}} button
+Look for the `Repositories` tab & click the green `New` button
 
 Enter the name you want for your repo, *without spaces*
 
@@ -320,7 +320,7 @@ Make the repository public or private
 
 ##### 2. Link empty repository to your repo
 
-Click on the {{<bdark>}}Code{{</bdark>}} green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS & copy the address
+Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS & copy the address
 
 In command line, `cd` inside your project & add the remote
 
@@ -328,7 +328,7 @@ In command line, `cd` inside your project & add the remote
 git remote add <remote-name> <remote-address>
 ```
 
-{{<bdark>}}&lt;remote-name&gt;{{</bdark>}} is a convenience name to identify that remote. You can choose any name, but since Git automatically call the remote `origin` when you clone a repo, it is common practice to use `origin` as the name for the first remote
+`&lt;remote-name&gt;` is a convenience name to identify that remote. You can choose any name, but since Git automatically call the remote `origin` when you clone a repo, it is common practice to use `origin` as the name for the first remote
 {{<br size="1">}}
 
 {{<notes>}}
@@ -357,11 +357,11 @@ If you want to grant your collaborators write access to the project however, you
 
 - Go to your GitHub project page
 
-- Click on the {{<bdark>}}Settings{{</bdark>}} tab
+- Click on the `Settings` tab
 
-- Click on the {{<bdark>}}Manage access{{</bdark>}} section on the left-hand side (you will be prompted for your GitHub password)
+- Click on the `Manage access` section on the left-hand side (you will be prompted for your GitHub password)
 
-- Click on the {{<bdark>}}Invite a collaborator{{</bdark>}} green button
+- Click on the `Invite a collaborator` green button
 
 - Invite your collaborators with one of their GitHub user name, their email address, or their full name
 
