@@ -20,14 +20,14 @@ In this workshop, we will:
 ## Why version control?
 {{<br size="4">}}
 
-{{<imgb2 src="/img/git/git_img/vc.jpg" margin="auto" title="" width="50%" line-height="2rem">}}
+{{<imgbshadow src="/img/git/git_img/vc.jpg" margin="auto" title="" width="50%" line-height="2rem">}}
 from <a href="http://geek-and-poke.com/" target="_blank">Geek&Poke &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a>
-{{</imgb2>}}
+{{</imgbshadow>}}
 {{<br size="2">}}
 
-{{<imgb2 src="https://phdcomics.com/comics/archive/phd101212s.gif" margin="auto" title="" width="67%" line-height="2rem">}}
+{{<imgbshadow src="https://phdcomics.com/comics/archive/phd101212s.gif" margin="auto" title="" width="67%" line-height="2rem">}}
 from <a href="http://phdcomics.com/" target="_blank">PhD &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</a>
-{{</imgb2>}}
+{{</imgbshadow>}}
 
 ## Which version control system?
 {{<br size="4">}}
@@ -37,9 +37,9 @@ from <a href="http://phdcomics.com/" target="_blank">PhD &emsp;&emsp;&emsp;&emsp
 Looking at Google trends for web searches, there is a clear winner...
 {{<br size="3">}}
 
-{{<imgb2 src="https://imgs.xkcd.com/comics/git.png" margin="auto" title="" width="100%" line-height="2rem">}}
+{{<imgbshadow src="https://imgs.xkcd.com/comics/git.png" margin="auto" title="" width="100%" line-height="2rem">}}
 from <a href="https://xkcd.com/" target="_blank">xkcd.com &nbsp;</a>
-{{</imgb2>}}
+{{</imgbshadow>}}
 
 ## Configuration
 
@@ -151,18 +151,18 @@ git commit -h
 
 Git saves the history of a project as a series of snapshots
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/02.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/02.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 Those snapshots are called commits
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 Commits are identified by unique *hash*
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/03.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 Each commit contains these metadata:
 
@@ -176,32 +176,32 @@ Each commit contains these metadata:
 
 As soon as you create the first commit, a pointer called a *branch* is created and it points to that commit. By default, that first branch is called `main`
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 Another pointed (`HEAD`) points to the branch `main`
 
 `HEAD` indicates where we are in the project history
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ### Recording history
 
 As you create more commits, the history grows ...
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ... and the pointers `HEAD` and `main` automatically move to the last commit
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/04.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/04.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 For simplicity, the git_img/diagrams can be simplified this way
 
-{{<imgb2 src="/img/git/git_img/diagrams_v3/13.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/13.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ### Displaying the commit history
 
@@ -240,15 +240,15 @@ git log --graph --all
 
 A useful representation of Git's functioning is to imagine three file trees
 
-{{<imgb2 src="/img/git/git_img/diagrams_v2/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v2/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ### Making changes to the working tree
 
 When you work on your project, your working tree changes
 
-{{<imgb2 src="/img/git/git_img/diagrams_v2/10.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v2/10.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ### Staging changes
 
@@ -260,8 +260,8 @@ git add <what-you-want-to-commit-next>
 
 Those changes move to the *index* or *staging area*
 
-{{<imgb2 src="/img/git/git_img/diagrams_v2/11.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v2/11.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ### Creating a commit
 
@@ -273,8 +273,8 @@ git commit -m "<message>"
 
 Finally you create a commit with what is in the staging area
 
-{{<imgb2 src="/img/git/git_img/diagrams_v2/12.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
-{{</imgb2>}}
+{{<imgbshadow src="/img/git/git_img/diagrams_v2/12.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
 
 ## Remotes
 
