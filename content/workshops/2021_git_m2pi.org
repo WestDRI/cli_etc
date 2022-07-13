@@ -5,7 +5,7 @@
 #+weight: 15
 
 #+BEGIN_export html
-<center style="font-size: 2rem;">Workshop for the <a href="https://m2pi.ca/">Math<sup>Industry</sup> 2021</a> workshop, August 3–27, 2021.</center>
+<em><center style="font-size: 2rem;">Workshop for <a href="https://m2pi.ca/" target="_blank">Math<sup>Industry</sup> 2021</a>, August 3–27, 2021</center></em>
 #+END_export
 
 *** /Abstract/
@@ -15,7 +15,7 @@ Git is a powerful version control system allowing to record, access, and restore
 
 In this workshop, we will:
 
-- explaining what version control is and what the benefits are,
+- explain what version control is and what the benefits are,
 - get you started with Git,
 - use the popular online Git repository hosting site GitHub to introduce a workflow typical of many companies.
 #+END_definition
