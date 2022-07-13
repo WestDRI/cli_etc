@@ -22,10 +22,6 @@ canonifyurls = true
     codeFences = true
     guessSyntax = true
     style = "manni"
-  [markup.tableOfContents]
-    endLevel = 1
-    ordered = false
-    startLevel = 1
 
 [params]
   repourl = "https://github.com/WestGrid/cli_etc"
