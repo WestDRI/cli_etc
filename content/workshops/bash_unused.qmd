@@ -1,0 +1,18 @@
+## Conditionals
+
+```{.bash}
+if [ <conditional expression> ]
+then
+	<statement1>
+	<statement2>
+	...
+fi
+```
+
+## Redirection
+
+### To file
+
+### Pipes
+
+## Functions
