@@ -36,50 +36,58 @@ Bash is the most common shell and the one which makes the most sense to learn as
 
 ### Why use a shell?
 
-Unix shells allow to automate repetitive tasks: it is easy to rerun a script (a file with a number of commands) while automating GUI operations is really difficult.
+While automating GUI operations is really difficult, it is easy to rerun a script (a file with a number of commands). Unix shells thus allow the creation of reproducible workflows and the automation of repetitive tasks.
 
-They are lightweight and powerful to launch tools, modify files, search, or combine commands.
+They are powerful to launch tools, modify files, search text, or combine commands.
 
 They also allow to work on remote machines and HPC systems.
 
 ## How we will use Bash today
 
-We will connect to a remote HPC system via SSH (secure shell) using a terminal on your laptop.
+Bash is a Unix shell. You thus need a Unix or Unix-like operating system.
 
-### Linux and MacOS users
+We will connect to a remote HPC system via SSH (secure shell). HPC systems always run Linux.
 
-Linux users: open the terminal emulator of your choice.
+Those on Linux or MacOS can alternatively use Bash directly on their machine. On MacOS, the default is now zsh (you can see that by typing `echo $SHELL` in Terminal), but zsh is fully compatible with Bash commands, so it is totally fine to use it instead. If you really want to use Bash, simply launch it by typing in Terminal: `bash`.
+
+### Connecting to a remote HPC system via SSH
+
+#### Usernames and password
+
+We will give you a link to an etherpad during the workshop. Add your name next to a free username to claim it.
+
+We will also give you the password for our training cluster. When prompted, enter it.
+
+{{<notes>}}
+Note that you will not see any character as you type the password: this is called blind typing and is a Linux safety feature. Type slowly and make sure not to make typos. It can be unsettling at first not to get any feed-back while typing.
+{{</notes>}}
+
+#### Linux and MacOS users
+
+Linux users: open the terminal emulator of your choice.\
 MacOS users: open "Terminal".
 
 Then type:
 
 ```{.bash}
-ssh userxx@bashworkshop.c3.ca
+ssh userxx@bashworkshop.c3.ca  # Replace userxx by your username (e.g. user09)
 ```
 
-### Windows users
+#### Windows users
 
 We suggest using {{<a "https://mobaxterm.mobatek.net/download.html" "the free version of MobaXterm.">}}
 
-MobaXterm comes with a terminal emulator and a simple interface for remote SSH sessions.
+MobaXterm comes with a terminal emulator and a GUI interface for SSH sessions.
 
 Open MobaXterm, click on "Session", then "SSH", and fill in the Remote host name and your username. {{<a "https://mobaxterm.mobatek.net/demo.html" "Here">}} is a live demo.
-
-### Password
-
-We will give you the password for our training cluster during the workshop. When prompted, enter it.
-
-{{<notes>}}
-Note that you will not see any character as you type: Linux uses blind typing for safety. Type slowly and make sure not to make typo. It can be weird to use blind typing at first!
-{{</notes>}}
 
 ## Bash: the basics
 
 ### The prompt
 
-Customizable.\
-By default, often gives the username and the hostname.\
-Usually ends with `$`.
+In command-line interfaces, a command prompt is a sequence of characters indicating that the interpreter is ready to accept input. It can also provide some information (e.g. time, error types, username and hostname, etc.)
+
+The Bash prompt is customizable. By default, it often gives the username and the hostname, and it typically ends with `$`.
 
 ### Help on commands
 
@@ -129,19 +137,25 @@ You can auto-complete commands by pressing the tab key.
 
 ## Bash scripting: the basics
 
-You can put the commands you used directly in the terminal into a script. They will be run when you execute the script.
+Instead of typing commands one at a time directly in a terminal, you can write them down, one per line, in a text file called a script.
+
+They will be run in the order in which they are written when you execute the script.
+
+This is a great way to automate tasks: to rerun this sequence of commands, you simply have to rerun the script.
 
 ### File name
 
 Shell scripts, including Bash scripts, are usually given the extension `sh` (e.g. `my_script.sh`).
 
-You can store scripts anywhere, but it may be a good idea to store them in a `~/bin` directory.
+You can store scripts anywhere, but a common practice is to store them in a `~/bin` directory.
 
 ### Syntax
 
 #### Shebang
 
-Scripts must start with a shebang (`#!`) followed by the name of the interpreter you are using. To use Bash, start your scripts with:
+Scripts can be written for any interpreter (e.g. Bash, Python, R, etc.) The way to tell the system which one to use is to use a shebang (`#!`) followed by the path of the interpreter on the first line of the script.
+
+To use Bash, start your scripts with:
 
 ```{.bash}
 #!/bin/bash
@@ -153,17 +167,19 @@ You may also encounter this notation:
 #!/usr/bin/env bash
 ```
 
-See {{<a "https://stackoverflow.com/questions/16365130/what-is-the-difference-between-usr-bin-env-bash-and-usr-bin-bash" "here">}} for the difference.
+If you are curious, you can read the answers to {{<a "https://stackoverflow.com/q/16365130/9210961" "this Stack Overflow question">}} for the differences between the two.
 
 #### Comments
 
-Start with `#`. Anything to the left of this character is ignored by the interpreter and is for humans only.
+Anything to the left of `#` is ignored by the interpreter and is for human consumption only.
 
-#### Commands
+```{.bash}
+# You can write full-line comments
 
-Each command starts on a new line or after a semicolon.
+pwd		  # You can also write comments after commands
+```
 
-### Executing a script
+### Executing scripts
 
 There are two ways to execute a script:
 
@@ -178,12 +194,12 @@ bash my_script.sh
 In the latter case, you need to make sure that your script is executable by first running:
 
 ```{.bash}
-chmod u+x my_script.sh	# Make the script executable by the user
+chmod u+x my_script.sh	# This makes the script executable by the user (i.e. you)
 ```
 
 ### Our first script
 
-Open a text editor and type:
+Open a text editor (e.g. nano) and type:
 
 ```{.bash}
 #!/bin/bash
@@ -193,17 +209,26 @@ echo "This is our first script."
 
 Save and close the file.
 
-Now run the script.
+{{<exercise>}}
+Now run the script with one, then the other method.<br><br>
+What does this script do?
+{{</exercise>}}
 
 ## Variables
 
 ### Declaring variables
 
-Declare a variable with the `=` sign and without spaces:
+You can declare a variable (i.e. a name that holds a value) with the `=` sign.
+
+{{<emph_inline>}}!! Make sure not to put spaces around the equal sign.{{</emph_inline>}}
 
 ```{.bash}
 variable=Test
 ```
+
+### Quotes
+
+Let's experiment with quotes:
 
 ```{bash}
 variable=This string is the value of the variable  # Oops...
@@ -235,7 +260,14 @@ variable="This string is the value of the variable called \"variable\""	 # \ is 
 
 ### Expanding a variable's value
 
-Expand a variable (access its value) with `$`:
+To expand a variable (to access its value), you need to prepend its name with `$`:
+
+```{bash}
+variable=Test
+echo variable
+```
+
+Mmmm... not really want we want!
 
 ```{bash}
 variable=Test
@@ -246,9 +278,7 @@ echo $variable
 variable=Test; echo "$variable"
 ```
 
-{{<emph_inline>}}
-Single quotes don't expand variables.
-{{</emph_inline>}}
+{{<emph_inline>}}!! Single quotes don't expand variables.{{</emph_inline>}}
 
 ```{bash}
 variable=Test; echo '$variable'
@@ -256,7 +286,7 @@ variable=Test; echo '$variable'
 
 ### Passing variables to a Bash script
 
-Create the script `name.sh` with:
+Create a script called `name.sh` with the following content:
 
 ```{.bash}
 #!/bin/bash
@@ -325,8 +355,10 @@ echo {r..v}
 ```
 
 ```{bash}
-echo {file1,file2}.sh	# no space after the comma
+echo {file1,file2}.sh
 ```
+
+{{<emph_inline>}}!! Make sure not to add a space after the comma.{{</emph_inline>}}
 
 ```{.bash}
 touch {file1,file2}.sh
@@ -342,11 +374,19 @@ echo {list,of,strings}
 
 ### Wildcards
 
+Wildcards are really powerful to apply a command to all the elements having a common pattern.
+
+For instance, we can delete all the files we created earlier (`file1.sh`, `file2.sh`, etc.) with a single command:
+
 ```{.bash}
 rm file*.sh
 ```
 
+{{<emph_inline>}}!! Be very careful that `rm` is irreversible. Deleted files do not go to the trash: they are gone.{{</emph_inline>}}
+
 ## Loops
+
+To apply a set of commands to all the elements of a list, you can use for loops. The general structure is as follows:
 
 ```{.bash}
 for <iterable> in <list>
@@ -357,7 +397,6 @@ do
 done
 ```
 
-{{<ex>}}
 Let's create the script `names.sh`:
 
 ```{.bash}
@@ -381,7 +420,41 @@ Paul
 Marie
 Alex
 ```
-{{</ex>}}
+
+{{<exercise>}}
+Compare the outputs of the following 2 scripts:
+
+- script1.sh:
+
+```{.bash}
+#!/bin/bash
+
+echo $@
+```
+
+- script2.sh:
+
+```{.bash}
+#!/bin/bash
+
+for i in $@
+do
+	echo $i
+done
+```
+
+How do you explain the difference between running:
+
+```{.bash}
+bash script1.sh arg1 arg2 arg3
+```
+
+and running:
+
+```{.bash}
+bash script2.sh arg1 arg2 arg3
+```
+{{</exercise>}}
 
 ## Let's put it all together to automate some task
 
