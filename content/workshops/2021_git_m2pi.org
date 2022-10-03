@@ -1,5 +1,5 @@
 #+title: Git & GitHub
-#+subtitle: Effective Versioning & Teamwork
+#+subtitle: Effective versioning & teamwork
 #+topic: Git
 #+slug: git_m2pi
 #+weight: 15

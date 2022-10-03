@@ -1,4 +1,4 @@
-#+title: Version Control with Git
+#+title: Version control with Git
 #+topic: Git
 #+slug: git
 #+weight: 20
