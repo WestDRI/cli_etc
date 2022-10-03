@@ -7,3 +7,16 @@ execute:
   error: true
 format: hugo
 ---
+
+
+
+## Abstract
+
+{{<def>}}
+Git is a free and open source version control system (a software that tracks changes to your files, allowing you to revisit or revert to older versions).
+
+Using Internet hosting services such as GitHub, Git is also a powerful collaboration tool.
+
+In this introductory workshop you will learn the basics of working with Git on the command line.
+{{</def>}}
+
