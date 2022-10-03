@@ -42,7 +42,7 @@ In this introductory workshop you will learn the basics of working with Git on t
       <br>
     </div>
     <div style="width: 48%; float: left;">
-Whenever we work on an important document, we intuitively realize that it is important to keep key versions (e.g. the version of a manuscript that we sent to our supervisor, the revised version after we address their comments, the revised version after we address reviewer comments, etc.)<br><br>
+Whenever we work on an important document, we intuitively realize that it is important to keep key versions (e.g. the version of a manuscript that we sent to our supervisor, the revised version after we addressed their comments, the revised version after we addressed reviewer comments, etc.)<br><br>
 We have all be there ...<br><br>
 The versions accumulate with names that are often less than helpful ...
     </div>
