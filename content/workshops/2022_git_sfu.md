@@ -77,14 +77,14 @@ Version control systems are software that allow to handle this much more effecti
 
 {{<br size="4">}}
 
-If the trends of Google searches of the existing version control systems is any indication of their popularity, we can say that Git crushed the competition and has been the most used option since 2010.
+If the trends of Google searches of the existing version control systems are any indication of their popularity, we can say that Git has crushed the competition since 2010.
 
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3045_RC01/embed_loader.js"></script>
 <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"/m/05vqwg","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/08441_","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/012ct9","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/09d6g","geo":"","time":"2004-01-01 2022-10-03"}],"category":0,"property":""}, {"exploreQuery":"date=all&q=%2Fm%2F05vqwg,%2Fm%2F08441_,%2Fm%2F012ct9,%2Fm%2F09d6g","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
 
 Nowadays, it is indeed extremely rare to come across any other version control system.
 
-Git is simply that good 🙂.
+Git is simply that good 🙂
 
 ## Installation and setup
 
