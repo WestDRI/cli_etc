@@ -22,3 +22,68 @@ Using Internet hosting services such as GitHub, Git is also a powerful collabora
 In this introductory workshop you will learn the basics of working with Git on the command line.
 {{</def>}}
 
+## Introduction
+
+### What is a version control system?
+{{<br size="4">}}
+
+```{=html}
+<figure style="display: table;">
+  <div class="row">
+	<div style="width: 48%; float: left;">
+	  <img src="https://phdcomics.com/comics/archive/phd101212s.gif" style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3); border-radius: 3px;">
+      <div align="right" style="font-size: 1.3rem; line-height: 2rem">
+	    <figcaption>
+	      <em>
+		    from <a href="http://phdcomics.com/" target="_blank">PhD</a>
+	      </em>
+	    </figcaption>
+      </div>
+	</div>
+	<div style="width: 4%; float: left;">
+      <br>
+	</div>
+	<div style="width: 48%; float: left;">
+Whenever we work on an important document, we intuitively realize that it is important to keep key versions (e.g. the version of a manuscript that we sent to our supervisor, the revised version after we address their comments, the revised version after we address reviewer comments, etc.)<br><br>
+We have all be there ...<br><br>
+The versions accumulate with names that are often less than helpful...
+	</div>
+  </div>
+  <div class="row">
+    <br>
+    <br>
+  </div>
+  <div class="row">
+	<div style="width: 48%; float: left;">
+	  <img src="/img/git/git_img/vc.jpg" style="box-shadow: 0px 0px 6px rgba(0,0,0,0.3); border-radius: 3px;">
+      <div align="right" style="font-size: 1.3rem; line-height: 2rem">
+	    <figcaption>
+	      <em>
+            from <a href="http://geek-and-poke.com/" target="_blank">Geek&Poke</a>
+	      </em>
+	    </figcaption>
+      </div>
+    </div>
+	<div style="width: 4%; float: left;">
+      <br>
+	</div>
+	<div style="width: 48%; float: left;">
+... and soon enough, it is hell.<br><br>
+This is a form of versioning, but a terribly messy and inefficient one.<br><br>
+Version control systems are software that allow to handle this much more effectively.
+	</div>
+  </div>
+</figure>
+```
+
+### Which version control system should I use?
+{{<br size="4">}}
+
+If the trends of Google searches of the existing version control systems is any indication of their popularity, we can say that Git crushed the competition and has been the most used option since 2010.
+
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3045_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"/m/05vqwg","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/08441_","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/012ct9","geo":"","time":"2004-01-01 2022-10-03"},{"keyword":"/m/09d6g","geo":"","time":"2004-01-01 2022-10-03"}],"category":0,"property":""}, {"exploreQuery":"date=all&q=%2Fm%2F05vqwg,%2Fm%2F08441_,%2Fm%2F012ct9,%2Fm%2F09d6g","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+
+Nowadays, it is indeed extremely rare to come across any other version control system.
+
+Git is simply that good 🙂.
+
