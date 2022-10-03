@@ -86,3 +86,63 @@ Nowadays, it is indeed extremely rare to come across any other version control s
 
 Git is simply that good 🙂.
 
+## Installation and setup
+
+### Installing Git
+
+#### MacOS & Linux users
+
+Install Git from {{<a "https://git-scm.com/downloads" "the official website.">}}
+
+#### Windows users
+
+Install {{<a "https://gitforwindows.org/" "Git for Windows.">}} This will also install Git Bash, a Bash emulator.
+
+### Configuring Git
+
+#### User identity
+
+``` sh
+git config --global user.name "<Your Name>"
+git config --global user.email "<your@email>"
+```
+
+##### Example
+
+``` sh
+git config --global user.name "John Doe"
+git config --global user.email "john.doe@gmail.com"
+```
+
+#### Text editor
+
+``` sh
+git config --global core.editor "<text-editor>"
+```
+
+##### Example for nano
+
+``` sh
+git config --global core.editor "nano"
+```
+
+#### Line ending
+
+##### macOS, Linux, or WSL
+
+``` sh
+git config --global core.autocrlf input
+```
+
+##### Windows
+
+``` sh
+git config --global core.autocrlf true
+```
+
+#### List settings
+
+``` sh
+git config --list
+```
+
