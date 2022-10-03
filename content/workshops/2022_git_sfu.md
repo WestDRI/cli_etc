@@ -98,7 +98,17 @@ Install Git from {{<a "https://git-scm.com/downloads" "the official website.">}}
 
 Install {{<a "https://gitforwindows.org/" "Git for Windows.">}} This will also install Git Bash, a Bash emulator.
 
+### Using Git
+
+We will use Git from the command line throughout this workshop.
+
+MacOS users:    open Terminal.  
+Windows users:   open Git Bash.  
+Linux users:    open the terminal emulator of your choice.
+
 ### Configuring Git
+
+Before you can use Git, you need to set some basic configuration. You will do this in the terminal you just opened.
 
 #### User identity
 
