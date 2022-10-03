@@ -147,3 +147,59 @@ git config --global core.autocrlf true
 git config --list
 ```
 
+## Documentation
+
+### Internal documentation
+
+#### Man pages
+
+```sh
+git <command> --help
+git help <command>
+man git-<command>
+```
+
+##### Example
+
+```sh
+git commit --help
+git help commit
+man git-commit
+```
+
+##### Useful keybindings when you are in the pager
+
+```sh
+SPACE      scroll one screen down
+b          scroll one screen up
+q          quit
+```
+
+#### Command options
+
+```sh
+git <command> -h
+```
+
+##### Example
+
+```sh
+git commit -h
+```
+
+### Online documentation
+
+- Official {{<a "https://git-scm.com/docs" "Git manual">}}
+- Open source {{<a "https://git-scm.com/book/en/v2" "Pro Git book">}}
+
+#### Courses & workshops
+
+- {{<a "https://westgrid-cli.netlify.app/workshops/" "Western Canada Research Computing Git workshops">}}
+- {{<a "https://wgschool.netlify.app/git/" "WestGrid Summer School 2020 Git course">}}
+- {{<a "https://autumnschool.netlify.app/git/" "WestGrid Autumn School 2020 Git course">}}
+- the {{<a "http://swcarpentry.github.io/git-novice/" "Software Carpentry Git lesson">}}
+
+#### Q & A
+
+- {{<a "https://stackoverflow.com/questions/tagged/git" "Stack Overflow's Git tag">}}
+
