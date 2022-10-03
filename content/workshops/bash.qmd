@@ -1,5 +1,5 @@
 ---
-title: Automation and scripting in bash for absolute beginners
+title: Automation & scripting in bash for absolute beginners
 topic: Shell
 slug: bash
 weight: 12
