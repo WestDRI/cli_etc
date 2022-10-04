@@ -292,6 +292,12 @@ Now, you can run the command that will turn your `chapter3` directory into a Git
 git init
 ```
 
+<div>
+
+Initialized empty Git repository in chapter3/.git/
+
+</div>
+
     Initialized empty Git repository in chapter3/.git/
 
 {{<notes>}}
@@ -742,11 +748,11 @@ git log \
                    `'%C(yellow)%s%+b %C(magenta)%ae'
 ```
 
-    * a1df8e5 88 seconds ago  (HEAD -> main)Add .gitignore file with data and results marie.burle@westdri.ca
-    * a049a2f 2 hours ago Define the variable a in R script marie.burle@westdri.ca
-    * c7fc9c1 2 hours ago Add conclusion to the manuscript marie.burle@westdri.ca
-    * 451c47b 4 hours ago Add result section to manuscript marie.burle@westdri.ca
-    * 7f94f8e 5 hours ago Initial commit marie.burle@westdri.ca
+    * a1df8e5 88 seconds ago  (HEAD -> main)Add .gitignore file with data and results xxx@xxx
+    * a049a2f 2 hours ago Define the variable a in R script xxx@xxx
+    * c7fc9c1 2 hours ago Add conclusion to the manuscript xxx@xxx
+    * 451c47b 4 hours ago Add result section to manuscript xxx@xxx
+    * 7f94f8e 5 hours ago Initial commit xxx@xxx
 
 ### Getting information about a commit
 
