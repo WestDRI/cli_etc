@@ -292,12 +292,6 @@ Now, you can run the command that will turn your `chapter3` directory into a Git
 git init
 ```
 
-<div>
-
-Initialized empty Git repository in chapter3/.git/
-
-</div>
-
     Initialized empty Git repository in chapter3/.git/
 
 {{<notes>}}
