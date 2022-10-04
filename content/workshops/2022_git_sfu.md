@@ -1092,6 +1092,56 @@ Then, usually, you delete the branch `test` as it has served its purpose. Altern
 
 </div>
 
+If both branches have diverged (you created commits from both `main` and `newbranch`), the merge would require the creation of an additional commit called a "merge commit".
+
+<div class="info-block">
+
+**Here is a classic situation of merge with a commit.**
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/21.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+You create a test branch and switch to it:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/22.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/23.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Then you create some commits:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/24.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/25.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Now you switch back to `main`:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/26.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+And you create commits from `main` too:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/27.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/28.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+To merge your main branch and your test branch, a new commit is now required:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/29.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+After which, you can delete the (now useless) test branch:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/30.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+</div>
+
 ## Remotes
 
 ### What are remotes?

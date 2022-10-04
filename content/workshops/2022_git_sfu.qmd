@@ -880,8 +880,6 @@ HEAD is now at 7f94f8e Initial commit
 This is the same as the command `git switch --detach 7f94f8e`: `git switch` is a command introduced a few years ago because `git checkout` can be used for many things in Git and it was confusing many users. `git switch` allows to switch from one branch to another or, with the `--detach` flag, to switch to a commit as is the case here.
 {{</notes>}}
 
-
-
 Once you have seen what you wanted to see, you can go back to your branch `main` with:
 
 ```{.bash}
@@ -1157,6 +1155,54 @@ Then you do the fast-forward merge from `main` onto `test` (so `main` catches up
 Then, usually, you delete the branch `test` as it has served its purpose. Alternatively, you can switch back to it and do the next bit of experimental work in it. This allows to keep `main` free of possible mishaps and bad developments (if you aren't happy with the work you did on your test branch, you can simply delete it and Git will clean the commits that are on it but not on `main` during the next garbage collection.
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/20.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+:::
+
+If both branches have diverged (you created commits from both `main` and `newbranch`), the merge would require the creation of an additional commit called a "merge commit".
+
+::: {.info-block}
+**Here is a classic situation of merge with a commit.**
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/21.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+You create a test branch and switch to it:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/22.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/23.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Then you create some commits:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/24.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/25.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Now you switch back to `main`:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/26.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+And you create commits from `main` too:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/27.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/28.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+To merge your main branch and your test branch, a new commit is now required:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/29.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+After which, you can delete the (now useless) test branch:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/30.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 :::
 
