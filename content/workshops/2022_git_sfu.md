@@ -600,6 +600,21 @@ git commit -m "Define the variable a in R script"
     [main a049a2f] Define the variable a in R script
      1 file changed, 2 insertions(+)
 
+### Ignoring
+
+Not everything should be under version control. For instance, you don't want to put under version control non-text files or your initial data. You also shouldn't put under version control documents that can be easily recreated such as graphs and script outputs.
+
+However, you don't want to have such documents constantly showing up when you run `git status`. In order to have a clean working directory while keeping them out of version control, you can create a file called `.gitignore` and add to it a list of files or patterns that you want Git to disregard.
+
+For instance:
+
+``` bash
+echo "/data/
+/results/" > .gitignore
+```
+
+This creates a `.gitignore` file with two entries (`/data/` and `/results/`) and from now on, any file in either of these directories will be ignored by Git.
+
 ### Displaying the commit history
 
 So far, we have created 4 commits. To display them, you use the command `git log`:
@@ -739,8 +754,6 @@ git checkout main
 ```
 
 {{<emph_inline>}}!! Be careful not to forget to go back to your branch `main` before making changes to your project. If you want to move the project to a new direction from some old commit, you need to create a new branch before doing so. When `HEAD` points directly to a commit (and not to a branch), this is called "Detached HEAD" and it is not a position from which you want to modify the project.{{</emph_inline>}}
-
-### Branches
 
 ## Remotes
 
