@@ -337,7 +337,7 @@ You should create a new commit whenever you think that your project is at a poin
 Let's create a first commit with the state of our chapter 3 before we do any more work to it:
 
 ```{.bash}
-git add --all
+git add .
 git commit -m "Initial commit"
 ```
 
@@ -348,7 +348,7 @@ git commit -m "Initial commit"
  create mode 100644 src/chapter3.R
 ````
 
-To create a commit, we first need to add the file(s) we want to add to our commit to the staging area. This is done with the command `git add`. To add all the files, we can use the `--all` flag.
+To create a commit, we first need to add the file(s) we want to add to our commit to the staging area (also called "index"). This is done with the command `git add`. To add all the files, we can use `git add .` (`.` represents the current directory).
 
 Once we have added some files to the staging area, we can create a commit. But each commit has a message associated to it. One way to add this message is to use the command to create commits (`git commit`) with the `-m` flag (for "message"). Here, our message is simply "Initial commit".
 
@@ -431,16 +431,225 @@ For simplicity, the diagrams can be simplified this way:
 {{</imgbshadow>}}
 :::
 
+### Understanding the staging area
+
+New Git users are often confused about the two-step commit process (first, you stage with `git add`, then you commit with `git commit`). This intermediate step seems, at first, totally unnecessary. In fact, it is very useful: without it, commits would always include all new changes made to a project and they would thus be very messy. The staging area allows to prepare ("stage") the next commit. This way, you only commit what you want when you want.
+
+Let's go over a simple example:
+
+We don't always work linearly. Maybe you are working on a section of your manuscript when you realize by chance that there is a mistake in your script. You fix that mistake. On your next commit, it might make little sense to commit together that fix and your manuscript changes since they are not related. If your commits are random bag of changes, it will be very hard for future you to navigate your project history.
+
+It is a lot better to only stage your script fix, commit it, then only stage your manuscript update, and commit this in a different commit.
+
+The staging area allows you to pick and chose the changes from one or various files that constitute some coherent change to the project and that make sense to commit together.
+
+### Inspecting changes
+
+#### List of modified files
+
+One command you will run often when working with Git is `git status`:
+
+```{.bash}
+git status
+```
+
+````
+On branch main
+nothing to commit, working tree clean
+````
+
+This means that we are on the branch `main` (that's the only branch in our repo at this point) and that all changes to our project have been committed.
+
+Let's modify a file and see what happens:
+
+```{.bash}
+echo "
+## Conclusion
+
+And finally, the great conclusion of our paper." >> ms/chapter3.md
+```
+
+```{.bash}
+git status
+```
+
+````
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ms/chapter3.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+````
+
+Let's modify another file:
+
+```{.bash}
+echo "
+a = 23" >> src/chapter3.R
+```
+
+```{.bash}
+git status
+```
+
+````
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ms/chapter3.md
+        modified:   src/chapter3.R
+
+no changes added to commit (use "git add" and/or "git commit -a")
+````
+
+Maybe we don't want to create a commit with all those changes, so we only stage the changes made to the manuscript:
+
+```{.bash}
+git add ms/chapter3.md
+git status
+```
+
+````
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ms/chapter3.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/chapter3.R
+````
+
+If we ran `git commit` at this point, we would create a new commit with the changes made to the manuscript.
+
+#### List of actual changes
+
+While `git status` gives us the list of new files and files with changes, it doesn't allow us to see what those changes are. For this, we need a new command: `git diff`.
+
+##### Difference between the working directory and the index
+
+`git diff` shows the difference between the working directory (our actual files) and the index (staging area):
+
+```{.bash}
+git diff
+```
+
+````
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: src/chapter3.R
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ src/chapter3.R:10 @ df <- data.frame(
+)
+
+ggplot(df, aes(x, y)) + geom_point()
+
+a = 23
+````
+
+This allows us to see that src/chapter3.R has a new line (`a = 23`) and that it is not yet staged.
+
+##### Difference between the index and your last commit
+
+To see what would be committed if you ran `git commit` (so, to see the difference between the index and the last commit), you need to run instead:
+
+```{.bash}
+git diff --cached
+```
+
+````
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: ms/chapter3.md
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ ms/chapter3.md:14 @ Bla bla bla.
+## Results
+
+We now have a bunch of results in our markdown manuscript.
+
+## Conclusion
+
+And finally, the great conclusion of our paper.
+````
+
+This shows us the changes that we have staged but not yet committed (the changes to our manuscript).
+
+##### Difference between the working directory and your last commit
+
+This means, both of the above. This can been displayed with:
+
+```{.bash}
+git diff HEAD
+```
+
+````
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: ms/chapter3.md
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ ms/chapter3.md:14 @ Bla bla bla.
+## Results
+
+We now have a bunch of results in our markdown manuscript.
+
+## Conclusion
+
+And finally, the great conclusion of our paper.
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: src/chapter3.R
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ src/chapter3.R:10 @ df <- data.frame(
+)
+
+ggplot(df, aes(x, y)) + geom_point()
+
+a = 23
+````
+
+Now, let's clean up our working directory by creating two new commits:
+
+```{.bash}
+git commit -m "Add conclusion to the manuscript"
+```
+
+````
+[main c7fc9c1] Add conclusion to the manuscript
+ 1 file changed, 4 insertions(+)
+````
+
+```{.bash}
+git add .
+git commit -m "Define the variable a in R script"
+```
+
+````
+[main a049a2f] Define the variable a in R script
+ 1 file changed, 2 insertions(+)
+````
+
 ### Displaying the commit history
 
-So far, we have created 2 commits. To display them, you use the command `git log`:
+So far, we have created 4 commits. To display them, you use the command `git log`:
 
 ```{.bash}
 git log
 ```
 
 ````
-commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9 (HEAD -> main)
+commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Mon Oct 3 21:17:23 2022 -0700
+
+    Define the variable a in R script
+
+commit c7fc9c1743d8a40c3f72d9450b9440dca1cb5922
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Mon Oct 3 21:16:43 2022 -0700
+
+    Add conclusion to the manuscript
+
+commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
 Author: Marie-Helene Burle <marie.burle@westdri.ca>
 Date:   Mon Oct 3 18:35:51 2022 -0700
 
@@ -462,7 +671,9 @@ git log --oneline
 ```
 
 ````
-451c47b (HEAD -> main) Add result section to manuscript
+a049a2f (HEAD -> main) Define the variable a in R script
+c7fc9c1 Add conclusion to the manuscript
+451c47b Add result section to manuscript
 7f94f8e Initial commit
 ````
 
@@ -473,7 +684,19 @@ git log --graph
 ```
 
 ````
-* commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9 (HEAD -> main)
+* commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
+| Author: Marie-Helene Burle <marie.burle@westdri.ca>
+| Date:   Mon Oct 3 21:17:23 2022 -0700
+|
+|     Define the variable a in R script
+|
+* commit c7fc9c1743d8a40c3f72d9450b9440dca1cb5922
+| Author: Marie-Helene Burle <marie.burle@westdri.ca>
+| Date:   Mon Oct 3 21:16:43 2022 -0700
+|
+|     Add conclusion to the manuscript
+|
+* commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
 | Author: Marie-Helene Burle <marie.burle@westdri.ca>
 | Date:   Mon Oct 3 18:35:51 2022 -0700
 |
@@ -497,9 +720,67 @@ git log \
 ```
 
 ````
-* 451c47b 20 minutes ago  (HEAD -> main)Add result section to manuscript marie.burle@westdri.ca
-* 7f94f8e 36 minutes ago Initial commit marie.burle@westdri.ca
+* a049a2f 89 seconds ago  (HEAD -> main)Define the variable a in R script marie.burle@westdri.ca
+* c7fc9c1 2 minutes ago Add conclusion to the manuscript marie.burle@westdri.ca
+* 451c47b 3 hours ago Add result section to manuscript marie.burle@westdri.ca
+* 7f94f8e 3 hours ago Initial commit marie.burle@westdri.ca
 ````
+
+### Getting information about a commit
+
+`git log` is useful to get an overview of our project history, but the information we get about each commit is limited. To get additional information about a particular commit, you can use `git show` followed by the hash of the commit you are interested about.
+
+For instance, let's explore our second commit:
+
+```{.bash}
+git show 451c47b  # Replace the hash by the hash of your second commit
+```
+
+````
+commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9 (HEAD -> main)
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Mon Oct 3 18:35:51 2022 -0700
+
+    Add result section to manuscript
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: ms/chapter3.md
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ ms/chapter3.md:10 @ Bla bla bla bla bla.
+## Methods
+
+Bla bla bla.
+
+## Results
+
+We now have a bunch of results in our markdown manuscript.
+````
+
+In addition to displaying the commit metadata, this also displays the difference with the previous commit.
+
+### Revisiting old commits
+
+The pointer `HEAD`, which normally points to the branch `main` which itself points to latest commit, can be moved around. By moving `HEAD` to any commit, you can revisit the state of your project at that particular version.
+
+The command for this is `git checkout` followed by the hash of the commit you want to revisit.
+
+For instance, we could revisit the first commit in our example with:
+
+```{.bash}
+git checkout 7f94f8e  # Replace the hash by the hash of your first commit
+```
+
+Once you have seen what you wanted to see, you can go back to your branch `main` with:
+
+```{.bash}
+git checkout main
+```
+
+{{<emph_inline>}}!! Be careful not to forget to go back to your branch `main` before making changes to your project. If you want to move the project to a new direction from some old commit, you need to create a new branch before doing so. When `HEAD` points directly to a commit (and not to a branch), this is called "Detached HEAD" and it is not a position from which you want to modify the project.{{</emph_inline>}}
+
+### Branches
+
+
 
 ## Remotes
 
@@ -514,6 +795,47 @@ Popular online Git repository managers & hosting services:
 - {{<a "https://github.com" "GitHub">}}
 - {{<a "https://gitlab.com" "GitLab">}}
 - {{<a "https://bitbucket.org" "Bitbucket">}}
+
+### Creating a remote on GitHub
+
+#### 1. Create an empty repository on GitHub
+
+- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+
+- Look for the `Repositories` tab & click the green `New` button.
+
+- Enter the name you want for your repo, *without spaces*.
+
+- Make the repository public or private.
+
+#### 2. Link empty repository to your repo
+
+Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+
+In the command line, `cd` inside your project, and add the remote:
+
+```{.bash}
+git remote add <remote-name> <remote-address>
+```
+
+`remote-name` is a convenience name to identify that remote. You can choose any name, but since Git automatically call the remote `origin` when you clone a repo, it is common practice to use `origin` as the name for the first remote.
+{{<br size="1">}}
+
+{{<notes>}}
+Example (using an SSH address):
+{{</notes>}}
+
+```{.bash}
+git remote add origin git@github.com:<user>/<repo>.git
+```
+
+{{<notes>}}
+Example (using an HTTPS address):
+{{</notes>}}
+
+```{.bash}
+git remote add origin https://github.com/<user>/<repo>.git
+```
 
 ### Getting information on remotes
 
@@ -681,6 +1003,8 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blan
 ### (1) You start the project
 
 #### Create a remote on GitHub
+
+These are the steps we already saw earlier.
 
 ##### 1. Create an empty repository on GitHub
 
