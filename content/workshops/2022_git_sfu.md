@@ -755,6 +755,54 @@ git checkout main
 
 {{<emph_inline>}}!! Be careful not to forget to go back to your branch `main` before making changes to your project. If you want to move the project to a new direction from some old commit, you need to create a new branch before doing so. When `HEAD` points directly to a commit (and not to a branch), this is called "Detached HEAD" and it is not a position from which you want to modify the project.{{</emph_inline>}}
 
+### Branches
+
+One of the reasons Git has become so popular is its branch system.
+
+Remember that little pointer called `main`? That's our main branch: the one Git creates automatically when we create our first commit.
+
+A branch in Git is just that: a little pointer. This makes creating branches extremely quick and cheap. But they are extremely convenient.
+
+Instead of checking out a commit as we just saw (which creates a detached HEAD state), we can instead create a new branch on that commit with:
+
+``` bash
+git switch -c newbranch 7f94f8e  # Replace the hash by the hash of your first commit
+```
+
+This creates a new branch called `newbranch` on our first commit and switches `HEAD` to it. If you do this instead of entering a detached HEAD state, it is totally safe to make changes and create commits from there. You can easily switch `HEAD` back and forth between the two branches with:
+
+``` bash
+git switch main        # Moves HEAD back to the branch main
+git switch newbranch
+```
+
+If you already checked out a commit with `git checkout 7f94f8e`, you can create a new branch on that commit and switch to it with:
+
+``` bash
+git switch -c newbranch
+```
+
+In short, `git switch` allows you to switch `HEAD` from one branch to another. With the `-c` flag, you can create a new branch before switching to it. And by adding some starting point such as a commit, the new branch gets created on that commit rather than on the position of `HEAD`.
+
+#### Comparing branches
+
+You can use `git diff` to compare branches:
+
+``` bash
+git diff newbranch main
+```
+
+#### Merging branches
+
+If you want to merge branches, switch to the branch to which you want to merge the other one, then run `git merge`.
+
+For instance, if we want to merge `newbranch` onto `main`, we would run:
+
+``` bash
+git switch main
+git merge newbranch
+```
+
 ## Remotes
 
 ### What are remotes?
