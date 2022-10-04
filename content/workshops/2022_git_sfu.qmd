@@ -976,18 +976,6 @@ git push
 by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blank">jscript &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a>
 {{</imgb2>}}
 
-### Submitting a pull request
-
-1. Pull from `upstream` to update your local project.
-
-2. Create & checkout a new branch.
-
-3. Make & commit your changes on that branch.
-
-4. Push that branch to your fork (i.e. `origin` — remember that you do not have write access to `upstream`).
-
-5. Go to the original project GitHub's page & open a pull request.
-
 ## Collaborating with Git and GitHub
 
 ### 3 situations
@@ -1081,11 +1069,23 @@ Without `<local-name>`, the repo will have the name of the last part of the remo
 
 #### Collaborate without write access
 
-1. Fork the project.
+In that case, you will have to submit a pull request:
+
+1. Fork the project on GitHub.
 
 2. Clone your fork on your machine.
 
 3. Add the initial project as a second remote & call it `upstream`.
+
+4. Pull from `upstream` to update your local project.
+
+5. Create & checkout a new branch.
+
+6. Make & commit your changes on that branch.
+
+7. Push that branch to your fork (i.e. `origin` — remember that you do not have write access to `upstream`).
+
+8. Go to the original project GitHub's page & open a pull request.
 
 ## Conclusion
 
