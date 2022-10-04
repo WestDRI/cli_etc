@@ -535,6 +535,17 @@ img[alt=radius] {
   border-radius: 3px;
 }
 
+.info-block {
+  // small font in dull gray box
+  background-color: #eae8f0;
+  font-family: 'Crimson Text', serif;
+  margin: 4rem 0;
+  padding: 0rem 3.5rem;
+  font-size: 2rem;
+  border: 1.5pt solid #669999;
+  border-radius: 3px;
+}
+
 .verse-block {
   color: #262626;
   font-family: 'IM Fell English';
