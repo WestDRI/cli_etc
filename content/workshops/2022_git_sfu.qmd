@@ -822,7 +822,7 @@ git show 451c47b  # Replace the hash by the hash of your second commit
 
 ````
 commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9 (HEAD -> main)
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Mon Oct 3 18:35:51 2022 -0700
 
     Add result section to manuscript
@@ -979,7 +979,7 @@ git log
 
 ````
 commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061 (HEAD -> newbranch)
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Mon Oct 3 18:19:28 2022 -0700
 
     Initial commit
@@ -995,31 +995,31 @@ git log --all
 
 ````
 commit 863afd650ecaeab85da2f8ed0d3c88a778754727 (main)
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Tue Oct 4 10:32:39 2022 -0700
 
     Add .gitignore file with data and results
 
 commit dc780c75c76220a39f7c89a76bebb670dad25b8e
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Tue Oct 4 10:32:12 2022 -0700
 
     Define the variable a in R script
 
 commit 5ba96b254b505f7d04f59f988a621a746a0c6896
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Tue Oct 4 10:28:51 2022 -0700
 
     Add conclusion to the manuscript
 
 commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Mon Oct 3 18:35:51 2022 -0700
 
     Add result section to manuscript
 
 commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061 (HEAD -> newbranch)
-Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Author: Marie-Helene Burle <xxx@xxx>
 Date:   Mon Oct 3 18:19:28 2022 -0700
 
     Initial commit
@@ -1095,6 +1095,44 @@ Fast-forward
 ````
 
 This merge is called a "fast-forward" merge because `main` and `newbranch` had not diverged. It was simply a question of having `newbranch` catch up to `main`.
+
+If you run `git log` again, you will see that `newbrach` has now caught up with `main`:
+
+```{.bash}
+git log
+```
+
+````
+commit 863afd650ecaeab85da2f8ed0d3c88a778754727 (HEAD -> newbranch, main)
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Tue Oct 4 10:32:39 2022 -0700
+
+    Add .gitignore file with data and results
+
+commit dc780c75c76220a39f7c89a76bebb670dad25b8e
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Tue Oct 4 10:32:12 2022 -0700
+
+    Define the variable a in R script
+
+commit 5ba96b254b505f7d04f59f988a621a746a0c6896
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Tue Oct 4 10:28:51 2022 -0700
+
+    Add conclusion to the manuscript
+
+commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Mon Oct 3 18:35:51 2022 -0700
+
+    Add result section to manuscript
+
+commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Mon Oct 3 18:19:28 2022 -0700
+
+    Initial commit
+````
 
 ::: {.info-block}
 **Here is a classic situation of fast-forward merge.**
