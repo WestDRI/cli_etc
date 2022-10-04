@@ -880,6 +880,8 @@ HEAD is now at 7f94f8e Initial commit
 This is the same as the command `git switch --detach 7f94f8e`: `git switch` is a command introduced a few years ago because `git checkout` can be used for many things in Git and it was confusing many users. `git switch` allows to switch from one branch to another or, with the `--detach` flag, to switch to a commit as is the case here.
 {{</notes>}}
 
+
+
 Once you have seen what you wanted to see, you can go back to your branch `main` with:
 
 ```{.bash}
@@ -969,6 +971,62 @@ Those are equivalent workflows. Just don't forget never to work from a detached 
 
 In short, `git switch` allows you to switch `HEAD` from one branch to another. With the `-c` flag, you can create a new branch before switching to it. And by adding some starting point such as a commit, the new branch gets created on that commit rather than on the position of `HEAD`.
 
+Now, have a look at what happens if you run git log from `newbranch`:
+
+```{.bash}
+git log
+```
+
+````
+commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061 (HEAD -> newbranch)
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Mon Oct 3 18:19:28 2022 -0700
+
+    Initial commit
+````
+
+Horror! It looks like all our commits except for the first one are gone!
+
+In fact, they still exist, but by default, `git log` only shows what is on the current branch. To see all the commits that are on any branch in your project, you need to add the `--all` flag:
+
+```{.bash}
+git log --all
+```
+
+````
+commit 863afd650ecaeab85da2f8ed0d3c88a778754727 (main)
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Tue Oct 4 10:32:39 2022 -0700
+
+    Add .gitignore file with data and results
+
+commit dc780c75c76220a39f7c89a76bebb670dad25b8e
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Tue Oct 4 10:32:12 2022 -0700
+
+    Define the variable a in R script
+
+commit 5ba96b254b505f7d04f59f988a621a746a0c6896
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Tue Oct 4 10:28:51 2022 -0700
+
+    Add conclusion to the manuscript
+
+commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Mon Oct 3 18:35:51 2022 -0700
+
+    Add result section to manuscript
+
+commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061 (HEAD -> newbranch)
+Author: Marie-Helene Burle <marie.burle@westdri.ca>
+Date:   Mon Oct 3 18:19:28 2022 -0700
+
+    Initial commit
+````
+
+Note that in this log, we can now see `main`, but that `HEAD` points to `newbranch`.
+
 #### Comparing branches
 
 You can use `git diff` to compare branches:
@@ -977,16 +1035,92 @@ You can use `git diff` to compare branches:
 git diff newbranch main
 ```
 
+````
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..e85f44a
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++/data/
++/results/
+diff --git a/ms/chapter3.md b/ms/chapter3.md
+index b88424b..80d2c5c 100644
+--- a/ms/chapter3.md
++++ b/ms/chapter3.md
+@@ -7,3 +7,11 @@ Bla bla bla bla bla.
+ ## Methods
+
+ Bla bla bla.
++
++## Results
++
++We now have a bunch of results in our markdown manuscript.
++
++## Conclusion
++
++And finally, the great conclusion of our paper.
+diff --git a/src/chapter3.R b/src/chapter3.R
+index 95f1592..2bf030d 100644
+--- a/src/chapter3.R
++++ b/src/chapter3.R
+@@ -7,3 +7,5 @@ df <- data.frame(
+ )
+
+ ggplot(df, aes(x, y)) + geom_point()
++
++a = 23
+````
+
+This shows all the lines that have been modified (added or deleted) between the commits both branches point to.
+
 #### Merging branches
 
-If you want to merge branches, switch to the branch to which you want to merge the other one, then run `git merge`.
+If you want to merge branches, switch to the branch you want to merge into the other one, then run `git merge`.
 
-For instance, if we want to merge `newbranch` onto `main`, we would run:
+For instance, if we want to merge `newbranch` onto `main`, we would first switch to `newbranch` (we are already on it, so nothing to do here), then:
 
 ```{.bash}
-git switch main
-git merge newbranch
+git merge main
 ```
+
+````
+Updating 7f94f8e..863afd6
+Fast-forward
+ .gitignore     | 2 ++
+ ms/chapter3.md | 8 ++++++++
+ src/chapter3.R | 2 ++
+ 3 files changed, 12 insertions(+)
+ create mode 100644 .gitignore
+````
+
+This merge is called a "fast-forward" merge because `main` and `newbranch` had not diverged. It was simply a question of having `newbranch` catch up to `main`.
+
+::: {.info-block}
+**Here is a classic situation of fast-forward merge.**
+
+Instead of working on your branch `main`, you create a test branch and work on it (so `HEAD` is on the branch `test` and both move along as you create commits):
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/17.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+When you are happy with the changes you made on your test branch, you decide to merge `main` onto it.
+
+First, you switch to `main`:
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/18.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Then you do the fast-forward merge from `main` onto `test` (so `main` catches up to `test`):
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/19.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+
+Then, usually, you delete the branch `test` as it has served its purpose. Alternatively, you can switch back to it and do the next bit of experimental work in it. This allows to keep `main` free of possible mishaps and bad developments (if you aren't happy with the work you did on your test branch, you can simply delete it and Git will clean the commits that are on it but not on `main` during the next garbage collection.
+
+{{<imgbshadow src="/img/git/git_img/diagrams_v3/20.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgbshadow>}}
+:::
 
 ## Remotes
 
