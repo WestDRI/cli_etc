@@ -666,3 +666,112 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blan
 
 5. Go to the original project GitHub's page & open a pull request.
 
+## Collaborating with Git and GitHub
+
+### 3 situations
+
+- You create a project on your machine and want others to contribute to it (1).
+
+- You want to contribute to a project started by others & ...
+
+	&emsp;&emsp;... you have write access to it (2).
+
+    &emsp;&emsp;... you do **not** have write access to it (3).
+
+### (1) You start the project
+
+#### Create a remote on GitHub
+
+##### 1. Create an empty repository on GitHub
+
+- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+
+- Look for the `Repositories` tab & click the green `New` button.
+
+- Enter the name you want for your repo, *without spaces*.
+
+- Make the repository public or private.
+
+##### 2. Link empty repository to your repo
+
+Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+
+In the command line, `cd` inside your project, and add the remote:
+
+```{.bash}
+git remote add <remote-name> <remote-address>
+```
+
+`remote-name` is a convenience name to identify that remote. You can choose any name, but since Git automatically call the remote `origin` when you clone a repo, it is common practice to use `origin` as the name for the first remote.
+{{<br size="1">}}
+
+{{<notes>}}
+Example (using an SSH address):
+{{</notes>}}
+
+```{.bash}
+git remote add origin git@github.com:<user>/<repo>.git
+```
+
+{{<notes>}}
+Example (using an HTTPS address):
+{{</notes>}}
+
+```{.bash}
+git remote add origin https://github.com/<user>/<repo>.git
+```
+
+If you are working alone on this project and you only wanted to have a remote for backup, you are set.
+
+If you don't want to grant others write access to the project, and you only accept contributions through pull requests, you are also set.
+
+If you want to grant your collaborators write access to the project however, you need to add them to it.
+
+#### Invite collaborators
+
+- Go to your GitHub project page.
+
+- Click on the `Settings` tab.
+
+- Click on the `Manage access` section on the left-hand side (you will be prompted for your GitHub password).
+
+- Click on the `Invite a collaborator` green button.
+
+- Invite your collaborators with one of their GitHub user name, their email address, or their full name.
+
+### (2) Write access to project
+
+#### Clone project
+
+`cd` to location where you want your local copy, then:
+
+```{.bash}
+git clone <remote-address> <local-name>
+```
+
+This sets the project as a remote to your new local copy and that remote is automatically called `origin`.
+
+Without `<local-name>`, the repo will have the name of the last part of the remote address.
+
+### (3) No write access to project
+
+#### Collaborate without write access
+
+1. Fork the project.
+
+2. Clone your fork on your machine.
+
+3. Add the initial project as a second remote & call it `upstream`.
+
+## Conclusion
+
+Git is a powerful and fairly complex tool, but you don't have to master it entirely to start using it. Start by putting your projects (e.g. thesis chapters, papers) under version control and by creating commits whenever you reach important stages in your work.
+
+Things will grow from there.
+{{<br size="4">}}
+
+{{<imgbshadow src="https://imgs.xkcd.com/comics/git.png" margin="auto" title="" width="100%" line-height="2rem">}}
+from <a href="https://xkcd.com/" target="_blank">xkcd.com &nbsp;</a>
+{{</imgbshadow>}}
+
+## Comments & questions
