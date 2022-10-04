@@ -643,6 +643,13 @@ echo "/data/
 
 This creates a `.gitignore` file with two entries (`/data/` and `/results/`) and from now on, any file in either of these directories will be ignored by Git.
 
+The `.gitignore` is a file like any other file, so you'll want to stage and commit it:
+
+```{.bash}
+git add .gitignore
+git commit -m "Add .gitignore file with data and results"
+```
+
 ### Displaying the commit history
 
 So far, we have created 4 commits. To display them, you use the command `git log`:
