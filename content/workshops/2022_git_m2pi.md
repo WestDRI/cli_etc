@@ -196,7 +196,7 @@ As soon as you create the first commit, a pointer called a *branch* is created a
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-Another pointed (`HEAD`) points to the branch `main`.
+Another pointer (`HEAD`) points to the branch `main`.
 
 `HEAD` indicates where we are in the project history.
 
