@@ -646,20 +646,54 @@ This creates a `.gitignore` file with two entries (`/data/` and `/results/`) and
 The `.gitignore` is a file like any other file, so you'll want to stage and commit it:
 
 ```{.bash}
+git status
+```
+
+````
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+````
+
+```{.bash}
 git add .gitignore
 git commit -m "Add .gitignore file with data and results"
 ```
 
+````
+[main a1df8e5] Add .gitignore file with data and results
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+````
+
+```{.bash}
+git status
+```
+
+````
+On branch main
+nothing to commit, working tree clean
+````
+
 ### Displaying the commit history
 
-So far, we have created 4 commits. To display them, you use the command `git log`:
+So far, we have created 5 commits. To display them, you use the command `git log`:
 
 ```{.bash}
 git log
 ```
 
 ````
-commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
+commit a1df8e56ad45ddd514ff951f2d65e4e1d40a641c (HEAD -> main)
+Author: Marie-Helene Burle <xxx@xxx>
+Date:   Mon Oct 3 22:57:59 2022 -0700
+
+    Add .gitignore file with data and results
+
+commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e
 Author: Marie-Helene Burle <xxx@xxx>
 Date:   Mon Oct 3 21:17:23 2022 -0700
 
@@ -693,7 +727,8 @@ git log --oneline
 ```
 
 ````
-a049a2f (HEAD -> main) Define the variable a in R script
+a1df8e5 (HEAD -> main) Add .gitignore file with data and results
+a049a2f Define the variable a in R script
 c7fc9c1 Add conclusion to the manuscript
 451c47b Add result section to manuscript
 7f94f8e Initial commit
@@ -706,7 +741,13 @@ git log --graph
 ```
 
 ````
-* commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
+* commit a1df8e56ad45ddd514ff951f2d65e4e1d40a641c (HEAD -> main)
+| Author: Marie-Helene Burle <xxx@xxx>
+| Date:   Mon Oct 3 22:57:59 2022 -0700
+|
+|     Add .gitignore file with data and results
+|
+* commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e
 | Author: Marie-Helene Burle <xxx@xxx>
 | Date:   Mon Oct 3 21:17:23 2022 -0700
 |
@@ -742,10 +783,11 @@ git log \
 ```
 
 ````
-* a049a2f 89 seconds ago  (HEAD -> main)Define the variable a in R script marie.burle@westdri.ca
-* c7fc9c1 2 minutes ago Add conclusion to the manuscript marie.burle@westdri.ca
-* 451c47b 3 hours ago Add result section to manuscript marie.burle@westdri.ca
-* 7f94f8e 3 hours ago Initial commit marie.burle@westdri.ca
+* a1df8e5 88 seconds ago  (HEAD -> main)Add .gitignore file with data and results marie.burle@westdri.ca
+* a049a2f 2 hours ago Define the variable a in R script marie.burle@westdri.ca
+* c7fc9c1 2 hours ago Add conclusion to the manuscript marie.burle@westdri.ca
+* 451c47b 4 hours ago Add result section to manuscript marie.burle@westdri.ca
+* 7f94f8e 5 hours ago Initial commit marie.burle@westdri.ca
 ````
 
 ### Getting information about a commit
@@ -792,11 +834,45 @@ For instance, we could revisit the first commit in our example with:
 git checkout 7f94f8e  # Replace the hash by the hash of your first commit
 ```
 
+````
+Note: switching to '7f94f8e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 7f94f8e Initial commit
+````
+
+{{<notes>}}
+This is the same as the command `git switch --detach 7f94f8e`: `git switch` is a command introduced a few years ago because `git checkout` can be used for many things in Git and it was confusing many users. `git switch` allows to switch from one branch to another or, with the `--detach` flag, to switch to a commit as is the case here.
+{{</notes>}}
+
 Once you have seen what you wanted to see, you can go back to your branch `main` with:
 
 ```{.bash}
 git checkout main
 ```
+
+````
+Previous HEAD position was 7f94f8e Initial commit
+Switched to branch 'main'
+````
+
+{{<notes>}}
+This is the same as the command `git switch main`.
+{{</notes>}}
 
 {{<emph_inline>}}!! Be careful not to forget to go back to your branch `main` before making changes to your project. If you want to move the project to a new direction from some old commit, you need to create a new branch before doing so. When `HEAD` points directly to a commit (and not to a branch), this is called "Detached HEAD" and it is not a position from which you want to modify the project.{{</emph_inline>}}
 
@@ -814,18 +890,46 @@ Instead of checking out a commit as we just saw (which creates a detached HEAD s
 git switch -c newbranch 7f94f8e  # Replace the hash by the hash of your first commit
 ```
 
+````
+Switched to a new branch 'newbranch'
+````
+
 This creates a new branch called `newbranch` on our first commit and switches `HEAD` to it. If you do this instead of entering a detached HEAD state, it is totally safe to make changes and create commits from there. You can easily switch `HEAD` back and forth between the two branches with:
 
 ```{.bash}
 git switch main	       # Moves HEAD back to the branch main
+```
+
+````
+Switched to branch 'main'
+````
+
+```{.bash}
 git switch newbranch
 ```
+
+````
+Switched to branch 'newbranch'
+````
+
+```{.bash}
+git status
+```
+
+````
+On branch newbranch
+nothing to commit, working tree clean
+````
 
 If you already checked out a commit with `git checkout 7f94f8e`, you can create a new branch on that commit and switch to it with:
 
 ```{.bash}
-git switch -c newbranch
+git switch -c thirdbranch
 ```
+
+````
+Switched to a new branch 'thirdbranch'
+````
 
 In short, `git switch` allows you to switch `HEAD` from one branch to another. With the `-c` flag, you can create a new branch before switching to it. And by adding some starting point such as a commit, the new branch gets created on that commit rather than on the position of `HEAD`.
 
