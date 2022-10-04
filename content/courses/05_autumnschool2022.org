@@ -1,0 +1,5 @@
+#+title: WestDRI Autumn School 2022
+#+topic: R
+#+coursetitle: R level 1
+#+courselink: https://autumnschool2022.netlify.app/r-menu/
+#+weight: 5
