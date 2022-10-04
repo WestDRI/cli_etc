@@ -624,25 +624,25 @@ git log
 ```
 
     commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
-    Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    Author: Marie-Helene Burle <xxx@xxx>
     Date:   Mon Oct 3 21:17:23 2022 -0700
 
         Define the variable a in R script
 
     commit c7fc9c1743d8a40c3f72d9450b9440dca1cb5922
-    Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    Author: Marie-Helene Burle <xxx@xxx>
     Date:   Mon Oct 3 21:16:43 2022 -0700
 
         Add conclusion to the manuscript
 
     commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
-    Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    Author: Marie-Helene Burle <xxx@xxx>
     Date:   Mon Oct 3 18:35:51 2022 -0700
 
         Add result section to manuscript
 
     commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061
-    Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    Author: Marie-Helene Burle <xxx@xxx>
     Date:   Mon Oct 3 18:19:28 2022 -0700
 
         Initial commit
@@ -667,25 +667,25 @@ git log --graph
 ```
 
     * commit a049a2f6834801bf76fa3c2c191a59a3ec589d6e (HEAD -> main)
-    | Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    | Author: Marie-Helene Burle <xxx@xxx>
     | Date:   Mon Oct 3 21:17:23 2022 -0700
     |
     |     Define the variable a in R script
     |
     * commit c7fc9c1743d8a40c3f72d9450b9440dca1cb5922
-    | Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    | Author: Marie-Helene Burle <xxx@xxx>
     | Date:   Mon Oct 3 21:16:43 2022 -0700
     |
     |     Add conclusion to the manuscript
     |
     * commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9
-    | Author: Marie-Helene Burle <marie.burle@westdri.ca>
+    | Author: Marie-Helene Burle <xxx@xxx>
     | Date:   Mon Oct 3 18:35:51 2022 -0700
     |
     |     Add result section to manuscript
     |
     * commit 7f94f8ed631a7390a910fa13cd4954cf9e8a3061
-      Author: Marie-Helene Burle <marie.burle@westdri.ca>
+      Author: Marie-Helene Burle <xxx@xxx>
       Date:   Mon Oct 3 18:19:28 2022 -0700
 
           Initial commit
@@ -952,7 +952,9 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blan
 
 ## Collaborating with Git and GitHub
 
-### 3 situations
+### Setup
+
+When you collaborate with others using Git and GitHub, there are three possible situations:
 
 - You create a project on your machine and want others to contribute to it (1).
 
@@ -962,13 +964,13 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blan
 
     ... you do **not** have write access to it (3).
 
-### (1) You start the project
+#### (1) You start the project
 
-#### Create a remote on GitHub
+##### Create a remote on GitHub
 
 These are the steps we already saw earlier.
 
-##### 1. Create an empty repository on GitHub
+###### 1. Create an empty repository on GitHub
 
 - Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
 
@@ -978,7 +980,7 @@ These are the steps we already saw earlier.
 
 - Make the repository public or private.
 
-##### 2. Link empty repository to your repo
+###### 2. Link empty repository to your repo
 
 Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
 
@@ -1013,7 +1015,7 @@ If you don't want to grant others write access to the project, and you only acce
 
 If you want to grant your collaborators write access to the project however, you need to add them to it.
 
-#### Invite collaborators
+##### Invite collaborators
 
 - Go to your GitHub project page.
 
@@ -1025,9 +1027,9 @@ If you want to grant your collaborators write access to the project however, you
 
 - Invite your collaborators with one of their GitHub user name, their email address, or their full name.
 
-### (2) Write access to project
+#### (2) Write access to project
 
-#### Clone project
+##### Clone project
 
 `cd` to location where you want your local copy, then:
 
@@ -1039,9 +1041,9 @@ This sets the project as a remote to your new local copy and that remote is auto
 
 Without `<local-name>`, the repo will have the name of the last part of the remote address.
 
-### (3) No write access to project
+#### (3) No write access to project
 
-#### Collaborate without write access
+##### Collaborate without write access
 
 In that case, you will have to submit a pull request:
 
@@ -1060,6 +1062,43 @@ In that case, you will have to submit a pull request:
 7.  Push that branch to your fork (i.e. `origin` --- remember that you do not have write access to `upstream`).
 
 8.  Go to the original project GitHub's page & open a pull request.
+
+### Workflow
+
+When you collaborate with others using GitHub (or other equivalent service), you and others will work simultaneously on some project. How does this work?
+
+Remember that to upload your changes to the remote on GitHub you push to it with `git push`.
+
+If one of your collaborators has made changes to the remote (pushing from their own machine), you won't be able to push. Instead, you will get the following message:
+
+    To xxx.git
+     ! [rejected]        main -> main (fetch first)
+    error: failed to push some refs to 'xxx.git'
+    hint: Updates were rejected because the remote contains work that you do
+    hint: not have locally. This is usually caused by another repository pushing
+    hint: to the same ref. You may want to first integrate the remote changes
+    hint: (e.g., 'git pull ...') before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+The solution?
+
+You first have to download (`git pull`) their work onto your machine, merge it with yours (which will happen automatically if there are no conflicts), before you can push your work to GitHub.
+
+Now... what if there *are* conflicts?
+
+### Resolving conflicts
+
+Git works line by line. As long as your collaborators and you aren't working on the same line(s) of the same file(s) at the same time, there will not be any problem. If however you modified one or more of the same line(s) of the same file(s), Git will not be able to decide which version should be kept. When you `git pull` their work on your machine, the automatic merging will get interrupted and Git will ask you to resolve the conflict(s) before the merge can resume. It will conveniently tell you which file(s) contain the conflict(s).
+
+There are fancy tools to resolve conflicts, but you can do it in any text editor: simply open the file(s) listed by Git as having conflicts and look for the following markers:
+
+    <<<<<<< HEAD
+    This is your version.
+    =======
+    This is the alternative version of the same section of the file.
+    >>>>>>> alternative version
+
+These markers are added by Git to signal the areas of conflict. It is up to you to choose between the two versions (or create a third one) and remove the conflict markers. After that, you can stage the file(s) which contained the conflicts to finish the merge (and then you can commit).
 
 ## Conclusion
 
