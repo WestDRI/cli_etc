@@ -1025,6 +1025,19 @@ Date:   Mon Oct 3 18:19:28 2022 -0700
 
 Note that in this log, we can now see `main`, but that `HEAD` points to `newbranch`.
 
+#### Listing branches
+
+```{.bash}
+git branch
+```
+
+````
+  main
+* newbranch
+````
+
+The `*` shows the branch you are currently on (i.e. the branch to which `HEAD` points to).
+
 #### Comparing branches
 
 You can use `git diff` to compare branches:
@@ -1152,7 +1165,7 @@ Then you do the fast-forward merge from `main` onto `test` (so `main` catches up
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/19.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-Then, usually, you delete the branch `test` as it has served its purpose. Alternatively, you can switch back to it and do the next bit of experimental work in it. This allows to keep `main` free of possible mishaps and bad developments (if you aren't happy with the work you did on your test branch, you can simply delete it and Git will clean the commits that are on it but not on `main` during the next garbage collection.
+Then, usually, you delete the branch `test` as it has served its purpose (with `git branch -d test`). Alternatively, you can switch back to it and do the next bit of experimental work in it. This allows to keep `main` free of possible mishaps and bad developments (if you aren't happy with the work you did on your test branch, you can simply delete it and Git will clean the commits that are on it but not on `main` during the next garbage collection.
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/20.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
@@ -1195,12 +1208,12 @@ And you create commits from `main` too:
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/28.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-To merge your main branch and your test branch, a new commit is now required:
+To merge your main branch and your test branch, a new commit is now required (note that the command is the same as in the case of a fast-forward merge: `git merge`. Git will create the new commit automatically. As long as there is no conflict, it is just as easy as a fast-forward merge. We will talk later about resolving conflicts).
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/29.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-After which, you can delete the (now useless) test branch:
+After which, you can delete the (now useless) test branch (with `git branch -d test2`):
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/30.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
