@@ -8,10 +8,6 @@ execute:
 format: hugo
 ---
 
-```{r}
-
-```
-
 ## Abstract
 
 {{<def>}}
@@ -225,11 +221,6 @@ First, we need to create a mock set of documents.
 
 ```{.bash}
 cd </some/suitable/location/in/your/computer>
-```
-
-```{bash}
-#| echo: false
-cd /home/marie/parvus/ptmp/git_workshops
 ```
 
 2. Create the directory at the root of chapter 3
