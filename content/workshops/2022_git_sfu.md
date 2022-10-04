@@ -493,6 +493,11 @@ Maybe we don't want to create a commit with all those changes, so we only stage 
 
 ``` bash
 git add ms/chapter3.md
+```
+
+Then we check the status of our repository again:
+
+``` bash
 git status
 ```
 
@@ -520,15 +525,16 @@ While `git status` gives us the list of new files and files with changes, it doe
 git diff
 ```
 
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    modified: src/chapter3.R
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    @ src/chapter3.R:10 @ df <- data.frame(
-    )
+    diff --git a/src/chapter3.R b/src/chapter3.R
+    index 95f1592..2bf030d 100644
+    --- a/src/chapter3.R
+    +++ b/src/chapter3.R
+    @@ -7,3 +7,5 @@ df <- data.frame(
+     )
 
-    ggplot(df, aes(x, y)) + geom_point()
-
-    a = 23
+     ggplot(df, aes(x, y)) + geom_point()
+    +
+    +a = 23
 
 This allows us to see that src/chapter3.R has a new line (`a = 23`) and that it is not yet staged.
 
@@ -540,17 +546,18 @@ To see what would be committed if you ran `git commit` (so, to see the differenc
 git diff --cached
 ```
 
-    ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    modified: ms/chapter3.md
-    ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    @ ms/chapter3.md:14 @ Bla bla bla.
-    ## Results
+    diff --git a/ms/chapter3.md b/ms/chapter3.md
+    index 9408f32..80d2c5c 100644
+    --- a/ms/chapter3.md
+    +++ b/ms/chapter3.md
+    @@ -11,3 +11,7 @@ Bla bla bla.
+     ## Results
 
-    We now have a bunch of results in our markdown manuscript.
-
-    ## Conclusion
-
-    And finally, the great conclusion of our paper.
+     We now have a bunch of results in our markdown manuscript.
+    +
+    +## Conclusion
+    +
+    +And finally, the great conclusion of our paper.
 
 This shows us the changes that we have staged but not yet committed (the changes to our manuscript).
 
@@ -562,26 +569,28 @@ This means, both of the above. This can been displayed with:
 git diff HEAD
 ```
 
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    modified: ms/chapter3.md
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    @ ms/chapter3.md:14 @ Bla bla bla.
-    ## Results
+    diff --git a/ms/chapter3.md b/ms/chapter3.md
+    index 9408f32..80d2c5c 100644
+    --- a/ms/chapter3.md
+    +++ b/ms/chapter3.md
+    @@ -11,3 +11,7 @@ Bla bla bla.
+     ## Results
 
-    We now have a bunch of results in our markdown manuscript.
+     We now have a bunch of results in our markdown manuscript.
+    +
+    +## Conclusion
+    +
+    +And finally, the great conclusion of our paper.
+    diff --git a/src/chapter3.R b/src/chapter3.R
+    index 95f1592..2bf030d 100644
+    --- a/src/chapter3.R
+    +++ b/src/chapter3.R
+    @@ -7,3 +7,5 @@ df <- data.frame(
+     )
 
-    ## Conclusion
-
-    And finally, the great conclusion of our paper.
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    modified: src/chapter3.R
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    @ src/chapter3.R:10 @ df <- data.frame(
-    )
-
-    ggplot(df, aes(x, y)) + geom_point()
-
-    a = 23
+     ggplot(df, aes(x, y)) + geom_point()
+    +
+    +a = 23
 
 Now, let's clean up our working directory by creating two new commits:
 
@@ -599,6 +608,15 @@ git commit -m "Define the variable a in R script"
 
     [main a049a2f] Define the variable a in R script
      1 file changed, 2 insertions(+)
+
+If we look at the status of our repository now, we can see that it is clean again:
+
+``` bash
+git status
+```
+
+    On branch main
+    nothing to commit, working tree clean
 
 ### Ignoring
 
@@ -759,22 +777,23 @@ git show 451c47b  # Replace the hash by the hash of your second commit
 ```
 
     commit 451c47b386895b8b0b5bdd1a8734ef1d51f9ccc9 (HEAD -> main)
-    Author: Marie-Helene Burle <xxx@xxx>
+    Author: Marie-Helene Burle <marie.burle@westdri.ca>
     Date:   Mon Oct 3 18:35:51 2022 -0700
 
         Add result section to manuscript
 
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    modified: ms/chapter3.md
-    ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-    @ ms/chapter3.md:10 @ Bla bla bla bla bla.
-    ## Methods
+    diff --git a/ms/chapter3.md b/ms/chapter3.md
+    index b88424b..9408f32 100644
+    --- a/ms/chapter3.md
+    +++ b/ms/chapter3.md
+    @@ -7,3 +7,7 @@ Bla bla bla bla bla.
+     ## Methods
 
-    Bla bla bla.
-
-    ## Results
-
-    We now have a bunch of results in our markdown manuscript.
+     Bla bla bla.
+    +
+    +## Results
+    +
+    +We now have a bunch of results in our markdown manuscript.
 
 In addition to displaying the commit metadata, this also displays the difference with the previous commit.
 
