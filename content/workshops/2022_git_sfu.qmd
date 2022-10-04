@@ -968,7 +968,13 @@ Popular online Git repository managers & hosting services:
 
 ### Creating a remote on GitHub
 
-#### 1. Create an empty repository on GitHub
+#### Create a free GitHub account
+
+Sign up for a {{<a "https://github.com/" "free GitHub account.">}}
+
+Later on, to avoid having to type your password all the time, you should {{<a "https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" "set up SSH for your account.">}}
+
+#### Create an empty repository on GitHub
 
 - Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
 
@@ -978,7 +984,7 @@ Popular online Git repository managers & hosting services:
 
 - Make the repository public or private.
 
-#### 2. Link empty repository to your repo
+#### Link empty repository to your repo
 
 Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
 
