@@ -942,15 +942,17 @@ On branch newbranch
 nothing to commit, working tree clean
 ````
 
-If you already checked out a commit with `git checkout 7f94f8e`, you can create a new branch on that commit and switch to it with:
+If you already checked out the commit `7f94f8e` with `git checkout 7f94f8e`, you can create the new branch `newbranch` on that commit and switch to it with:
 
 ```{.bash}
-git switch -c thirdbranch
+git switch -c newbranch
 ```
 
 ````
-Switched to a new branch 'thirdbranch'
+Switched to a new branch 'newbranch'
 ````
+
+Those are equivalent workflows. Just don't forget never to work from a detached HEAD state. You can look around in that state, but that's it. Why? Because commits that are not part of a branch get automatically deleted on a regular basis when Git runs its garbage collection. So any commits you make from a detached HEAD will eventually be lost. And that's probably not what you want.
 
 In short, `git switch` allows you to switch `HEAD` from one branch to another. With the `-c` flag, you can create a new branch before switching to it. And by adding some starting point such as a commit, the new branch gets created on that commit rather than on the position of `HEAD`.
 
