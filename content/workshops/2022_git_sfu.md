@@ -483,3 +483,169 @@ git log \
     * 451c47b 20 minutes ago  (HEAD -> main)Add result section to manuscript marie.burle@westdri.ca
     * 7f94f8e 36 minutes ago Initial commit marie.burle@westdri.ca
 
+## Remotes
+
+### What are remotes?
+
+Remotes are copies of a project and its history.
+
+They can be located anywhere, including on external drive or on the same machine as the project, although they are often on a different machine to serve as backup, or on a network (e.g. internet) to serve as a syncing hub for collaborations.
+
+Popular online Git repository managers & hosting services:
+
+- {{<a "https://github.com" "GitHub">}}
+- {{<a "https://gitlab.com" "GitLab">}}
+- {{<a "https://bitbucket.org" "Bitbucket">}}
+
+### Getting information on remotes
+
+List remotes:
+
+``` bash
+git remote
+```
+
+List remotes with their addresses:
+
+``` bash
+git remote -v
+```
+
+Get more information on a remote:
+
+``` bash
+git remote show <remote-name>
+```
+
+{{<notes>}}
+Example:
+{{</notes>}}
+
+``` bash
+git remote show origin
+```
+
+### Managing remotes
+
+Rename a remote:
+
+``` bash
+git remote rename <old-remote-name> <new-remote-name>
+```
+
+Delete a remote:
+
+``` bash
+git remote remove <remote-name>
+```
+
+Change the address of a remote:
+
+``` bash
+git remote set-url <remote-name> <new-url> [<old-url>]
+```
+
+### Getting data from a remote
+
+If you collaborate on a project, you have to get the data added by your teammates to keep your local project up to date.
+
+To download new data from a remote, you have 2 options:
+
+- `git fetch`
+
+- `git pull`
+
+#### Fetching changes
+
+*Fetching* downloads the data from a remote that you don't already have in your local version of the project:
+
+``` bash
+git fetch <remote-name>
+```
+
+The branches on the remote are now accessible locally as `<remote-name>/<branch>`. You can inspect them or you can merge them into your local branches.
+
+{{<notes>}}
+Example:
+{{</notes>}}
+
+``` bash
+git fetch origin
+```
+
+#### Pulling changes
+
+*Pulling* fetches the changes & merges them onto your local branches:
+
+``` bash
+git pull <remote-name> <branch>
+```
+
+{{<notes>}}
+Example:
+{{</notes>}}
+
+``` bash
+git pull origin main
+```
+
+If your branch is already tracking a remote branch, you can omit the arguments:
+
+``` bash
+git pull
+```
+
+### Pushing to a remote
+
+Uploading data to the remote is called *pushing*:
+
+``` bash
+git push <remote-name> <branch-name>
+```
+
+{{<notes>}}
+Example:
+{{</notes>}}
+
+``` bash
+git push origin main
+```
+
+You can set an upstream branch to track a local branch with the `-u` flag:
+
+``` bash
+git push -u <remote-name> <branch-name>
+```
+
+{{<notes>}}
+Example:
+{{</notes>}}
+
+``` bash
+git push -u origin main
+```
+
+From now on, all you have to run when you are on `main` is:
+
+``` bash
+git push
+```
+
+{{<br size="5">}}
+
+{{<imgb2 src="/img/git/git_img/gitout.png" margin="auto" title="" width="60%" line-height="2rem">}}
+by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blank">jscript        </a>
+{{</imgb2>}}
+
+### Submitting a pull request
+
+1.  Pull from `upstream` to update your local project.
+
+2.  Create & checkout a new branch.
+
+3.  Make & commit your changes on that branch.
+
+4.  Push that branch to your fork (i.e. `origin` --- remember that you do not have write access to `upstream`).
+
+5.  Go to the original project GitHub's page & open a pull request.
+
