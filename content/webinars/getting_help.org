@@ -23,7 +23,7 @@ In this workshop, I will present key online sites, their functioning, and their 
 	</div>
 	<div style="float: left; width: 35%">
 	  <div style="padding: 20% 0 0 15%;">
-        <a href="https://westgrid-slides.netlify.app/help/#/" target="_blank">Web version</a>
+        <a href="https://slides.westdri.ca/help/#/" target="_blank">Web version</a>
 	  </div>
 	  <div style="padding: 5% 0 0 15%;">
 	  <a href="/pdf/getting_help.pdf">Pdf version</a>

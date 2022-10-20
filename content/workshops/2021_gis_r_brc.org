@@ -34,7 +34,7 @@ You will be given access to an RStudio server, so no prior local installation is
 	</div>
 	<div style="float: left; width: 35%">
 	  <div style="padding: 20% 0 0 15%;">
-        <a href="https://westgrid-slides.netlify.app/r_gis_brc/#/" target="_blank">Web version</a>
+        <a href="https://slides.westdri.ca/r_gis_brc/#/" target="_blank">Web version</a>
 	  </div>
 	  <div style="padding: 5% 0 0 15%;">
 	  <a href="/pdf/gis_r_brc.pdf">Pdf version</a>

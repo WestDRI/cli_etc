@@ -18,7 +18,7 @@ This gets into more advanced and dangerous Git territories, so we will only have
 Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
 
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/git_undo/#/"><p align="center"><img src="/img/git/git_undo_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://slides.westdri.ca/git_undo/#/"><p align="center"><img src="/img/git/git_undo_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Comments & questions

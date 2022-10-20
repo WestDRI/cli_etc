@@ -42,7 +42,7 @@ In this workshop, we will:
 	</div>
 	<div style="float: left; width: 35%">
 	  <div style="padding: 20% 0 0 15%;">
-        <a href="https://westgrid-slides.netlify.app/git_m2pi/#/" target="_blank">Web version</a>
+        <a href="https://slides.westdri.ca/git_m2pi/#/" target="_blank">Web version</a>
 	  </div>
 	  <div style="padding: 5% 0 0 15%;">
 	  <a href="/pdf/git_m2pi.pdf">Pdf version</a>

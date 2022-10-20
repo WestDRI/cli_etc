@@ -18,7 +18,7 @@ In this lesson, we will talk about remotes such as GitHub and how they can be us
 Once in the presentation, navigate the slides with the left and right arrows and refresh any page to show the link that will take you back here./
 
 #+BEGIN_export html
-<a href="https://westgrid-slides.netlify.app/git_remotes/#/"><p align="center"><img src="/img/git/git_remotes2_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
+<a href="https://slides.westdri.ca/git_remotes/#/"><p align="center"><img src="/img/git/git_remotes2_slides.png" title="" width="100%" style="border-style: solid; border-width: 1.5px 1.5px 0 2px; border-color: black"/></p></a>
 #+END_export
 
 * Comments & questions

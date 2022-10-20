@@ -33,7 +33,7 @@ For the Emacs users among you, we will finish the workshop with two Emacs utilit
 	</div>
 	<div style="float: left; width: 35%">
 	  <div style="padding: 20% 0 0 15%;">
-        <a href="https://westgrid-slides.netlify.app/tools/#/" target="_blank">Web version</a>
+        <a href="https://slides.westdri.ca/tools/#/" target="_blank">Web version</a>
 	  </div>
 	  <div style="padding: 5% 0 0 15%;">
 	  <a href="/pdf/tools.pdf">Pdf version</a>
