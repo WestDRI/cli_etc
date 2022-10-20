@@ -67,7 +67,7 @@ canonifyurls = true
   name = "Events"
   icon = "fa fa-calendar-alt fa-2x"
   weight = 6
-  url = "https://westgrid.github.io/trainingMaterials/blog/"
+  url = "https://training.westdri.ca/blog/"
 [[params.social]]
   name = "EventBrite"
   icon = "fa fa-ticket-alt fa-2x"
@@ -89,7 +89,7 @@ canonifyurls = true
 [[menu.main]]
   name = "📚"
   weight = 4
-  url  = "https://westgrid.github.io/trainingMaterials/"
+  url  = "https://training.westdri.ca/"
 [[menu.main]]
   name = "📬"
   weight = 5
