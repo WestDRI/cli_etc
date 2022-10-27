@@ -24,7 +24,7 @@ canonifyurls = true
     style = "manni"
 
 [params]
-  repourl = "https://github.com/WestGrid/cli_etc"
+  repourl = "https://github.com/WestDRI/cli_etc"
   sfuavatar = "/img/sfu.png"
   dracavatar = "/img/drac.png"
   siteavatar = "/img/cli_etc.png"
@@ -40,7 +40,7 @@ canonifyurls = true
   rtl = false
   math = true
   [params.utteranc]
-    repo = "WestGrid/cli_etc"
+    repo = "WestDRI/cli_etc"
     issueTerm = "url"
 
 [taxonomies]
@@ -52,7 +52,7 @@ canonifyurls = true
   name = "Github"
   icon = "fab fa-github fa-2x"
   weight = 3
-  url = "https://github.com/WestGrid"
+  url = "https://github.com/WestDRI"
 [[params.social]]
   name = "Twitter"
   icon = "fab fa-twitter fa-2x"
