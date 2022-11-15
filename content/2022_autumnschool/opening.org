@@ -1,0 +1,49 @@
+#+title: Opening session
+#+description: Zoom
+#+colordes: "#e86e0a"
+#+slug: 01_r_opening
+#+weight: 1
+
+* Running R interactively
+
+There are several ways to run R.
+
+- Directly in the *console* (the name for the R shell):
+
+{{<br size="3.5">}}
+
+
+{{<imgshadow src="/img/r_intro/console.png" margin="rem" title="" width="85%" line-height="0rem">}}
+{{</imgshadow>}}
+
+- In {{<a "https://jupyter.org/" "Jupyter">}} with the R kernel ({{<a "https://cran.rstudio.com/web/packages/IRkernel/index.html" "IRkernel package">}}).
+- In the RStudio IDE.
+- In an other IDE (e.g. in Emacs with {{<a "https://ess.r-project.org/" "ESS">}}).
+
+The RStudio IDE is popular and this is what we will use today. RStudio can can be run locally, but for this course, we will use an RStudio server.
+
+Note that you can also run R scripts with:
+
+#+BEGIN_src R
+Rscript my_script.R
+#+END_src
+
+* Accessing our RStudio server
+
+To access it:
+
+{{<s>}}1 {{<s>}} Go to {{<a "https://jupyter.bobthewren.c3.ca/" "https://jupyter.bobthewren.c3.ca/,">}}
+
+{{<s>}}2 {{<s>}} Sign in using your username and password (given during the course). You can ignore the OTP entry,
+
+{{<s>}}3 {{<s>}} Choose the following `Server Options`:
+
+    - Time: ~3.0~ hours
+    - Number of cores: ~1~
+    - Memory: ~3600~ MB
+    - User interface: ~JupyterLab~
+
+{{<imgshadow src="/img/r_intro/jupyter_options.png" margin="rem" title="" width="%" line-height="1.0rem">}}
+{{</imgshadow>}}
+
+{{<s>}}4 {{<s>}} In JupyterLab, click on the RStudio button (big blue symbol with a white R in it).
