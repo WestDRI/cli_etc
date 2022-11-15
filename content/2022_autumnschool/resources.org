@@ -1,0 +1,37 @@
+#+title: Resources
+#+description: Zoom
+#+colordes: "#e86e0a"
+#+slug: 03_r_resources
+#+weight: 3
+
+Here are a number of useful resources.
+
+** R main sites
+
+- {{<a "https://www.r-project.org/" "The main R website">}}
+- {{<a "https://mirror.rcg.sfu.ca/mirror/CRAN/" "Download page">}}
+
+** RStudio
+
+- {{<a "https://posit.co/" "RStudio site">}}
+
+** Documentation as pdf
+
+- {{<a "https://cran.r-project.org/other-docs.html" "Contributed documentation">}}
+- {{<a "https://github.com/ProjectMOSAIC/LittleBooks" "Intro books">}}
+
+** Software Carpentry online workshops
+
+- {{<a "http://swcarpentry.github.io/r-novice-inflammation/" "Programming with R">}}
+- {{<a "https://swcarpentry.github.io/r-novice-gapminder/" "R for Reproducible Scientific Analysis">}}
+
+** Online books
+
+- {{<a "https://r4ds.had.co.nz/index.html" "R for Data Science">}} (heavily based on the {{<a "https://www.tidyverse.org/" "tidyverse">}})
+- {{<a "https://adv-r.hadley.nz/" "Advanced R">}} (functioning of the language)
+- {{<a "https://r-pkgs.org/index.html" "R Packages">}} (how to create packages)
+- {{<a "https://csgillespie.github.io/efficientR/" "Efficient R programming">}} (code optimization)
+
+** R research
+
+- {{<a "https://journal.r-project.org/board.html" "The R Journal">}}
