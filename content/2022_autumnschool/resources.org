@@ -13,7 +13,8 @@ Here are a number of useful resources.
 
 ** RStudio
 
-- {{<a "https://posit.co/" "RStudio site">}}
+- {{<a "https://posit.co/" "Posit site">}} (Posit is the brand new name of the RStudio company)
+- {{<a "https://posit.co/resources/cheatsheets/" "Posit cheatsheets">}}
 
 ** Documentation as pdf
 
