@@ -33,7 +33,11 @@ Which one should you use? Well, this is really up to you.
 
 In truth, even though the tidyverse has many detractors amongst old R users, it is increasingly becoming the norm.
 
-## Data transformation
+## A glimpse of the tidyverse
+
+This introductory workshop is much too short to get into the syntax and usage of the tidyverse, but this series of cheatsheet developed by <a href="https://posit.co/" target="_blank">Posit</a> can give you a bird's eye view of the tidyverse.
+
+### Data transformation
 
 {{<imgshadowsmall src="/img/r_intro/cheatsheet/data-transformation_1.jpg" margin="rem" title="" width="%" line-height="0rem">}}
 {{</imgshadowsmall>}}
@@ -51,13 +55,13 @@ from <a href="https://posit.co/resources/cheatsheets/" target="_blank">Posit Che
 from <a href="https://posit.co/resources/cheatsheets/" target="_blank">Posit Cheatsheets</a>
 {{</imgshadowsmall>}}
 
-## Working with factors
+### Working with factors
 
 {{<imgshadowsmall src="/img/r_intro/cheatsheet/factors.jpg" margin="rem" title="" width="%" line-height="1.5rem">}}
 from <a href="https://posit.co/resources/cheatsheets/" target="_blank">Posit Cheatsheets</a>
 {{</imgshadowsmall>}}
 
-## Visualization
+### Visualization
 
 {{<imgshadowsmall src="/img/r_intro/cheatsheet/data-visualization_1.jpg" margin="rem" title="" width="%" line-height="0rem">}}
 {{</imgshadowsmall>}}
@@ -66,7 +70,7 @@ from <a href="https://posit.co/resources/cheatsheets/" target="_blank">Posit Che
 from <a href="https://posit.co/resources/cheatsheets/" target="_blank">Posit Cheatsheets</a>
 {{</imgshadowsmall>}}
 
-## Functional programming
+### Functional programming
 
 {{<imgshadowsmall src="/img/r_intro/cheatsheet/purrr_1.jpg" margin="rem" title="" width="%" line-height="0rem">}}
 {{</imgshadowsmall>}}
