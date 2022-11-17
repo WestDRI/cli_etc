@@ -833,6 +833,32 @@ compare(2, 3)
 
     [1] FALSE
 
+Note that the result of the last statement is printed automatically:
+
+``` r
+test <- function(x, y) {
+  x
+  y
+}
+test(2, 3)
+```
+
+    [1] 3
+
+If you want to return other results, you need to explicitly use the `print()` function:
+
+``` r
+test <- function(x, y) {
+  print(x)
+  y
+}
+test(2, 3)
+```
+
+    [1] 2
+
+    [1] 3
+
 ## Control flow
 
 ### Conditionals
