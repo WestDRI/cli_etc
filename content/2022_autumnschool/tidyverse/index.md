@@ -11,11 +11,27 @@ format: hugo
 
 ## What is the tidyverse?
 
-The <a href="https://www.tidyverse.org/" target="_blank">tidyverse</a> is
+The <a href="https://www.tidyverse.org/" target="_blank">tidyverse</a> is a set of packages which attempts to make R more consistent and more similar to programming languages which were developed by computer scientists rather than statisticians.
+
+You can think of it as a more modern version of R.
 
 The best introduction to the tidyverse is probably the book <a href="https://r4ds.had.co.nz/index.html" target="_blank">R for Data Science</a> by Hadley Wickham and Garrett Grolemund.
 
 ## Base R or tidyverse?
+
+"Base R" refers to the use of the standard R library. The expression is often used in contrast to the tidyverse.
+
+There are a many things that you can do with either base R or the tidyverse. Because the syntaxes are quite different, it almost feels like using two different languages and people tend to favour one or the other.
+
+Which one should you use? Well, this is really up to you.
+
+| Base R                                          | Tidyverse                                           |
+|-----------------------------------|-------------------------------------|
+| Preferred by old-schoolers                      | Increasingly becoming the norm with newer R users   |
+| More stable                                     | More consistent syntax and behaviour                |
+| Doesn't require installing and loading packages | More and more resources and documentation available |
+
+In truth, even though the tidyverse has many detractors amongst old R users, it is increasingly becoming the norm.
 
 ## Data transformation
 
