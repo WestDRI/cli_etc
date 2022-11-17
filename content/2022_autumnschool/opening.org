@@ -47,3 +47,11 @@ To access it:
 {{</imgshadow>}}
 
 {{<s>}}4 {{<s>}} In JupyterLab, click on the RStudio button (big blue symbol with a white R in it).
+
+* Using RStudio
+
+{{<imgshadow src="/img/r_intro/cheatsheet/rstudio-ide_1.png" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgshadow>}}
+
+{{<imgshadow src="/img/r_intro/cheatsheet/rstudio-ide_2.png" margin="rem" title="" width="%" line-height="0.5rem">}}
+{{</imgshadow>}}
