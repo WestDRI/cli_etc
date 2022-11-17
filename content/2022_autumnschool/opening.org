@@ -50,9 +50,9 @@ To access it:
 
 * Using RStudio
 
-{{<imgshadowsmall src="/img/r_intro/cheatsheet/rstudio-ide_1.png" margin="rem" title="" width="%" line-height="0rem">}}
+{{<imgshadowsmall src="/img/r_intro/cheatsheet/rstudio-ide_1.jpg" margin="rem" title="" width="%" line-height="0rem">}}
 {{</imgshadowsmall>}}
 
-{{<imgshadowsmall src="/img/r_intro/cheatsheet/rstudio-ide_2.png" margin="rem" title="" width="%" line-height="1.5rem">}}
+{{<imgshadowsmall src="/img/r_intro/cheatsheet/rstudio-ide_2.jpg" margin="rem" title="" width="%" line-height="1.5rem">}}
 from {{<a "https://posit.co/resources/cheatsheets/" "Posit Cheatsheets">}}
 {{</imgshadowsmall>}}
