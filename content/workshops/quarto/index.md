@@ -285,22 +285,29 @@ Code blocks are written in the format:
 
 If all you want is syntax highlighting of the code blocks, use:
 
-    ```{.language}
-    <some code>
-    ```
+```` markdown
+```{.language}
+<some code>
+```
+````
 
 If you want syntax highlighting of the blocks and for the code to run, use instead:
 
-    ```{language}
-    <some code>
-    ```
+```` markdown
+```{language}
+<some code>
+```
+````
 
 In addition, options can be added to individual code blocks:
 
-    ```{language}
-    #| echo: true
-    <some code>
-    ```
+```` markdown
+```{language}
+#| <some option>: <some option value>
+
+<some code>
+```
+````
 
 ### Rendering
 
@@ -330,6 +337,424 @@ Then open a new terminal, `cd` to the location of the file and run the command:
 ``` bash
 quarto preview test.qmd
 ```
+
+### A few examples
+
+Below are example files we will play with and export in various formats, but feel free to write your own files.
+
+{{<ex>}}
+Please note that these are extremely basic examples due to time constraints but that documents can be much more elaborate and beautiful.
+{{</ex>}}
+
+#### Revealjs presentation
+
+``` markdown
+---
+title: "My title"
+author: "My name"
+institute: "Simon Fraser University"
+format:
+  revealjs:
+    highlight-style: monokai
+    code-line-numbers: false
+    embed-resources: true
+---
+
+## First section
+
+When exporting to revealjs, second level sections mark the start of new slides,
+with a slide title.
+
+This can be changed in options.
+
+---
+
+New slides can be started without titles this way.
+
+# There are title slides
+
+## Formatting
+
+Text can be rendered *in italic* or **in bold** as well as [underlined]{.underline}.
+
+You can use superscripts^2^, subscripts~test~, ~~strikethrough~~, and `inline code`.
+
+> This is a quote.
+
+## Columns
+
+:::: {.columns}
+::: {.column width="30%"}
+You can create columns.
+:::
+
+::: {.column width="70%"}
+And you can set their respective width.
+:::
+::::
+
+## Lists
+
+::: {.incremental}
+- List can happen one line at a time
+- like
+- this
+:::
+
+## Lists
+
+- Or all at the same time
+- like
+- that
+
+## Ordered lists
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+## Images
+
+![Example image](/home/marie/parvus/prog/tcl/static/img/quarto/qmd_jupyter.png)
+
+## Tables
+
+| Col 1 | Col 2 | Col 3  |
+|------ |-------|--------|
+| a     | 1     | red    |
+| b     | 2     | orange | 
+| c     | 3     | yellow |
+
+:::{.callout-note}
+Tables can be fully customized (or you could use raw html).
+:::
+
+## Equations
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$
+```
+
+#### pdf
+
+In order to export to pdf, you need a TeX distribution. You probably already have one (e.g. TexLive), but if not, you can install the minimalist distribution TinyTex by running in your terminal:
+
+``` bash
+quarto install tool tinytex
+```
+
+And now for our `test.qmd` file:
+
+``` markdown
+---
+title: "My title"
+author: "My name"
+format:
+  pdf:
+    toc: true
+---
+
+# Header 1
+
+Some text.
+
+## Header 2
+
+More text.
+
+## Formatting
+
+Text can be rendered *in italic* or **in bold** as well as [underlined]{.underline}.
+
+You can use superscripts^2^, subscripts~test~, ~~strikethrough~~, and `inline code`.
+
+> This is a quote.
+
+## Lists
+
+### Unordered
+
+- Item 1
+- Item 2
+- Item 3
+
+### Ordered
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+## Images
+
+![Example image](/home/marie/parvus/prog/tcl/static/img/quarto/qmd_jupyter.png)
+
+## Tables
+
+| Col 1 | Col 2 | Col 3  |
+|------ |-------|--------|
+| a     | 1     | red    |
+| b     | 2     | orange | 
+| c     | 3     | yellow |
+
+:::{.callout-note}
+Tables can be fully customized (or you could use raw html).
+:::
+
+## Equations
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$
+```
+
+#### HTML with R code blocks
+
+```` markdown
+---
+title: "My title"
+author: "My name"
+institute: "Simon Fraser University"
+format: html
+---
+
+# Header 1
+
+## Header 2
+
+Some text.
+
+## Formatting  {#sec-formatting}
+
+::: aside
+Note that each header automatically creates an anchor,
+making it easy to link to specific sections of your documents.
+:::
+
+Text can be rendered *in italic* or **in bold** as well as [underlined]{.underline}.
+
+You can use superscripts^2^, subscripts~test~, ~~strikethrough~~, and `inline code`.
+
+> This is a quote.
+
+## Columns
+
+:::: {.columns}
+::: {.column width="30%"}
+You can create columns.
+:::
+
+::: {.column width="70%"}
+And you can set their respective width.
+:::
+::::
+
+## Lists
+
+- Item 1
+- Item 2
+- Item 3
+
+## Ordered lists
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+## Images
+
+![Example image](qmd_jupyter.png)
+
+## Tables
+
+| Col 1 | Col 2 | Col 3  |
+|------ |-------|--------|
+| a     | 1     | red    |
+| b     | 2     | orange | 
+| c     | 3     | yellow |
+
+:::{.callout-note}
+Tables can be fully customized (or you could use raw html).
+:::
+
+## Equations
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$
+
+## Cross-references
+
+See @sec-formatting.
+
+*Note that you can add bibliographies, flow charts, the equivalent of HTML "div",
+and just so much more. Remember that this is a tiny overview.*
+
+## Let's try some code blocks now
+
+```{r}
+# This is a block that runs
+2 + 3
+```
+
+::: aside
+Did you notice that the content of your code blocks can be copied with a click?
+Of course, this is customizable.
+:::
+
+```{.r}
+# This is a block that doesn't run
+2 + 3
+```
+
+```{r}
+#| echo: false
+# And this is a block showing only the output
+data.frame(
+  country = c("Canada", "USA", "Mexico"),
+  var = c(2.9, 3.1, 4.5)
+)
+```
+
+## Plots
+
+```{r}
+plot(cars)
+```
+
+<br>
+You can play with options to add a title:
+
+```{r}
+#| fig-cap: "Stopping distance as a function of speed in cars"
+
+plot(cars)
+```
+
+<br>
+You can have more complex multi-plot layouts:
+
+```{r}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Stopping distance as a function of speed in cars"
+#|   - "Vapor pressure of mercury as a function of temperature"
+
+plot(cars)
+plot(pressure)
+```
+
+For those who have `ggplot2`[^1], you can try that too:
+
+```{r}
+library(ggplot2)
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth()
+```
+
+[^1]: You can install it with:
+    ```{.r}
+    install.packages("ggplot2")
+    ```
+````
+
+#### Beamer (LaTeX pdf presentation framework) with Python code blocks
+
+```` markdown
+---
+title: "Some title"
+author: "Some name"
+format: beamer
+jupyter: python3
+---
+
+## First slide
+
+With some content
+
+## Formatting
+
+Text can be rendered *in italic* or **in bold** as well as [underlined]{.underline}.
+
+You can use superscripts^2^, subscripts~test~, ~~strikethrough~~, and `inline code`.
+
+## Lists
+
+- Item 1
+- Item 2
+- Item 3
+
+## Ordered lists
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+## Images
+
+![Example image](qmd_jupyter.png)
+
+## Tables
+
+| Col 1 | Col 2 | Col 3  |
+|------ |-------|--------|
+| a     | 1     | red    |
+| b     | 2     | orange | 
+| c     | 3     | yellow |
+
+:::{.callout-note}
+Tables can be fully customized (or you could use raw html).
+:::
+
+## Equations
+
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$
+
+## Some basic code block
+
+```{python}
+#| echo: true
+
+2 + 3
+```
+
+## Some plot
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plotting
+t = np.arange(0.0, 2.0, 0.01)
+s = 1 + np.sin(2 * np.pi * t)
+
+fig, ax = plt.subplots()
+ax.plot(t, s)
+
+ax.set(xlabel='time (s)', ylabel='voltage (mV)',
+       title='About as simple as it gets, folks')
+ax.grid()
+
+fig.savefig("test.png")
+plt.show()
+```
+````
 
 ## Comments & questions
 
