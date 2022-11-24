@@ -165,7 +165,42 @@ In this workshop, we will see the most general workflow: simply using a text edi
 
 ### Installation
 
-Download Quarto <a href="https://quarto.org/docs/get-started/" target="_blank">here</a>.
+1.  Download Quarto <a href="https://quarto.org/docs/get-started/" target="_blank">here</a>.
+
+2.  Download the language(s) (R, Python, or Julia) you will want to use with Quarto as well as their corresponding engine (knitr for R; Jupyter for Python and Julia).
+
+If you want to use Quarto with R, you will need:
+
+-   R (download <a href="https://cran.r-project.org/" target="_blank">here</a> if you don't have R already on your system),
+-   the `rmarkdown` package. For this, launch R and run:
+
+``` r
+install.packages("rmarkdown")
+```
+
+If you want to use it with Python, you will need:
+
+-   Python 3 (download <a href="https://www.python.org/downloads/" target="_blank">here</a> if don't have it on your system),
+-   JupyterLab. For this, open a terminal and run:
+
+``` bash
+python3 -m pip install jupyterlab  # if you are on MacOS or Linux
+py -m pip install jupyterlab       # if you are on Windows
+```
+
+Finally, if you want to use Quarto with Julia, you will need:
+
+-   Julia (download <a href="https://julialang.org/downloads/" target="_blank">here</a> if you don't have Julia),
+-   the <a href="https://github.com/JuliaLang/IJulia.jl" target="_blank">IJulia</a> and <a href="https://github.com/timholy/Revise.jl" target="_blank">Revise</a> packages. For this, launch Julia and run:
+
+``` julia
+] add IJulia Revise
+# <Backspace>
+using IJulia
+notebook()      # to install a minimal Python+Jupyter distribution
+```
+
+Running `notebook()` allows you to install Jupyter if you don't already have it.
 
 ### Document structure and syntax
 
