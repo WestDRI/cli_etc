@@ -284,24 +284,23 @@ Code blocks are written in the format:
 
 If all you want is syntax highlighting of the code blocks, use:
 
-````
-```{.language}
+```{{.language}}
 <some code>
 ```
-````
+
 If you want syntax highlighting of the blocks and for the code to run, use instead:
-````
-```{language}
+
+```{{language}}
 <some code>
 ```
-````
+
 In addition, options can be added to individual code blocks:
-````
-```{language}
-#| echo: true
+
+```{{language}}
+#| <some option>: <some option value>
+
 <some code>
 ```
-````
 
 ### Rendering
 
