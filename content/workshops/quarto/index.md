@@ -32,7 +32,9 @@ Example LaTeX:
 \documentclass{article}
 \title{My title}
 \author{My name}
-\date{\today}
+\usepackage{datetime}
+\newdate{date}{24}{11}{2022}
+\date{\displaydate{date}}
 \begin{document}
  \maketitle
  \section{First section}
@@ -79,11 +81,25 @@ In its <a href="https://daringfireball.net/projects/markdown/" target="_blank">b
 
 While the basic syntax is good enough for HTML outputs, it is very limited for other formats.
 
-<a href="https://pandoc.org/" target="_blank">Pandoc</a> is a free and open-source markup format converter. Pandoc supports <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="_blank">an extended Markdown syntax</a> with functionality for figures, tables, callout blocks, LaTeX mathematical equations, citations... in short, everything needed for the creation of scientific documents.
+<a href="https://pandoc.org/" target="_blank">Pandoc</a> is a free and open-source markup format converter. Pandoc supports <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="_blank">an extended Markdown syntax</a> with functionality for figures, tables, callout blocks, LaTeX mathematical equations, citations, and YAML metadata blocks. In short, everything needed for the creation of scientific documents.
 
 Such documents remain as readable as basic Markdown documents (thus respecting the Markdown philosophy), but they can now be rendered in sophisticated pdf, books, entire websites, Word documents, etc.
 
 And of course, as such documents remain text files, you can put them under version control with <a href="https://git-scm.com/" target="_blank">Git</a>.
+
+{{<ex>}}
+Previous example using Pandoc's Markdown:
+{{</ex>}}
+
+``` markdown
+---
+title: My title
+author: My name
+date: 2022-11-24
+---
+# First section
+Some text in the first section.
+```
 
 ## Literate programming
 
