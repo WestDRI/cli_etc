@@ -515,7 +515,7 @@ $$
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-[![](/quarto/pdf.png)](){target="_blank"}
+[![](/quarto/pdf.png)](/quarto/pdf.pdf)
 {{</accordion>}}
 
 #### HTML with R code blocks
@@ -678,7 +678,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-
+[![](/quarto/html.png)](https://prog.westdri.ca/quarto/html.html){target="_blank"}
 {{</accordion>}}
 
 #### Beamer (LaTeX pdf presentation framework) with Python code blocks
@@ -773,7 +773,7 @@ plt.show()
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-
+[![](/quarto/beamer.png)](/quarto/beamer.pdf)
 {{</accordion>}}
 
 ## Comments & questions

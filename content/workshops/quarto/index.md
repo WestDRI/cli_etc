@@ -523,7 +523,7 @@ $$
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-<a href="" target="_blank"><img src="../../../quarto/pdf.png" /></a>
+[![](../../../quarto/pdf.png)](/quarto/pdf.pdf)
 {{</accordion>}}
 
 #### HTML with R code blocks
@@ -686,7 +686,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-
+<a href="https://prog.westdri.ca/quarto/html.html" target="_blank"><img src="../../../quarto/html.png" /></a>
 {{</accordion>}}
 
 #### Beamer (LaTeX pdf presentation framework) with Python code blocks
@@ -781,7 +781,7 @@ plt.show()
 {{</accordion>}}
 
 {{<accordion title="Rendered document">}}
-
+[![](../../../quarto/beamer.png)](/quarto/beamer.pdf)
 {{</accordion>}}
 
 ## Comments & questions
