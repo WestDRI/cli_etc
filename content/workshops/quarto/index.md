@@ -283,9 +283,7 @@ Written sections are written in <a href="https://quarto.org/docs/authoring/markd
 
 #### Code blocks
 
-Code blocks are written in the format:
-
-If all you want is **syntax highlighting** of the code blocks, use:
+If all you want is **syntax highlighting** of the code blocks, use this syntax:
 
 ```` markdown
 ```{.language}

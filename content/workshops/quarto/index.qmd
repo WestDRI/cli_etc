@@ -282,9 +282,7 @@ Written sections are written in [Pandoc's extended Markdown](https://quarto.org/
 
 #### Code blocks
 
-Code blocks are written in the format:
-
-If all you want is **syntax highlighting** of the code blocks, use:
+If all you want is **syntax highlighting** of the code blocks, use this syntax:
 
 ```{{.language}}
 <some code>
