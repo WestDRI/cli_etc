@@ -125,43 +125,45 @@ In this workshop, we will see the most general workflow: simply using a text edi
 
 ### Supported languages
 
-<u>Supported languages:</u>
+Quarto renders highlighting in countless languages and generates dynamic output for code blocks in:
 
 -   Python
 -   R
 -   Julia
 -   Observable JS
 
-<u>Supported outputs:</u>
+You can render documents in a wide variety of output formats:
 
--   HTML
--   PDF
--   MS Word
--   OpenOffice
--   ePub
--   Revealjs
--   PowerPoint
--   Beamer
--   GitHub Markdown
--   CommonMark
--   Hugo
--   Docusaurus
--   Markua
--   MediaWiki
--   DokuWiki
--   ZimWiki
--   Jira Wiki
--   XWiki
--   JATS
--   Jupyter
--   ConTeXt
--   RTF
--   reST
--   AsciiDoc
--   Org-Mode
--   Muse
--   GNU
--   Groff
+{{<accordion title="Supported outputs (click to expand)">}}
+- HTML
+- PDF
+- MS Word
+- OpenOffice
+- ePub
+- Revealjs
+- PowerPoint
+- Beamer
+- GitHub Markdown
+- CommonMark
+- Hugo
+- Docusaurus
+- Markua
+- MediaWiki
+- DokuWiki
+- ZimWiki
+- Jira Wiki
+- XWiki
+- JATS
+- Jupyter
+- ConTeXt
+- RTF
+- reST
+- AsciiDoc
+- Org-Mode
+- Muse
+- GNU
+- Groff
+{{</accordion>}}
 
 ### Installation
 
@@ -320,7 +322,7 @@ quarto render <file>.qmd     # this will render the document
 quarto preview <file>.qmd    # this will display live preview as you work on your document
 ```
 
-## Let's give all this a try
+## Let's give this a try
 
 Create a file called `test.qmd` with the text editor of your choice.
 
@@ -340,11 +342,11 @@ quarto preview test.qmd
 
 We will play with this `test.qmd` file and see how it is rendered by Quarto as we go.
 
-### Examples
+## Examples
 
 Below are a few basic example files and their outputs.
 
-#### Revealjs presentation
+### Revealjs presentation
 
 {{<accordion title="Code">}}
 
@@ -445,7 +447,7 @@ $$
 <a href="https://prog.westdri.ca/quarto/revealjs.html" target="_blank"><img src="../../../quarto/revealjs.png" /></a>
 {{</accordion>}}
 
-#### pdf
+### pdf
 
 In order to export to pdf, you need a TeX distribution. You probably already have one (e.g. TexLive), but if not, you can install the minimalist distribution TinyTex by running in your terminal:
 
@@ -526,7 +528,7 @@ $$
 [![](../../../quarto/pdf.png)](/quarto/pdf.pdf)
 {{</accordion>}}
 
-#### HTML with R code blocks
+### HTML with R code blocks
 
 {{<accordion title="Code">}}
 
@@ -689,7 +691,9 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 <a href="https://prog.westdri.ca/quarto/html.html" target="_blank"><img src="../../../quarto/html.png" /></a>
 {{</accordion>}}
 
-#### Beamer (LaTeX pdf presentation framework) with Python code blocks
+### Beamer with Python code blocks
+
+Beamer is LaTeX presentation framework: a way to create beautiful pdf slides.
 
 {{<accordion title="Code">}}
 
