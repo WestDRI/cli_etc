@@ -5,7 +5,7 @@ slug: quarto
 weight: 10
 execute:
   error: true
-format: hugo
+format: hugo-md
 ---
 
 ## Abstract
