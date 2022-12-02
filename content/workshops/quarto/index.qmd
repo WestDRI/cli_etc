@@ -86,13 +86,13 @@ And of course, as such documents remain text files, you can put them under versi
 
 ## Literate programming
 
-[Literate programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"} is a methodology that combines snippets of code in a written document. While first introduced in 1984, this approach to the creation of documents has only in recent years truly exploded in popularity, mostly thanks to the development of new tools such as [R Markdown](https://r4ds.had.co.nz/r-markdown.html){target="_blank"} and, later, [Jupyter notebooks](https://jupyter.org/){target="_blank"}.
+[Literate programming](https://en.wikipedia.org/wiki/Literate_programming){target="_blank"} is a methodology that combines snippets of code and written text. While first introduced in 1984, this approach to the creation of documents has truly exploded in popularity in recent years thanks to the development of new tools such as [R Markdown](https://r4ds.had.co.nz/r-markdown.html){target="_blank"} and, later, [Jupyter notebooks](https://jupyter.org/){target="_blank"}.
 
 ## Quarto
 
 ### How it works
 
-Quarto files are transformed into Pandoc's extended Markdown by Jupyter (when used with Python or Julia) or by knitr (when used with R), then pandoc turns the Markdown document into whatever output of your choice.
+Quarto files are transformed into Pandoc's extended Markdown by Jupyter (when used with Python or Julia) or by knitr (when used with R), then pandoc turns the Markdown document into the output of your choice.
 
 {{<ex>}}
 Julia and Python make use of the Jupyter engine:
@@ -131,7 +131,7 @@ Quarto renders highlighting in countless languages and generates dynamic output 
 - Julia
 - Observable JS
 
-You can render documents in a wide variety of output formats:
+You can render documents in a wide variety of formats:
 
 {{<accordion title="Supported outputs (click to expand)">}}
 - HTML
@@ -325,11 +325,26 @@ Example:
 nano test.qmd
 ```
 
+Add a minimal front matter with the output format.
+
+{{<ex>}}
+Example:
+{{</ex>}}
+
+```{.yaml}
+---
+title: "Some title"
+format: revealjs
+---
+```
+
 Then open a new terminal, `cd` to the location of the file, and run the command:
 
 ```{.bash}
 quarto preview test.qmd
 ```
+
+This will open the rendered document in your browser.
 
 We will play with this `test.qmd` file and see how it is rendered by Quarto as we go.
 
