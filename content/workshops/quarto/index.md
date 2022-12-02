@@ -167,9 +167,9 @@ In this workshop, we will see the most general workflow: simply using a text edi
 
 1.  Download Quarto <a href="https://quarto.org/docs/get-started/" target="_blank">here</a>.
 
-2.  Download the language(s) (R, Python, or Julia) you will want to use with Quarto as well as their corresponding engine (knitr for R; Jupyter for Python and Julia).
+2.  Download the language(s) (R, Python, or Julia) you will want to use with Quarto as well as their corresponding engine (knitr for R; Jupyter for Python and Julia):
 
-If you want to use Quarto with R, you will need:
+<u>If you want to use Quarto with R, you will need:</u>
 
 -   R (download <a href="https://cran.r-project.org/" target="_blank">here</a> if you don't have R already on your system),
 -   the `rmarkdown` package. For this, launch R and run:
@@ -178,7 +178,7 @@ If you want to use Quarto with R, you will need:
 install.packages("rmarkdown")
 ```
 
-If you want to use it with Python, you will need:
+<u>If you want to use it with Python, you will need:</u>
 
 -   Python 3 (download <a href="https://www.python.org/downloads/" target="_blank">here</a> if don't have it on your system),
 -   JupyterLab. For this, open a terminal and run:
@@ -188,7 +188,7 @@ python3 -m pip install jupyterlab  # if you are on MacOS or Linux
 py -m pip install jupyterlab       # if you are on Windows
 ```
 
-Finally, if you want to use Quarto with Julia, you will need:
+<u>Finally, if you want to use Quarto with Julia, you will need:</u>
 
 -   Julia (download <a href="https://julialang.org/downloads/" target="_blank">here</a> if you don't have Julia),
 -   the <a href="https://github.com/JuliaLang/IJulia.jl" target="_blank">IJulia</a> and <a href="https://github.com/timholy/Revise.jl" target="_blank">Revise</a> packages. For this, launch Julia and run:
@@ -283,7 +283,7 @@ Written sections are written in <a href="https://quarto.org/docs/authoring/markd
 
 Code blocks are written in the format:
 
-If all you want is syntax highlighting of the code blocks, use:
+If all you want is **syntax highlighting** of the code blocks, use:
 
 ```` markdown
 ```{.language}
@@ -291,7 +291,7 @@ If all you want is syntax highlighting of the code blocks, use:
 ```
 ````
 
-If you want syntax highlighting of the blocks and for the code to run, use instead:
+If you want **syntax highlighting** of the blocks and **for the code to run**, use instead:
 
 ```` markdown
 ```{language}
@@ -332,21 +332,21 @@ Example:
 nano test.qmd
 ```
 
-Then open a new terminal, `cd` to the location of the file and run the command:
+Then open a new terminal, `cd` to the location of the file, and run the command:
 
 ``` bash
 quarto preview test.qmd
 ```
 
-### A few examples
+We will play with this `test.qmd` file and see how it is rendered by Quarto as we go.
 
-Below are example files we will play with and export in various formats, but feel free to write your own files.
+### Examples
 
-{{<ex>}}
-Please note that these are extremely basic examples due to time constraints but that documents can be much more elaborate and beautiful.
-{{</ex>}}
+Below are a few basic example files and their outputs.
 
 #### Revealjs presentation
+
+{{<accordion title="Code">}}
 
 ``` markdown
 ---
@@ -439,6 +439,12 @@ $$
 $$
 ```
 
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+<a href="https://prog.westdri.ca/quarto/revealjs.html" target="_blank"><img src="../../../quarto/revealjs.png" /></a>
+{{</accordion>}}
+
 #### pdf
 
 In order to export to pdf, you need a TeX distribution. You probably already have one (e.g. TexLive), but if not, you can install the minimalist distribution TinyTex by running in your terminal:
@@ -447,7 +453,7 @@ In order to export to pdf, you need a TeX distribution. You probably already hav
 quarto install tool tinytex
 ```
 
-And now for our `test.qmd` file:
+{{<accordion title="Code">}}
 
 ``` markdown
 ---
@@ -514,7 +520,15 @@ $$
 $$
 ```
 
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+<a href="" target="_blank"><img src="../../../quarto/pdf.png" /></a>
+{{</accordion>}}
+
 #### HTML with R code blocks
+
+{{<accordion title="Code">}}
 
 ```` markdown
 ---
@@ -669,7 +683,15 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
     ```
 ````
 
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+
+{{</accordion>}}
+
 #### Beamer (LaTeX pdf presentation framework) with Python code blocks
+
+{{<accordion title="Code">}}
 
 ```` markdown
 ---
@@ -748,13 +770,19 @@ fig, ax = plt.subplots()
 ax.plot(t, s)
 
 ax.set(xlabel='time (s)', ylabel='voltage (mV)',
-       title='About as simple as it gets, folks')
+       title='Here goes the title')
 ax.grid()
 
 fig.savefig("test.png")
 plt.show()
 ```
 ````
+
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+
+{{</accordion>}}
 
 ## Comments & questions
 
