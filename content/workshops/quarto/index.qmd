@@ -339,6 +339,8 @@ Below are a few basic example files and their outputs.
 
 #### Revealjs presentation
 
+{{<accordion title="Code">}}
+
 ```{.markdown}
 ---
 title: "My title"
@@ -429,6 +431,11 @@ $$
   \mathrm r \mathrm C 
 $$
 ```
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+[![](/quarto/revealjs.png)](https://prog.westdri.ca/quarto/revealjs.html){target="_blank"}
+{{</accordion>}}
 
 #### pdf
 
@@ -438,7 +445,7 @@ In order to export to pdf, you need a TeX distribution. You probably already hav
 quarto install tool tinytex
 ```
 
-And now for our `test.qmd` file:
+{{<accordion title="Code">}}
 
 ```{.markdown}
 ---
@@ -505,7 +512,15 @@ $$
 $$
 ```
 
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+[![](/quarto/pdf.png)](){target="_blank"}
+{{</accordion>}}
+
 #### HTML with R code blocks
+
+{{<accordion title="Code">}}
 
 ````
 ---
@@ -660,7 +675,15 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 	```
 ````
 
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+
+{{</accordion>}}
+
 #### Beamer (LaTeX pdf presentation framework) with Python code blocks
+
+{{<accordion title="Code">}}
 
 ````
 ---
@@ -746,6 +769,12 @@ fig.savefig("test.png")
 plt.show()
 ```
 ````
+
+{{</accordion>}}
+
+{{<accordion title="Rendered document">}}
+
+{{</accordion>}}
 
 ## Comments & questions
 
