@@ -470,12 +470,6 @@ $$
 
 ### pdf
 
-In order to export to pdf, you need a TeX distribution. You probably already have one (e.g. TexLive), but if not, you can install the minimalist distribution TinyTex by running in your terminal:
-
-```{.bash}
-quarto install tool tinytex
-```
-
 {{<accordion title="Code">}}
 
 ```{.markdown}
@@ -548,6 +542,14 @@ $$
 {{<accordion title="Rendered document">}}
 [![](/quarto/pdf.png)](/quarto/pdf.pdf)
 {{</accordion>}}
+
+{{<notes>}}
+Note: in order to export to pdf, you need a TeX distribution. You probably already have one installed on your machine, so you should first try to render or preview a document to pdf to see whether it works. If it doesn't work, you can install the minimalist distribution TinyTex by running in your terminal:
+{{</notes>}}
+
+```{.bash}
+quarto install tool tinytex
+```
 
 ### HTML with R code blocks
 
