@@ -53,23 +53,28 @@ ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$" ]
 [[params.social]]
   name = "Github"
   icon = "fab fa-github fa-2x"
-  weight = 3
+  weight = 1
   url = "https://github.com/WestDRI"
 [[params.social]]
   name = "Twitter"
   icon = "fab fa-twitter fa-2x"
-  weight = 4
+  weight = 2
   url = "https://twitter.com/Alliance_Can"
 [[params.social]]
   name = "YouTube"
   icon = "fab fa-youtube fa-2x"
-  weight = 5
+  weight = 3
   url = "https://www.youtube.com/channel/UCfgds4Qf7VFOv4ORRvFFmhw"
 [[params.social]]
   name = "Events"
   icon = "fa fa-calendar-alt fa-2x"
-  weight = 6
+  weight = 4
   url = "https://training.westdri.ca/blog/"
+[[params.social]]
+  name = "Newsletter"
+  icon = "fas fa-envelope-open-text fa-2x"
+  weight = 5
+  url = "/newsletter"
 
 [[menu.main]]
   name = "Workshops"
