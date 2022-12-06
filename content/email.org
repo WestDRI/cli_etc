@@ -1,1 +1,4 @@
-Please email us at: ~training at westdri dot ca~
+#+title: Contact
+#+slug: email
+
+Please email us at: ~training at westdri dot ca~.
