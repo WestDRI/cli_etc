@@ -218,13 +218,13 @@ Let's imagine that you have been working on chapter 3 of your thesis for some ti
 
 First, we need to create a mock set of documents.
 
-1.  Navigate to a suitable location
+Navigate to a suitable location
 
 ``` bash
 cd </some/suitable/location/in/your/computer>
 ```
 
-1.  Create the directory at the root of chapter 3
+Create the directory at the root of chapter 3
 
 ``` bash
 mkdir chapter3
@@ -234,13 +234,13 @@ mkdir chapter3
 Make sure not to use any spaces in the name: Git doesn't work well with spaces.
 {{</notes>}}
 
-1.  Create a number of subdirectories
+Create a number of subdirectories
 
 ``` bash
 mkdir chapter3/src chapter3/ms chapter3/data chapter3/results
 ```
 
-1.  Create a mock manuscript
+Create a mock manuscript
 
 ``` bash
 echo "# Chapter 3
@@ -258,7 +258,7 @@ Bla bla bla." > chapter3/ms/chapter3.md
 Git can only version text files. If you write your papers or thesis chapter in text files (e.g. markdown, LaTeX, org-mode), you will be able to put them under version control, which is really convenient. If you use a word processor, you won't be able to.
 {{</notes>}}
 
-1.  Create a mock R script
+Create a mock R script
 
 ``` bash
 echo "library(ggplot2)
