@@ -8,8 +8,6 @@ execute:
 format: hugo
 ---
 
-
-
 ## Abstract
 
 {{<def>}}
@@ -92,11 +90,11 @@ Git is simply that good 🙂
 
 #### MacOS & Linux users
 
-Install Git from {{<a "https://git-scm.com/downloads" "the official website.">}}
+Install Git from <a href="https://git-scm.com/downloads" target="_blank">the official website.</a>
 
 #### Windows users
 
-Install {{<a "https://gitforwindows.org/" "Git for Windows.">}} This will also install Git Bash, a Bash emulator.
+Install <a href="https://gitforwindows.org/" target="_blank">Git for Windows.</a> This will also install Git Bash, a Bash emulator.
 
 ### Using Git
 
@@ -198,19 +196,19 @@ git commit -h
 
 ### Online documentation
 
-- Official {{<a "https://git-scm.com/docs" "Git manual">}}
-- Open source {{<a "https://git-scm.com/book/en/v2" "Pro Git book">}}
+-   Official <a href="https://git-scm.com/docs" target="_blank">Git manual</a>
+-   Open source <a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git book</a>
 
 #### Courses & workshops
 
-- {{<a "https://westgrid-cli.netlify.app/workshops/" "Western Canada Research Computing Git workshops">}}
-- {{<a "https://wgschool.netlify.app/git/" "WestGrid Summer School 2020 Git course">}}
-- {{<a "https://autumnschool.netlify.app/git/" "WestGrid Autumn School 2020 Git course">}}
-- the {{<a "http://swcarpentry.github.io/git-novice/" "Software Carpentry Git lesson">}}
+-   <a href="https://westgrid-cli.netlify.app/workshops/" target="_blank">Western Canada Research Computing Git workshops</a>
+-   <a href="https://wgschool.netlify.app/git/" target="_blank">WestGrid Summer School 2020 Git course</a>
+-   <a href="https://autumnschool.netlify.app/git/" target="_blank">WestGrid Autumn School 2020 Git course</a>
+-   the <a href="http://swcarpentry.github.io/git-novice/" target="_blank">Software Carpentry Git lesson</a>
 
 #### Q & A
 
-- {{<a "https://stackoverflow.com/questions/tagged/git" "Stack Overflow's Git tag">}}
+-   <a href="https://stackoverflow.com/questions/tagged/git" target="_blank">Stack Overflow’s Git tag</a>
 
 ## Let's get started with an example
 
@@ -226,23 +224,23 @@ First, we need to create a mock set of documents.
 cd </some/suitable/location/in/your/computer>
 ```
 
-2.  Create the directory at the root of chapter 3
+1.  Create the directory at the root of chapter 3
 
 ``` bash
 mkdir chapter3
 ```
 
 {{<notes>}}
-Make sure note to use any spaces in the name: Git doesn't work well with spaces.
+Make sure not to use any spaces in the name: Git doesn't work well with spaces.
 {{</notes>}}
 
-3.  Create a number of subdirectories
+1.  Create a number of subdirectories
 
 ``` bash
 mkdir chapter3/src chapter3/ms chapter3/data chapter3/results
 ```
 
-4.  Create a mock manuscript
+1.  Create a mock manuscript
 
 ``` bash
 echo "# Chapter 3
@@ -260,7 +258,7 @@ Bla bla bla." > chapter3/ms/chapter3.md
 Git can only version text files. If you write your papers or thesis chapter in text files (e.g. markdown, LaTeX, org-mode), you will be able to put them under version control, which is really convenient. If you use a word processor, you won't be able to.
 {{</notes>}}
 
-5.  Create a mock R script
+1.  Create a mock R script
 
 ``` bash
 echo "library(ggplot2)
@@ -340,8 +338,6 @@ To create a commit, we first need to add the file(s) we want to add to our commi
 
 Once we have added some files to the staging area, we can create a commit. But each commit has a message associated to it. One way to add this message is to use the command to create commits (`git commit`) with the `-m` flag (for "message"). Here, our message is simply "Initial commit".
 
-<div class="info-block">
-
 Git saves the history of a project as a series of snapshots:
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/02.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
@@ -359,13 +355,13 @@ Each commit is identified by a unique *hash*:
 
 Each commit contains these metadata:
 
-- author,
+-   author,
 
-- date and time,
+-   date and time,
 
-- the hash of parent commit(s),
+-   the hash of parent commit(s),
 
-- a message.
+-   a message.
 
 As soon as you create the first commit, a pointer called a *branch* is created and it points to that commit. By default, that first branch is called `main`:
 
@@ -378,8 +374,6 @@ Another pointer (`HEAD`) points to the branch `main`.
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/08.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
-
-</div>
 
 We can now do some work in our chapter 3. For instance, let's imagine that we are adding a result section to our chapter3.md file.
 
@@ -402,8 +396,6 @@ git commit -m "Add result section to manuscript"
     [main 451c47b] Add result section to manuscript
      1 file changed, 4 insertions(+)
 
-<div class="info-block">
-
 As you create more commits, the history of your project grows ...
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/05.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
@@ -418,8 +410,6 @@ For simplicity, the diagrams can be simplified this way:
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/13.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
-
-</div>
 
 ### Understanding the staging area
 
@@ -847,8 +837,6 @@ This is the same as the command `git switch main`.
 
 {{<emph_inline>}}!! Be careful not to forget to go back to your branch `main` before making changes to your project. If you want to move the project to a new direction from some old commit, you need to create a new branch before doing so. When `HEAD` points directly to a commit (and not to a branch), this is called "Detached HEAD" and it is not a position from which you want to modify the project.{{</emph_inline>}}
 
-<div class="info-block">
-
 It is totally fine to move `HEAD` around and have it point directly to a commit (instead of a branch) as long as you are only looking at a version of your project and get back to a branch before doing some work:
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/31.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
@@ -859,8 +847,6 @@ It is totally fine to move `HEAD` around and have it point directly to a commit 
 
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/31.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
-
-</div>
 
 ### Branches
 
@@ -1075,8 +1061,6 @@ git log
 
         Initial commit
 
-<div class="info-block">
-
 **Here is a classic situation of fast-forward merge.**
 
 Instead of working on your branch `main`, you create a test branch and work on it (so `HEAD` is on the branch `test` and both move along as you create commits):
@@ -1101,11 +1085,7 @@ Then, usually, you delete the branch `test` as it has served its purpose (with `
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/20.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-</div>
-
 If both branches have diverged (you created commits from both `main` and `newbranch`), the merge would require the creation of an additional commit called a "merge commit".
-
-<div class="info-block">
 
 **Here is a classic situation of merge with a commit.**
 
@@ -1151,8 +1131,6 @@ After which, you can delete the (now useless) test branch (with `git branch -d t
 {{<imgbshadow src="/img/git/git_img/diagrams_v3/30.png" bg="#e6e6e6" margin="rem" title="" width="%" line-height="0.5rem">}}
 {{</imgbshadow>}}
 
-</div>
-
 ## Remotes
 
 ### What are remotes?
@@ -1163,31 +1141,31 @@ They can be located anywhere, including on external drive or on the same machine
 
 Popular online Git repository managers & hosting services:
 
-- {{<a "https://github.com" "GitHub">}}
-- {{<a "https://gitlab.com" "GitLab">}}
-- {{<a "https://bitbucket.org" "Bitbucket">}}
+-   <a href="https://github.com" target="_blank">GitHub</a>
+-   <a href="https://gitlab.com" target="_blank">GitLab</a>
+-   <a href="https://bitbucket.org" target="_blank">Bitbucket</a>
 
 ### Creating a remote on GitHub
 
 #### Create a free GitHub account
 
-Sign up for a {{<a "https://github.com/" "free GitHub account.">}}
+Sign up for a <a href="https://github.com/" target="_blank">free GitHub account.</a>
 
-Later on, to avoid having to type your password all the time, you should {{<a "https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" "set up SSH for your account.">}}
+Later on, to avoid having to type your password all the time, you should <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank">set up SSH for your account.</a>
 
 #### Create an empty repository on GitHub
 
-- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+-   Go to the <a href="https://github.com" target="_blank">GitHub website,</a> login, and go to your home page.
 
-- Look for the `Repositories` tab & click the green `New` button.
+-   Look for the `Repositories` tab & click the green `New` button.
 
-- Enter the name you want for your repo, *without spaces*.
+-   Enter the name you want for your repo, *without spaces*.
 
-- Make the repository public or private.
+-   Make the repository public or private.
 
 #### Link empty repository to your repo
 
-Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+Click on the `Code` green drop-down button, select SSH <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank">if you have set SSH for your GitHub account</a> or HTTPS and copy the address.
 
 In the command line, `cd` inside your project, and add the remote:
 
@@ -1268,9 +1246,9 @@ If you collaborate on a project, you have to get the data added by your teammate
 
 To download new data from a remote, you have 2 options:
 
-- `git fetch`
+-   `git fetch`
 
-- `git pull`
+-   `git pull`
 
 #### Fetching changes
 
@@ -1360,13 +1338,13 @@ by <a href="https://www.redbubble.com/people/jscript/shop#profile" target="_blan
 
 When you collaborate with others using Git and GitHub, there are three possible situations:
 
-- You create a project on your machine and want others to contribute to it (1).
+-   You create a project on your machine and want others to contribute to it (1).
 
-- You want to contribute to a project started by others & ...
+-   You want to contribute to a project started by others & ...
 
-    ... you have write access to it (2).
+      ... you have write access to it (2).
 
-    ... you do **not** have write access to it (3).
+      ... you do **not** have write access to it (3).
 
 #### (1) You start the project
 
@@ -1376,17 +1354,17 @@ These are the steps we already saw earlier.
 
 ###### 1. Create an empty repository on GitHub
 
-- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+-   Go to the <a href="https://github.com" target="_blank">GitHub website,</a> login, and go to your home page.
 
-- Look for the `Repositories` tab & click the green `New` button.
+-   Look for the `Repositories` tab & click the green `New` button.
 
-- Enter the name you want for your repo, *without spaces*.
+-   Enter the name you want for your repo, *without spaces*.
 
-- Make the repository public or private.
+-   Make the repository public or private.
 
 ###### 2. Link empty repository to your repo
 
-Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+Click on the `Code` green drop-down button, select SSH <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank">if you have set SSH for your GitHub account</a> or HTTPS and copy the address.
 
 In the command line, `cd` inside your project, and add the remote:
 
@@ -1421,15 +1399,15 @@ If you want to grant your collaborators write access to the project however, you
 
 ##### Invite collaborators
 
-- Go to your GitHub project page.
+-   Go to your GitHub project page.
 
-- Click on the `Settings` tab.
+-   Click on the `Settings` tab.
 
-- Click on the `Manage access` section on the left-hand side (you will be prompted for your GitHub password).
+-   Click on the `Manage access` section on the left-hand side (you will be prompted for your GitHub password).
 
-- Click on the `Invite a collaborator` green button.
+-   Click on the `Invite a collaborator` green button.
 
-- Invite your collaborators with one of their GitHub user name, their email address, or their full name.
+-   Invite your collaborators with one of their GitHub user name, their email address, or their full name.
 
 #### (2) Write access to project
 

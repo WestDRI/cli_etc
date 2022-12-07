@@ -89,11 +89,11 @@ Git is simply that good 🙂
 
 #### MacOS & Linux users
 
-Install Git from {{<a "https://git-scm.com/downloads" "the official website.">}}
+Install Git from [the official website.](https://git-scm.com/downloads){target="_blank"}
 
 #### Windows users
 
-Install {{<a "https://gitforwindows.org/" "Git for Windows.">}} This will also install Git Bash, a Bash emulator.
+Install [Git for Windows.](https://gitforwindows.org/){target="_blank"} This will also install Git Bash, a Bash emulator.
 
 ### Using Git
 
@@ -195,19 +195,19 @@ git commit -h
 
 ### Online documentation
 
-- Official {{<a "https://git-scm.com/docs" "Git manual">}}
-- Open source {{<a "https://git-scm.com/book/en/v2" "Pro Git book">}}
+- Official [Git manual](https://git-scm.com/docs){target="_blank"}
+- Open source [Pro Git book](https://git-scm.com/book/en/v2){target="_blank"}
 
 #### Courses & workshops
 
-- {{<a "https://westgrid-cli.netlify.app/workshops/" "Western Canada Research Computing Git workshops">}}
-- {{<a "https://wgschool.netlify.app/git/" "WestGrid Summer School 2020 Git course">}}
-- {{<a "https://autumnschool.netlify.app/git/" "WestGrid Autumn School 2020 Git course">}}
-- the {{<a "http://swcarpentry.github.io/git-novice/" "Software Carpentry Git lesson">}}
+- [Western Canada Research Computing Git workshops](https://westgrid-cli.netlify.app/workshops/){target="_blank"}
+- [WestGrid Summer School 2020 Git course](https://wgschool.netlify.app/git/){target="_blank"}
+- [WestGrid Autumn School 2020 Git course](https://autumnschool.netlify.app/git/){target="_blank"}
+- the [Software Carpentry Git lesson](http://swcarpentry.github.io/git-novice/){target="_blank"}
 
 #### Q & A
 
-- {{<a "https://stackoverflow.com/questions/tagged/git" "Stack Overflow's Git tag">}}
+- [Stack Overflow's Git tag](https://stackoverflow.com/questions/tagged/git){target="_blank"}
 
 ## Let's get started with an example
 
@@ -230,7 +230,7 @@ mkdir chapter3
 ```
 
 {{<notes>}}
-Make sure note to use any spaces in the name: Git doesn't work well with spaces.
+Make sure not to use any spaces in the name: Git doesn't work well with spaces.
 {{</notes>}}
 
 3. Create a number of subdirectories
@@ -1220,21 +1220,21 @@ They can be located anywhere, including on external drive or on the same machine
 
 Popular online Git repository managers & hosting services:
 
-- {{<a "https://github.com" "GitHub">}}
-- {{<a "https://gitlab.com" "GitLab">}}
-- {{<a "https://bitbucket.org" "Bitbucket">}}
+- [GitHub](https://github.com){target="_blank"}
+- [GitLab](https://gitlab.com){target="_blank"}
+- [Bitbucket](https://bitbucket.org){target="_blank"}
 
 ### Creating a remote on GitHub
 
 #### Create a free GitHub account
 
-Sign up for a {{<a "https://github.com/" "free GitHub account.">}}
+Sign up for a [free GitHub account.](https://github.com/){target="_blank"}
 
-Later on, to avoid having to type your password all the time, you should {{<a "https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" "set up SSH for your account.">}}
+Later on, to avoid having to type your password all the time, you should [set up SSH for your account.](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh){target="_blank"}
 
 #### Create an empty repository on GitHub
 
-- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+- Go to the [GitHub website,](https://github.com){target="_blank"} login, and go to your home page.
 
 - Look for the `Repositories` tab & click the green `New` button.
 
@@ -1244,7 +1244,7 @@ Later on, to avoid having to type your password all the time, you should {{<a "h
 
 #### Link empty repository to your repo
 
-Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+Click on the `Code` green drop-down button, select SSH [if you have set SSH for your GitHub account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh){target="_blank"} or HTTPS and copy the address.
 
 In the command line, `cd` inside your project, and add the remote:
 
@@ -1432,7 +1432,7 @@ These are the steps we already saw earlier.
 
 ###### 1. Create an empty repository on GitHub
 
-- Go to the {{<a "https://github.com" "GitHub website,">}} login, and go to your home page.
+- Go to the [GitHub website,](https://github.com){target="_blank"} login, and go to your home page.
 
 - Look for the `Repositories` tab & click the green `New` button.
 
@@ -1442,7 +1442,7 @@ These are the steps we already saw earlier.
 
 ###### 2. Link empty repository to your repo
 
-Click on the `Code` green drop-down button, select SSH {{<a "https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh" "if you have set SSH for your GitHub account">}} or HTTPS and copy the address.
+Click on the `Code` green drop-down button, select SSH [if you have set SSH for your GitHub account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh){target="_blank"} or HTTPS and copy the address.
 
 In the command line, `cd` inside your project, and add the remote:
 
