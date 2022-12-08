@@ -1,5 +1,5 @@
 +++
-title = "Upcoming training newsletter"
+title = "Upcoming training events"
 slug = "newsletter"
 +++
 
