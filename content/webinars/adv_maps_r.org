@@ -98,7 +98,7 @@ ak <- st_read("01_rgi60_Alaska")
 wes <- st_read("02_rgi60_WesternCanadaUS")
 #+END_src
 
-#+BEGIN_note~
+#+BEGIN_note
 Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
 #+END_note
 

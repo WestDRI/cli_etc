@@ -56,7 +56,7 @@ str(ak)
 str(wes)
 #+END_src
 
-#+BEGIN_note~
+#+BEGIN_note
 Note: ~02_rgi60_WesternCanadaUS~ and ~01_rgi60_Alaska~ are the 2 directories containing the downloaded and unzipped datasets. Make sure to use the absolute paths or the proper paths relative to your working directory (which can be obtained with ~getwd()~ and modified with ~setwd()~).
 #+END_note
 
