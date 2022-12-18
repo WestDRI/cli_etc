@@ -3,6 +3,20 @@
 #+slug: gis_r_rc
 #+weight: 17
 
+*** /Abstract/
+
+#+BEGIN_definition
+This workshop is an introduction to the fundamentals of GIS in R. We will see how to import, handle, and analyze spatial data in R and how to create static and interactive maps. We will use the new generation of packages: sf, terra, and tmap.
+
+No prior knowledge of the topic is required, but some basic experience with R is highly recommended.
+#+END_definition
+
+*** /Workshop requirements/
+
+#+BEGIN_box
+You will be given access to an RStudio server, so no prior local installation is needed.
+#+END_box
+
 * Slides
 
 #+BEGIN_export html
